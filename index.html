@@ -3,35 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="EDRA — the ESG certification readiness index that runs your asset data through real GRESB, ENERGY STAR, and LEED scoring logic. Every gap identified, every fix mapped — before you submit." />
-  <title>EDRA — ESG Certification Readiness Index</title>
+  <meta name="description" content="EDRA — Environmental Data Readiness Assessment. The ESG certification readiness index that scores your asset data across three planes, identifies every gap with codified reason codes, and maps every fix — before you submit." />
+  <title>EDRA — Environmental Data Readiness Assessment</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════════
-       NAV
-  ══════════════════════════════════════════ -->
+  <!-- NAV -->
   <nav id="nav" role="navigation" aria-label="Main navigation">
     <a href="#" class="nav-logo" aria-label="EDRA home">
-      <img class="nav-logo-mark" src="./logo-mark.svg" alt="" aria-hidden="true" />
-      <span class="nav-logo-text"><em>EDR</em><span class="accent">A</span></span>
+      <img class="nav-logo-wide" src="./logo-v2.svg" alt="EDRA — ESG Certification Readiness" />
     </a>
-
     <ul class="nav-links" role="list">
       <li><a href="#about">About</a></li>
+      <li><a href="#methodology">Methodology</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#why-edra">Why EDRA</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-
     <div class="nav-actions">
-      <a href="#contact" class="btn btn-ghost">Book a Demo</a>
-      <a href="#cta" class="btn btn-gold">
-        Free Diagnosis
+      <a href="#contact" class="btn btn-outline">Book a Demo</a>
+      <a href="#cta" class="btn btn-teal">Free Diagnosis
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
       </a>
     </div>
@@ -40,57 +35,55 @@
   <main>
 
     <!-- ══════════════════════════════════════════
-         HERO — Full-screen video
+         HERO — Video carousel with left-aligned text
     ══════════════════════════════════════════ -->
     <section class="hero" aria-label="Hero">
-
-      <!-- Background video — aerial green landscape / sustainable buildings -->
-      <div class="hero-video-wrap" aria-hidden="true">
-        <video
-          class="hero-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="auto"
-          poster="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80"
-        >
-          <!-- Royalty-free aerial forest/nature video (Pexels) -->
-          <source src="https://videos.pexels.com/video-files/3571264/3571264-hd_1920_1080_30fps.mp4" type="video/mp4" />
-          <!-- Fallback: sustainable cityscape -->
-          <source src="https://videos.pexels.com/video-files/2169880/2169880-hd_1920_1080_25fps.mp4" type="video/mp4" />
-        </video>
+      <div class="hero-carousel" aria-hidden="true">
+        <div class="hero-slide active">
+          <video autoplay muted loop playsinline preload="auto"
+            poster="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80">
+            <source src="https://videos.pexels.com/video-files/3571264/3571264-hd_1920_1080_30fps.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="hero-slide">
+          <video muted loop playsinline preload="auto"
+            poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80">
+            <source src="https://videos.pexels.com/video-files/2169880/2169880-hd_1920_1080_25fps.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="hero-slide">
+          <video muted loop playsinline preload="auto"
+            poster="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80">
+            <source src="https://videos.pexels.com/video-files/3209211/3209211-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
-
       <div class="hero-overlay" aria-hidden="true"></div>
 
       <div class="hero-content">
         <div class="hero-badge">
-          <span class="badge-pulse" aria-hidden="true"></span>
-          Built on Real GRESB, ENERGY STAR &amp; LEED Logic
+          <span class="dot" aria-hidden="true"></span>
+          Environmental Data Readiness Assessment
         </div>
-
-        <h1>Stop losing certification cycles<br /><em>to data gaps you didn't</em><br />know existed.</h1>
-
-        <p class="hero-sub">EDRA runs your asset data through the same scoring logic that GRESB, ENERGY STAR, and LEED use to evaluate submissions. Every gap identified. Every fix mapped. Before you submit — not after you fail.</p>
-
+        <h1>We don't manage<br />ESG scores. We manage<br />the <em>decisions</em> that<br />create them.</h1>
+        <p class="hero-sub">EDRA scores your asset data across three planes — context, integrity, and performance — using the exact thresholds that govern GRESB, ENERGY STAR, and LEED certification decisions. Every gap codified. Every fix mapped.</p>
         <div class="hero-actions">
-          <a href="#cta" class="btn btn-gold btn-lg">
-            Start Free Diagnosis
+          <a href="#cta" class="btn btn-teal btn-lg">Start Free Diagnosis
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
           </a>
-          <a href="#contact" class="btn btn-ghost btn-lg">Book a Demo</a>
+          <a href="#contact" class="btn btn-outline btn-lg">Book a Demo</a>
         </div>
       </div>
 
-      <div class="scroll-hint" aria-hidden="true">
-        <div class="scroll-line"></div>
-        <span>Scroll</span>
+      <div class="hero-indicators">
+        <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════
-         ABOUT
+         ABOUT — from Design 1
     ══════════════════════════════════════════ -->
     <section class="about section-pad" id="about" aria-labelledby="about-heading">
       <div class="container">
@@ -119,7 +112,7 @@
             </div>
             <div class="stat-card">
               <div class="stat-value">8</div>
-              <div class="stat-label">Codified reason codes flag every failing metric — not generic flags, specific blockers</div>
+              <div class="stat-label">Codified reason codes flag every failing metric — specific blockers, not generic flags</div>
             </div>
           </div>
 
@@ -130,54 +123,167 @@
     <div class="divider" role="separator"></div>
 
     <!-- ══════════════════════════════════════════
-         SERVICES
+         EDRA SCORE METHODOLOGY — from Design 2
+    ══════════════════════════════════════════ -->
+    <section class="score-section section-pad" id="methodology">
+      <div class="container">
+        <div class="score-header reveal">
+          <span class="eyebrow">The EDRA Score</span>
+          <h2>Data before performance.<br />That's the principle.</h2>
+          <p>Your EDRA Score is a composite of three scored planes. Performance is only shown when data integrity is proven — not assumed.</p>
+        </div>
+
+        <div class="score-formula reveal reveal-d1">
+          <div class="formula-piece">
+            <div class="formula-weight">45%</div>
+            <div class="formula-label">B Score — Data Integrity</div>
+          </div>
+          <div class="formula-op">+</div>
+          <div class="formula-piece">
+            <div class="formula-weight">35%</div>
+            <div class="formula-label">C Score — Performance</div>
+          </div>
+          <div class="formula-op">+</div>
+          <div class="formula-piece">
+            <div class="formula-weight">20%</div>
+            <div class="formula-label">G Score — Governance</div>
+          </div>
+          <div class="formula-op">=</div>
+          <div class="formula-piece">
+            <div class="formula-eq">EDRA</div>
+            <div class="formula-label">0 – 100 Composite Score</div>
+          </div>
+        </div>
+
+        <div class="planes-grid">
+          <div class="plane-card reveal reveal-d1">
+            <div class="plane-letter">A</div>
+            <div class="plane-name">Asset Context</div>
+            <div class="plane-weight">Informational — does not affect score</div>
+            <p>Captures structural characteristics that explain why performance looks the way it does. Context, not penalty.</p>
+            <div class="plane-metrics">
+              <div class="plane-metric">Construction year bands</div>
+              <div class="plane-metric">Weekly operating hours</div>
+              <div class="plane-metric">Technology density (office)</div>
+              <div class="plane-metric">Irrigation intensity</div>
+            </div>
+          </div>
+
+          <div class="plane-card reveal reveal-d2">
+            <div class="plane-letter">B</div>
+            <div class="plane-name">Data Integrity</div>
+            <div class="plane-weight">45% of EDRA Score — most heavily weighted</div>
+            <p>Measures whether your ESG data can be trusted. Five components: completeness, coverage, continuity, structural fields, and governance controls.</p>
+            <div class="plane-metrics">
+              <div class="plane-metric">B1 — Data Completeness (25%)</div>
+              <div class="plane-metric">B2 — Coverage Integrity (25%)</div>
+              <div class="plane-metric">B3 — Temporal Continuity (15%)</div>
+              <div class="plane-metric">B4 — Structural Field Integrity (20%)</div>
+              <div class="plane-metric">B5 — Assurance &amp; Governance (15%)</div>
+            </div>
+          </div>
+
+          <div class="plane-card reveal reveal-d3">
+            <div class="plane-letter">C</div>
+            <div class="plane-name">Performance &amp; Readiness</div>
+            <div class="plane-weight">35% of EDRA Score — gated by Plane B</div>
+            <p>Measures actual ESG performance — but only where data integrity has passed. Zero score means data didn't qualify, not that performance is poor.</p>
+            <div class="plane-metrics">
+              <div class="plane-metric">Energy (ENERGY STAR or kWh/sqm)</div>
+              <div class="plane-metric">Water intensity (m³/sqm)</div>
+              <div class="plane-metric">Waste diversion rate</div>
+              <div class="plane-metric">GHG Scope 1 + Scope 2</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" role="separator"></div>
+
+    <!-- ══════════════════════════════════════════
+         STATUS BANDS — from Design 2
+    ══════════════════════════════════════════ -->
+    <section class="bands-section section-pad">
+      <div class="container">
+        <div class="bands-header reveal">
+          <span class="eyebrow">Status Bands</span>
+          <h2>Where does your<br />portfolio stand?</h2>
+          <p>Your EDRA Score places you in one of five status bands. Year-on-year movement matters more than absolute score.</p>
+        </div>
+
+        <div class="bands-track reveal reveal-d1">
+          <div class="band band-1">
+            <div class="band-range">0 – 30</div>
+            <div class="band-score">Reporting</div>
+            <div class="band-name">Mode</div>
+            <div class="band-desc">Data exists but is not systematically controlled</div>
+          </div>
+          <div class="band band-2">
+            <div class="band-range">31 – 50</div>
+            <div class="band-score">Dependent</div>
+            <div class="band-name">Mode</div>
+            <div class="band-desc">Works but depends on specific individuals</div>
+          </div>
+          <div class="band band-3">
+            <div class="band-range">51 – 70</div>
+            <div class="band-score">Transition</div>
+            <div class="band-name">Mode</div>
+            <div class="band-desc">Data foundation in place, coverage improving</div>
+          </div>
+          <div class="band band-4">
+            <div class="band-range">71 – 85</div>
+            <div class="band-score">Decision</div>
+            <div class="band-name">Grade</div>
+            <div class="band-desc">Data informs capital decisions with confidence</div>
+          </div>
+          <div class="band band-5">
+            <div class="band-range">86 – 96</div>
+            <div class="band-score">Infrastructure</div>
+            <div class="band-name">Ready</div>
+            <div class="band-desc">ESG operates as a managed system</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" role="separator"></div>
+
+    <!-- ══════════════════════════════════════════
+         SERVICES — from Design 2
     ══════════════════════════════════════════ -->
     <section class="services section-pad" id="services" aria-labelledby="services-heading">
       <div class="container">
-
         <div class="services-header">
           <span class="eyebrow reveal">What EDRA Delivers</span>
           <h2 id="services-heading" class="reveal reveal-d1">Four things EDRA delivers<br />for your portfolio.</h2>
         </div>
 
         <div class="services-grid">
-
           <div class="service-card reveal reveal-d1">
             <div class="service-num">01 —</div>
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
             <h3>3-Plane Readiness Score</h3>
-            <p>Every asset scored across Plane A (context), Plane B (data quality), and Plane C (performance readiness) — benchmarked against the exact thresholds GRESB, ENERGY STAR, and LEED use to evaluate submissions. Not estimates. The real logic.</p>
+            <p>Every asset scored across Plane A (context), Plane B (data quality), and Plane C (performance readiness) — benchmarked against the exact thresholds GRESB, ENERGY STAR, and LEED use to evaluate submissions.</p>
           </div>
-
           <div class="service-card reveal reveal-d2">
             <div class="service-num">02 —</div>
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
             <h3>Reason-Coded Gap Identification</h3>
-            <p>Every failing metric flagged with a codified reason code: COVERAGE_LT_75, CONTINUITY_BAD_DAYS, CRITICAL_FIELDS_MISSING, OCCUPANCY_BELOW_THRESHOLD. Your data team gets specific blockers — not a vague "incomplete" flag.</p>
+            <p>Every failing metric flagged with a codified reason code: COVERAGE_LT_75, CONTINUITY_BAD_DAYS, CRITICAL_FIELDS_MISSING, OCCUPANCY_BELOW_THRESHOLD. Specific blockers — not vague flags.</p>
           </div>
-
           <div class="service-card reveal reveal-d3">
             <div class="service-num">03 —</div>
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            </div>
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
             <h3>Targeted Remediation Plans</h3>
-            <p>A prioritised action plan for every gap: what to fix, how to fix it, and what certification threshold it unlocks. Works with your existing data and systems — no platform migration required.</p>
+            <p>A prioritised action plan for every gap: what to fix, how to fix it, and what certification threshold it unlocks. Works with your existing data — no platform migration required.</p>
           </div>
-
           <div class="service-card reveal reveal-d4">
             <div class="service-num">04 —</div>
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </div>
+            <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
             <h3>Portfolio-Level Intelligence</h3>
-            <p>See which assets are dragging your portfolio score and by exactly how much. Asset-by-asset comparison with audit-ready output — every override logged with field, value, reason, approver, and timestamp.</p>
+            <p>Asset-by-asset comparison with cohort benchmarking by asset type. Coverage disclosure on every metric. Every override logged with field, value, reason, approver, and timestamp.</p>
           </div>
-
         </div>
       </div>
     </section>
@@ -185,113 +291,63 @@
     <div class="divider" role="separator"></div>
 
     <!-- ══════════════════════════════════════════
-         WHY EDRA
+         WHY EDRA — from Design 2
     ══════════════════════════════════════════ -->
     <section class="why section-pad" id="why-edra" aria-labelledby="why-heading">
       <div class="container">
-
         <div class="why-intro">
           <div>
             <span class="eyebrow reveal">Why EDRA</span>
-            <h2 id="why-heading" class="reveal reveal-d1">Decision-grade<br />ESG infrastructure.</h2>
+            <h2 id="why-heading" class="reveal reveal-d1">Performance is gated.<br />That's by design.</h2>
           </div>
-          <p class="reveal reveal-d2">EDRA was designed to meet the standard of institutional scrutiny — built on the logic that governs actual certification decisions, not approximations of them.</p>
+          <p class="reveal reveal-d2">If your data doesn't pass integrity thresholds, EDRA won't show performance. This isn't a penalty — it's a disclosure of fact. Performance calculated on insufficient data cannot be trusted.</p>
         </div>
 
         <div class="why-grid">
           <div class="why-card reveal reveal-d1">
             <div class="why-num" aria-hidden="true">01</div>
             <h3>Truth-first scoring</h3>
-            <p>NULL values are never treated as zero. Worst-case continuity defines asset continuity. Performance silence is preferred over inferred performance. Accuracy over convenience — always.</p>
+            <p>NULL values are never treated as zero. Worst-case continuity defines asset continuity. Performance silence is preferred over inferred performance. Accuracy over convenience.</p>
           </div>
           <div class="why-card reveal reveal-d2">
             <div class="why-num" aria-hidden="true">02</div>
-            <h3>Built on real certification logic</h3>
-            <p>EDRA's thresholds are calibrated directly against GRESB, ENERGY STAR, and LEED requirements. Every score you see maps to a real-world certification outcome — not an estimate.</p>
+            <h3>Real certification logic</h3>
+            <p>Thresholds calibrated directly against GRESB, ENERGY STAR, and LEED requirements. Every score maps to a real-world certification outcome — not an estimate.</p>
           </div>
           <div class="why-card reveal reveal-d3">
             <div class="why-num" aria-hidden="true">03</div>
             <h3>Full audit trail</h3>
-            <p>Every override, correction, and score change is logged with field name, original value, new value, reason, approver, and timestamp. Defensible at every level.</p>
+            <p>Every override, correction, and score change logged with field name, original value, new value, reason, approver, and timestamp. Defensible at every level.</p>
           </div>
         </div>
-
       </div>
     </section>
 
     <div class="divider" role="separator"></div>
 
     <!-- ══════════════════════════════════════════
-         TESTIMONIALS
-    ══════════════════════════════════════════ -->
-    <section class="testimonials section-pad" aria-labelledby="testi-heading">
-      <div class="container">
-        <span class="eyebrow reveal">Client Results</span>
-        <h2 id="testi-heading" class="reveal reveal-d1">Results that speak<br />for themselves.</h2>
-
-        <div class="testi-grid">
-
-          <article class="testi-card reveal reveal-d1">
-            <div class="quote-mark" aria-hidden="true">"</div>
-            <blockquote>We used EDRA before our GRESB submission and identified three coverage gaps we didn't know existed. Fixed them in two weeks. First time we qualified at this rating.</blockquote>
-            <footer class="testi-author">
-              <strong>Portfolio Manager</strong>
-              Real Estate Fund
-            </footer>
-          </article>
-
-          <article class="testi-card reveal reveal-d2">
-            <div class="quote-mark" aria-hidden="true">"</div>
-            <blockquote>EDRA cut our pre-submission audit prep from six weeks to ten days. The reason codes alone saved us from three rejections.</blockquote>
-            <footer class="testi-author">
-              <strong>ESG Director</strong>
-              Global Asset Manager
-            </footer>
-          </article>
-
-          <article class="testi-card reveal reveal-d3">
-            <div class="quote-mark" aria-hidden="true">"</div>
-            <blockquote>The remediation plan was specific enough to brief our data team directly. No interpretation required. That's rare.</blockquote>
-            <footer class="testi-author">
-              <strong>Head of Sustainability</strong>
-              Listed REIT
-            </footer>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <div class="divider" role="separator"></div>
-
-    <!-- ══════════════════════════════════════════
-         CTA BANNER
+         CTA — from Design 2
     ══════════════════════════════════════════ -->
     <section class="cta-section section-pad" id="cta" aria-labelledby="cta-heading">
       <div class="container">
         <div class="cta-inner reveal">
-
           <div class="cta-text">
             <span class="eyebrow">Free Diagnosis</span>
             <h2 id="cta-heading">Stop submitting blind.<br />Start your free EDRA<br />diagnosis today.</h2>
             <p>Every certification cycle without readiness visibility is a risk. Gaps that could have been closed in two weeks become rejections that cost you a full year.</p>
-
             <ul class="cta-list" aria-label="What's included">
-              <li>3-Plane readiness score: asset context, data quality, performance readiness</li>
-              <li>Every gap flagged with a codified reason code — not generic flags</li>
-              <li>Preliminary remediation priorities mapped to certification thresholds</li>
-              <li>Delivered to your inbox within 24 hours</li>
+              <li>3-Plane readiness score: context, data integrity, performance</li>
+              <li>Every gap flagged with a codified reason code</li>
+              <li>Remediation priorities mapped to certification thresholds</li>
+              <li>Your EDRA Status Band — know where you stand</li>
             </ul>
           </div>
-
           <div class="cta-actions">
-            <a href="#contact" class="btn btn-gold btn-lg">
-              Start Free Diagnosis
+            <a href="#contact" class="btn btn-teal btn-lg">Start Free Diagnosis
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </a>
-            <a href="#contact" class="btn btn-ghost btn-lg">Book a Demo</a>
+            <a href="#contact" class="btn btn-outline btn-lg">Book a Demo</a>
           </div>
-
         </div>
       </div>
     </section>
@@ -304,12 +360,10 @@
     <section class="contact section-pad" id="contact" aria-labelledby="contact-heading">
       <div class="container">
         <div class="contact-grid">
-
           <div class="contact-text">
             <span class="eyebrow reveal">Get in Touch</span>
             <h2 id="contact-heading" class="reveal reveal-d1">Ready to get<br />certification-ready?</h2>
             <p class="reveal reveal-d2">EDRA works with real estate fund managers, asset owners, ESG consultants, and GRESB submitters serious about achieving — and defending — their certifications.</p>
-
             <div class="contact-info reveal reveal-d3" aria-label="Contact details">
               <div class="contact-info-item">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -325,74 +379,42 @@
               </div>
             </div>
           </div>
-
           <div class="reveal reveal-d2">
             <form class="contact-form" id="contact-form" novalidate>
               <div class="form-row">
-                <div class="form-group">
-                  <label for="name">Full Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
-                </div>
-                <div class="form-group">
-                  <label for="company">Company</label>
-                  <input type="text" id="company" name="company" placeholder="Your company" required autocomplete="organization" />
-                </div>
+                <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" /></div>
+                <div class="form-group"><label for="company">Company</label><input type="text" id="company" name="company" placeholder="Your company" required autocomplete="organization" /></div>
               </div>
-
-              <div class="form-group">
-                <label for="email">Work Email</label>
-                <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email" />
+              <div class="form-group"><label for="email">Work Email</label><input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email" /></div>
+              <div class="form-group"><label for="role">Your Role</label>
+                <select id="role" name="role" required><option value="" disabled selected>Select your role</option><option value="fund-manager">Fund Manager</option><option value="asset-owner">Asset Owner</option><option value="esg-consultant">ESG Consultant</option><option value="gresb-submitter">GRESB Submitter</option><option value="other">Other</option></select>
               </div>
-
-              <div class="form-group">
-                <label for="role">Your Role</label>
-                <select id="role" name="role" required>
-                  <option value="" disabled selected>Select your role</option>
-                  <option value="fund-manager">Fund Manager</option>
-                  <option value="asset-owner">Asset Owner</option>
-                  <option value="esg-consultant">ESG Consultant</option>
-                  <option value="gresb-submitter">GRESB Submitter</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell us about your portfolio or certification goals..."></textarea>
-              </div>
-
-              <div class="form-group">
-                <button type="submit" class="btn btn-gold btn-lg form-submit">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                  Send Message
-                </button>
+              <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about your portfolio or certification goals..."></textarea></div>
+              <div class="form-group"><button type="submit" class="btn btn-teal btn-lg form-submit">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Send Message</button>
               </div>
             </form>
           </div>
-
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ══════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer role="contentinfo">
     <div class="container">
       <div class="footer-inner">
-        <div class="footer-logo" aria-label="EDRA"><em>EDR</em><span class="accent">A</span></div>
-
+        <div class="footer-logo"><img class="footer-logo-img" src="./logo-v2.svg" alt="EDRA" /></div>
         <nav aria-label="Footer navigation">
           <ul class="footer-links" role="list">
             <li><a href="#about">About</a></li>
+            <li><a href="#methodology">Methodology</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#why-edra">Why EDRA</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-
         <div class="footer-right">
           <span class="footer-meta">Founded by Preyanka Jain</span>
           <span class="cert-badge" aria-label="GRESB Certified">GRESB Certified</span>
@@ -415,83 +437,44 @@
     </button>
   </div>
 
-  <!-- ══════════════════════════════════════════
-       WIDGET 1 — Q&A CHAT
-  ══════════════════════════════════════════ -->
-  <div id="chat-widget" class="widget-panel-wrap" aria-label="Chat with EDRA assistant">
+  <!-- WIDGET 1 — Q&A CHAT -->
+  <div id="chat-widget" class="widget-panel-wrap">
     <div class="widget-panel">
       <div class="chat-header">
         <div class="chat-header-info">
           <div class="chat-avatar">E</div>
-          <div>
-            <div class="chat-header-name">EDRA Assistant</div>
-            <div class="chat-header-status">Online</div>
-          </div>
+          <div><div class="chat-header-name">EDRA Assistant</div><div class="chat-header-status">Online</div></div>
         </div>
-        <button class="chat-close-btn" id="chat-close" aria-label="Close chat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
+        <button class="chat-close-btn" id="chat-close" aria-label="Close chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
-
       <div class="chat-messages" id="chat-messages"></div>
-
-      <div class="chat-typing" id="chat-typing" hidden>
-        <div class="chat-msg chat-msg-bot">
-          <div class="chat-msg-bubble chat-typing-bubble">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          </div>
-        </div>
-      </div>
-
+      <div class="chat-typing" id="chat-typing" hidden><div class="chat-msg chat-msg-bot"><div class="chat-msg-bubble chat-typing-bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div></div>
       <form class="chat-input-form" id="chat-form">
         <input type="text" class="chat-input" id="chat-input" placeholder="Type your message..." autocomplete="off" />
-        <button type="submit" class="chat-send" id="chat-send" aria-label="Send message">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        </button>
+        <button type="submit" class="chat-send" id="chat-send" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
       </form>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════
-       WIDGET 2 — PROPOSAL INTAKE
-  ══════════════════════════════════════════ -->
-  <div id="proposal-widget" class="widget-panel-wrap" aria-label="Get a proposal from EDRA">
+  <!-- WIDGET 2 — PROPOSAL INTAKE -->
+  <div id="proposal-widget" class="widget-panel-wrap">
     <div class="widget-panel proposal-panel">
       <div class="chat-header proposal-header">
         <div class="chat-header-info">
           <div class="chat-avatar proposal-avatar">P</div>
-          <div>
-            <div class="chat-header-name">Get a Proposal</div>
-            <div class="chat-header-status">Online</div>
-          </div>
+          <div><div class="chat-header-name">Get a Proposal</div><div class="chat-header-status">Online</div></div>
         </div>
-        <button class="chat-close-btn" id="proposal-close" aria-label="Close proposal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
+        <button class="chat-close-btn" id="proposal-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
-
       <div class="proposal-progress" id="proposal-progress">
-        <div class="proposal-progress-bar">
-          <div class="proposal-progress-fill" id="proposal-progress-fill"></div>
-        </div>
+        <div class="proposal-progress-bar"><div class="proposal-progress-fill" id="proposal-progress-fill"></div></div>
         <div class="proposal-progress-text" id="proposal-progress-text">Step 1 of 6</div>
       </div>
-
       <div class="chat-messages" id="proposal-messages"></div>
-
-      <div class="chat-typing" id="proposal-typing" hidden>
-        <div class="chat-msg chat-msg-bot">
-          <div class="chat-msg-bubble chat-typing-bubble">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          </div>
-        </div>
-      </div>
-
+      <div class="chat-typing" id="proposal-typing" hidden><div class="chat-msg chat-msg-bot"><div class="chat-msg-bubble chat-typing-bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div></div>
       <form class="chat-input-form" id="proposal-form">
         <input type="text" class="chat-input" id="proposal-input" placeholder="Type your answer..." autocomplete="off" />
-        <button type="submit" class="chat-send" id="proposal-send" aria-label="Send">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        </button>
+        <button type="submit" class="chat-send" id="proposal-send" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
       </form>
     </div>
   </div>
@@ -500,385 +483,132 @@
        JAVASCRIPT
   ══════════════════════════════════════════ -->
   <script>
-    // ── Nav: scroll-aware style + hide/show ─────────────────
-    (function () {
-      const nav = document.getElementById('nav');
-      let lastY = 0;
-      let ticking = false;
+    // ── Nav ──
+    (function(){var n=document.getElementById('nav'),ly=0,t=false;function u(){var y=window.scrollY;y>40?n.classList.add('scrolled'):n.classList.remove('scrolled');y>ly&&y>120?n.classList.add('hidden'):n.classList.remove('hidden');ly=y;t=false;}window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(u);t=true;}},{passive:true});})();
 
-      function update() {
-        const y = window.scrollY;
-        // Scrolled style
-        if (y > 40) nav.classList.add('scrolled');
-        else nav.classList.remove('scrolled');
-        // Hide on scroll down, show on scroll up
-        if (y > lastY && y > 120) nav.classList.add('hidden');
-        else nav.classList.remove('hidden');
-        lastY = y;
-        ticking = false;
+    // ── Reveal ──
+    (function(){var e=document.querySelectorAll('.reveal');if(!('IntersectionObserver' in window)){e.forEach(function(el){el.classList.add('visible');});return;}var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});e.forEach(function(el){io.observe(el);});})();
+
+    // ── Video carousel ──
+    (function(){
+      var slides=document.querySelectorAll('.hero-slide'),dots=document.querySelectorAll('.hero-dot'),c=0;
+      function go(i){
+        slides[c].classList.remove('active');
+        var pv=slides[c].querySelector('video');if(pv)pv.pause();
+        dots[c].classList.remove('active');
+        c=i;
+        slides[c].classList.add('active');dots[c].classList.add('active');
+        var v=slides[c].querySelector('video');if(v){v.currentTime=0;v.play().catch(function(){});}
       }
-
-      window.addEventListener('scroll', () => {
-        if (!ticking) { requestAnimationFrame(update); ticking = true; }
-      }, { passive: true });
+      dots.forEach(function(d){d.addEventListener('click',function(){go(parseInt(this.dataset.slide,10));});});
+      setInterval(function(){go((c+1)%slides.length);},6000);
+      document.querySelectorAll('.hero-slide video').forEach(function(v){v.addEventListener('error',function(){v.style.display='none';});});
     })();
 
-    // ── Scroll reveal ────────────────────────────────────────
-    (function () {
-      const els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) {
-        els.forEach(el => el.classList.add('visible'));
-        return;
-      }
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+    // ── Contact form ──
+    (function(){var f=document.getElementById('contact-form');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var n=f.querySelector('#name').value.trim(),em=f.querySelector('#email').value.trim();if(!n){f.querySelector('#name').focus();return;}if(!em){f.querySelector('#email').focus();return;}var b=f.querySelector('.form-submit');b.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Message Sent';b.style.pointerEvents='none';b.style.opacity='0.85';setTimeout(function(){f.reset();b.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message';b.style.pointerEvents='';b.style.opacity='';},3000);});})();
 
-      els.forEach(el => io.observe(el));
-    })();
+    // ── Smooth scroll ──
+    (function(){document.querySelectorAll('a[href^="#"]').forEach(function(l){l.addEventListener('click',function(e){var id=this.getAttribute('href').slice(1);if(!id)return;var t=document.getElementById(id);if(!t)return;e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-76,behavior:'smooth'});});});})();
 
-    // ── Video fallback: if video fails load poster stays ────
-    (function () {
-      const video = document.querySelector('.hero-video');
-      if (!video) return;
-      video.addEventListener('error', () => {
-        video.style.display = 'none';
-      });
-    })();
-
-    // ── Contact form ─────────────────────────────────────────
-    (function () {
-      const form = document.getElementById('contact-form');
-      if (!form) return;
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const name  = form.querySelector('#name').value.trim();
-        const email = form.querySelector('#email').value.trim();
-        if (!name)  { form.querySelector('#name').focus();  return; }
-        if (!email) { form.querySelector('#email').focus(); return; }
-
-        const btn = form.querySelector('.form-submit');
-        btn.innerHTML = `
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Message Sent
-        `;
-        btn.style.pointerEvents = 'none';
-        btn.style.opacity = '0.85';
-
-        setTimeout(() => {
-          form.reset();
-          btn.innerHTML = `
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            Send Message
-          `;
-          btn.style.pointerEvents = '';
-          btn.style.opacity = '';
-        }, 3000);
-      });
-    })();
-
-    // ── Smooth scroll with fixed-nav offset ─────────────────
-    (function () {
-      document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', function (e) {
-          const id = this.getAttribute('href').slice(1);
-          if (!id) return;
-          const target = document.getElementById(id);
-          if (!target) return;
-          e.preventDefault();
-          const offset = target.getBoundingClientRect().top + window.scrollY - 76;
-          window.scrollTo({ top: offset, behavior: 'smooth' });
-        });
-      });
-    })();
-
-    // ── Widget launcher system ────────────────────────────────
+    // ── Widget launcher system ──
     (function () {
       var launchers = document.getElementById('widget-launchers');
       var chatWidget = document.getElementById('chat-widget');
       var proposalWidget = document.getElementById('proposal-widget');
-
       var launcherChat = document.getElementById('launcher-chat');
       var launcherProposal = document.getElementById('launcher-proposal');
 
-      var activeWidget = null;
-
-      function showLaunchers() {
-        launchers.classList.remove('hidden');
-      }
-
-      function hideLaunchers() {
-        launchers.classList.add('hidden');
-      }
+      function showLaunchers() { launchers.classList.remove('hidden'); }
+      function hideLaunchers() { launchers.classList.add('hidden'); }
 
       function openWidget(which) {
         hideLaunchers();
         if (which === 'chat') {
-          chatWidget.classList.add('open');
-          proposalWidget.classList.remove('open');
-          activeWidget = 'chat';
+          chatWidget.classList.add('open'); proposalWidget.classList.remove('open');
           document.getElementById('chat-input').focus();
         } else {
-          proposalWidget.classList.add('open');
-          chatWidget.classList.remove('open');
-          activeWidget = 'proposal';
+          proposalWidget.classList.add('open'); chatWidget.classList.remove('open');
           document.getElementById('proposal-input').focus();
-          // Auto-start intake if first time
           if (!proposalStarted) startProposalIntake();
         }
       }
 
       function closeWidget() {
-        chatWidget.classList.remove('open');
-        proposalWidget.classList.remove('open');
-        activeWidget = null;
+        chatWidget.classList.remove('open'); proposalWidget.classList.remove('open');
         showLaunchers();
       }
 
       launcherChat.addEventListener('click', function () { openWidget('chat'); });
       launcherProposal.addEventListener('click', function () { openWidget('proposal'); });
-
       document.getElementById('chat-close').addEventListener('click', closeWidget);
       document.getElementById('proposal-close').addEventListener('click', closeWidget);
 
-      // ── Q&A CHAT (Widget 1) ─────────────────────────────────
-      var chatForm = document.getElementById('chat-form');
-      var chatInput = document.getElementById('chat-input');
-      var chatMessages = document.getElementById('chat-messages');
-      var chatTyping = document.getElementById('chat-typing');
+      // ── Q&A Chat ──
+      var chatForm = document.getElementById('chat-form'), chatInput = document.getElementById('chat-input');
+      var chatMessages = document.getElementById('chat-messages'), chatTyping = document.getElementById('chat-typing');
       var chatHistory = [];
 
       function parseOptions(text) {
-        var lines = text.split('\n');
-        var optionRegex = /^([a-e])\)\s*(.+)$/i;
-        var bodyLines = [];
-        var options = [];
-        for (var i = 0; i < lines.length; i++) {
-          var match = lines[i].trim().match(optionRegex);
-          if (match) {
-            options.push({ letter: match[1].toLowerCase(), label: match[2].trim() });
-          } else if (lines[i].trim()) {
-            bodyLines.push(lines[i].trim());
-          }
-        }
-        return { body: bodyLines.join('\n'), options: options };
+        var lines = text.split('\n'), re = /^([a-e])\)\s*(.+)$/i, body = [], opts = [];
+        for (var i = 0; i < lines.length; i++) { var m = lines[i].trim().match(re); if (m) opts.push({ l: m[1].toLowerCase(), t: m[2].trim() }); else if (lines[i].trim()) body.push(lines[i].trim()); }
+        return { body: body.join('\n'), options: opts };
       }
+      function disableOpts() { chatMessages.querySelectorAll('.chat-option-btn:not([disabled])').forEach(function(b){b.disabled=true;b.classList.add('used');}); }
 
-      function disableChatOptions() {
-        chatMessages.querySelectorAll('.chat-option-btn:not([disabled])').forEach(function (btn) {
-          btn.disabled = true;
-          btn.classList.add('used');
-        });
-      }
-
-      function addChatMessage(text, sender) {
-        var wrapper = document.createElement('div');
-        wrapper.className = 'chat-msg chat-msg-' + sender;
-
+      function addChat(text, sender) {
+        var w = document.createElement('div'); w.className = 'chat-msg chat-msg-' + sender;
         if (sender === 'bot') {
-          var parsed = parseOptions(text);
-          if (parsed.body) {
-            var bubble = document.createElement('div');
-            bubble.className = 'chat-msg-bubble';
-            bubble.textContent = parsed.body;
-            wrapper.appendChild(bubble);
+          var p = parseOptions(text);
+          if (p.body) { var b = document.createElement('div'); b.className = 'chat-msg-bubble'; b.textContent = p.body; w.appendChild(b); }
+          if (p.options.length) { var ow = document.createElement('div'); ow.className = 'chat-options'; p.options.forEach(function(o){ var btn = document.createElement('button'); btn.className = 'chat-option-btn'; btn.textContent = o.t; btn.addEventListener('click', function(){ if(btn.disabled)return; disableOpts(); btn.classList.add('selected'); sendChat(o.l+') '+o.t); }); ow.appendChild(btn); }); w.appendChild(ow); }
+        } else { var b = document.createElement('div'); b.className = 'chat-msg-bubble'; b.textContent = text; w.appendChild(b); }
+        chatMessages.appendChild(w); chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      async function sendChat(text) {
+        addChat(text,'user'); chatInput.value=''; chatInput.disabled=true;
+        chatHistory.push({role:'user',content:text}); chatTyping.hidden=false; chatMessages.scrollTop=chatMessages.scrollHeight;
+        try { var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:chatHistory,mode:'qa'})}); var d=await r.json(); chatTyping.hidden=true;
+          if(d.error)addChat('Sorry, something went wrong.','bot'); else{chatHistory.push({role:'assistant',content:d.reply});addChat(d.reply,'bot');}
+        }catch(e){chatTyping.hidden=true;addChat('Connection error.','bot');}
+        chatInput.disabled=false;chatInput.focus();
+      }
+
+      var welcome="Hey! I'm EDRA's assistant. Let's check your certification readiness.\na) Yes, I've submitted to GRESB\nb) No, I haven't\nc) Not sure what GRESB is";
+      addChat(welcome,'bot'); chatHistory.push({role:'assistant',content:welcome});
+      chatForm.addEventListener('submit',function(e){e.preventDefault();var t=chatInput.value.trim();if(!t)return;disableOpts();sendChat(t);});
+
+      // ── Proposal Intake ──
+      var proposalForm=document.getElementById('proposal-form'),proposalInput=document.getElementById('proposal-input');
+      var proposalMessages=document.getElementById('proposal-messages'),proposalTyping=document.getElementById('proposal-typing');
+      var proposalFill=document.getElementById('proposal-progress-fill'),proposalText=document.getElementById('proposal-progress-text');
+      var proposalHistory=[],proposalStarted=false,proposalComplete=false;
+
+      function updateProgress(s){proposalFill.style.width=(s/6)*100+'%';proposalText.textContent='Step '+s+' of 6';}
+      function addProp(text,sender){var w=document.createElement('div');w.className='chat-msg chat-msg-'+sender;var b=document.createElement('div');b.className='chat-msg-bubble';b.textContent=text;w.appendChild(b);proposalMessages.appendChild(w);proposalMessages.scrollTop=proposalMessages.scrollHeight;}
+
+      async function startProposalIntake(){
+        proposalStarted=true;proposalTyping.hidden=false;proposalMessages.scrollTop=proposalMessages.scrollHeight;
+        proposalHistory.push({role:'user',content:"I'd like to get a proposal."});
+        try{var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:proposalHistory,mode:'intake'})});var d=await r.json();proposalTyping.hidden=true;
+          if(d.error)addProp('Sorry, something went wrong.','bot');else{proposalHistory.push({role:'assistant',content:d.reply});addProp(d.reply,'bot');if(d.intake_step)updateProgress(d.intake_step);}
+        }catch(e){proposalTyping.hidden=true;addProp('Connection error.','bot');}
+      }
+
+      async function sendProp(text){
+        if(proposalComplete)return;addProp(text,'user');proposalInput.value='';proposalInput.disabled=true;
+        proposalHistory.push({role:'user',content:text});proposalTyping.hidden=false;proposalMessages.scrollTop=proposalMessages.scrollHeight;
+        try{var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:proposalHistory,mode:'intake'})});var d=await r.json();proposalTyping.hidden=true;
+          if(d.error)addProp('Sorry, something went wrong.','bot');else{proposalHistory.push({role:'assistant',content:d.reply});addProp(d.reply,'bot');
+            if(d.intake_step)updateProgress(d.intake_step);
+            if(d.intake_complete){proposalComplete=true;proposalFill.style.width='100%';proposalText.textContent='Complete';proposalInput.disabled=true;proposalInput.placeholder='Proposal intake complete';
+              fetch('/api/generate-proposal',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({intake_data:d.intake_data,conversation:proposalHistory})}).catch(function(){});return;}
           }
-          if (parsed.options.length > 0) {
-            var optWrap = document.createElement('div');
-            optWrap.className = 'chat-options';
-            parsed.options.forEach(function (opt) {
-              var btn = document.createElement('button');
-              btn.className = 'chat-option-btn';
-              btn.textContent = opt.label;
-              btn.addEventListener('click', function () {
-                if (btn.disabled) return;
-                disableChatOptions();
-                btn.classList.add('selected');
-                sendChatMessage(opt.letter + ') ' + opt.label);
-              });
-              optWrap.appendChild(btn);
-            });
-            wrapper.appendChild(optWrap);
-          }
-        } else {
-          var bubble = document.createElement('div');
-          bubble.className = 'chat-msg-bubble';
-          bubble.textContent = text;
-          wrapper.appendChild(bubble);
-        }
-
-        chatMessages.appendChild(wrapper);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+        }catch(e){proposalTyping.hidden=true;addProp('Connection error.','bot');}
+        proposalInput.disabled=false;proposalInput.focus();
       }
-
-      async function sendChatMessage(text) {
-        addChatMessage(text, 'user');
-        chatInput.value = '';
-        chatInput.disabled = true;
-        chatHistory.push({ role: 'user', content: text });
-        chatTyping.hidden = false;
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-
-        try {
-          var res = await fetch('/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ messages: chatHistory, mode: 'qa' })
-          });
-          var data = await res.json();
-          chatTyping.hidden = true;
-          if (data.error) {
-            addChatMessage('Sorry, something went wrong. Please try again.', 'bot');
-          } else {
-            chatHistory.push({ role: 'assistant', content: data.reply });
-            addChatMessage(data.reply, 'bot');
-          }
-        } catch (err) {
-          chatTyping.hidden = true;
-          addChatMessage('Connection error. Please try again.', 'bot');
-        }
-
-        chatInput.disabled = false;
-        chatInput.focus();
-      }
-
-      // Seed Q&A welcome
-      var welcomeMsg = "Hey! I'm EDRA's assistant. Let's check your certification readiness.\na) Yes, I've submitted to GRESB\nb) No, I haven't\nc) Not sure what GRESB is";
-      addChatMessage(welcomeMsg, 'bot');
-      chatHistory.push({ role: 'assistant', content: welcomeMsg });
-
-      chatForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var text = chatInput.value.trim();
-        if (!text) return;
-        disableChatOptions();
-        sendChatMessage(text);
-      });
-
-      // ── PROPOSAL INTAKE (Widget 2) ──────────────────────────
-      var proposalForm = document.getElementById('proposal-form');
-      var proposalInput = document.getElementById('proposal-input');
-      var proposalMessages = document.getElementById('proposal-messages');
-      var proposalTyping = document.getElementById('proposal-typing');
-      var proposalProgressFill = document.getElementById('proposal-progress-fill');
-      var proposalProgressText = document.getElementById('proposal-progress-text');
-      var proposalHistory = [];
-      var proposalStarted = false;
-      var proposalComplete = false;
-
-      function updateProgress(step) {
-        var pct = (step / 6) * 100;
-        proposalProgressFill.style.width = pct + '%';
-        proposalProgressText.textContent = 'Step ' + step + ' of 6';
-      }
-
-      function addProposalMessage(text, sender) {
-        var wrapper = document.createElement('div');
-        wrapper.className = 'chat-msg chat-msg-' + sender;
-        var bubble = document.createElement('div');
-        bubble.className = 'chat-msg-bubble';
-        bubble.textContent = text;
-        wrapper.appendChild(bubble);
-        proposalMessages.appendChild(wrapper);
-        proposalMessages.scrollTop = proposalMessages.scrollHeight;
-      }
-
-      async function startProposalIntake() {
-        proposalStarted = true;
-        proposalTyping.hidden = false;
-        proposalMessages.scrollTop = proposalMessages.scrollHeight;
-
-        var firstMsg = "I'd like to get a proposal.";
-        proposalHistory.push({ role: 'user', content: firstMsg });
-
-        try {
-          var res = await fetch('/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ messages: proposalHistory, mode: 'intake' })
-          });
-          var data = await res.json();
-          proposalTyping.hidden = true;
-
-          if (data.error) {
-            addProposalMessage('Sorry, something went wrong. Please try again.', 'bot');
-          } else {
-            proposalHistory.push({ role: 'assistant', content: data.reply });
-            addProposalMessage(data.reply, 'bot');
-            if (data.intake_step) updateProgress(data.intake_step);
-          }
-        } catch (err) {
-          proposalTyping.hidden = true;
-          addProposalMessage('Connection error. Please try again.', 'bot');
-        }
-      }
-
-      async function sendProposalMessage(text) {
-        if (proposalComplete) return;
-
-        addProposalMessage(text, 'user');
-        proposalInput.value = '';
-        proposalInput.disabled = true;
-        proposalHistory.push({ role: 'user', content: text });
-        proposalTyping.hidden = false;
-        proposalMessages.scrollTop = proposalMessages.scrollHeight;
-
-        try {
-          var res = await fetch('/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ messages: proposalHistory, mode: 'intake' })
-          });
-          var data = await res.json();
-          proposalTyping.hidden = true;
-
-          if (data.error) {
-            addProposalMessage('Sorry, something went wrong. Please try again.', 'bot');
-          } else {
-            proposalHistory.push({ role: 'assistant', content: data.reply });
-            addProposalMessage(data.reply, 'bot');
-
-            if (data.intake_step) {
-              updateProgress(data.intake_step);
-            }
-
-            if (data.intake_complete) {
-              proposalComplete = true;
-              proposalProgressFill.style.width = '100%';
-              proposalProgressText.textContent = 'Complete';
-              proposalInput.disabled = true;
-              proposalInput.placeholder = 'Proposal intake complete';
-
-              // Send to generate-proposal stub
-              fetch('/api/generate-proposal', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  intake_data: data.intake_data,
-                  conversation: proposalHistory
-                })
-              }).catch(function () {});
-              return;
-            }
-          }
-        } catch (err) {
-          proposalTyping.hidden = true;
-          addProposalMessage('Connection error. Please try again.', 'bot');
-        }
-
-        proposalInput.disabled = false;
-        proposalInput.focus();
-      }
-
-      proposalForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var text = proposalInput.value.trim();
-        if (!text) return;
-        sendProposalMessage(text);
-      });
+      proposalForm.addEventListener('submit',function(e){e.preventDefault();var t=proposalInput.value.trim();if(!t)return;sendProp(t);});
     })();
   </script>
 
