@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="248" height="68" viewBox="0 0 248 68" fill="none" role="img" aria-label="EDRA — ESG Certification Readiness Index">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- ── Top rule: full-width gold hairline ── -->
+  <line x1="0" y1="11" x2="248" y2="11" stroke="#C8A96E" stroke-width="1.2"/>
+
+  <!-- ── Wordmark: wide-tracked serif display ── -->
+  <!-- "EDR" in regular weight, "A" in lighter weight + gold — typographic split -->
+  <text
+    x="4" y="48"
+    font-family="'Cormorant Garamond', 'Georgia', serif"
+    font-size="40"
+    font-weight="600"
+    fill="currentColor"
+    letter-spacing="10">EDR</text>
+
+  <!-- "A" — same font, gold accent, slightly lighter -->
+  <text
+    x="162" y="48"
+    font-family="'Cormorant Garamond', 'Georgia', serif"
+    font-size="40"
+    font-weight="300"
+    fill="#C8A96E"
+    letter-spacing="0">A</text>
+
+  <!-- ── Bottom rule: partial, offset for visual tension ── -->
+  <line x1="4"  y1="56" x2="158" y2="56" stroke="currentColor" stroke-width="0.75" stroke-opacity="0.2"/>
+  <line x1="162" y1="56" x2="228" y2="56" stroke="#C8A96E"    stroke-width="0.75" stroke-opacity="0.5"/>
+
+  <!-- ── Tagline: centered, ultra-tracked small caps ── -->
+  <text
+    x="4" y="66"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="7"
+    font-weight="400"
+    fill="#C8A96E"
+    fill-opacity="0.75"
+    letter-spacing="3.2">ESG · CERTIFICATION · READINESS</text>
+</svg>

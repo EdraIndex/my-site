@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EDRA — ESG certification readiness index for real estate assets. Know where you stand. Get certified." />
+  <title>EDRA — ESG Certification Readiness Index</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       NAV
+  ══════════════════════════════════════════ -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <a href="#" class="nav-logo" aria-label="EDRA home">
+      <img class="nav-logo-mark" src="./logo-mark.svg" alt="" aria-hidden="true" />
+      <span class="nav-logo-text"><em>EDR</em><span class="accent">A</span></span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why-edra">Why EDRA</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-ghost">Book a Demo</a>
+      <a href="#cta" class="btn btn-gold">
+        Free Diagnosis
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════
+         HERO — Full-screen video
+    ══════════════════════════════════════════ -->
+    <section class="hero" aria-label="Hero">
+
+      <!-- Background video — aerial green landscape / sustainable buildings -->
+      <div class="hero-video-wrap" aria-hidden="true">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80"
+        >
+          <!-- Royalty-free aerial forest/nature video (Pexels) -->
+          <source src="https://videos.pexels.com/video-files/3571264/3571264-hd_1920_1080_30fps.mp4" type="video/mp4" />
+          <!-- Fallback: sustainable cityscape -->
+          <source src="https://videos.pexels.com/video-files/2169880/2169880-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-pulse" aria-hidden="true"></span>
+          ESG Certification Intelligence
+        </div>
+
+        <h1>Your next GRESB submission —<br /><em>scored, gap-identified,</em><br />remediated before you submit.</h1>
+
+        <p class="hero-sub">EDRA is the ESG index that tells you exactly how far your asset data is from certification qualification — and closes every gap standing in the way.</p>
+
+        <div class="hero-actions">
+          <a href="#cta" class="btn btn-gold btn-lg">
+            Start Free Diagnosis
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost btn-lg">Book a Demo</a>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         ABOUT
+    ══════════════════════════════════════════ -->
+    <section class="about section-pad" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-text">
+            <span class="eyebrow reveal">About EDRA</span>
+            <h2 id="about-heading" class="reveal reveal-d1">Most ESG tools give you a score.<br />EDRA gives you a result.</h2>
+            <p class="reveal reveal-d2">Fund managers and asset owners lose certification cycles not because their assets are underperforming — but because their data is. Coverage gaps. Continuity issues. Missing documentation. Structural errors that a GRESB reviewer will flag and a submission system won't warn you about.</p>
+            <p class="reveal reveal-d2">EDRA was built to solve that problem at the source. It runs your asset data through the same logic that GRESB, ENERGY STAR, and LEED use to evaluate submissions — identifies every threshold your data fails to meet — and then gives you a targeted remediation plan to fix each one.</p>
+            <p class="reveal reveal-d3"><strong>The outcome:</strong> You go into your next submission cycle knowing exactly where you stand. No surprises. No failed qualifications. No cycles wasted.</p>
+          </div>
+
+          <div class="about-stats reveal reveal-d2" aria-label="Key metrics">
+            <div class="stat-card">
+              <div class="stat-value">3</div>
+              <div class="stat-label">Scoring planes across every asset</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Audit trail on every data change</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">0</div>
+              <div class="stat-label">NULL values treated as zero — ever</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">3</div>
+              <div class="stat-label">Certifications mapped: GRESB · ENERGY STAR · LEED</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" role="separator"></div>
+
+    <!-- ══════════════════════════════════════════
+         SERVICES
+    ══════════════════════════════════════════ -->
+    <section class="services section-pad" id="services" aria-labelledby="services-heading">
+      <div class="container">
+
+        <div class="services-header">
+          <span class="eyebrow reveal">What EDRA Delivers</span>
+          <h2 id="services-heading" class="reveal reveal-d1">Four things EDRA delivers<br />for your portfolio.</h2>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card reveal reveal-d1">
+            <div class="service-num">01 —</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>Pre-Submission ESG Readiness Score</h3>
+            <p>Know your GRESB, ENERGY STAR, and LEED readiness score before you submit. Understand which assets are dragging your portfolio score — and by exactly how much.</p>
+          </div>
+
+          <div class="service-card reveal reveal-d2">
+            <div class="service-num">02 —</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h3>Precise Gap Identification</h3>
+            <p>Every failing metric is flagged with a specific reason code: coverage below 75%, continuity bad-days exceeded, critical fields missing. Decision-grade intelligence — not generic audit flags.</p>
+          </div>
+
+          <div class="service-card reveal reveal-d3">
+            <div class="service-num">03 —</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h3>Targeted Remediation Plans</h3>
+            <p>A prioritised action plan for every gap. What to fix, how to fix it, and what it unlocks. EDRA works with your existing data — no system overhaul required.</p>
+          </div>
+
+          <div class="service-card reveal reveal-d4">
+            <div class="service-num">04 —</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3>Audit-Ready Certification Output</h3>
+            <p>Full audit trail. Override logging. Submission-ready formatting for GRESB, ENERGY STAR, and LEED. Every correction logged with approver, timestamp, and reason.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" role="separator"></div>
+
+    <!-- ══════════════════════════════════════════
+         WHY EDRA
+    ══════════════════════════════════════════ -->
+    <section class="why section-pad" id="why-edra" aria-labelledby="why-heading">
+      <div class="container">
+
+        <div class="why-intro">
+          <div>
+            <span class="eyebrow reveal">Why EDRA</span>
+            <h2 id="why-heading" class="reveal reveal-d1">Decision-grade<br />ESG infrastructure.</h2>
+          </div>
+          <p class="reveal reveal-d2">EDRA was designed to meet the standard of institutional scrutiny — built on the logic that governs actual certification decisions, not approximations of them.</p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card reveal reveal-d1">
+            <div class="why-num" aria-hidden="true">01</div>
+            <h3>Truth-first scoring</h3>
+            <p>NULL values are never treated as zero. Worst-case continuity defines asset continuity. Performance silence is preferred over inferred performance. Accuracy over convenience — always.</p>
+          </div>
+          <div class="why-card reveal reveal-d2">
+            <div class="why-num" aria-hidden="true">02</div>
+            <h3>Built on real certification logic</h3>
+            <p>EDRA's thresholds are calibrated directly against GRESB, ENERGY STAR, and LEED requirements. Every score you see maps to a real-world certification outcome — not an estimate.</p>
+          </div>
+          <div class="why-card reveal reveal-d3">
+            <div class="why-num" aria-hidden="true">03</div>
+            <h3>Full audit trail</h3>
+            <p>Every override, correction, and score change is logged with field name, original value, new value, reason, approver, and timestamp. Defensible at every level.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider" role="separator"></div>
+
+    <!-- ══════════════════════════════════════════
+         TESTIMONIALS
+    ══════════════════════════════════════════ -->
+    <section class="testimonials section-pad" aria-labelledby="testi-heading">
+      <div class="container">
+        <span class="eyebrow reveal">Client Results</span>
+        <h2 id="testi-heading" class="reveal reveal-d1">Results that speak<br />for themselves.</h2>
+
+        <div class="testi-grid">
+
+          <article class="testi-card reveal reveal-d1">
+            <div class="quote-mark" aria-hidden="true">"</div>
+            <blockquote>We used EDRA before our GRESB submission and identified three coverage gaps we didn't know existed. Fixed them in two weeks. First time we qualified at this rating.</blockquote>
+            <footer class="testi-author">
+              <strong>Portfolio Manager</strong>
+              Real Estate Fund
+            </footer>
+          </article>
+
+          <article class="testi-card reveal reveal-d2">
+            <div class="quote-mark" aria-hidden="true">"</div>
+            <blockquote>EDRA cut our pre-submission audit prep from six weeks to ten days. The reason codes alone saved us from three rejections.</blockquote>
+            <footer class="testi-author">
+              <strong>ESG Director</strong>
+              Global Asset Manager
+            </footer>
+          </article>
+
+          <article class="testi-card reveal reveal-d3">
+            <div class="quote-mark" aria-hidden="true">"</div>
+            <blockquote>The remediation plan was specific enough to brief our data team directly. No interpretation required. That's rare.</blockquote>
+            <footer class="testi-author">
+              <strong>Head of Sustainability</strong>
+              Listed REIT
+            </footer>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" role="separator"></div>
+
+    <!-- ══════════════════════════════════════════
+         CTA BANNER
+    ══════════════════════════════════════════ -->
+    <section class="cta-section section-pad" id="cta" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-inner reveal">
+
+          <div class="cta-text">
+            <span class="eyebrow">Free Diagnosis</span>
+            <h2 id="cta-heading">Stop submitting blind.<br />Start your free EDRA<br />diagnosis today.</h2>
+            <p>Every certification cycle without readiness visibility is a risk. Gaps that could have been closed in two weeks become rejections that cost you a full year.</p>
+
+            <ul class="cta-list" aria-label="What's included">
+              <li>EDRA readiness score across Planes A, B, and C</li>
+              <li>Identified gaps with specific reason codes</li>
+              <li>Preliminary remediation priorities</li>
+              <li>Delivered to your inbox within 24 hours</li>
+            </ul>
+          </div>
+
+          <div class="cta-actions">
+            <a href="#contact" class="btn btn-gold btn-lg">
+              Start Free Diagnosis
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost btn-lg">Book a Demo</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" role="separator"></div>
+
+    <!-- ══════════════════════════════════════════
+         CONTACT
+    ══════════════════════════════════════════ -->
+    <section class="contact section-pad" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div class="contact-text">
+            <span class="eyebrow reveal">Get in Touch</span>
+            <h2 id="contact-heading" class="reveal reveal-d1">Ready to get<br />certification-ready?</h2>
+            <p class="reveal reveal-d2">EDRA works with real estate fund managers, asset owners, ESG consultants, and GRESB submitters serious about achieving — and defending — their certifications.</p>
+
+            <div class="contact-info reveal reveal-d3" aria-label="Contact details">
+              <div class="contact-info-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                India — working globally
+              </div>
+              <div class="contact-info-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Response within 24 hours
+              </div>
+              <div class="contact-info-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                GRESB Certified Individual
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal reveal-d2">
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label for="company">Company</label>
+                  <input type="text" id="company" name="company" placeholder="Your company" required autocomplete="organization" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Work Email</label>
+                <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email" />
+              </div>
+
+              <div class="form-group">
+                <label for="role">Your Role</label>
+                <select id="role" name="role" required>
+                  <option value="" disabled selected>Select your role</option>
+                  <option value="fund-manager">Fund Manager</option>
+                  <option value="asset-owner">Asset Owner</option>
+                  <option value="esg-consultant">ESG Consultant</option>
+                  <option value="gresb-submitter">GRESB Submitter</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your portfolio or certification goals..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-gold btn-lg form-submit">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo" aria-label="EDRA"><em>EDR</em><span class="accent">A</span></div>
+
+        <nav aria-label="Footer navigation">
+          <ul class="footer-links" role="list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-edra">Why EDRA</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-right">
+          <span class="footer-meta">Founded by Preyanka Jain</span>
+          <span class="cert-badge" aria-label="GRESB Certified">GRESB Certified</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════
+       WIDGET LAUNCHERS
+  ══════════════════════════════════════════ -->
+  <div id="widget-launchers" class="widget-launchers">
+    <button class="launcher-btn launcher-primary" id="launcher-chat" aria-label="Open Q&A chat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span>Ask me anything</span>
+    </button>
+    <button class="launcher-btn launcher-secondary" id="launcher-proposal" aria-label="Get a proposal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      <span>Get Proposal</span>
+    </button>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       WIDGET 1 — Q&A CHAT
+  ══════════════════════════════════════════ -->
+  <div id="chat-widget" class="widget-panel-wrap" aria-label="Chat with EDRA assistant">
+    <div class="widget-panel">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar">E</div>
+          <div>
+            <div class="chat-header-name">EDRA Assistant</div>
+            <div class="chat-header-status">Online</div>
+          </div>
+        </div>
+        <button class="chat-close-btn" id="chat-close" aria-label="Close chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="chat-messages" id="chat-messages"></div>
+
+      <div class="chat-typing" id="chat-typing" hidden>
+        <div class="chat-msg chat-msg-bot">
+          <div class="chat-msg-bubble chat-typing-bubble">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+        </div>
+      </div>
+
+      <form class="chat-input-form" id="chat-form">
+        <input type="text" class="chat-input" id="chat-input" placeholder="Type your message..." autocomplete="off" />
+        <button type="submit" class="chat-send" id="chat-send" aria-label="Send message">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       WIDGET 2 — PROPOSAL INTAKE
+  ══════════════════════════════════════════ -->
+  <div id="proposal-widget" class="widget-panel-wrap" aria-label="Get a proposal from EDRA">
+    <div class="widget-panel proposal-panel">
+      <div class="chat-header proposal-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar proposal-avatar">P</div>
+          <div>
+            <div class="chat-header-name">Get a Proposal</div>
+            <div class="chat-header-status">Online</div>
+          </div>
+        </div>
+        <button class="chat-close-btn" id="proposal-close" aria-label="Close proposal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="proposal-progress" id="proposal-progress">
+        <div class="proposal-progress-bar">
+          <div class="proposal-progress-fill" id="proposal-progress-fill"></div>
+        </div>
+        <div class="proposal-progress-text" id="proposal-progress-text">Step 1 of 6</div>
+      </div>
+
+      <div class="chat-messages" id="proposal-messages"></div>
+
+      <div class="chat-typing" id="proposal-typing" hidden>
+        <div class="chat-msg chat-msg-bot">
+          <div class="chat-msg-bubble chat-typing-bubble">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+        </div>
+      </div>
+
+      <form class="chat-input-form" id="proposal-form">
+        <input type="text" class="chat-input" id="proposal-input" placeholder="Type your answer..." autocomplete="off" />
+        <button type="submit" class="chat-send" id="proposal-send" aria-label="Send">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════ -->
+  <script>
+    // ── Nav: scroll-aware style + hide/show ─────────────────
+    (function () {
+      const nav = document.getElementById('nav');
+      let lastY = 0;
+      let ticking = false;
+
+      function update() {
+        const y = window.scrollY;
+        // Scrolled style
+        if (y > 40) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+        // Hide on scroll down, show on scroll up
+        if (y > lastY && y > 120) nav.classList.add('hidden');
+        else nav.classList.remove('hidden');
+        lastY = y;
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) { requestAnimationFrame(update); ticking = true; }
+      }, { passive: true });
+    })();
+
+    // ── Scroll reveal ────────────────────────────────────────
+    (function () {
+      const els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(el => el.classList.add('visible'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+
+      els.forEach(el => io.observe(el));
+    })();
+
+    // ── Video fallback: if video fails load poster stays ────
+    (function () {
+      const video = document.querySelector('.hero-video');
+      if (!video) return;
+      video.addEventListener('error', () => {
+        video.style.display = 'none';
+      });
+    })();
+
+    // ── Contact form ─────────────────────────────────────────
+    (function () {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name  = form.querySelector('#name').value.trim();
+        const email = form.querySelector('#email').value.trim();
+        if (!name)  { form.querySelector('#name').focus();  return; }
+        if (!email) { form.querySelector('#email').focus(); return; }
+
+        const btn = form.querySelector('.form-submit');
+        btn.innerHTML = `
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Message Sent
+        `;
+        btn.style.pointerEvents = 'none';
+        btn.style.opacity = '0.85';
+
+        setTimeout(() => {
+          form.reset();
+          btn.innerHTML = `
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Message
+          `;
+          btn.style.pointerEvents = '';
+          btn.style.opacity = '';
+        }, 3000);
+      });
+    })();
+
+    // ── Smooth scroll with fixed-nav offset ─────────────────
+    (function () {
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+          const id = this.getAttribute('href').slice(1);
+          if (!id) return;
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          const offset = target.getBoundingClientRect().top + window.scrollY - 76;
+          window.scrollTo({ top: offset, behavior: 'smooth' });
+        });
+      });
+    })();
+
+    // ── Widget launcher system ────────────────────────────────
+    (function () {
+      var launchers = document.getElementById('widget-launchers');
+      var chatWidget = document.getElementById('chat-widget');
+      var proposalWidget = document.getElementById('proposal-widget');
+
+      var launcherChat = document.getElementById('launcher-chat');
+      var launcherProposal = document.getElementById('launcher-proposal');
+
+      var activeWidget = null;
+
+      function showLaunchers() {
+        launchers.classList.remove('hidden');
+      }
+
+      function hideLaunchers() {
+        launchers.classList.add('hidden');
+      }
+
+      function openWidget(which) {
+        hideLaunchers();
+        if (which === 'chat') {
+          chatWidget.classList.add('open');
+          proposalWidget.classList.remove('open');
+          activeWidget = 'chat';
+          document.getElementById('chat-input').focus();
+        } else {
+          proposalWidget.classList.add('open');
+          chatWidget.classList.remove('open');
+          activeWidget = 'proposal';
+          document.getElementById('proposal-input').focus();
+          // Auto-start intake if first time
+          if (!proposalStarted) startProposalIntake();
+        }
+      }
+
+      function closeWidget() {
+        chatWidget.classList.remove('open');
+        proposalWidget.classList.remove('open');
+        activeWidget = null;
+        showLaunchers();
+      }
+
+      launcherChat.addEventListener('click', function () { openWidget('chat'); });
+      launcherProposal.addEventListener('click', function () { openWidget('proposal'); });
+
+      document.getElementById('chat-close').addEventListener('click', closeWidget);
+      document.getElementById('proposal-close').addEventListener('click', closeWidget);
+
+      // ── Q&A CHAT (Widget 1) ─────────────────────────────────
+      var chatForm = document.getElementById('chat-form');
+      var chatInput = document.getElementById('chat-input');
+      var chatMessages = document.getElementById('chat-messages');
+      var chatTyping = document.getElementById('chat-typing');
+      var chatHistory = [];
+
+      function parseOptions(text) {
+        var lines = text.split('\n');
+        var optionRegex = /^([a-e])\)\s*(.+)$/i;
+        var bodyLines = [];
+        var options = [];
+        for (var i = 0; i < lines.length; i++) {
+          var match = lines[i].trim().match(optionRegex);
+          if (match) {
+            options.push({ letter: match[1].toLowerCase(), label: match[2].trim() });
+          } else if (lines[i].trim()) {
+            bodyLines.push(lines[i].trim());
+          }
+        }
+        return { body: bodyLines.join('\n'), options: options };
+      }
+
+      function disableChatOptions() {
+        chatMessages.querySelectorAll('.chat-option-btn:not([disabled])').forEach(function (btn) {
+          btn.disabled = true;
+          btn.classList.add('used');
+        });
+      }
+
+      function addChatMessage(text, sender) {
+        var wrapper = document.createElement('div');
+        wrapper.className = 'chat-msg chat-msg-' + sender;
+
+        if (sender === 'bot') {
+          var parsed = parseOptions(text);
+          if (parsed.body) {
+            var bubble = document.createElement('div');
+            bubble.className = 'chat-msg-bubble';
+            bubble.textContent = parsed.body;
+            wrapper.appendChild(bubble);
+          }
+          if (parsed.options.length > 0) {
+            var optWrap = document.createElement('div');
+            optWrap.className = 'chat-options';
+            parsed.options.forEach(function (opt) {
+              var btn = document.createElement('button');
+              btn.className = 'chat-option-btn';
+              btn.textContent = opt.label;
+              btn.addEventListener('click', function () {
+                if (btn.disabled) return;
+                disableChatOptions();
+                btn.classList.add('selected');
+                sendChatMessage(opt.letter + ') ' + opt.label);
+              });
+              optWrap.appendChild(btn);
+            });
+            wrapper.appendChild(optWrap);
+          }
+        } else {
+          var bubble = document.createElement('div');
+          bubble.className = 'chat-msg-bubble';
+          bubble.textContent = text;
+          wrapper.appendChild(bubble);
+        }
+
+        chatMessages.appendChild(wrapper);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      async function sendChatMessage(text) {
+        addChatMessage(text, 'user');
+        chatInput.value = '';
+        chatInput.disabled = true;
+        chatHistory.push({ role: 'user', content: text });
+        chatTyping.hidden = false;
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        try {
+          var res = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: chatHistory, mode: 'qa' })
+          });
+          var data = await res.json();
+          chatTyping.hidden = true;
+          if (data.error) {
+            addChatMessage('Sorry, something went wrong. Please try again.', 'bot');
+          } else {
+            chatHistory.push({ role: 'assistant', content: data.reply });
+            addChatMessage(data.reply, 'bot');
+          }
+        } catch (err) {
+          chatTyping.hidden = true;
+          addChatMessage('Connection error. Please try again.', 'bot');
+        }
+
+        chatInput.disabled = false;
+        chatInput.focus();
+      }
+
+      // Seed Q&A welcome
+      var welcomeMsg = "Hey! I'm EDRA's assistant. Let's check your certification readiness.\na) Yes, I've submitted to GRESB\nb) No, I haven't\nc) Not sure what GRESB is";
+      addChatMessage(welcomeMsg, 'bot');
+      chatHistory.push({ role: 'assistant', content: welcomeMsg });
+
+      chatForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var text = chatInput.value.trim();
+        if (!text) return;
+        disableChatOptions();
+        sendChatMessage(text);
+      });
+
+      // ── PROPOSAL INTAKE (Widget 2) ──────────────────────────
+      var proposalForm = document.getElementById('proposal-form');
+      var proposalInput = document.getElementById('proposal-input');
+      var proposalMessages = document.getElementById('proposal-messages');
+      var proposalTyping = document.getElementById('proposal-typing');
+      var proposalProgressFill = document.getElementById('proposal-progress-fill');
+      var proposalProgressText = document.getElementById('proposal-progress-text');
+      var proposalHistory = [];
+      var proposalStarted = false;
+      var proposalComplete = false;
+
+      function updateProgress(step) {
+        var pct = (step / 6) * 100;
+        proposalProgressFill.style.width = pct + '%';
+        proposalProgressText.textContent = 'Step ' + step + ' of 6';
+      }
+
+      function addProposalMessage(text, sender) {
+        var wrapper = document.createElement('div');
+        wrapper.className = 'chat-msg chat-msg-' + sender;
+        var bubble = document.createElement('div');
+        bubble.className = 'chat-msg-bubble';
+        bubble.textContent = text;
+        wrapper.appendChild(bubble);
+        proposalMessages.appendChild(wrapper);
+        proposalMessages.scrollTop = proposalMessages.scrollHeight;
+      }
+
+      async function startProposalIntake() {
+        proposalStarted = true;
+        proposalTyping.hidden = false;
+        proposalMessages.scrollTop = proposalMessages.scrollHeight;
+
+        var firstMsg = "I'd like to get a proposal.";
+        proposalHistory.push({ role: 'user', content: firstMsg });
+
+        try {
+          var res = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: proposalHistory, mode: 'intake' })
+          });
+          var data = await res.json();
+          proposalTyping.hidden = true;
+
+          if (data.error) {
+            addProposalMessage('Sorry, something went wrong. Please try again.', 'bot');
+          } else {
+            proposalHistory.push({ role: 'assistant', content: data.reply });
+            addProposalMessage(data.reply, 'bot');
+            if (data.intake_step) updateProgress(data.intake_step);
+          }
+        } catch (err) {
+          proposalTyping.hidden = true;
+          addProposalMessage('Connection error. Please try again.', 'bot');
+        }
+      }
+
+      async function sendProposalMessage(text) {
+        if (proposalComplete) return;
+
+        addProposalMessage(text, 'user');
+        proposalInput.value = '';
+        proposalInput.disabled = true;
+        proposalHistory.push({ role: 'user', content: text });
+        proposalTyping.hidden = false;
+        proposalMessages.scrollTop = proposalMessages.scrollHeight;
+
+        try {
+          var res = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: proposalHistory, mode: 'intake' })
+          });
+          var data = await res.json();
+          proposalTyping.hidden = true;
+
+          if (data.error) {
+            addProposalMessage('Sorry, something went wrong. Please try again.', 'bot');
+          } else {
+            proposalHistory.push({ role: 'assistant', content: data.reply });
+            addProposalMessage(data.reply, 'bot');
+
+            if (data.intake_step) {
+              updateProgress(data.intake_step);
+            }
+
+            if (data.intake_complete) {
+              proposalComplete = true;
+              proposalProgressFill.style.width = '100%';
+              proposalProgressText.textContent = 'Complete';
+              proposalInput.disabled = true;
+              proposalInput.placeholder = 'Proposal intake complete';
+
+              // Send to generate-proposal stub
+              fetch('/api/generate-proposal', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  intake_data: data.intake_data,
+                  conversation: proposalHistory
+                })
+              }).catch(function () {});
+              return;
+            }
+          }
+        } catch (err) {
+          proposalTyping.hidden = true;
+          addProposalMessage('Connection error. Please try again.', 'bot');
+        }
+
+        proposalInput.disabled = false;
+        proposalInput.focus();
+      }
+
+      proposalForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var text = proposalInput.value.trim();
+        if (!text) return;
+        sendProposalMessage(text);
+      });
+    })();
+  </script>
+
+</body>
+</html>

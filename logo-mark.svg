@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400&amp;display=swap');
+    </style>
+
+    <!-- Vertical hatching — main ghost areas -->
+    <pattern id="p-hatch" x="0" y="0" width="6.5" height="900" patternUnits="userSpaceOnUse">
+      <line x1="3.25" y1="0" x2="3.25" y2="900" stroke="#1C2A1E" stroke-width="0.65"/>
+    </pattern>
+
+    <!-- Vertical hatching — solid top face (denser, darker base) -->
+    <pattern id="p-hatch-dense" x="0" y="0" width="7" height="900" patternUnits="userSpaceOnUse">
+      <line x1="3.5" y1="0" x2="3.5" y2="900" stroke="#152418" stroke-width="0.75"/>
+    </pattern>
+
+    <!-- Clip: left ghost rhombus (from large hex, R=248, c=450,460) -->
+    <clipPath id="cp-ghost-left">
+      <polygon points="235,336 450,460 450,708 235,584"/>
+    </clipPath>
+
+    <!-- Clip: right ghost rhombus -->
+    <clipPath id="cp-ghost-right">
+      <polygon points="450,460 665,336 665,584 450,708"/>
+    </clipPath>
+
+    <!-- Clip: top face of main solid hex (R=160, c=450,478) -->
+    <clipPath id="cp-sol-top">
+      <polygon points="311,398 450,318 589,398 450,478"/>
+    </clipPath>
+
+    <!-- Clip: light adjacent face (right-adjacent smaller cube) -->
+    <clipPath id="cp-light">
+      <polygon points="589,398 655,360 655,520 589,558"/>
+    </clipPath>
+
+    <!-- Clip: small top wireframe cube top face (R=84, c=450,342) -->
+    <clipPath id="cp-small-top">
+      <polygon points="377,300 450,258 523,300 450,342"/>
+    </clipPath>
+  </defs>
+
+  <!-- ════════════════════════════════════════
+       BACKGROUND — warm cream
+  ════════════════════════════════════════ -->
+  <rect width="900" height="900" fill="#EDEAE2"/>
+
+  <!-- ════════════════════════════════════════
+       VERTICAL AXIS LINE
+  ════════════════════════════════════════ -->
+  <line x1="450" y1="80"  x2="450" y2="318" stroke="#2A2E24" stroke-width="0.75" stroke-opacity="0.45"/>
+  <line x1="450" y1="638" x2="450" y2="820" stroke="#2A2E24" stroke-width="0.75" stroke-opacity="0.45"/>
+
+  <!-- ════════════════════════════════════════
+       LARGE OUTER WIREFRAME HEX (R=248, c=450,460)
+       sin60*248=214.8, cos60*248=124
+       v0=(450,212) v1=(665,336) v2=(665,584) v3=(450,708) v4=(235,584) v5=(235,336)
+  ════════════════════════════════════════ -->
+  <polygon
+    points="450,212 665,336 665,584 450,708 235,584 235,336"
+    fill="none" stroke="#2A2E24" stroke-width="0.7" stroke-opacity="0.32"/>
+  <!-- 6 spokes to center -->
+  <line x1="450" y1="460" x2="450" y2="212" stroke="#2A2E24" stroke-width="0.55" stroke-opacity="0.2"/>
+  <line x1="450" y1="460" x2="665" y2="336" stroke="#2A2E24" stroke-width="0.55" stroke-opacity="0.2"/>
+  <line x1="450" y1="460" x2="665" y2="584" stroke="#2A2E24" stroke-width="0.55" stroke-opacity="0.2"/>
+  <line x1="450" y1="460" x2="450" y2="708" stroke="#2A2E24" stroke-width="0.55" stroke-opacity="0.2"/>
+  <line x1="450" y1="460" x2="235" y2="584" stroke="#2A2E24" stroke-width="0.55" stroke-opacity="0.2"/>
+  <line x1="450" y1="460" x2="235" y2="336" stroke="#2A2E24" stroke-width="0.55" stroke-opacity="0.2"/>
+
+  <!-- ════════════════════════════════════════
+       GHOST RHOMBUS — LEFT (hatched)
+  ════════════════════════════════════════ -->
+  <polygon points="235,336 450,460 450,708 235,584" fill="#EDEAE2"/>
+  <rect x="0" y="0" width="900" height="900"
+        fill="url(#p-hatch)" clip-path="url(#cp-ghost-left)" opacity="0.55"/>
+  <polygon points="235,336 450,460 450,708 235,584"
+           fill="none" stroke="#2A2E24" stroke-width="0.65" stroke-opacity="0.28"/>
+
+  <!-- ════════════════════════════════════════
+       GHOST RHOMBUS — RIGHT (hatched)
+  ════════════════════════════════════════ -->
+  <polygon points="450,460 665,336 665,584 450,708" fill="#EDEAE2"/>
+  <rect x="0" y="0" width="900" height="900"
+        fill="url(#p-hatch)" clip-path="url(#cp-ghost-right)" opacity="0.45"/>
+  <polygon points="450,460 665,336 665,584 450,708"
+           fill="none" stroke="#2A2E24" stroke-width="0.65" stroke-opacity="0.28"/>
+
+  <!-- ════════════════════════════════════════
+       MEDIUM WIREFRAME HEX (R=192, c=450,460)
+       sin60*192=166.3, cos60*192=96
+       v0=(450,268) v1=(616,364) v2=(616,556) v3=(450,652) v4=(284,556) v5=(284,364)
+  ════════════════════════════════════════ -->
+  <polygon
+    points="450,268 616,364 616,556 450,652 284,556 284,364"
+    fill="none" stroke="#2A2E24" stroke-width="0.75" stroke-opacity="0.4"/>
+  <!-- Top 3 spokes only -->
+  <line x1="450" y1="460" x2="450" y2="268" stroke="#2A2E24" stroke-width="0.6" stroke-opacity="0.28"/>
+  <line x1="450" y1="460" x2="616" y2="364" stroke="#2A2E24" stroke-width="0.6" stroke-opacity="0.28"/>
+  <line x1="450" y1="460" x2="284" y2="364" stroke="#2A2E24" stroke-width="0.6" stroke-opacity="0.28"/>
+
+  <!-- ════════════════════════════════════════
+       SMALL TOP WIREFRAME CUBE (R=84, c=450,342)
+       sin60*84=72.8, cos60*84=42
+       v0=(450,258) v1=(523,300) v2=(523,384) v3=(450,426) v4=(377,384) v5=(377,300) c=(450,342)
+  ════════════════════════════════════════ -->
+  <!-- Outer hex -->
+  <polygon
+    points="450,258 523,300 523,384 450,426 377,384 377,300"
+    fill="none" stroke="#2A2E24" stroke-width="0.75" stroke-opacity="0.5"/>
+  <!-- 3 forward spokes (top face, top-left, top-right) -->
+  <line x1="450" y1="342" x2="450" y2="258" stroke="#2A2E24" stroke-width="0.65" stroke-opacity="0.38"/>
+  <line x1="450" y1="342" x2="523" y2="300" stroke="#2A2E24" stroke-width="0.65" stroke-opacity="0.38"/>
+  <line x1="450" y1="342" x2="377" y2="300" stroke="#2A2E24" stroke-width="0.65" stroke-opacity="0.38"/>
+  <!-- 3 back spokes (make it a full transparent box) -->
+  <line x1="450" y1="342" x2="450" y2="426" stroke="#2A2E24" stroke-width="0.5" stroke-opacity="0.2"/>
+  <line x1="450" y1="342" x2="523" y2="384" stroke="#2A2E24" stroke-width="0.5" stroke-opacity="0.2"/>
+  <line x1="450" y1="342" x2="377" y2="384" stroke="#2A2E24" stroke-width="0.5" stroke-opacity="0.2"/>
+
+  <!-- ════════════════════════════════════════
+       MAIN SOLID HEX CLUSTER (R=160, c=450,478)
+       sin60*160=138.6, cos60*160=80
+       v0=(450,318) v1=(589,398) v2=(589,558) v3=(450,638) v4=(311,558) v5=(311,398) c=(450,478)
+  ════════════════════════════════════════ -->
+
+  <!-- TOP FACE: v5(311,398), v0(450,318), v1(589,398), c(450,478) — sage + vertical hatch -->
+  <polygon points="311,398 450,318 589,398 450,478" fill="#4E7A60"/>
+  <rect x="0" y="0" width="900" height="900"
+        fill="url(#p-hatch-dense)" clip-path="url(#cp-sol-top)" opacity="0.62"/>
+
+  <!-- RIGHT FACE: v1(589,398), v2(589,558), v3(450,638), c(450,478) — near-black -->
+  <polygon points="589,398 589,558 450,638 450,478" fill="#111A13"/>
+
+  <!-- LEFT FACE: c(450,478), v3(450,638), v4(311,558), v5(311,398) — dark forest green -->
+  <polygon points="450,478 450,638 311,558 311,398" fill="#1C3E29"/>
+
+  <!-- ════════════════════════════════════════
+       LIGHT ADJACENT FACE (right-adjacent smaller cube)
+       A right-facing rhombus ~ R=76: (589,398),(655,360),(655,520),(589,558)
+  ════════════════════════════════════════ -->
+  <polygon points="589,398 655,360 655,520 589,558" fill="#D6DDD4"/>
+  <!-- Very subtle hatch on light face -->
+  <rect x="0" y="0" width="900" height="900"
+        fill="url(#p-hatch)" clip-path="url(#cp-light)" opacity="0.12"/>
+  <polygon points="589,398 655,360 655,520 589,558"
+           fill="none" stroke="#2A2E24" stroke-width="0.5" stroke-opacity="0.15"/>
+
+  <!-- ════════════════════════════════════════
+       SOLID HEX OUTLINES (light definition strokes)
+  ════════════════════════════════════════ -->
+  <!-- Top face outline -->
+  <polygon points="311,398 450,318 589,398 450,478"
+           fill="none" stroke="#0E1610" stroke-width="0.6" stroke-opacity="0.35"/>
+  <!-- Right face outline -->
+  <polygon points="589,398 589,558 450,638 450,478"
+           fill="none" stroke="#0E1610" stroke-width="0.6" stroke-opacity="0.35"/>
+  <!-- Left face outline -->
+  <polygon points="450,478 450,638 311,558 311,398"
+           fill="none" stroke="#0E1610" stroke-width="0.6" stroke-opacity="0.35"/>
+
+  <!-- ════════════════════════════════════════
+       "D" AXIS MARKER
+  ════════════════════════════════════════ -->
+  <text
+    x="450" y="838"
+    font-family="'DM Sans', Helvetica Neue, Arial, sans-serif"
+    font-size="10"
+    font-weight="300"
+    fill="#2A2E24"
+    fill-opacity="0.55"
+    text-anchor="middle"
+    letter-spacing="0.5">D</text>
+
+  <!-- ════════════════════════════════════════
+       EDRA WORDMARK
+  ════════════════════════════════════════ -->
+  <text
+    x="450" y="866"
+    font-family="'DM Sans', Helvetica Neue, Arial, sans-serif"
+    font-size="17"
+    font-weight="400"
+    fill="#1A2018"
+    text-anchor="middle"
+    letter-spacing="9">EDRA</text>
+
+  <!-- Tagline -->
+  <text
+    x="450" y="881"
+    font-family="'DM Sans', Helvetica Neue, Arial, sans-serif"
+    font-size="7"
+    font-weight="300"
+    fill="#2A2E24"
+    fill-opacity="0.48"
+    text-anchor="middle"
+    letter-spacing="3.5">ESG CERTIFICATION INDEX</text>
+</svg>
