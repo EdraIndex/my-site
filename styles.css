@@ -160,10 +160,11 @@ h3 {
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 #nav.scrolled {
-  background: rgba(10,10,10,0.95);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border);
+  background: rgba(250,250,247,0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
   padding: 14px 56px;
 }
 #nav.hidden { transform: translateY(-100%); }
@@ -207,12 +208,8 @@ h3 {
   color: #0A0A0A;
 }
 
-/* Nav scrolled state — flip to light text */
-#nav.scrolled .nav-links a { color: var(--muted); }
-#nav.scrolled .nav-links a:hover { color: var(--white); }
-#nav.scrolled .nav-logo-mark { filter: brightness(0) invert(1); }
-#nav.scrolled .btn-outline { color: var(--white); border-color: rgba(255,255,255,0.2); }
-#nav.scrolled .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+/* Nav stays white on scroll — no color flip needed */
+#nav.scrolled .nav-logo-wordmark { color: #0A0A0A; }
 
 /* ============================================================
    HERO — Full-width image carousel with left-aligned text overlay

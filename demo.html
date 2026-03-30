@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Request a demo of EDRA™ — the world's first ESG data readiness index." />
+  <title>Request a Demo — EDRA™</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; font-family: inherit; }
+    img { display: block; max-width: 100%; }
+
+    :root {
+      --bg: #0A0A0A;
+      --bg-card: #111111;
+      --white: #FFFFFF;
+      --body: #999999;
+      --muted: #666666;
+      --teal: #16D3CA;
+      --teal-deep: #0FA89F;
+      --teal-dim: rgba(22,211,202,0.08);
+      --teal-border: rgba(22,211,202,0.2);
+      --border: rgba(255,255,255,0.06);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--body);
+      line-height: 1.7;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    sup { font-size: 0.45em; vertical-align: super; opacity: 0.6; font-weight: 400; }
+
+    /* Nav */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 56px;
+      background: #FAFAF7;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 14px; }
+    .nav-logo img { height: 48px; width: 48px; }
+    .nav-logo span {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700; font-size: 1.5rem;
+      color: #0A0A0A; letter-spacing: 0.06em;
+    }
+    .nav-back {
+      font-size: 0.82rem; font-weight: 500;
+      color: #666; letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: #0A0A0A; }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 40px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .hero h1 em { color: var(--teal); font-style: normal; }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--body);
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Stats strip */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      padding: 40px 24px;
+      border-bottom: 1px solid var(--border);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Form section — split layout with image */
+    .form-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    /* Report preview panel */
+    .report-preview {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      position: sticky;
+      top: 100px;
+    }
+    .rp-header {
+      background: var(--teal);
+      color: var(--bg);
+      padding: 16px 28px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .rp-header-sub { font-size: 0.68rem; font-weight: 400; opacity: 0.7; }
+    .rp-body { padding: 28px; }
+
+    .rp-scores {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .rp-score { text-align: center; }
+    .rp-score-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.2rem; font-weight: 700;
+      color: var(--teal); line-height: 1;
+    }
+    .rp-score-label {
+      font-size: 0.6rem; color: var(--muted);
+      margin-top: 4px; letter-spacing: 0.05em;
+    }
+
+    .rp-band {
+      display: inline-block;
+      background: rgba(22,211,202,0.08);
+      border: 1px solid rgba(22,211,202,0.2);
+      border-radius: 100px;
+      padding: 5px 16px;
+      font-size: 0.72rem; font-weight: 500;
+      color: var(--teal);
+      margin-bottom: 24px;
+    }
+
+    .rp-section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem; font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .rp-bars { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+    .rp-bar-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 32px;
+      align-items: center; gap: 10px;
+    }
+    .rp-bar-name { font-size: 0.7rem; color: rgba(255,255,255,0.5); }
+    .rp-bar-track { height: 6px; background: rgba(255,255,255,0.04); border-radius: 3px; overflow: hidden; }
+    .rp-bar-fill { height: 100%; background: var(--teal); border-radius: 3px; }
+    .rp-bar-fill-b { background: #0FA89F; }
+    .rp-bar-fill-g { background: #0d8a73; }
+    .rp-bar-val { font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--white); text-align: right; }
+
+    .rp-reasons { display: flex; flex-direction: column; gap: 5px; margin-bottom: 24px; }
+    .rp-reason {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 7px 10px; background: rgba(255,255,255,0.02);
+      border-radius: 5px; border-left: 2px solid rgba(255,100,100,0.5);
+    }
+    .rp-reason-code { font-size: 0.62rem; font-weight: 500; color: rgba(255,130,130,0.85); font-family: monospace; letter-spacing: 0.02em; }
+    .rp-reason-asset { font-size: 0.58rem; color: var(--muted); }
+
+    .rp-bands-visual { display: flex; gap: 3px; border-radius: 8px; overflow: hidden; margin-bottom: 20px; }
+    .rp-bv {
+      flex: 1; padding: 10px 6px; text-align: center;
+      font-size: 0.55rem; color: rgba(255,255,255,0.6);
+      line-height: 1.3;
+    }
+    .rp-bv-active { outline: 2px solid var(--teal); outline-offset: -2px; border-radius: 4px; }
+    .rp-bv-1 { background: #1a1a2e; }
+    .rp-bv-2 { background: #16213e; }
+    .rp-bv-3 { background: #0f3460; }
+    .rp-bv-4 { background: #0a5c5c; }
+    .rp-bv-5 { background: #0d8a73; }
+    .rp-bv strong { display: block; font-size: 0.65rem; color: var(--white); margin-bottom: 2px; }
+
+    .rp-quote {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 20px;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+    .rp-quote cite {
+      display: block; margin-top: 8px;
+      font-style: normal; font-size: 0.72rem;
+      color: var(--teal); font-weight: 500;
+    }
+    .form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 44px;
+    }
+    .form-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .form-group { margin-bottom: 18px; }
+    .form-group:last-child { margin-bottom: 0; }
+    .form-group label {
+      display: block;
+      font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--muted); opacity: 0.6; }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px var(--teal-dim);
+    }
+    .form-group select { cursor: pointer; }
+    .form-group select option { background: var(--bg-card); color: var(--white); }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+
+    .btn-submit {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 36px;
+      border-radius: 100px;
+      background: var(--teal);
+      color: var(--bg);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+      border: none;
+      margin-top: 8px;
+      transition: all 0.3s;
+    }
+    .btn-submit:hover {
+      background: var(--teal-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(22,211,202,0.2);
+    }
+    .btn-submit svg { width: 16px; height: 16px; }
+
+    /* Trust badges below form */
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      padding: 32px 24px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .trust-badge svg {
+      width: 16px; height: 16px;
+      stroke: var(--teal); fill: none;
+      stroke-width: 1.6; flex-shrink: 0;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700; font-size: 1.1rem;
+      color: var(--white); letter-spacing: 0.04em;
+    }
+    .footer-logo .accent { color: var(--teal); }
+    .footer-text { font-size: 0.72rem; color: var(--muted); }
+
+    @media (max-width: 1024px) {
+      .form-section { grid-template-columns: 1fr; max-width: 600px; }
+      .report-preview { display: none; }
+    }
+    @media (max-width: 768px) {
+      .nav { padding: 16px 20px; }
+      .form-card { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .stats { gap: 24px; flex-wrap: wrap; }
+      .trust-row { flex-direction: column; align-items: center; gap: 16px; }
+      .footer { flex-direction: column; text-align: center; gap: 12px; padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="./index.html" class="nav-logo">
+      <img src="./logo-mark.svg" alt="" />
+      <span>EDRA<sup>TM</sup></span>
+    </a>
+    <a href="./index.html" class="nav-back">&larr; Back to EDRA</a>
+  </nav>
+
+  <div class="hero">
+    <h1>See what <em>decision-grade</em> ESG data looks like.</h1>
+    <p>Book a 30-minute walkthrough of EDRA<sup>TM</sup>. We'll show you how the scoring works, what your data readiness might look like, and how to close the gaps.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">Years in RE data services</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Geographies: US, CA, UK</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1st</div>
+      <div class="stat-label">ESG data readiness index</div>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <div class="report-preview">
+      <div class="rp-header">
+        <span>EDRA<sup>TM</sup> Diagnostic Report</span>
+        <span class="rp-header-sub">Sample Output</span>
+      </div>
+      <div class="rp-body">
+        <div class="rp-scores">
+          <div class="rp-score"><div class="rp-score-num">74</div><div class="rp-score-label">EDRA Score</div></div>
+          <div class="rp-score"><div class="rp-score-num">81</div><div class="rp-score-label">B Score</div></div>
+          <div class="rp-score"><div class="rp-score-num">68</div><div class="rp-score-label">C Score</div></div>
+          <div class="rp-score"><div class="rp-score-num">72</div><div class="rp-score-label">G Score</div></div>
+        </div>
+
+        <div class="rp-band">Transition Mode</div>
+
+        <div class="rp-section-title">Score Breakdown</div>
+        <div class="rp-bars">
+          <div class="rp-bar-row"><span class="rp-bar-name">Data Integrity</span><div class="rp-bar-track"><div class="rp-bar-fill" style="width:81%"></div></div><span class="rp-bar-val">81</span></div>
+          <div class="rp-bar-row"><span class="rp-bar-name">Performance</span><div class="rp-bar-track"><div class="rp-bar-fill rp-bar-fill-b" style="width:68%"></div></div><span class="rp-bar-val">68</span></div>
+          <div class="rp-bar-row"><span class="rp-bar-name">Governance</span><div class="rp-bar-track"><div class="rp-bar-fill rp-bar-fill-g" style="width:72%"></div></div><span class="rp-bar-val">72</span></div>
+        </div>
+
+        <div class="rp-section-title">Active Reason Codes</div>
+        <div class="rp-reasons">
+          <div class="rp-reason"><span class="rp-reason-code">COVERAGE_LT_75</span><span class="rp-reason-asset">Asset 04 — Energy</span></div>
+          <div class="rp-reason"><span class="rp-reason-code">CRITICAL_FIELDS_MISSING</span><span class="rp-reason-asset">Asset 07 — Water</span></div>
+          <div class="rp-reason"><span class="rp-reason-code">CONTINUITY_BAD_DAYS</span><span class="rp-reason-asset">Asset 12 — Energy</span></div>
+          <div class="rp-reason"><span class="rp-reason-code">OCCUPANCY_MISSING</span><span class="rp-reason-asset">Asset 03 — All</span></div>
+        </div>
+
+        <div class="rp-section-title">Status Band</div>
+        <div class="rp-bands-visual">
+          <div class="rp-bv rp-bv-1"><strong>0-30</strong>Reporting</div>
+          <div class="rp-bv rp-bv-2"><strong>31-50</strong>Dependent</div>
+          <div class="rp-bv rp-bv-3 rp-bv-active"><strong>51-70</strong>Transition</div>
+          <div class="rp-bv rp-bv-4"><strong>71-85</strong>Decision</div>
+          <div class="rp-bv rp-bv-5"><strong>86-96</strong>Infrastructure</div>
+        </div>
+
+        <div class="rp-quote">
+          "EDRA told us exactly what to fix. We qualified in the next cycle."
+          <cite>Portfolio Manager — Real Estate Fund</cite>
+        </div>
+      </div>
+    </div>
+    <div class="form-card">
+      <div class="form-title">Request a Demo</div>
+      <form id="demo-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first_name" placeholder="First name" required />
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last_name" placeholder="Last name" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Work Email</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Company name" required />
+          </div>
+          <div class="form-group">
+            <label for="title">Job Title</label>
+            <input type="text" id="title" name="title" placeholder="Your role" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="role">I am a...</label>
+          <select id="role" name="role" required>
+            <option value="" disabled selected>Select your role</option>
+            <option value="fund-manager">Fund Manager</option>
+            <option value="asset-owner">Asset Owner</option>
+            <option value="esg-consultant">ESG Consultant</option>
+            <option value="gresb-submitter">GRESB Submitter</option>
+            <option value="property-manager">Property Manager</option>
+            <option value="institutional-investor">Institutional Investor</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="portfolio">Portfolio Size</label>
+          <select id="portfolio" name="portfolio_size">
+            <option value="" disabled selected>How many assets?</option>
+            <option value="1-10">1 – 10 assets</option>
+            <option value="11-50">11 – 50 assets</option>
+            <option value="51-200">51 – 200 assets</option>
+            <option value="200+">200+ assets</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="interest">What are you most interested in?</label>
+          <select id="interest" name="interest">
+            <option value="" disabled selected>Select one</option>
+            <option value="gresb-readiness">GRESB submission readiness</option>
+            <option value="data-gaps">Understanding my data gaps</option>
+            <option value="energy-star">ENERGY STAR eligibility</option>
+            <option value="data-completion">Data completion services</option>
+            <option value="full-assessment">Full EDRA assessment</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Anything else we should know?</label>
+          <textarea id="message" name="message" placeholder="Tell us about your portfolio, certification goals, or timeline..."></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn-submit" id="submit-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Request Demo
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="trust-row">
+    <div class="trust-badge">
+      <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      GRESB Certified Individual
+    </div>
+    <div class="trust-badge">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Response within 24 hours
+    </div>
+    <div class="trust-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      No data upload required
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo">EDR<span class="accent">A</span><sup>TM</sup></div>
+    <div class="footer-text">A product of Outsourcing Hub India</div>
+  </footer>
+
+  <script>
+    var form = document.getElementById('demo-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var fn = form.querySelector('#first-name').value.trim();
+      var em = form.querySelector('#email').value.trim();
+      if (!fn) { form.querySelector('#first-name').focus(); return; }
+      if (!em) { form.querySelector('#email').focus(); return; }
+      var btn = document.getElementById('submit-btn');
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Demo Requested';
+      btn.style.pointerEvents = 'none';
+      btn.style.opacity = '0.85';
+      setTimeout(function() {
+        form.reset();
+        btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Request Demo';
+        btn.style.pointerEvents = '';
+        btn.style.opacity = '';
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
