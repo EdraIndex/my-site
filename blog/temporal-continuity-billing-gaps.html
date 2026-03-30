@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Billing period gaps and overlaps silently corrupt ESG data. Learn how EDRA detects temporal continuity failures." />
+  <title>Temporal Continuity: The Billing Gap That Costs Millions — EDRA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .blog-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 18px 56px; display: flex; align-items: center; justify-content: space-between; background: #FAFAF7; }
+    .blog-nav .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .blog-nav .nav-logo-wordmark { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0A0A0A; letter-spacing: -0.04em; }
+    .blog-nav .back-link { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; color: #0A0A0A; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s; }
+    .blog-nav .back-link:hover { color: #16D3CA; }
+    .blog-hero { position: relative; width: 100%; height: 40vh; min-height: 320px; overflow: hidden; margin-top: 64px; }
+    .blog-hero img { width: 100%; height: 100%; object-fit: cover; }
+    .blog-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3), rgba(10,10,10,0.8)); }
+    .blog-article { max-width: 780px; margin: 0 auto; padding: 80px 56px 60px; }
+    .blog-date { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+    .blog-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 40px; }
+    .blog-body p { color: var(--body); line-height: 1.8; margin-bottom: 24px; font-size: 1.05rem; }
+    .blog-body p strong { color: var(--white-off); }
+    .case-study-card { margin-top: 60px; padding: 40px; background: var(--bg-card); border: 1px solid var(--border-hi); border-radius: var(--radius-lg); }
+    .case-study-card .cs-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .case-study-card .cs-eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--teal); }
+    .case-study-card p { color: var(--body); line-height: 1.7; margin-bottom: 24px; font-size: 0.98rem; }
+    .case-study-card .btn-teal { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.82rem; background: var(--teal); color: var(--bg); border: 1.5px solid var(--teal); transition: all 0.35s; text-decoration: none; }
+    .case-study-card .btn-teal:hover { background: var(--teal-deep); border-color: var(--teal-deep); transform: translateY(-2px); box-shadow: 0 8px 32px var(--teal-glow); }
+    .blog-footer { border-top: 1px solid var(--border); margin-top: 0; }
+    .blog-footer .container { max-width: 1200px; margin: 0 auto; padding: 40px 56px; }
+    .blog-footer .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .blog-footer .footer-text { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--muted); }
+    .blog-footer .footer-text a { color: var(--teal); }
+    @media (max-width: 768px) {
+      .blog-nav { padding: 14px 24px; }
+      .blog-article { padding: 50px 24px 40px; }
+      .case-study-card { padding: 28px; }
+      .blog-footer .container { padding: 30px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="blog-nav" role="navigation" aria-label="Blog navigation">
+    <a href="../index.html" class="nav-logo" aria-label="EDRA home">
+      <span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
+    </a>
+    <a href="../index.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to EDRA
+    </a>
+  </nav>
+
+  <div class="blog-hero">
+    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1920&q=80" alt="Financial documents and billing" />
+  </div>
+
+  <main>
+    <article class="blog-article">
+      <div class="blog-date">November 19, 2025</div>
+      <h1 class="blog-title">Temporal Continuity: The Billing Gap That Costs Millions</h1>
+
+      <div class="blog-body">
+        <p>Between every two utility billing periods, there should be zero days unaccounted for and zero days counted twice. In practice, this almost never happens. <strong>Gaps between billing periods inflate consumption estimates. Overlaps deflate them.</strong> Both are counted as "bad days" by EDRA — and one problem meter holds the entire asset to its worst score. The financial consequence is real: distorted consumption data leads to incorrect benchmarking, failed certifications, and misinformed capital allocation decisions.</p>
+
+        <p>The source of most temporal continuity failures is surprisingly mundane: utility providers sending incorrect billing dates. A billing period that ends on March 30 and the next starting on April 2 creates a 2-day gap. Over 12 months of monthly billing across 50 meters, these micro-gaps accumulate into material data quality issues. A single meter with 15 bad days can drag an entire asset's continuity score below threshold — even if the other 49 meters are perfect.</p>
+
+        <p>What makes temporal continuity particularly dangerous is its invisibility. Coverage gaps are obvious — you either have data or you don't. Completeness gaps are detectable — missing months show up in any review. But a 1-day overlap between billing periods? That requires date-level inspection of every billing record for every meter for every asset. No human reviewer catches these systematically. Most organizations don't even know to look.</p>
+
+        <p><strong>The fix is straightforward but invisible without a system like EDRA to detect it.</strong> Once bad days are identified — with the specific meter, billing period, and date range flagged — the resolution is a billing date correction with the utility provider. Most providers will issue corrected statements within 2-4 weeks. The work is administrative, not technical. But finding the problem requires automated, date-level scanning across every meter in the portfolio.</p>
+
+        <p>EDRA's B3 component runs exactly this scan. Every billing record is checked against its neighbors. Gaps and overlaps are flagged with specific reason codes, meter IDs, and date ranges. The portfolio manager doesn't get a vague "continuity issues detected" — they get "Meter EM-0047 at Asset 12 has a 3-day overlap between the February and March billing periods." That level of specificity is what turns a systemic data quality problem into a 4-week fix.</p>
+      </div>
+
+      <div class="case-study-card">
+        <div class="cs-eyebrow">Case Study</div>
+        <p>A 30-asset portfolio had 14 assets with billing period overlaps averaging 12 bad days each. The overlaps were concentrated in electricity meters from a single regional utility provider. Correcting billing dates with the provider eliminated all continuity failures in 4 weeks — no new meters, no new systems, just corrected records.</p>
+        <a href="./case-studies/temporal-continuity-billing-gaps.pdf" class="btn-teal">Download Case Study (PDF)
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="blog-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-text">EDRA<sup>TM</sup> — Environmental Data Readiness Assessment. A product of <a href="../index.html">Outsourcing Hub India</a>.</span>
+        <span class="footer-text">GRESB Certified</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

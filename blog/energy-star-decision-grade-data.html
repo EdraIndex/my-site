@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ENERGY STAR requires 12 consecutive months of complete energy data. EDRA's gating mechanism mirrors these requirements to ensure your data qualifies." />
+  <title>ENERGY STAR Scoring: Why Your Data Must Be Decision-Grade First — EDRA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .blog-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 18px 56px; display: flex; align-items: center; justify-content: space-between; background: #FAFAF7; }
+    .blog-nav .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .blog-nav .nav-logo-wordmark { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0A0A0A; letter-spacing: -0.04em; }
+    .blog-nav .back-link { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; color: #0A0A0A; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s; }
+    .blog-nav .back-link:hover { color: #16D3CA; }
+    .blog-hero { position: relative; width: 100%; height: 40vh; min-height: 320px; overflow: hidden; margin-top: 64px; }
+    .blog-hero img { width: 100%; height: 100%; object-fit: cover; }
+    .blog-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3), rgba(10,10,10,0.8)); }
+    .blog-article { max-width: 780px; margin: 0 auto; padding: 80px 56px 60px; }
+    .blog-date { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+    .blog-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 40px; }
+    .blog-body p { color: var(--body); line-height: 1.8; margin-bottom: 24px; font-size: 1.05rem; }
+    .blog-body p strong { color: var(--white-off); }
+    .case-study-card { margin-top: 60px; padding: 40px; background: var(--bg-card); border: 1px solid var(--border-hi); border-radius: var(--radius-lg); }
+    .case-study-card .cs-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .case-study-card .cs-eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--teal); }
+    .case-study-card p { color: var(--body); line-height: 1.7; margin-bottom: 24px; font-size: 0.98rem; }
+    .case-study-card .btn-teal { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.82rem; background: var(--teal); color: var(--bg); border: 1.5px solid var(--teal); transition: all 0.35s; text-decoration: none; }
+    .case-study-card .btn-teal:hover { background: var(--teal-deep); border-color: var(--teal-deep); transform: translateY(-2px); box-shadow: 0 8px 32px var(--teal-glow); }
+    .blog-footer { border-top: 1px solid var(--border); margin-top: 0; }
+    .blog-footer .container { max-width: 1200px; margin: 0 auto; padding: 40px 56px; }
+    .blog-footer .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .blog-footer .footer-text { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--muted); }
+    .blog-footer .footer-text a { color: var(--teal); }
+    @media (max-width: 768px) {
+      .blog-nav { padding: 14px 24px; }
+      .blog-article { padding: 50px 24px 40px; }
+      .case-study-card { padding: 28px; }
+      .blog-footer .container { padding: 30px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="blog-nav" role="navigation" aria-label="Blog navigation">
+    <a href="../index.html" class="nav-logo" aria-label="EDRA home">
+      <span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
+    </a>
+    <a href="../index.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to EDRA
+    </a>
+  </nav>
+
+  <div class="blog-hero">
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt="Modern energy-efficient office building" />
+  </div>
+
+  <main>
+    <article class="blog-article">
+      <div class="blog-date">June 20, 2025</div>
+      <h1 class="blog-title">ENERGY STAR Scoring: Why Your Data Must Be Decision-Grade First</h1>
+
+      <div class="blog-body">
+        <p>ENERGY STAR is deceptively strict about data. The scoring algorithm requires <strong>12 consecutive months of complete energy data</strong> — no gaps, no overlaps, and coverage that represents the whole building. Many portfolios assume they meet this standard. The assumption holds until they check. A missing month of gas data, a billing period gap in the electricity records, or tenant-metered space excluded from the submission — any of these disqualifies the asset from receiving an ENERGY STAR score.</p>
+
+        <p>The challenge is that ENERGY STAR doesn't tell you why your score can't be calculated until after you've entered all the data into Portfolio Manager. The system simply returns an error or no score at all. There's no diagnostic output explaining that the March gas bill is missing, or that the electricity billing periods have a 4-day overlap in Q2. The asset manager sees "score not available" and starts a manual investigation that can take weeks.</p>
+
+        <p>EDRA's gating mechanism mirrors ENERGY STAR's actual requirements. The B1 component (completeness) checks whether 12 full months of data exist for every utility type at every meter. The B3 component (continuity) checks whether billing periods connect without gaps or overlaps. <strong>If your data doesn't pass B1 and B3, your ENERGY STAR score cannot be calculated</strong> — and EDRA tells you exactly which meters, which months, and which billing periods are the problem.</p>
+
+        <p>The practical value is speed. Instead of entering data into Portfolio Manager, waiting for a failed score, investigating manually, fixing the data, re-entering, and trying again — the fund manager runs an EDRA scan first. In 48 hours, every asset is classified: eligible for ENERGY STAR scoring, or not eligible with specific reason codes. The assets that pass can proceed immediately. The assets that don't get a remediation plan with specific data gaps to close.</p>
+
+        <p>For portfolios pursuing both GRESB and ENERGY STAR — which is most institutional real estate portfolios — EDRA provides a single data readiness assessment that gates for both certifications simultaneously. The data requirements overlap significantly. An asset that passes EDRA's B1 and B3 thresholds is ready for ENERGY STAR scoring and has cleared the data quality bar for GRESB submission.</p>
+      </div>
+
+      <div class="case-study-card">
+        <div class="cs-eyebrow">Case Study</div>
+        <p>A US office portfolio of 18 assets believed all were ENERGY STAR eligible. EDRA scoring showed only 11 had the required 12 months of continuous data. The other 7 had gaps ranging from 2 to 5 months — concentrated in gas meters where billing had been irregular. Targeted utility outreach closed all gaps in 6 weeks.</p>
+        <a href="./case-studies/energy-star-decision-grade-data.pdf" class="btn-teal">Download Case Study (PDF)
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="blog-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-text">EDRA<sup>TM</sup> — Environmental Data Readiness Assessment. A product of <a href="../index.html">Outsourcing Hub India</a>.</span>
+        <span class="footer-text">GRESB Certified</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

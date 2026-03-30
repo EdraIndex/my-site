@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ESG consultants build strategies on data assumptions. Without a data readiness scan, those assumptions fail at submission." />
+  <title>The Consultant Paradox: Why Advisory Firms Can't Solve Your Data Problem — EDRA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .blog-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 18px 56px; display: flex; align-items: center; justify-content: space-between; background: #FAFAF7; }
+    .blog-nav .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .blog-nav .nav-logo-wordmark { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0A0A0A; letter-spacing: -0.04em; }
+    .blog-nav .back-link { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; color: #0A0A0A; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s; }
+    .blog-nav .back-link:hover { color: #16D3CA; }
+    .blog-hero { position: relative; width: 100%; height: 40vh; min-height: 320px; overflow: hidden; margin-top: 64px; }
+    .blog-hero img { width: 100%; height: 100%; object-fit: cover; }
+    .blog-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3), rgba(10,10,10,0.8)); }
+    .blog-article { max-width: 780px; margin: 0 auto; padding: 80px 56px 60px; }
+    .blog-date { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+    .blog-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 40px; }
+    .blog-body p { color: var(--body); line-height: 1.8; margin-bottom: 24px; font-size: 1.05rem; }
+    .blog-body p strong { color: var(--white-off); }
+    .case-study-card { margin-top: 60px; padding: 40px; background: var(--bg-card); border: 1px solid var(--border-hi); border-radius: var(--radius-lg); }
+    .case-study-card .cs-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .case-study-card .cs-eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--teal); }
+    .case-study-card p { color: var(--body); line-height: 1.7; margin-bottom: 24px; font-size: 0.98rem; }
+    .case-study-card .btn-teal { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.82rem; background: var(--teal); color: var(--bg); border: 1.5px solid var(--teal); transition: all 0.35s; text-decoration: none; }
+    .case-study-card .btn-teal:hover { background: var(--teal-deep); border-color: var(--teal-deep); transform: translateY(-2px); box-shadow: 0 8px 32px var(--teal-glow); }
+    .blog-footer { border-top: 1px solid var(--border); margin-top: 0; }
+    .blog-footer .container { max-width: 1200px; margin: 0 auto; padding: 40px 56px; }
+    .blog-footer .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .blog-footer .footer-text { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--muted); }
+    .blog-footer .footer-text a { color: var(--teal); }
+    @media (max-width: 768px) {
+      .blog-nav { padding: 14px 24px; }
+      .blog-article { padding: 50px 24px 40px; }
+      .case-study-card { padding: 28px; }
+      .blog-footer .container { padding: 30px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="blog-nav" role="navigation" aria-label="Blog navigation">
+    <a href="../index.html" class="nav-logo" aria-label="EDRA home">
+      <span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
+    </a>
+    <a href="../index.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to EDRA
+    </a>
+  </nav>
+
+  <div class="blog-hero">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80" alt="Business consulting meeting" />
+  </div>
+
+  <main>
+    <article class="blog-article">
+      <div class="blog-date">September 12, 2025</div>
+      <h1 class="blog-title">The Consultant Paradox: Why Advisory Firms Can't Solve Your Data Problem</h1>
+
+      <div class="blog-body">
+        <p>ESG consulting is a booming market. Advisory firms offer framework selection, strategy development, stakeholder engagement, and reporting guidance. They're staffed with talented people who understand GRESB, TCFD, ISSB, and every acronym in between. <strong>But none of them start by scanning the data.</strong> They can't — there hasn't been a system to do it. So they build plans on assumptions about data that may be incomplete, discontinuous, or structurally flawed.</p>
+
+        <p>The result is a pattern that repeats across the industry. A consultant spends 3-6 months developing an ESG strategy. They recommend a certification pathway, timeline, and resource plan. The strategy looks excellent on paper. Then submission day arrives and the data doesn't pass basic integrity checks. Coverage is below threshold. Billing periods have gaps. Critical fields are missing from the data exports. The strategy was sound — the data foundation was not.</p>
+
+        <p>This isn't a criticism of consultants. It's a structural problem. ESG advisory firms operate at the strategy layer. Data quality lives at the infrastructure layer. There has been no standardized way to assess data readiness before building a strategy on top of it. Consultants have had to assume that the data their clients describe is the data that actually exists. That assumption fails more often than anyone in the industry is comfortable admitting.</p>
+
+        <p><strong>EDRA gives consultants (and their clients) a factual starting point.</strong> Before the strategy is designed, before the certification pathway is selected, before the timeline is committed — run an EDRA scan. In 48 hours, both the consultant and the client know exactly what the data can support. Which assets are ready. Which have coverage gaps. Which have continuity failures. Which are missing structural fields. The strategy then gets built on facts, not assumptions.</p>
+
+        <p>The best ESG consultants are already asking for this. They know that their reputation is tied to outcomes, and outcomes are tied to data quality. EDRA doesn't replace consulting — it makes consulting work. The strategy layer needs a data layer beneath it. That's what EDRA provides.</p>
+      </div>
+
+      <div class="case-study-card">
+        <div class="cs-eyebrow">Case Study</div>
+        <p>An ESG consultant recommended a GRESB submission strategy for a hotel portfolio. EDRA scoring revealed that 5 of 8 hotels had critical fields missing — property type classifications, GFA figures, and occupancy data that are required for benchmarking. This work would have surfaced only after submission rejection, costing the client a full 12-month cycle.</p>
+        <a href="./case-studies/consultant-paradox.pdf" class="btn-teal">Download Case Study (PDF)
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="blog-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-text">EDRA<sup>TM</sup> — Environmental Data Readiness Assessment. A product of <a href="../index.html">Outsourcing Hub India</a>.</span>
+        <span class="footer-text">GRESB Certified</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

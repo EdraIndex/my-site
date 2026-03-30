@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EDRA's B2 component measures building data coverage. Below 75%, performance scoring is blocked. Learn how to fix coverage gaps." />
+  <title>The Coverage Problem: When 75% of Your Building Data Is Missing — EDRA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .blog-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 18px 56px; display: flex; align-items: center; justify-content: space-between; background: #FAFAF7; }
+    .blog-nav .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .blog-nav .nav-logo-wordmark { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0A0A0A; letter-spacing: -0.04em; }
+    .blog-nav .back-link { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; color: #0A0A0A; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s; }
+    .blog-nav .back-link:hover { color: #16D3CA; }
+    .blog-hero { position: relative; width: 100%; height: 40vh; min-height: 320px; overflow: hidden; margin-top: 64px; }
+    .blog-hero img { width: 100%; height: 100%; object-fit: cover; }
+    .blog-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3), rgba(10,10,10,0.8)); }
+    .blog-article { max-width: 780px; margin: 0 auto; padding: 80px 56px 60px; }
+    .blog-date { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+    .blog-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 40px; }
+    .blog-body p { color: var(--body); line-height: 1.8; margin-bottom: 24px; font-size: 1.05rem; }
+    .blog-body p strong { color: var(--white-off); }
+    .case-study-card { margin-top: 60px; padding: 40px; background: var(--bg-card); border: 1px solid var(--border-hi); border-radius: var(--radius-lg); }
+    .case-study-card .cs-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .case-study-card .cs-eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--teal); }
+    .case-study-card p { color: var(--body); line-height: 1.7; margin-bottom: 24px; font-size: 0.98rem; }
+    .case-study-card .btn-teal { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.82rem; background: var(--teal); color: var(--bg); border: 1.5px solid var(--teal); transition: all 0.35s; text-decoration: none; }
+    .case-study-card .btn-teal:hover { background: var(--teal-deep); border-color: var(--teal-deep); transform: translateY(-2px); box-shadow: 0 8px 32px var(--teal-glow); }
+    .blog-footer { border-top: 1px solid var(--border); margin-top: 0; }
+    .blog-footer .container { max-width: 1200px; margin: 0 auto; padding: 40px 56px; }
+    .blog-footer .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .blog-footer .footer-text { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--muted); }
+    .blog-footer .footer-text a { color: var(--teal); }
+    @media (max-width: 768px) {
+      .blog-nav { padding: 14px 24px; }
+      .blog-article { padding: 50px 24px 40px; }
+      .case-study-card { padding: 28px; }
+      .blog-footer .container { padding: 30px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="blog-nav" role="navigation" aria-label="Blog navigation">
+    <a href="../index.html" class="nav-logo" aria-label="EDRA home">
+      <span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
+    </a>
+    <a href="../index.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to EDRA
+    </a>
+  </nav>
+
+  <div class="blog-hero">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80" alt="Modern commercial buildings" />
+  </div>
+
+  <main>
+    <article class="blog-article">
+      <div class="blog-date">January 8, 2026</div>
+      <h1 class="blog-title">The Coverage Problem: When 75% of Your Building Data Is Missing</h1>
+
+      <div class="blog-body">
+        <p>EDRA's B2 component measures something deceptively simple: <strong>what proportion of total building consumption is actually represented in your dataset?</strong> If a building has 5 meters but only 2 are submitting data, coverage is 40%. Below 75%, performance scoring is blocked entirely. The building might be the most energy-efficient asset in your portfolio — but without sufficient data coverage, it cannot be scored.</p>
+
+        <p>Most portfolios discover this problem only after submission rejection. The assumption is that "we have data for all our buildings" — which is technically true. They have some data for all buildings. But GRESB and ENERGY STAR require representative data: consumption figures that account for the whole building, not just the landlord-controlled areas or the meters that happen to report consistently. Tenant-metered spaces, common areas with separate utility accounts, and sub-metered floors all contribute to the coverage calculation.</p>
+
+        <p>The gap between "having data" and "having coverage" is where most submissions fail. A 22-asset mixed-use portfolio might report energy data for every asset — but when you examine the metering boundaries, nine of those assets are only capturing 40-60% of actual consumption. The retail tenants have their own utility accounts. The parking garage runs on a separate meter. The rooftop equipment is billed to a different entity. None of this shows up in the portfolio-level view until someone maps the metering boundary against the physical boundary.</p>
+
+        <p><strong>The fix is operational, not technological.</strong> It starts with metering boundary audits: walking each asset's physical footprint against its data footprint. Where do the meters end and the gaps begin? From there, tenant data collection agreements, sub-meter installation, and utility account consolidation close the coverage gap. These are 4-8 week projects, not 12-month transformations — but they have to be identified first.</p>
+
+        <p>EDRA's B2 score makes coverage visible before it becomes a submission blocker. Every asset gets a coverage percentage. Every gap gets a reason code. The portfolio manager sees exactly which assets are at risk and what specific data is missing — not after rejection, but before the submission cycle even begins.</p>
+      </div>
+
+      <div class="case-study-card">
+        <div class="cs-eyebrow">Case Study</div>
+        <p>A mixed-use portfolio of 22 assets found that 9 assets had coverage below 75%. The gaps were concentrated in tenant-metered retail spaces and separately billed common areas. After targeted meter mapping and tenant data collection agreements, coverage rose to 92% across all assets in 8 weeks.</p>
+        <a href="./case-studies/coverage-problem-75-percent.pdf" class="btn-teal">Download Case Study (PDF)
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="blog-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-text">EDRA<sup>TM</sup> — Environmental Data Readiness Assessment. A product of <a href="../index.html">Outsourcing Hub India</a>.</span>
+        <span class="footer-text">GRESB Certified</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

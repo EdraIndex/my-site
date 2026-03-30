@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logo Preview — EDRA Green Mark</title>
+  <style>
+    body { background: #0A0A0A; color: #FFF; font-family: -apple-system, sans-serif; margin: 0; padding: 60px; }
+    h2 { font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: #16D3CA; margin-bottom: 20px; }
+    .row { display: flex; align-items: center; gap: 60px; margin-bottom: 80px; flex-wrap: wrap; }
+    .preview { text-align: center; }
+    .preview span { display: block; font-size: 0.7rem; color: #666; margin-top: 12px; }
+    .nav-demo { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px 32px; margin-bottom: 40px; }
+    .nav-demo .text { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.6rem; color: #FFF; letter-spacing: 0.06em; }
+    .nav-demo .accent { color: #16D3CA; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <h2>Logo Mark — Green on Transparent (no wordmark)</h2>
+  <div class="row">
+    <div class="preview">
+      <img src="./logo-mark-green.svg" style="width: 80px; height: 80px;" />
+      <span>80px (nav size)</span>
+    </div>
+    <div class="preview">
+      <img src="./logo-mark-green.svg" style="width: 160px; height: 160px;" />
+      <span>160px</span>
+    </div>
+    <div class="preview">
+      <img src="./logo-mark-green.svg" style="width: 260px; height: 260px;" />
+      <span>260px (5X current nav)</span>
+    </div>
+    <div class="preview">
+      <img src="./logo-mark-green.svg" style="width: 400px; height: 400px;" />
+      <span>400px (hero size)</span>
+    </div>
+  </div>
+
+  <h2>How it would look in the nav (with text)</h2>
+  <div class="nav-demo">
+    <img src="./logo-mark-green.svg" style="width: 52px; height: 52px;" />
+    <div class="text">EDR<span class="accent">A</span></div>
+  </div>
+  <div class="nav-demo">
+    <img src="./logo-mark-green.svg" style="width: 80px; height: 80px;" />
+    <div class="text" style="font-size: 2.2rem;">EDR<span class="accent">A</span></div>
+  </div>
+
+  <h2>Original (cream bg) vs New (transparent, green)</h2>
+  <div class="row">
+    <div class="preview">
+      <img src="./logo-mark.svg" style="width: 200px; height: 200px;" />
+      <span>Original — cream background</span>
+    </div>
+    <div class="preview">
+      <img src="./logo-mark-green.svg" style="width: 200px; height: 200px;" />
+      <span>New — green, transparent</span>
+    </div>
+  </div>
+
+</body>
+</html>
