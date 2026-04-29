@@ -589,6 +589,11 @@
   </div>
 
   <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <script>
     // Nav
     (function(){var n=document.getElementById('nav'),ly=0,t=false;function u(){var y=window.scrollY;y>40?n.classList.add('scrolled'):n.classList.remove('scrolled');y>ly&&y>120?n.classList.add('hidden'):n.classList.remove('hidden');ly=y;t=false;}window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(u);t=true;}},{passive:true});})();
     // Reveal
