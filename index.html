@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 
   <!-- Structured Data -->
@@ -541,159 +542,254 @@
     <!-- ============================================================
          9. SAMPLE OUTPUT PREVIEW
          ============================================================ -->
-    <section class="sample-section section-pad" id="sample-output">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Product Preview</span>
-          <h2>See what an EDRA<sup>TM</sup> diagnostic looks like</h2>
+    <section class="preview-section" id="sample-output">
+      <div class="preview-container">
+
+        <!-- HEADER -->
+        <div class="preview-header reveal">
+          <div class="preview-eyebrow">Product Preview</div>
+          <h2 class="preview-title">See what an EDRA<sup style="font-size:0.4em;font-weight:400;vertical-align:super;">™</sup> diagnostic <em>actually</em> looks like.</h2>
+          <p class="preview-subtitle">Not a feature list. The real artefact you'll receive — scored, codified, and ready to action on day one.</p>
         </div>
 
-        <div class="sample-panels reveal reveal-d1">
-          <!-- Panel 1: Portfolio Summary -->
-          <div class="preview-panel">
-            <div class="preview-panel-header">
-              <span class="preview-panel-badge">Portfolio Summary</span>
-              <span class="preview-panel-ts">Last updated: Apr 2026</span>
+        <!-- MAIN GRID -->
+        <div class="preview-grid">
+
+          <!-- LEFT — STACKED PAGE SNAPSHOTS -->
+          <div class="snapshot-stack reveal reveal-d1">
+
+            <!-- Page 2 (back, peeking) -->
+            <div class="snapshot-back">
+              <div class="report-page report-page-2">
+
+                <div class="p2-hdr">
+                  <div class="brand">EDRA<span class="plus">+</span> Portfolio Report</div>
+                  <div>Section 01 · Score Summary</div>
+                </div>
+
+                <div class="p2-eyebrow">01 · Score Summary</div>
+                <div class="p2-title">Portfolio readiness at a glance.</div>
+                <div class="p2-deck">A weighted, GFA-confidence-adjusted readiness score across 23 multifamily assets.</div>
+
+                <div class="p2-grid">
+                  <div class="score-hero">
+                    <div class="lbl">Portfolio Readiness</div>
+                    <div class="big">65<span class="of">/100</span></div>
+                    <div class="band">TRANSITION MODE</div>
+                    <div class="interpret">"Reliable enough for internal review. Material gaps prevent certification submission."</div>
+                  </div>
+                  <div class="score-stats">
+                    <div class="lbl">Composition</div>
+                    <div class="row"><div class="num">23</div><div class="desc"><strong>Total assets</strong> across one property type. Multifamily portfolio.</div></div>
+                    <div class="row"><div class="num">5.76M</div><div class="desc"><strong>Square feet</strong> of GFA. Average 250K sqft per asset.</div></div>
+                    <div class="row"><div class="num">3</div><div class="desc"><strong>Utility tracks</strong> assessed independently — Energy, Water, Waste.</div></div>
+                  </div>
+                </div>
+
+                <div class="utilities">
+                  <div class="util-card-mini energy">
+                    <div class="name">Energy</div>
+                    <div class="score-line"><span class="v">68.0</span><span class="of">/100</span></div>
+                    <div class="funnel"><strong>17/23</strong> ELIGIBLE</div>
+                  </div>
+                  <div class="util-card-mini water">
+                    <div class="name">Water</div>
+                    <div class="score-line"><span class="v">60.5</span><span class="of">/100</span></div>
+                    <div class="funnel"><strong>10/23</strong> ELIGIBLE</div>
+                  </div>
+                  <div class="util-card-mini waste">
+                    <div class="name">Waste</div>
+                    <div class="score-line"><span class="v">46.9</span><span class="of">/100</span></div>
+                    <div class="funnel"><strong>0/23</strong> BLOCKED</div>
+                  </div>
+                </div>
+
+                <div class="findings-mini">
+                  <div class="lbl">Key Findings</div>
+                  <ul>
+                    <li><strong>Energy is strongest.</strong> 17 of 23 eligible.</li>
+                    <li><strong>Water has coverage gaps.</strong> Tracked, not eligible.</li>
+                    <li><strong>Waste is portfolio-wide blocked.</strong> 9-month gate failing.</li>
+                    <li><strong>One asset needs triage.</strong> Failing all three utilities.</li>
+                  </ul>
+                </div>
+
+              </div>
             </div>
-            <div class="preview-panel-body">
-              <div class="preview-summary-grid">
-                <div class="preview-kpi">
-                  <span class="preview-kpi-num">74</span>
-                  <span class="preview-kpi-label">EDRA<sup>TM</sup> Score</span>
+
+            <!-- Page 1 (front, cover) -->
+            <div class="snapshot-front">
+              <div class="report-page">
+
+                <div class="cover-band-top">
+                  <div class="label">Portfolio Readiness Report</div>
+                  <div class="ref"><strong>Issued</strong> Mar 18, 2026<br>EDRA-PR-2026-0318</div>
                 </div>
-                <div class="preview-kpi">
-                  <span class="preview-kpi-num">38</span>
-                  <span class="preview-kpi-label">Assets</span>
+
+                <div class="cover-mid">
+                  <div class="cube-mark">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                      <g stroke="#a8b89a" stroke-width="0.5" fill="none" opacity="0.6">
+                        <path d="M50 8 L88 30 L88 72 L50 92 L12 72 L12 30 Z"/>
+                        <path d="M50 8 L50 92 M12 30 L88 30 M12 72 L88 72"/>
+                        <path d="M50 30 L12 50 M50 30 L88 50 M12 50 L50 70 M88 50 L50 70 M50 50 L50 70"/>
+                      </g>
+                      <g>
+                        <path d="M50 30 L72 42 L50 54 L28 42 Z" fill="#1a5f3f" opacity="0.9"/>
+                        <path d="M28 42 L28 64 L50 76 L50 54 Z" fill="#0f3f29" opacity="0.95"/>
+                        <path d="M72 42 L72 64 L50 76 L50 54 Z" fill="#1a5f3f"/>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="cover-text">
+                    <h1>EDRA<span class="plus">+</span></h1>
+                    <h2>ESG Data Readiness Assessment</h2>
+                    <div class="desc">A scored, codified diagnostic of portfolio data integrity across energy, water, and waste.</div>
+                  </div>
                 </div>
-                <div class="preview-kpi">
-                  <span class="preview-kpi-num">27</span>
-                  <span class="preview-kpi-label">Passing</span>
+
+                <div class="cover-data">
+                  <div class="item">
+                    <div class="lbl">Assets</div>
+                    <div class="val">23</div>
+                    <div class="sub">Multifamily</div>
+                  </div>
+                  <div class="item">
+                    <div class="lbl">Total GFA</div>
+                    <div class="val">5.76M</div>
+                    <div class="sub">Square feet</div>
+                  </div>
+                  <div class="item">
+                    <div class="lbl">Year</div>
+                    <div class="val">2025</div>
+                    <div class="sub">Calendar</div>
+                  </div>
+                  <div class="item">
+                    <div class="lbl">Engagement</div>
+                    <div class="val score-tier">Tier 1</div>
+                    <div class="sub">Free Diagnosis</div>
+                  </div>
                 </div>
-                <div class="preview-kpi">
-                  <span class="preview-kpi-num critical">11</span>
-                  <span class="preview-kpi-label">Blocked</span>
+
+                <div class="cover-band-btm">
+                  <div class="who-row">
+                    <div class="who">
+                      <div class="lbl">Prepared for</div>
+                      <div class="val">Sample Portfolio Holdings</div>
+                    </div>
+                    <div class="who">
+                      <div class="lbl">Prepared by</div>
+                      <div class="val">EDRA · A product of OHI</div>
+                    </div>
+                  </div>
+                  <div class="tagline">Know it. Fix it. Report it.</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Page indicator dots -->
+            <div class="page-indicator">
+              <span class="label">Cover</span>
+              <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+              </div>
+              <span class="label">Score</span>
+            </div>
+
+          </div>
+
+          <!-- RIGHT — NARRATIVE -->
+          <div class="narrative reveal reveal-d2">
+
+            <div class="narrative-tag">
+              <span class="pulse"></span>
+              The deliverable, not a description
+            </div>
+
+            <h3 class="narrative-headline">
+              A scored snapshot. A codified gap list. A roadmap you can <em>action</em>.
+            </h3>
+
+            <p class="narrative-body">
+              Every EDRA<sup>™</sup> Diagnosis produces the same artefact: <strong>a portfolio readiness report</strong> built on the same gating logic certification bodies apply. No generic gap analysis. No consulting deck. The actual document your team takes to remediation — same day.
+            </p>
+
+            <div class="includes">
+              <div class="includes-label">What's inside the diagnostic</div>
+
+              <div class="include-item">
+                <div class="include-icon">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 8l3 3 7-7"/>
+                  </svg>
+                </div>
+                <div class="text">
+                  Portfolio readiness score (0–100) with status band
+                  <span class="meta">Five bands from Reporting Mode through Infrastructure Ready</span>
                 </div>
               </div>
-              <div class="preview-bar-chart">
-                <div class="preview-bar-row">
-                  <span class="preview-bar-label">B Score</span>
-                  <div class="preview-bar-track"><div class="preview-bar-fill" style="width:81%"></div></div>
-                  <span class="preview-bar-val">81</span>
+
+              <div class="include-item">
+                <div class="include-icon">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 8l3 3 7-7"/>
+                  </svg>
                 </div>
-                <div class="preview-bar-row">
-                  <span class="preview-bar-label">C Score</span>
-                  <div class="preview-bar-track"><div class="preview-bar-fill fill-c" style="width:68%"></div></div>
-                  <span class="preview-bar-val">68</span>
+                <div class="text">
+                  Reason-coded gap list, asset by asset
+                  <span class="meta">COVERAGE_LT_75 · CRITICAL_FIELDS_MISSING · CONTINUITY_BAD_DAYS</span>
                 </div>
-                <div class="preview-bar-row">
-                  <span class="preview-bar-label">G Score</span>
-                  <div class="preview-bar-track"><div class="preview-bar-fill fill-g" style="width:72%"></div></div>
-                  <span class="preview-bar-val">72</span>
+              </div>
+
+              <div class="include-item">
+                <div class="include-icon">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 8l3 3 7-7"/>
+                  </svg>
+                </div>
+                <div class="text">
+                  Framework alignment across GRESB, ENERGY STAR, LEED, BREEAM, CDP
+                  <span class="meta">What you can submit to today, what needs remediation first</span>
+                </div>
+              </div>
+
+              <div class="include-item">
+                <div class="include-icon">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 8l3 3 7-7"/>
+                  </svg>
+                </div>
+                <div class="text">
+                  Priority roadmap ranked by portfolio lift
+                  <span class="meta">Top 5 fixes, ordered by impact and effort</span>
                 </div>
               </div>
             </div>
+
+            <div>
+              <div class="cta-row">
+                <a href="#contact" class="btn btn-primary" data-track="hero_primary_cta_click">
+                  Request EDRA<sup style="font-size:0.65em;vertical-align:super;">™</sup> Diagnostic
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 8h10M9 4l4 4-4 4"/>
+                  </svg>
+                </a>
+                <button id="download-sample-btn" class="btn btn-ghost" data-track="sample_output_view">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 1v10M4 7l4 4 4-4M2 14h12"/>
+                  </svg>
+                  Download Sample PDF
+                </button>
+              </div>
+              <div class="cta-helper">
+                Free diagnostic. No-commitment. Response within 24 hours.
+              </div>
+            </div>
+
           </div>
 
-          <!-- Panel 2: Asset-Level Gap Register -->
-          <div class="preview-panel">
-            <div class="preview-panel-header">
-              <span class="preview-panel-badge">Asset-Level Gap Register</span>
-            </div>
-            <div class="preview-panel-body preview-table-body">
-              <table class="preview-table" role="table">
-                <thead>
-                  <tr>
-                    <th>Asset</th>
-                    <th>Score</th>
-                    <th>Status</th>
-                    <th>Blockers</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Tower A - NYC</td>
-                    <td><span class="score-chip-sm band-4">82</span></td>
-                    <td><span class="status-pill-sm status-decision">Decision</span></td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>Maple Ridge - Toronto</td>
-                    <td><span class="score-chip-sm band-3">61</span></td>
-                    <td><span class="status-pill-sm status-transition">Transition</span></td>
-                    <td><span class="blocker-tag">2</span></td>
-                  </tr>
-                  <tr>
-                    <td>Bay View - SF</td>
-                    <td><span class="score-chip-sm band-2">44</span></td>
-                    <td><span class="status-pill-sm status-dependent">Dependent</span></td>
-                    <td><span class="blocker-tag">4</span></td>
-                  </tr>
-                  <tr>
-                    <td>Park Lane - London</td>
-                    <td><span class="score-chip-sm band-4">78</span></td>
-                    <td><span class="status-pill-sm status-decision">Decision</span></td>
-                    <td><span class="blocker-tag">1</span></td>
-                  </tr>
-                  <tr>
-                    <td>Harbor Point - Boston</td>
-                    <td><span class="score-chip-sm band-1">28</span></td>
-                    <td><span class="status-pill-sm status-reporting">Reporting</span></td>
-                    <td><span class="blocker-tag severe">6</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Panel 3: Remediation Priority Matrix -->
-          <div class="preview-panel">
-            <div class="preview-panel-header">
-              <span class="preview-panel-badge">Remediation Priority Matrix</span>
-            </div>
-            <div class="preview-panel-body preview-table-body">
-              <table class="preview-table" role="table">
-                <thead>
-                  <tr>
-                    <th>Issue</th>
-                    <th>Priority</th>
-                    <th>Assets</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span class="issue-tag">COVERAGE_LT_75</span></td>
-                    <td><span class="priority-pill priority-now">Fix Now</span></td>
-                    <td>4</td>
-                    <td>Extend meter coverage to 75%+</td>
-                  </tr>
-                  <tr>
-                    <td><span class="issue-tag">CRITICAL_FIELDS_MISSING</span></td>
-                    <td><span class="priority-pill priority-now">Fix Now</span></td>
-                    <td>3</td>
-                    <td>Complete structural field registry</td>
-                  </tr>
-                  <tr>
-                    <td><span class="issue-tag">CONTINUITY_BAD_DAYS</span></td>
-                    <td><span class="priority-pill priority-soon">Fix Soon</span></td>
-                    <td>2</td>
-                    <td>Resolve billing period overlaps</td>
-                  </tr>
-                  <tr>
-                    <td><span class="issue-tag">OCCUPANCY_MISSING</span></td>
-                    <td><span class="priority-pill priority-soon">Fix Soon</span></td>
-                    <td>2</td>
-                    <td>Add annual occupancy records</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <div class="sample-cta reveal reveal-d2">
-          <a href="#contact" class="btn btn-primary" data-track="hero_primary_cta_click">Request EDRA<sup>TM</sup> Diagnostic</a>
-          <button class="btn btn-outline" id="download-sample-btn" data-track="sample_output_view">Download Sample PDF</button>
         </div>
       </div>
     </section>
