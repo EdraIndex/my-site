@@ -437,79 +437,10 @@
         </div>
       </div>
     </div>
-    <div class="form-card">
-      <div class="form-title">Request a Demo</div>
-      <form id="demo-form" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name" name="first_name" placeholder="First name" required />
-          </div>
-          <div class="form-group">
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="last_name" placeholder="Last name" required />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Work Email</label>
-          <input type="email" id="email" name="email" placeholder="you@company.com" required />
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company" placeholder="Company name" required />
-          </div>
-          <div class="form-group">
-            <label for="title">Job Title</label>
-            <input type="text" id="title" name="title" placeholder="Your role" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="role">I am a...</label>
-          <select id="role" name="role" required>
-            <option value="" disabled selected>Select your role</option>
-            <option value="fund-manager">Fund Manager</option>
-            <option value="asset-owner">Asset Owner</option>
-            <option value="esg-consultant">ESG Consultant</option>
-            <option value="gresb-submitter">GRESB Submitter</option>
-            <option value="property-manager">Property Manager</option>
-            <option value="institutional-investor">Institutional Investor</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="portfolio">Portfolio Size</label>
-          <select id="portfolio" name="portfolio_size">
-            <option value="" disabled selected>How many assets?</option>
-            <option value="1-10">1 – 10 assets</option>
-            <option value="11-50">11 – 50 assets</option>
-            <option value="51-200">51 – 200 assets</option>
-            <option value="200+">200+ assets</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="interest">What are you most interested in?</label>
-          <select id="interest" name="interest">
-            <option value="" disabled selected>Select one</option>
-            <option value="gresb-readiness">GRESB submission readiness</option>
-            <option value="data-gaps">Understanding my data gaps</option>
-            <option value="energy-star">ENERGY STAR eligibility</option>
-            <option value="data-completion">Data completion services</option>
-            <option value="full-assessment">Full EDRA assessment</option>
-            <option value="other">Something else</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Anything else we should know?</label>
-          <textarea id="message" name="message" placeholder="Tell us about your portfolio, certification goals, or timeline..."></textarea>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn-submit" id="submit-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            Request Demo
-          </button>
-        </div>
-      </form>
+    <div class="form-card" style="padding: 0; overflow: hidden;">
+      <div class="form-title" style="padding: 28px 44px 0;">Pick a time that works for you</div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/ohi-edraesg?hide_gdpr_banner=1&hide_event_type_details=1&background_color=111111&text_color=ffffff&primary_color=16d3ca" style="min-width:320px;height:660px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>
   </div>
 
@@ -533,26 +464,6 @@
     <div class="footer-text">A product of Outsourcing Hub India</div>
   </footer>
 
-  <script>
-    var form = document.getElementById('demo-form');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var fn = form.querySelector('#first-name').value.trim();
-      var em = form.querySelector('#email').value.trim();
-      if (!fn) { form.querySelector('#first-name').focus(); return; }
-      if (!em) { form.querySelector('#email').focus(); return; }
-      var btn = document.getElementById('submit-btn');
-      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Demo Requested';
-      btn.style.pointerEvents = 'none';
-      btn.style.opacity = '0.85';
-      setTimeout(function() {
-        form.reset();
-        btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Request Demo';
-        btn.style.pointerEvents = '';
-        btn.style.opacity = '';
-      }, 3000);
-    });
-  </script>
 
 </body>
 </html>
