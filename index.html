@@ -274,7 +274,6 @@
           <div class="method-card">
             <div class="method-card-top">
               <span class="method-letter">A</span>
-              <span class="method-weight">Informational only</span>
             </div>
             <h3>Asset Context</h3>
             <ul class="method-list">
@@ -286,7 +285,6 @@
           <div class="method-card">
             <div class="method-card-top">
               <span class="method-letter">B</span>
-              <span class="method-weight">45% of total score</span>
             </div>
             <h3>Data Integrity</h3>
             <ul class="method-list">
@@ -300,7 +298,6 @@
           <div class="method-card">
             <div class="method-card-top">
               <span class="method-letter">C</span>
-              <span class="method-weight">35% of total score</span>
             </div>
             <h3>Performance</h3>
             <p class="method-note">Only activated when data qualifies</p>
@@ -314,7 +311,6 @@
           <div class="method-card">
             <div class="method-card-top">
               <span class="method-letter">G</span>
-              <span class="method-weight">20% of total score</span>
             </div>
             <h3>Governance</h3>
             <ul class="method-list">
@@ -1173,16 +1169,22 @@
     (function(){
       var toggle = document.getElementById('nav-toggle');
       var nav = document.getElementById('nav');
+      function setOpen(open) {
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        nav.classList.toggle('nav-open', open);
+        // Lock body scroll while menu is open so the page behind doesn't move
+        document.body.classList.toggle('nav-open-lock', open);
+      }
       toggle.addEventListener('click', function() {
-        var expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !expanded);
-        nav.classList.toggle('nav-open');
+        setOpen(this.getAttribute('aria-expanded') !== 'true');
       });
+      // Close on nav-link or CTA click
       document.querySelectorAll('.nav-links a, .nav-actions a').forEach(function(link) {
-        link.addEventListener('click', function() {
-          toggle.setAttribute('aria-expanded', 'false');
-          nav.classList.remove('nav-open');
-        });
+        link.addEventListener('click', function() { setOpen(false); });
+      });
+      // Close on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && nav.classList.contains('nav-open')) setOpen(false);
       });
     })();
 

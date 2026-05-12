@@ -293,16 +293,33 @@ h3 {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  /* Bars inherit from this color — adapts per theme */
+  color: #0A0A0A;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  position: relative;
+  z-index: 10;
 }
 .nav-mobile-toggle span {
   display: block;
   width: 22px;
   height: 2px;
-  background: #0A0A0A;
+  background: currentColor;
   border-radius: 1px;
-  transition: all 0.3s;
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.2s ease;
+}
+/* Morph the 3 bars into an X when expanded */
+.nav-mobile-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-mobile-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-mobile-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ============================================================
@@ -457,7 +474,7 @@ h3 {
 }
 
 .issue-code {
-  font-family: 'DM Sans', monospace;
+  font-family: var(--font-mono);
   font-size: 0.68rem;
   font-weight: 500;
   color: rgba(255,130,130,0.85);
@@ -710,17 +727,6 @@ h3 {
   line-height: 1;
   opacity: 0.6;
 }
-.method-weight {
-  font-size: 0.62rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--teal);
-  background: var(--teal-dim);
-  border: 1px solid var(--teal-border);
-  border-radius: var(--radius-pill);
-  padding: 3px 10px;
-}
 
 .method-card h3 { margin-bottom: 8px; }
 
@@ -810,7 +816,7 @@ h3 {
   position: relative;
   height: 28px;
   margin-top: 14px;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
@@ -887,7 +893,7 @@ h3 {
   gap: 8px;
 }
 .band-card-num {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -1081,7 +1087,7 @@ h3 {
   background: var(--teal-dim);
   border: 1px solid var(--teal-border);
   color: var(--teal);
-  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-family: var(--font-mono);
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -1551,7 +1557,7 @@ h3 {
 }
 
 .issue-tag {
-  font-family: 'DM Sans', monospace;
+  font-family: var(--font-mono);
   font-size: 0.68rem;
   font-weight: 500;
   color: rgba(255,130,130,0.85);
@@ -2813,7 +2819,7 @@ footer {
 .preview-section .page-indicator .label {
   font-size: 0.7rem;
   color: var(--text-faint);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   letter-spacing: 0.1em;
 }
 .preview-section .page-indicator .dots { display: flex; gap: 0.35rem; }
@@ -3474,6 +3480,33 @@ body.hero-v3-page nav#nav .nav-logo-wordmark {
   color: #F2F4F0;
   font-weight: 500;
 }
+
+/* ── Mobile nav on dark theme — fix invisible hamburger + open surface ─── */
+body.hero-v3-page .nav-mobile-toggle {
+  color: rgba(244, 246, 243, 0.92);
+}
+body.hero-v3-page #nav.nav-open {
+  /* Solid dark surface so the open menu doesn't blend into the hero */
+  background: rgba(10, 10, 10, 0.96);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+body.hero-v3-page #nav.nav-open .nav-links {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+body.hero-v3-page #nav.nav-open .nav-actions {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+body.hero-v3-page #nav.nav-open .nav-links a {
+  color: rgba(244, 246, 243, 0.85);
+  font-weight: 500;
+}
+body.hero-v3-page #nav.nav-open .nav-links a:hover {
+  color: var(--teal, #16D3CA);
+}
+/* Prevent body scroll behind the open menu */
+body.nav-open-lock { overflow: hidden; }
 
 /* ── Mobile tuning ────────────────────────────── */
 @media (max-width: 768px) {
