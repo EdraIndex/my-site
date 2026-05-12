@@ -768,102 +768,190 @@ h3 {
    ============================================================ */
 .bands-section { background: var(--bg-card); }
 
-/* Desktop table */
-.bands-table-wrap {
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  background: var(--bg);
+/* ── Score spectrum — visual 0–100 scale with 5 colored zones ─── */
+.bands-spectrum {
+  margin: 56px 0 48px;
+  --zone-1: #2a2a44;
+  --zone-2: #1f3a5f;
+  --zone-3: var(--amber);
+  --zone-4: var(--teal);
+  --zone-5: var(--green);
+}
+.spectrum-track {
+  position: relative;
+  display: flex;
+  height: 14px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
+}
+.spectrum-zone {
+  flex: var(--span, 20);
+  height: 100%;
+  position: relative;
+  /* Subtle inner divider between zones */
+  box-shadow: inset -1px 0 0 rgba(10,10,10,0.5);
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: spectrumFill 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.spectrum-zone:last-child { box-shadow: none; }
+.zone-1 { background: linear-gradient(90deg, var(--zone-1) 0%, #36365a 100%); animation-delay: 0.15s; }
+.zone-2 { background: linear-gradient(90deg, var(--zone-2) 0%, #2a4d7a 100%); animation-delay: 0.30s; }
+.zone-3 { background: linear-gradient(90deg, rgba(245,166,35,0.6) 0%, var(--zone-3) 100%); animation-delay: 0.45s; }
+.zone-4 { background: linear-gradient(90deg, rgba(22,211,202,0.7) 0%, var(--zone-4) 100%); animation-delay: 0.60s; }
+.zone-5 { background: linear-gradient(90deg, rgba(74,222,128,0.7) 0%, var(--zone-5) 100%); animation-delay: 0.75s; }
+@keyframes spectrumFill {
+  to { transform: scaleX(1); }
 }
 
-.bands-table {
-  min-width: 700px;
-}
-.bands-table th {
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.spectrum-axis {
+  position: relative;
+  height: 28px;
+  margin-top: 14px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
   color: var(--muted);
-  padding: 16px 24px;
-  text-align: left;
-  border-bottom: 1px solid var(--border);
-  background: rgba(255,255,255,0.02);
+  font-variant-numeric: tabular-nums;
 }
-.bands-table td {
-  padding: 16px 24px;
-  font-size: 0.85rem;
-  color: var(--body);
-  border-bottom: 1px solid var(--border);
-  vertical-align: middle;
+.axis-tick {
+  position: absolute;
+  top: 0;
+  left: calc(var(--at, 0) * 1%);
+  transform: translateX(-50%);
+  padding-top: 8px;
+  white-space: nowrap;
 }
-.bands-table tr:last-child td { border-bottom: none; }
-.bands-table td strong { color: var(--white); font-weight: 600; }
+.axis-tick::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 5px;
+  background: var(--border-hi);
+}
+/* Bookend ticks align to the bar edges, not centered on the tick mark */
+.axis-tick[style*="--at: 0"] { transform: translateX(0); }
+.axis-tick[style*="--at: 0"]::before { left: 0; }
+.axis-tick[style*="--at: 100"] { transform: translateX(-100%); }
+.axis-tick[style*="--at: 100"]::before { left: auto; right: 0; }
 
-.score-chip {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: var(--radius-pill);
-  font-family: 'Syne', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-align: center;
-  min-width: 64px;
+/* ── Detail card grid ───────────────────────────────────────── */
+.bands-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
 }
-.band-1 { background: #1a1a2e; color: #8888aa; }
-.band-2 { background: #16213e; color: #7799bb; }
-.band-3 { background: rgba(245,166,35,0.12); color: var(--amber); }
-.band-4 { background: var(--teal-dim); color: var(--teal); }
-.band-5 { background: rgba(74,222,128,0.1); color: var(--green); }
-
-/* Mobile accordion */
-.bands-accordion { display: none; }
-.band-acc-item {
+.band-card {
+  position: relative;
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  margin-bottom: 8px;
+  padding: 22px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.2s,
+              background 0.2s;
   overflow: hidden;
 }
-.band-acc-trigger {
-  width: 100%;
+/* Color stripe along the top of each card — matches spectrum zone */
+.band-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-accent, var(--border));
+}
+.band-card-1::before { background: linear-gradient(90deg, #2a2a44, #36365a); }
+.band-card-2::before { background: linear-gradient(90deg, #1f3a5f, #2a4d7a); }
+.band-card-3::before { background: linear-gradient(90deg, rgba(245,166,35,0.6), var(--amber)); }
+.band-card-4::before { background: linear-gradient(90deg, rgba(22,211,202,0.7), var(--teal)); }
+.band-card-5::before { background: linear-gradient(90deg, rgba(74,222,128,0.7), var(--green)); }
+
+.band-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-hi);
+  background: var(--bg-raised);
+}
+
+.band-card-head {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 16px 20px;
-  background: var(--bg);
-  border: none;
+  justify-content: space-between;
+  gap: 8px;
+}
+.band-card-num {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.band-card-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--white);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  text-align: left;
+  line-height: 1.25;
 }
-.band-acc-trigger strong { flex: 1; }
-.acc-chevron {
-  width: 18px;
-  height: 18px;
-  stroke: var(--muted);
-  flex-shrink: 0;
-  transition: transform 0.3s;
-}
-.band-acc-item.open .acc-chevron { transform: rotate(180deg); }
-.band-acc-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  padding: 0 20px;
-  background: var(--bg);
-}
-.band-acc-item.open .band-acc-content {
-  max-height: 200px;
-  padding: 0 20px 16px;
-}
-.band-acc-content p {
+.band-card-meaning {
   font-size: 0.82rem;
+  line-height: 1.55;
   color: var(--body);
-  margin-bottom: 6px;
-  line-height: 1.5;
+  margin: 0;
 }
-.band-acc-content p strong { color: var(--white); }
+.band-card-action {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+}
+.band-card-action-lbl {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.band-card-action p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--white-off);
+  margin: 0;
+}
+
+/* ── Score chip (used in cards + still referenced in sample preview) ─── */
+.score-chip {
+  display: inline-block;
+  padding: 3px 11px;
+  border-radius: var(--radius-pill);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  min-width: 60px;
+  font-variant-numeric: tabular-nums;
+}
+.band-1 { background: #1a1a2e; color: #9999bb; }
+.band-2 { background: #16213e; color: #7799bb; }
+.band-3 { background: rgba(245,166,35,0.14); color: var(--amber); }
+.band-4 { background: var(--teal-dim); color: var(--teal); }
+.band-5 { background: rgba(74,222,128,0.12); color: var(--green); }
+
+/* Respect reduced motion — fully reveal zones immediately */
+@media (prefers-reduced-motion: reduce) {
+  .spectrum-zone { animation: none; transform: scaleX(1); }
+  .band-card:hover { transform: none; }
+}
 
 /* ============================================================
    DELIVERABLES
@@ -1693,59 +1781,6 @@ h3 {
 }
 
 /* ============================================================
-   CTA BLOCK
-   ============================================================ */
-.cta-section {
-  background: linear-gradient(135deg, #0a2e2a 0%, #0A0A0A 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-block {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 64px;
-  align-items: center;
-}
-
-.cta-text h2 { margin-bottom: 12px; }
-.cta-text > p {
-  font-size: 0.92rem;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.7;
-  margin-bottom: 24px;
-  max-width: 480px;
-}
-
-.cta-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.cta-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.65);
-}
-.cta-list li::before {
-  content: '';
-  width: 14px; height: 14px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2 7l3.5 3.5L12 3' stroke='%2316D3CA' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E") center/contain no-repeat;
-  flex-shrink: 0;
-}
-
-.cta-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  flex-shrink: 0;
-  min-width: 220px;
-}
-.cta-actions .btn { justify-content: center; }
-
-/* ============================================================
    CONTACT / DIAGNOSTIC FORM
    ============================================================ */
 .contact-section { background: var(--bg); }
@@ -2017,8 +2052,6 @@ footer {
   .tab-content { grid-template-columns: 1fr; }
   .rules-grid { grid-template-columns: 1fr 1fr; }
   .insights-grid { grid-template-columns: 1fr 1fr; }
-  .cta-block { grid-template-columns: 1fr; gap: 32px; }
-  .cta-actions { flex-direction: row; flex-wrap: wrap; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
 
   .pipeline { flex-wrap: wrap; gap: 12px; }
@@ -2109,17 +2142,19 @@ footer {
   .rules-grid { grid-template-columns: 1fr; }
   .insights-grid { grid-template-columns: 1fr; }
 
-  .bands-table-wrap { display: none; }
-  .bands-accordion { display: block; }
+  .bands-grid { grid-template-columns: 1fr 1fr; }
+  .bands-spectrum { margin: 40px 0 32px; }
+  .spectrum-axis { font-size: 0.65rem; }
+  /* Hide intermediate axis ticks on narrow viewports — keep just endpoints + midpoint */
+  .axis-tick[style*="--at: 30"],
+  .axis-tick[style*="--at: 70"],
+  .axis-tick[style*="--at: 85"] { display: none; }
 
   .tabs-nav { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tab-btn { flex: none; }
 
   .form-row { grid-template-columns: 1fr; }
   .contact-form { padding: 24px 20px; }
-
-  .cta-actions { flex-direction: column; }
-  .cta-actions .btn { width: 100%; }
 
   .footer-bottom { flex-direction: column; text-align: center; }
 
@@ -2143,6 +2178,9 @@ footer {
   .container { padding: 0 18px; }
   .section-pad { padding: 48px 0; }
   .section-header { margin-bottom: 40px; }
+
+  /* Bands collapse to single column on narrow phones */
+  .bands-grid { grid-template-columns: 1fr; }
 
   .hero-center { padding-top: 72px; padding-left: 18px; padding-right: 18px; }
   .hero-sub { font-size: 0.92rem; margin-bottom: 32px; }
