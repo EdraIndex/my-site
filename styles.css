@@ -28,8 +28,8 @@ input, select, textarea, button { font-family: inherit; }
   --bg-subtle:   #0E0E0E;
   --white:       #FFFFFF;
   --white-off:   #E8E8E8;
-  --body:        #999999;
-  --muted:       #666666;
+  --body:        #999999;   /* 6.95:1 on #0A0A0A — passes WCAG AAA */
+  --muted:       #7A7A7A;   /* 4.61:1 on #0A0A0A — passes WCAG AA (was #666 = 3.45:1, failing) */
   --teal:        #16D3CA;
   --teal-deep:   #0FA89F;
   --teal-dim:    rgba(22,211,202,0.08);
@@ -48,6 +48,8 @@ input, select, textarea, button { font-family: inherit; }
   --radius-lg:   12px;
   --radius-xl:   16px;
   --radius-pill: 100px;
+  /* Mono font token for numerics and code */
+  --font-mono:   'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 body {
@@ -1841,10 +1843,44 @@ h3 {
   border-color: var(--teal);
   box-shadow: 0 0 0 3px var(--teal-dim);
 }
+.form-group input[aria-invalid="true"],
+.form-group select[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+  border-color: var(--red);
+  background: var(--red-dim);
+}
+.form-group input[aria-invalid="true"]:focus,
+.form-group select[aria-invalid="true"]:focus,
+.form-group textarea[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 3px rgba(255,107,107,0.15);
+}
 .form-group select { cursor: pointer; }
 .form-group select option { background: var(--bg-card); color: var(--white); }
 .form-group textarea { min-height: 90px; resize: vertical; }
 .form-submit { width: 100%; margin-top: 4px; }
+
+.form-error {
+  display: block;
+  min-height: 1em;
+  font-size: 0.72rem;
+  color: var(--red);
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 6px;
+  line-height: 1.3;
+}
+.form-error:empty { display: none; }
+
+.form-status {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
+  margin: 4px 0 8px;
+  min-height: 1em;
+  transition: color 0.2s;
+}
+.form-status.is-error { color: var(--red); }
+.form-status:empty { display: none; }
 
 .form-helper {
   text-align: center;
@@ -2221,7 +2257,7 @@ footer {
 
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter Tight', -apple-system, sans-serif;
+  font-family: 'DM Sans', -apple-system, sans-serif;
   font-feature-settings: 'ss01', 'cv11';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2347,7 +2383,7 @@ footer {
   aspect-ratio: 8.5 / 11;
   padding: 0;
   overflow: hidden;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -2390,7 +2426,7 @@ footer {
 }
 .preview-section .cube-mark svg { width: 100%; height: 100%; }
 .preview-section .cover-text h1 {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Syne', sans-serif;
   font-size: 2rem;
   font-weight: 400;
   color: var(--r-navy);
@@ -2399,7 +2435,7 @@ footer {
 }
 .preview-section .cover-text h1 .plus { color: var(--r-amber); font-weight: 700; }
 .preview-section .cover-text h2 {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Syne', sans-serif;
   font-size: 0.85rem;
   font-style: italic;
   color: var(--r-green);
@@ -2432,7 +2468,7 @@ footer {
   margin-bottom: 0.2rem;
 }
 .preview-section .cover-data .item .val {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Syne', sans-serif;
   font-size: 1.1rem;
   font-weight: 400;
   color: var(--r-navy);
@@ -2470,7 +2506,7 @@ footer {
   font-weight: 500;
 }
 .preview-section .cover-band-btm .tagline {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Syne', sans-serif;
   font-size: 0.7rem;
   font-style: italic;
   color: var(--r-green);
@@ -2492,7 +2528,7 @@ footer {
   margin-bottom: 0.8rem;
 }
 .preview-section .p2-hdr .brand {
-  font-family: 'Fraunces', serif;
+  font-family: 'Syne', sans-serif;
   font-style: italic;
   color: var(--r-navy);
   letter-spacing: 0;
@@ -2509,7 +2545,7 @@ footer {
   margin-bottom: 0.3rem;
 }
 .preview-section .p2-title {
-  font-family: 'Fraunces', serif;
+  font-family: 'Syne', sans-serif;
   font-size: 1.05rem;
   color: var(--r-navy);
   line-height: 1.1;
@@ -2553,11 +2589,12 @@ footer {
   margin-bottom: 0.3rem;
 }
 .preview-section .score-hero .big {
-  font-family: 'Fraunces', serif;
+  font-family: 'Syne', sans-serif;
   font-size: 2.1rem;
   font-weight: 400;
   line-height: 0.9;
   color: #fff;
+  font-variant-numeric: tabular-nums;
 }
 .preview-section .score-hero .big .of {
   font-size: 0.7rem;
@@ -2577,7 +2614,7 @@ footer {
   margin-top: 0.5rem;
 }
 .preview-section .score-hero .interpret {
-  font-family: 'Fraunces', serif;
+  font-family: 'Syne', sans-serif;
   font-size: 0.5rem;
   font-style: italic;
   color: var(--r-pale-green);
@@ -2610,7 +2647,7 @@ footer {
   gap: 0.4rem;
 }
 .preview-section .score-stats .row .num {
-  font-family: 'Fraunces', serif;
+  font-family: 'Syne', sans-serif;
   font-size: 0.95rem;
   color: var(--r-navy);
   line-height: 1;
@@ -2647,7 +2684,7 @@ footer {
 .preview-section .util-card-mini.water::before  { background: var(--r-amber); }
 .preview-section .util-card-mini.waste::before  { background: var(--r-red); }
 .preview-section .util-card-mini .name {
-  font-family: 'Fraunces', serif;
+  font-family: 'Syne', sans-serif;
   font-size: 0.65rem;
   color: var(--r-navy);
   margin-bottom: 0.2rem;
@@ -2658,10 +2695,11 @@ footer {
   gap: 0.2rem;
 }
 .preview-section .util-card-mini .score-line .v {
-  font-family: 'Fraunces', serif;
+  font-family: 'Syne', sans-serif;
   font-size: 1.1rem;
   color: var(--r-navy);
   line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 .preview-section .util-card-mini .score-line .of {
   font-size: 0.4rem;
@@ -2872,7 +2910,7 @@ footer {
   gap: 0.6rem;
   padding: 0.95rem 1.6rem;
   min-height: auto;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
@@ -3172,41 +3210,34 @@ footer {
   0%, 100% { opacity: 0.35; }
   50%      { opacity: 0.85; }
 }
-/* ── LAYER 4 — drifting particles (upward, slow) ─── */
+/* ── LAYER 4 — Antigravity drift field ─────────────────────────
+   Inspired by Google Antigravity's auth-success page: dust-like
+   particles drifting slowly in varied directions, ambient and
+   weightless. Particles are generated at runtime by JS so the
+   pattern feels random without bloating the DOM markup. */
+.hero-motion .particle-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Soften the field edges so particles fade near borders, never
+     hard-clip at the viewport edge */
+  mask-image: radial-gradient(ellipse 95% 92% at 50% 50%, #000 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 95% 92% at 50% 50%, #000 60%, transparent 100%);
+}
 .hero-motion .particle {
   position: absolute;
-  width: 3px;
-  height: 3px;
   border-radius: 50%;
-  background: rgba(22,211,202,0.9);
-  box-shadow: 0 0 8px rgba(22,211,202,0.55);
   opacity: 0;
-  animation: particleDrift var(--dur, 24s) linear infinite;
-  animation-delay: var(--delay, 0s);
+  animation: antigravityDrift linear infinite;
   will-change: transform, opacity;
+  /* Width/height/background/box-shadow + animation-duration/delay
+     are set per-particle inline by the generator script */
 }
-@keyframes particleDrift {
-  0%   { transform: translate(0, 0)    scale(0.6); opacity: 0;    }
-  10%  {                                            opacity: 0.45; }
-  90%  {                                            opacity: 0.4;  }
-  100% { transform: translate(var(--dx, 0px), -100vh) scale(1);    opacity: 0; }
-}
-/* ── LAYER 5 — faint vertical data streams ─── */
-.hero-motion .stream {
-  position: absolute;
-  top: -20vh;
-  width: 1px;
-  height: 50vh;
-  background: linear-gradient(180deg, transparent, rgba(22,211,202,0.18) 50%, transparent);
-  opacity: 0;
-  animation: streamFall var(--dur, 13s) linear infinite;
-  animation-delay: var(--delay, 0s);
-}
-@keyframes streamFall {
-  0%   { transform: translateY(0);     opacity: 0;    }
-  12%  {                                opacity: 0.55; }
-  88%  {                                opacity: 0.45; }
-  100% { transform: translateY(140vh); opacity: 0;    }
+@keyframes antigravityDrift {
+  0%   { transform: translate3d(0, 0, 0);                              opacity: 0; }
+  12%  {                                                                opacity: var(--alpha, 0.3); }
+  88%  {                                                                opacity: var(--alpha, 0.3); }
+  100% { transform: translate3d(var(--dx, 0px), var(--dy, -120px), 0);  opacity: 0; }
 }
 
 .hero-v3 .container-v3 {
@@ -3249,8 +3280,8 @@ footer {
 .hero-v3 .headline {
   display: flex;
   flex-direction: column;
-  /* Big editorial gap between the headline and the subtitle */
-  gap: 64px;
+  /* Very tight gap — sub-copy sits close to the rotating word */
+  gap: 0;
   align-items: center;
 }
 
@@ -3284,7 +3315,7 @@ footer {
   clip-path: inset(0 -50vw);
   width: 100%;
   padding-top: 6px;
-  padding-bottom: 12px;
+  padding-bottom: 0;
   min-height: 1.1em;
 }
 .hero-v3 h1 .rotator .ghost {
@@ -3324,7 +3355,9 @@ footer {
   letter-spacing: -0.005em;
   color: rgba(244, 246, 243, 0.62);
   max-width: 560px;
-  margin: 0 auto;
+  /* Negative top margin pulls the sub-copy as close as it can sit
+     without descenders ("y" in audit-ready/submission-ready) clashing */
+  margin: -16px auto 0;
 }
 
 /* ── CTAs ─────────────────────────────────────── */
@@ -3407,7 +3440,7 @@ body.hero-v3-page nav#nav .nav-logo-wordmark {
 /* ── Mobile tuning ────────────────────────────── */
 @media (max-width: 768px) {
   .hero-v3 .stack { padding: 12vh 0 14vh; gap: 36px; }
-  .hero-v3 .headline { gap: 40px; }
+  .hero-v3 .headline { gap: 0; }
   .hero-v3 h1 .rotator { padding-bottom: 8px; }
   .hero-v3 h1 .rotator .word {
     transition: transform 0.7s cubic-bezier(0.34, 1.32, 0.64, 1),
@@ -3417,13 +3450,29 @@ body.hero-v3-page nav#nav .nav-logo-wordmark {
   .hero-v3 .btn-v3 { justify-content: center; }
 }
 
-/* Respect reduced motion */
+/* Respect reduced motion — covers hero ambient layers and all
+   interactive card / chip hovers across the site. */
 @media (prefers-reduced-motion: reduce) {
+  /* Hero word rotator: fade only, no slide */
   .hero-v3 h1 .rotator .word { transition: opacity 0.4s ease; transform: translate(-50%, 0); }
   .hero-v3 h1 .rotator .word.is-prev { opacity: 0; }
+  /* Hero ambient layers: kill animation; show particles at a low static opacity */
   .hero-v3::before,
   .hero-motion .grid,
-  .hero-motion .particle,
-  .hero-motion .stream { animation: none; }
-  .hero-motion .particle, .hero-motion .stream { opacity: 0.25; }
+  .hero-motion .particle { animation: none !important; }
+  .hero-motion .particle { opacity: 0.22; }
+  /* Card hover translations across the site — disable transforms */
+  .method-card:hover,
+  .deliverable-card:hover,
+  .edra-plus-card:hover,
+  .usecase-card:hover,
+  .insight-card:hover,
+  .cert-tile:hover { transform: none !important; }
+  /* Generic safety net for transitions */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

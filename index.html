@@ -7,8 +7,8 @@
   <title>EDRA | ESG Data Readiness Assessment for Real Estate Portfolios</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Single consolidated font request: Syne (display) + DM Sans (body) + JetBrains Mono (numerics). Fraunces/Inter Tight removed in favor of brand consistency. -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 
   <!-- Favicon -->
@@ -53,8 +53,8 @@
        1. HEADER / NAV
        ============================================================ -->
   <nav id="nav" role="navigation" aria-label="Main navigation">
-    <a href="#" class="nav-logo" aria-label="EDRA home">
-      <img class="nav-logo-mark" src="./logo-mark.svg" alt="" />
+    <a href="/" class="nav-logo" aria-label="EDRA home">
+      <img class="nav-logo-mark" src="./logo-mark.svg" alt="" width="40" height="40" />
       <span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
     </a>
     <ul class="nav-links" role="list">
@@ -84,23 +84,9 @@
       <!-- Subtle motion layers -->
       <div class="hero-motion" aria-hidden="true">
         <div class="grid"></div>
-        <span class="particle" style="left: 12%; bottom: -2%;  --dx:  18px; --dur: 26s; --delay:  0s;"></span>
-        <span class="particle" style="left: 22%; bottom:  5%;  --dx: -14px; --dur: 31s; --delay: 4s;"></span>
-        <span class="particle" style="left: 31%; bottom: -4%;  --dx:  22px; --dur: 24s; --delay: 7s;"></span>
-        <span class="particle" style="left: 40%; bottom:  2%;  --dx: -10px; --dur: 33s; --delay: 11s;"></span>
-        <span class="particle" style="left: 49%; bottom: -3%;  --dx:  16px; --dur: 28s; --delay: 2s;"></span>
-        <span class="particle" style="left: 58%; bottom:  4%;  --dx: -20px; --dur: 30s; --delay: 13s;"></span>
-        <span class="particle" style="left: 67%; bottom: -2%;  --dx:  12px; --dur: 27s; --delay: 5s;"></span>
-        <span class="particle" style="left: 76%; bottom:  3%;  --dx: -16px; --dur: 32s; --delay: 9s;"></span>
-        <span class="particle" style="left: 85%; bottom: -4%;  --dx:  20px; --dur: 25s; --delay: 1s;"></span>
-        <span class="particle" style="left: 15%; bottom: 10%;  --dx:  -8px; --dur: 34s; --delay: 14s;"></span>
-        <span class="particle" style="left: 55%; bottom:  8%;  --dx:  10px; --dur: 29s; --delay: 16s;"></span>
-        <span class="particle" style="left: 82%; bottom:  6%;  --dx: -12px; --dur: 26s; --delay: 8s;"></span>
-        <span class="stream" style="left: 18%; --dur: 13s; --delay:  0s;"></span>
-        <span class="stream" style="left: 36%; --dur: 17s; --delay: 5s;"></span>
-        <span class="stream" style="left: 54%; --dur: 14s; --delay: 9s;"></span>
-        <span class="stream" style="left: 72%; --dur: 19s; --delay: 3s;"></span>
-        <span class="stream" style="left: 88%; --dur: 15s; --delay: 12s;"></span>
+        <!-- Antigravity-style drifting particle field. Populated by JS for
+             density variation + prefers-reduced-motion respect. -->
+        <div class="particle-field"></div>
       </div>
 
       <div class="container-v3">
@@ -1049,25 +1035,28 @@
             </ul>
           </div>
           <div class="reveal reveal-d1">
-            <form class="contact-form" id="contact-form" novalidate>
+            <form class="contact-form" id="contact-form" novalidate aria-describedby="form-status">
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Full Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" data-track="contact_form_start" />
+                  <input type="text" id="name" name="name" placeholder="Your name" required aria-required="true" aria-describedby="name-error" autocomplete="name" data-track="contact_form_start" />
+                  <span class="form-error" id="name-error" role="alert"></span>
                 </div>
                 <div class="form-group">
                   <label for="email">Work Email</label>
-                  <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email" />
+                  <input type="email" id="email" name="email" placeholder="you@company.com" required aria-required="true" aria-describedby="email-error" autocomplete="email" />
+                  <span class="form-error" id="email-error" role="alert"></span>
                 </div>
               </div>
               <div class="form-group">
                 <label for="company">Company</label>
-                <input type="text" id="company" name="company" placeholder="Your company" required autocomplete="organization" />
+                <input type="text" id="company" name="company" placeholder="Your company" required aria-required="true" aria-describedby="company-error" autocomplete="organization" />
+                <span class="form-error" id="company-error" role="alert"></span>
               </div>
               <div class="form-row">
                 <div class="form-group">
                   <label for="portfolio-type">Portfolio Type</label>
-                  <select id="portfolio-type" name="portfolio_type" required>
+                  <select id="portfolio-type" name="portfolio_type" required aria-required="true" aria-describedby="portfolio-type-error">
                     <option value="" disabled selected>Select portfolio type</option>
                     <option value="multifamily">Multifamily</option>
                     <option value="office">Office</option>
@@ -1077,15 +1066,16 @@
                     <option value="mixed">Mixed Portfolio</option>
                     <option value="other">Other</option>
                   </select>
+                  <span class="form-error" id="portfolio-type-error" role="alert"></span>
                 </div>
                 <div class="form-group">
                   <label for="asset-count">Approx. Number of Assets</label>
-                  <input type="text" id="asset-count" name="asset_count" placeholder="e.g. 25" autocomplete="off" />
+                  <input type="text" id="asset-count" name="asset_count" placeholder="e.g. 25" inputmode="numeric" autocomplete="off" />
                 </div>
               </div>
               <div class="form-group">
                 <label for="objective">Primary Objective</label>
-                <select id="objective" name="objective" required>
+                <select id="objective" name="objective" required aria-required="true" aria-describedby="objective-error">
                   <option value="" disabled selected>Select primary objective</option>
                   <option value="gresb">GRESB preparation</option>
                   <option value="readiness">Data readiness assessment</option>
@@ -1094,11 +1084,13 @@
                   <option value="reporting">ESG reporting support</option>
                   <option value="other">Other</option>
                 </select>
+                <span class="form-error" id="objective-error" role="alert"></span>
               </div>
               <div class="form-group">
                 <label for="message">Message <span class="optional">(optional)</span></label>
                 <textarea id="message" name="message" placeholder="Tell us about your portfolio or certification goals..."></textarea>
               </div>
+              <p class="form-status" id="form-status" aria-live="polite"></p>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-lg form-submit" data-track="contact_form_submit">Request an Assessment</button>
                 <p class="form-helper">We respond within 1 business day.</p>
@@ -1143,7 +1135,7 @@
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
-          <img class="footer-logo-mark" src="./logo-mark-dark.svg" alt="" />
+          <img class="footer-logo-mark" src="./logo-mark-dark.svg" alt="" width="36" height="36" />
           <div>
             <div class="footer-wordmark">EDRA<sup>TM</sup></div>
             <div class="footer-tagline">Environmental Data Readiness Assessment</div>
@@ -1289,33 +1281,145 @@
       });
     })();
 
-    // ── Contact form ──
+    // ── Contact form (validated with inline error states) ──
     (function(){
       var form = document.getElementById('contact-form');
       if (!form) return;
       var started = false;
+      var status = form.querySelector('#form-status');
+      // Loose email check — strict enough to catch typos, lenient enough to
+      // pass anything a real MTA would accept.
+      var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      function showError(field, message) {
+        field.setAttribute('aria-invalid', 'true');
+        var errId = field.getAttribute('aria-describedby');
+        var errEl = errId && document.getElementById(errId);
+        if (errEl) errEl.textContent = message;
+      }
+      function clearError(field) {
+        field.removeAttribute('aria-invalid');
+        var errId = field.getAttribute('aria-describedby');
+        var errEl = errId && document.getElementById(errId);
+        if (errEl) errEl.textContent = '';
+      }
+
+      // Clear errors as the user fixes them
+      form.addEventListener('input', function(e) {
+        if (e.target.hasAttribute('aria-invalid')) clearError(e.target);
+      });
+      form.addEventListener('change', function(e) {
+        if (e.target.hasAttribute('aria-invalid')) clearError(e.target);
+      });
+
       form.addEventListener('focusin', function() {
         if (!started) { trackEvent('contact_form_start', { section: 'contact' }); started = true; }
       });
+
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-        var name = form.querySelector('#name').value.trim();
-        var email = form.querySelector('#email').value.trim();
-        if (!name) { form.querySelector('#name').focus(); return; }
-        if (!email) { form.querySelector('#email').focus(); return; }
+        var firstInvalid = null;
+        var errorCount = 0;
+
+        function check(field, predicate, message) {
+          if (!predicate()) {
+            showError(field, message);
+            if (!firstInvalid) firstInvalid = field;
+            errorCount++;
+          } else {
+            clearError(field);
+          }
+        }
+
+        var name = form.querySelector('#name');
+        var email = form.querySelector('#email');
+        var company = form.querySelector('#company');
+        var portfolio = form.querySelector('#portfolio-type');
+        var objective = form.querySelector('#objective');
+
+        check(name, function(){ return name.value.trim().length > 1; }, 'Please enter your full name.');
+        check(email, function(){ return emailRe.test(email.value.trim()); }, 'Please enter a valid work email.');
+        check(company, function(){ return company.value.trim().length > 1; }, 'Please enter your company.');
+        check(portfolio, function(){ return !!portfolio.value; }, 'Please select a portfolio type.');
+        check(objective, function(){ return !!objective.value; }, 'Please select your primary objective.');
+
+        if (errorCount > 0) {
+          if (status) status.textContent = errorCount + (errorCount === 1 ? ' field needs attention.' : ' fields need attention.');
+          status && status.classList.add('is-error');
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        if (status) { status.textContent = ''; status.classList.remove('is-error'); }
         trackEvent('contact_form_submit', { section: 'contact' });
         var btn = form.querySelector('.form-submit');
         btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Request Received';
         btn.style.pointerEvents = 'none';
         btn.style.opacity = '0.85';
+        if (status) status.textContent = 'Thanks — we’ll be in touch within 1 business day.';
         setTimeout(function() {
           form.reset();
           btn.textContent = 'Request an Assessment';
           btn.style.pointerEvents = '';
           btn.style.opacity = '';
+          if (status) status.textContent = '';
           started = false;
-        }, 4000);
+        }, 4500);
       });
+    })();
+
+    // ── Antigravity particle field (hero ambient drift) ──
+    // Modeled on the auth-success page at antigravity.google: dust-like
+    // particles drifting slowly across a deep field. Random origin, angle,
+    // size, opacity, duration — ~70 nodes, ambient and weightless.
+    (function () {
+      var field = document.querySelector('.hero-motion .particle-field');
+      if (!field) return;
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var count = reduceMotion ? 24 : 72;
+      var frag = document.createDocumentFragment();
+      function rand(min, max) { return Math.random() * (max - min) + min; }
+      for (var i = 0; i < count; i++) {
+        var p = document.createElement('span');
+        p.className = 'particle';
+        // Random origin across the hero
+        var x = rand(0, 100);
+        var y = rand(0, 100);
+        // Drift vector — degrees biased toward upward (60% favor an upward angle)
+        var biasUp = Math.random() < 0.6;
+        var angle = biasUp ? rand(200, 340) : rand(0, 360); // 200–340° = sweeping up
+        var distance = rand(60, 180);
+        var dx = Math.cos(angle * Math.PI / 180) * distance;
+        var dy = Math.sin(angle * Math.PI / 180) * distance;
+        // Size and opacity for depth (smaller = dimmer = farther)
+        var size = rand(1, 3.2);
+        var alpha = 0.18 + (size - 1) * 0.18; // bigger particles slightly brighter
+        // ~12% of particles get a brand teal tint for cohesion
+        var tinted = Math.random() < 0.12;
+        var color = tinted
+          ? 'rgba(22,211,202,1)'
+          : 'rgba(244,246,243,1)';
+        var glow = (size > 2.2 || tinted)
+          ? '0 0 ' + (size * 2.5).toFixed(1) + 'px ' + (tinted ? 'rgba(22,211,202,0.5)' : 'rgba(244,246,243,0.25)')
+          : 'none';
+        var dur = rand(22, 44);
+        // Negative delay (-dur..0) so particles spawn mid-cycle, no synchronized swarm
+        var delay = -rand(0, dur);
+        p.style.cssText =
+          'left:' + x.toFixed(2) + '%;' +
+          'top:' + y.toFixed(2) + '%;' +
+          'width:' + size.toFixed(2) + 'px;' +
+          'height:' + size.toFixed(2) + 'px;' +
+          'background:' + color + ';' +
+          'box-shadow:' + glow + ';' +
+          '--dx:' + dx.toFixed(1) + 'px;' +
+          '--dy:' + dy.toFixed(1) + 'px;' +
+          '--alpha:' + alpha.toFixed(2) + ';' +
+          'animation-duration:' + dur.toFixed(1) + 's;' +
+          'animation-delay:' + delay.toFixed(1) + 's;';
+        frag.appendChild(p);
+      }
+      field.appendChild(frag);
     })();
 
     // ── Hero rotator (animated word) ──
