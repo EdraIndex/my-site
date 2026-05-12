@@ -2939,3 +2939,149 @@ footer {
   .preview-section .cta-row .btn { width: 100%; justify-content: center; }
   .preview-section .findings-mini ul { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   HERO CERT STRIP — black banner with cert/membership logos
+   ============================================================ */
+.hero-cert-strip {
+  background: #0a0a0a;
+  padding: 36px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.hero-cert-label-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+.hero-cert-label {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  white-space: nowrap;
+}
+
+/* ── Marquee — infinite horizontal scroll ─────────────── */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 38s linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0 12px;
+  flex-shrink: 0;
+}
+.marquee-group li {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 76px;
+  min-width: 130px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+}
+.marquee-group img {
+  height: 52px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+}
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .marquee { overflow-x: auto; }
+}
+@media (max-width: 768px) {
+  .hero-cert-strip { padding: 26px 0; }
+  .hero-cert-label-row { margin-bottom: 16px; }
+  .hero-cert-label { font-size: 0.7rem; letter-spacing: 0.14em; }
+  .marquee-group { gap: 18px; padding: 0 9px; }
+  .marquee-group li { height: 60px; min-width: 108px; padding: 8px 16px; }
+  .marquee-group img { height: 40px; max-width: 130px; }
+  .marquee-track { animation-duration: 30s; }
+}
+@media (max-width: 480px) {
+  .marquee-group li { height: 54px; min-width: 96px; padding: 6px 12px; }
+  .marquee-group img { height: 34px; max-width: 110px; }
+}
+
+/* ============================================================
+   CERTIFICATIONS & MEMBERSHIPS — full section before footer
+   ============================================================ */
+.cert-section {
+  background: #FAFAF7;
+}
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  list-style: none;
+  margin: 48px 0 0 0;
+  padding: 0;
+}
+.cert-tile {
+  background: #fff;
+  border: 1px solid rgba(10,10,10,0.06);
+  border-radius: 12px;
+  padding: 28px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cert-tile:hover {
+  border-color: rgba(10,10,10,0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10,10,10,0.04);
+}
+.cert-tile img {
+  max-height: 64px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(20%);
+  opacity: 0.92;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+.cert-tile:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .cert-grid { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-top: 32px; }
+  .cert-tile { min-height: 96px; padding: 18px 14px; }
+  .cert-tile img { max-height: 48px; }
+}
+@media (max-width: 480px) {
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+}
