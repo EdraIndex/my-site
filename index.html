@@ -47,7 +47,7 @@
   }
   </script>
 </head>
-<body>
+<body class="hero-v3-page">
 
   <!-- ============================================================
        1. HEADER / NAV
@@ -78,84 +78,69 @@
   <main>
 
     <!-- ============================================================
-         2. HERO — centered, video carousel behind
+         2. HERO — animated rotating word, dark cinematic
          ============================================================ -->
-    <section class="hero" aria-label="Hero">
-      <div class="hero-carousel" aria-hidden="true">
-        <div class="hero-slide active">
-          <video autoplay muted loop playsinline preload="auto"
-            poster="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80">
-            <source src="https://videos.pexels.com/video-files/3571264/3571264-hd_1920_1080_30fps.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="hero-slide">
-          <video muted loop playsinline preload="auto"
-            poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80">
-            <source src="https://videos.pexels.com/video-files/3130284/3130284-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="hero-slide">
-          <video muted loop playsinline preload="auto"
-            poster="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80">
-            <source src="https://videos.pexels.com/video-files/7579969/7579969-uhd_2560_1440_25fps.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </div>
-      <div class="hero-overlay" aria-hidden="true"></div>
-
-      <div class="hero-center">
-        <h1>The World's First Data Readiness Index for ESG Certification</h1>
-        <p class="hero-sub">EDRA<sup>TM</sup> scores your data against real certification thresholds, closes every gap it finds, and makes qualification an outcome.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary btn-lg" data-track="hero_primary_cta_click">Request an Assessment
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-          </a>
-          <a href="#sample-output" class="btn btn-outline btn-lg" data-track="hero_secondary_cta_click">See Sample Output</a>
-        </div>
+    <section class="hero-v3" aria-label="Hero">
+      <!-- Subtle motion layers -->
+      <div class="hero-motion" aria-hidden="true">
+        <div class="grid"></div>
+        <span class="particle" style="left: 12%; bottom: -2%;  --dx:  18px; --dur: 26s; --delay:  0s;"></span>
+        <span class="particle" style="left: 22%; bottom:  5%;  --dx: -14px; --dur: 31s; --delay: 4s;"></span>
+        <span class="particle" style="left: 31%; bottom: -4%;  --dx:  22px; --dur: 24s; --delay: 7s;"></span>
+        <span class="particle" style="left: 40%; bottom:  2%;  --dx: -10px; --dur: 33s; --delay: 11s;"></span>
+        <span class="particle" style="left: 49%; bottom: -3%;  --dx:  16px; --dur: 28s; --delay: 2s;"></span>
+        <span class="particle" style="left: 58%; bottom:  4%;  --dx: -20px; --dur: 30s; --delay: 13s;"></span>
+        <span class="particle" style="left: 67%; bottom: -2%;  --dx:  12px; --dur: 27s; --delay: 5s;"></span>
+        <span class="particle" style="left: 76%; bottom:  3%;  --dx: -16px; --dur: 32s; --delay: 9s;"></span>
+        <span class="particle" style="left: 85%; bottom: -4%;  --dx:  20px; --dur: 25s; --delay: 1s;"></span>
+        <span class="particle" style="left: 15%; bottom: 10%;  --dx:  -8px; --dur: 34s; --delay: 14s;"></span>
+        <span class="particle" style="left: 55%; bottom:  8%;  --dx:  10px; --dur: 29s; --delay: 16s;"></span>
+        <span class="particle" style="left: 82%; bottom:  6%;  --dx: -12px; --dur: 26s; --delay: 8s;"></span>
+        <span class="stream" style="left: 18%; --dur: 13s; --delay:  0s;"></span>
+        <span class="stream" style="left: 36%; --dur: 17s; --delay: 5s;"></span>
+        <span class="stream" style="left: 54%; --dur: 14s; --delay: 9s;"></span>
+        <span class="stream" style="left: 72%; --dur: 19s; --delay: 3s;"></span>
+        <span class="stream" style="left: 88%; --dur: 15s; --delay: 12s;"></span>
       </div>
 
-      <div class="hero-indicators">
-        <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
-        <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
-        <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
-      </div>
-    </section>
+      <div class="container-v3">
+        <div class="stack">
 
-    <!-- ============================================================
-         2b. HERO CERT STRIP — scrolling marquee
-         ============================================================ -->
-    <section class="hero-cert-strip" aria-label="Certifications and memberships">
-      <div class="hero-cert-label-row">
-        <span class="hero-cert-label">Certifications &amp; Memberships</span>
-      </div>
-      <div class="marquee" role="region" aria-label="Certification and membership logos">
-        <div class="marquee-track">
-          <!-- Track group 1 -->
-          <ul class="marquee-group" role="list">
-            <li><img src="./assets/cert/iso-27001.png" alt="ISO 27001" loading="lazy" /></li>
-            <li><img src="./assets/cert/soc-2-type-2.png" alt="SOC 2 Type II" loading="lazy" /></li>
-            <li><img src="./assets/cert/gresb.webp" alt="GRESB" loading="lazy" /></li>
-            <li><img src="./assets/cert/nahma.webp" alt="NAHMA Member" loading="lazy" /></li>
-            <li><img src="./assets/cert/naa.png" alt="NAA — National Apartment Association" loading="lazy" /></li>
-            <li><img src="./assets/cert/cii.png" alt="CII — Confederation of Indian Industry" loading="lazy" /></li>
-            <li><img src="./assets/cert/iacc.jpg" alt="IACC — Indo-American Chamber of Commerce" loading="lazy" /></li>
-            <li><img src="./assets/cert/nasscom.png" alt="NASSCOM" loading="lazy" /></li>
-            <li><img src="./assets/cert/cai.jpg" alt="CAI Business Partner" loading="lazy" /></li>
-            <li><img src="./assets/cert/quadel.png" alt="Quadel" loading="lazy" /></li>
-          </ul>
-          <!-- Track group 2 — duplicated for seamless loop, hidden from a11y -->
-          <ul class="marquee-group" role="list" aria-hidden="true">
-            <li><img src="./assets/cert/iso-27001.png" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/soc-2-type-2.png" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/gresb.webp" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/nahma.webp" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/naa.png" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/cii.png" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/iacc.jpg" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/nasscom.png" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/cai.jpg" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/quadel.png" alt="" loading="lazy" /></li>
-          </ul>
+          <div class="hero-eyebrow">The World's First Data Readiness Index</div>
+
+          <div class="headline">
+            <h1>
+              <span class="static-line">Make your ESG data</span>
+              <span class="rotator" aria-live="polite">
+                <span class="ghost" aria-hidden="true">submission-ready</span>
+                <span class="word is-active" data-i="0">certifiable</span>
+                <span class="word" data-i="1">defensible</span>
+                <span class="word" data-i="2">audit-ready</span>
+                <span class="word" data-i="3">fund-grade</span>
+                <span class="word" data-i="4">submission-ready</span>
+              </span>
+            </h1>
+
+            <p class="sub">
+              Most portfolios begin ESG reporting without knowing if their data is actually ready. EDRA measures the gaps, risks, and readiness behind every submission.
+            </p>
+          </div>
+
+          <div class="ctas">
+            <a href="./demo.html" class="btn-v3 outline" data-track="hero_secondary_cta_click">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </a>
+            <a href="#contact" class="btn-v3 primary" data-track="hero_primary_cta_click">
+              Request an Assessment
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
@@ -1333,13 +1318,25 @@
       });
     })();
 
-    // ── Video carousel ──
-    (function(){
-      var s=document.querySelectorAll('.hero-slide'),d=document.querySelectorAll('.hero-dot'),c=0;
-      function go(i){s[c].classList.remove('active');var pv=s[c].querySelector('video');if(pv)pv.pause();d[c].classList.remove('active');c=i;s[c].classList.add('active');d[c].classList.add('active');var v=s[c].querySelector('video');if(v){v.currentTime=0;v.play().catch(function(){});}};
-      d.forEach(function(b){b.addEventListener('click',function(){go(parseInt(this.dataset.slide,10));});});
-      setInterval(function(){go((c+1)%s.length);},6000);
-      document.querySelectorAll('.hero-slide video').forEach(function(v){v.addEventListener('error',function(){v.style.display='none';});});
+    // ── Hero rotator (animated word) ──
+    (function () {
+      var words = Array.prototype.slice.call(document.querySelectorAll('.hero-v3 .rotator .word'));
+      if (!words.length) return;
+      var current = 0;
+      function tick() {
+        var next = (current + 1) % words.length;
+        words[current].classList.remove('is-active');
+        words[current].classList.add('is-prev');
+        words[next].classList.remove('is-prev');
+        words[next].classList.add('is-active');
+        setTimeout(function () {
+          if (!words[current].classList.contains('is-active')) {
+            words[current].classList.remove('is-prev');
+          }
+        }, 900);
+        current = next;
+      }
+      setInterval(tick, 2000);
     })();
   </script>
 
