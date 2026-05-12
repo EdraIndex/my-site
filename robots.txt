@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Internal dev artifacts — not real product pages
+Disallow: /logo-preview.html
+Disallow: /logos-showcase.html
+
+Sitemap: https://edraindex.com/sitemap.xml
