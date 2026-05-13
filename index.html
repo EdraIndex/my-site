@@ -998,24 +998,24 @@
             <form class="contact-form" id="contact-form" novalidate aria-describedby="form-status">
               <div class="form-row">
                 <div class="form-group">
-                  <label for="name">Full Name</label>
+                  <label for="name">Full Name <span class="required-mark" aria-hidden="true">*</span></label>
                   <input type="text" id="name" name="name" placeholder="Your name" required aria-required="true" aria-describedby="name-error" autocomplete="name" data-track="contact_form_start" />
                   <span class="form-error" id="name-error" role="alert"></span>
                 </div>
                 <div class="form-group">
-                  <label for="email">Work Email</label>
+                  <label for="email">Work Email <span class="required-mark" aria-hidden="true">*</span></label>
                   <input type="email" id="email" name="email" placeholder="you@company.com" required aria-required="true" aria-describedby="email-error" autocomplete="email" />
                   <span class="form-error" id="email-error" role="alert"></span>
                 </div>
               </div>
               <div class="form-group">
-                <label for="company">Company</label>
+                <label for="company">Company <span class="required-mark" aria-hidden="true">*</span></label>
                 <input type="text" id="company" name="company" placeholder="Your company" required aria-required="true" aria-describedby="company-error" autocomplete="organization" />
                 <span class="form-error" id="company-error" role="alert"></span>
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="portfolio-type">Portfolio Type</label>
+                  <label for="portfolio-type">Portfolio Type <span class="required-mark" aria-hidden="true">*</span></label>
                   <select id="portfolio-type" name="portfolio_type" required aria-required="true" aria-describedby="portfolio-type-error">
                     <option value="" disabled selected>Select portfolio type</option>
                     <option value="multifamily">Multifamily</option>
@@ -1029,12 +1029,13 @@
                   <span class="form-error" id="portfolio-type-error" role="alert"></span>
                 </div>
                 <div class="form-group">
-                  <label for="asset-count">Approx. Number of Assets</label>
-                  <input type="text" id="asset-count" name="asset_count" placeholder="e.g. 25" inputmode="numeric" autocomplete="off" />
+                  <label for="asset-count">Approx. Number of Assets <span class="required-mark" aria-hidden="true">*</span></label>
+                  <input type="text" id="asset-count" name="asset_count" placeholder="e.g. 25" inputmode="numeric" required aria-required="true" aria-describedby="asset-count-error" autocomplete="off" />
+                  <span class="form-error" id="asset-count-error" role="alert"></span>
                 </div>
               </div>
               <div class="form-group">
-                <label for="objective">Primary Objective</label>
+                <label for="objective">Primary Objective <span class="required-mark" aria-hidden="true">*</span></label>
                 <select id="objective" name="objective" required aria-required="true" aria-describedby="objective-error">
                   <option value="" disabled selected>Select primary objective</option>
                   <option value="gresb">GRESB preparation</option>
@@ -1246,6 +1247,28 @@
       // pass anything a real MTA would accept.
       var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+      // Block well-known personal email providers — we want work emails only.
+      // Compared case-insensitively against the full domain (after the @).
+      var personalEmailDomains = [
+        'gmail.com', 'googlemail.com',
+        'yahoo.com', 'yahoo.co.uk', 'yahoo.co.in', 'yahoo.in', 'ymail.com', 'rocketmail.com',
+        'hotmail.com', 'hotmail.co.uk', 'hotmail.co.in',
+        'outlook.com', 'live.com', 'msn.com',
+        'aol.com', 'aim.com',
+        'icloud.com', 'me.com', 'mac.com',
+        'protonmail.com', 'proton.me', 'pm.me',
+        'mail.com', 'gmx.com', 'gmx.net',
+        'yandex.com', 'yandex.ru',
+        'rediffmail.com', 'rediff.com',
+        'fastmail.com', 'fastmail.fm',
+        'tutanota.com', 'tuta.io'
+      ];
+      function isPersonalEmail(s) {
+        var at = s.indexOf('@');
+        if (at < 0) return false;
+        return personalEmailDomains.indexOf(s.slice(at + 1).trim().toLowerCase()) >= 0;
+      }
+
       function showError(field, message) {
         field.setAttribute('aria-invalid', 'true');
         var errId = field.getAttribute('aria-describedby');
@@ -1290,17 +1313,20 @@
         var email = form.querySelector('#email');
         var company = form.querySelector('#company');
         var portfolio = form.querySelector('#portfolio-type');
+        var assetCount = form.querySelector('#asset-count');
         var objective = form.querySelector('#objective');
 
         check(name, function(){ return name.value.trim().length > 1; }, 'Please enter your full name.');
-        check(email, function(){ return emailRe.test(email.value.trim()); }, 'Please enter a valid work email.');
+        check(email, function(){
+          var v = email.value.trim();
+          return emailRe.test(v) && !isPersonalEmail(v);
+        }, 'Please enter your work email — personal providers like gmail or yahoo aren’t accepted.');
         check(company, function(){ return company.value.trim().length > 1; }, 'Please enter your company.');
         check(portfolio, function(){ return !!portfolio.value; }, 'Please select a portfolio type.');
+        check(assetCount, function(){ return assetCount.value.trim().length > 0; }, 'Please enter the approximate number of assets.');
         check(objective, function(){ return !!objective.value; }, 'Please select your primary objective.');
 
         if (errorCount > 0) {
-          if (status) status.textContent = errorCount + (errorCount === 1 ? ' field needs attention.' : ' fields need attention.');
-          status && status.classList.add('is-error');
           if (firstInvalid) firstInvalid.focus();
           return;
         }
