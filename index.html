@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Tag (gtag.js) — Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18160005662"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18160005662');
+  </script>
   <meta name="description" content="EDRA helps real estate funds, asset owners, and GRESB teams assess ESG data readiness before submission. Score portfolio data, identify blockers, and prioritize remediation." />
   <link rel="canonical" href="https://edraindex.com/" />
   <title>EDRA | ESG Data Readiness Assessment for Real Estate Portfolios</title>
@@ -1333,6 +1341,14 @@
 
         if (status) { status.textContent = ''; status.classList.remove('is-error'); }
         trackEvent('contact_form_submit', { section: 'contact' });
+        // Fire Google Ads conversion — only after validation passes.
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18160005662/jUjuCPCzuqwcEJ7krtND',
+            'value': 1.0,
+            'currency': 'INR'
+          });
+        }
         var btn = form.querySelector('.form-submit');
         btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Request Received';
         btn.style.pointerEvents = 'none';
