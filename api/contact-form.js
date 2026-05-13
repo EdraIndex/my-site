@@ -67,11 +67,12 @@ async function sendEmail({ to, subject, body, replyTo }) {
     return { success: false, error: 'RESEND_API_KEY not configured' };
   }
 
-  // Sender stays on Resend's sandbox domain until edraindex.com is added as a
-  // verified sender in Resend (needs SPF + DKIM updates). Reply-To routes
-  // replies back to the lead so we can respond from real Outlook accounts.
+  // Sends from notifications@edraindex.com (edraindex.com verified in Resend
+  // 2026-05-13 via DKIM + send-subdomain SPF/MX). Reply-To routes replies
+  // straight to the visitor so we can respond from p.jain/rachit's real M365
+  // mailboxes.
   const payload = {
-    from: 'EDRA Website <onboarding@resend.dev>',
+    from: 'EDRA <notifications@edraindex.com>',
     to,
     subject,
     text: body,
