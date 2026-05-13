@@ -1341,27 +1341,63 @@
 
         if (status) { status.textContent = ''; status.classList.remove('is-error'); }
         trackEvent('contact_form_submit', { section: 'contact' });
-        // Fire Google Ads conversion — only after validation passes.
-        if (typeof gtag === 'function') {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-18160005662/jUjuCPCzuqwcEJ7krtND',
-            'value': 1.0,
-            'currency': 'INR'
-          });
-        }
+
         var btn = form.querySelector('.form-submit');
-        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Request Received';
+        var originalBtnHtml = btn.innerHTML;
+        btn.textContent = 'Sending…';
         btn.style.pointerEvents = 'none';
         btn.style.opacity = '0.85';
-        if (status) status.textContent = 'Thanks — we’ll be in touch within 1 business day.';
-        setTimeout(function() {
-          form.reset();
+
+        var payload = {
+          name: name.value.trim(),
+          email: email.value.trim(),
+          company: company.value.trim(),
+          portfolio_type: portfolio.value,
+          asset_count: assetCount.value.trim(),
+          objective: objective.value,
+          message: (form.querySelector('#message') && form.querySelector('#message').value || '').trim()
+        };
+
+        fetch('/api/contact-form', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function(r) {
+          return r.json().then(function(j) { return { ok: r.ok && j && j.ok, body: j }; });
+        }).then(function(result) {
+          if (!result.ok) {
+            throw new Error((result.body && result.body.error) || 'send_failed');
+          }
+          // Fire Google Ads conversion only AFTER the lead actually delivered.
+          if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18160005662/jUjuCPCzuqwcEJ7krtND',
+              'value': 1.0,
+              'currency': 'INR'
+            });
+          }
+          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Request Received';
+          if (status) status.textContent = 'Thanks — we’ll be in touch within 1 business day.';
+          setTimeout(function() {
+            form.reset();
+            btn.innerHTML = originalBtnHtml;
+            btn.textContent = 'Request an Assessment';
+            btn.style.pointerEvents = '';
+            btn.style.opacity = '';
+            if (status) status.textContent = '';
+            started = false;
+          }, 4500);
+        }).catch(function(e) {
+          if (window.console) console.error('contact-form submit failed:', e);
+          btn.innerHTML = originalBtnHtml;
           btn.textContent = 'Request an Assessment';
           btn.style.pointerEvents = '';
           btn.style.opacity = '';
-          if (status) status.textContent = '';
-          started = false;
-        }, 4500);
+          if (status) {
+            status.textContent = 'Sorry — couldn’t send your request. Please email p.jain@edraindex.com directly.';
+            status.classList.add('is-error');
+          }
+        });
       });
     })();
 

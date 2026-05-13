@@ -17,6 +17,7 @@ app.post('/api/chat', require('./api/chat'));
 app.post('/api/generate-proposal', require('./api/generate-proposal'));
 app.get('/api/approve-proposal', require('./api/approve-proposal'));
 app.post('/api/approve-proposal', require('./api/approve-proposal'));
+app.post('/api/contact-form', require('./api/contact-form'));
 
 app.listen(PORT, () => {
   console.log(`EDRA server running at http://localhost:${PORT}`);
