@@ -83,8 +83,13 @@
     /* Compact + vertically-centered so the whole hero (incl. stats) fits in one viewport */
     body.hero-image-page .hero-v3 { overflow: hidden; align-items: center; }
     body.hero-image-page .hero-v3 .stack { padding: 40px 0; gap: 28px; }
-    body.hero-image-page .hero-v3 h1 { font-size: clamp(2.3rem, 5vw, 4.4rem); }
+    body.hero-image-page .hero-v3 h1 { font-size: clamp(1.6rem, 6vw, 4.4rem); }
     body.hero-image-page .hero-v3 .sub { margin-top: 0; }
+    @media (max-width: 768px) {
+      body.hero-image-page .hero-v3 { min-height: auto; }
+      body.hero-image-page .hero-v3 .stack { padding: 100px 0 48px; }
+      body.hero-image-page .hero-eyebrow { font-size: 0.6rem; letter-spacing: 0.14em; }
+    }
     .hero-stat-strip {
       width: 100%;
       max-width: 1100px;
