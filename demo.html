@@ -24,16 +24,22 @@
     img { display: block; max-width: 100%; }
 
     :root {
-      --bg: #0A0A0A;
-      --bg-card: #111111;
-      --white: #FFFFFF;
-      --body: #999999;
-      --muted: #666666;
-      --teal: #16D3CA;
-      --teal-deep: #0FA89F;
-      --teal-dim: rgba(22,211,202,0.08);
-      --teal-border: rgba(22,211,202,0.2);
-      --border: rgba(255,255,255,0.06);
+      /* EDRA Sample Report — institutional light */
+      --bg: #EDEAE2;
+      --bg-card: #FFFFFF;
+      --bg-subtle: #F6F4ED;
+      --white: #111A13;        /* strong ink text (token name kept) */
+      --body: #4F574C;
+      --muted: #61685B;
+      --teal: #1C3E29;         /* forest — primary accent (token name kept) */
+      --teal-deep: #0E2417;
+      --teal-dim: rgba(28,62,41,0.06);
+      --teal-border: rgba(28,62,41,0.18);
+      --border: rgba(17,26,19,0.08);
+      --panel: #0E2417;
+      --gold: #C8A96E;
+      --gold-deep: #B0863A;
+      --cream: #F4F1E8;
     }
 
     body {
@@ -54,21 +60,21 @@
       justify-content: space-between;
       padding: 18px 56px;
       background: #FAFAF7;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(17,26,19,0.08);
     }
     .nav-logo { display: flex; align-items: center; gap: 14px; }
     .nav-logo img { height: 48px; width: 48px; }
     .nav-logo span {
       font-family: 'Syne', sans-serif;
       font-weight: 700; font-size: 1.5rem;
-      color: #0A0A0A; letter-spacing: 0.06em;
+      color: #111A13; letter-spacing: 0.06em;
     }
     .nav-back {
       font-size: 0.82rem; font-weight: 500;
-      color: #666; letter-spacing: 0.04em;
+      color: var(--muted); letter-spacing: 0.04em;
       transition: color 0.2s;
     }
-    .nav-back:hover { color: #0A0A0A; }
+    .nav-back:hover { color: #111A13; }
 
     /* Hero */
     .hero {
@@ -86,7 +92,7 @@
       line-height: 1.1;
       margin-bottom: 16px;
     }
-    .hero h1 em { color: var(--teal); font-style: normal; }
+    .hero h1 em { color: var(--gold-deep); font-style: italic; }
     .hero p {
       font-size: 1.05rem;
       color: var(--body);
@@ -130,18 +136,19 @@
       gap: 48px;
       align-items: start;
     }
-    /* Report preview panel */
+    /* Report preview panel — white sample card */
     .report-preview {
       background: var(--bg-card);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
       border-radius: 16px;
       overflow: hidden;
       position: sticky;
       top: 100px;
+      box-shadow: 0 12px 32px rgba(17,26,19,0.08), 0 2px 6px rgba(17,26,19,0.04);
     }
     .rp-header {
-      background: var(--teal);
-      color: var(--bg);
+      background: var(--panel);
+      color: var(--cream);
       padding: 16px 28px;
       font-family: 'Syne', sans-serif;
       font-weight: 700;
@@ -173,19 +180,19 @@
 
     .rp-band {
       display: inline-block;
-      background: rgba(22,211,202,0.08);
-      border: 1px solid rgba(22,211,202,0.2);
+      background: var(--gold-dim, rgba(200,169,110,0.16));
+      border: 1px solid rgba(200,169,110,0.45);
       border-radius: 100px;
       padding: 5px 16px;
       font-size: 0.72rem; font-weight: 500;
-      color: var(--teal);
+      color: var(--gold-deep);
       margin-bottom: 24px;
     }
 
     .rp-section-title {
       font-family: 'Syne', sans-serif;
       font-size: 0.72rem; font-weight: 700;
-      color: rgba(255,255,255,0.4);
+      color: var(--muted);
       letter-spacing: 0.15em;
       text-transform: uppercase;
       margin-bottom: 10px;
@@ -197,42 +204,42 @@
       grid-template-columns: 120px 1fr 32px;
       align-items: center; gap: 10px;
     }
-    .rp-bar-name { font-size: 0.7rem; color: rgba(255,255,255,0.5); }
-    .rp-bar-track { height: 6px; background: rgba(255,255,255,0.04); border-radius: 3px; overflow: hidden; }
+    .rp-bar-name { font-size: 0.7rem; color: var(--muted); }
+    .rp-bar-track { height: 6px; background: rgba(17,26,19,0.06); border-radius: 3px; overflow: hidden; }
     .rp-bar-fill { height: 100%; background: var(--teal); border-radius: 3px; }
-    .rp-bar-fill-b { background: #0FA89F; }
-    .rp-bar-fill-g { background: #0d8a73; }
+    .rp-bar-fill-b { background: #4E7A60; }
+    .rp-bar-fill-g { background: #6B9580; }
     .rp-bar-val { font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--white); text-align: right; }
 
     .rp-reasons { display: flex; flex-direction: column; gap: 5px; margin-bottom: 24px; }
     .rp-reason {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 7px 10px; background: rgba(255,255,255,0.02);
-      border-radius: 5px; border-left: 2px solid rgba(255,100,100,0.5);
+      padding: 7px 10px; background: rgba(17,26,19,0.03);
+      border-radius: 5px; border-left: 2px solid rgba(168,57,46,0.5);
     }
-    .rp-reason-code { font-size: 0.62rem; font-weight: 500; color: rgba(255,130,130,0.85); font-family: monospace; letter-spacing: 0.02em; }
+    .rp-reason-code { font-size: 0.62rem; font-weight: 500; color: #A8392E; font-family: monospace; letter-spacing: 0.02em; }
     .rp-reason-asset { font-size: 0.58rem; color: var(--muted); }
 
     .rp-bands-visual { display: flex; gap: 3px; border-radius: 8px; overflow: hidden; margin-bottom: 20px; }
     .rp-bv {
       flex: 1; padding: 10px 6px; text-align: center;
-      font-size: 0.55rem; color: rgba(255,255,255,0.6);
+      font-size: 0.55rem; color: rgba(244,241,232,0.85);
       line-height: 1.3;
     }
-    .rp-bv-active { outline: 2px solid var(--teal); outline-offset: -2px; border-radius: 4px; }
-    .rp-bv-1 { background: #1a1a2e; }
-    .rp-bv-2 { background: #16213e; }
-    .rp-bv-3 { background: #0f3460; }
-    .rp-bv-4 { background: #0a5c5c; }
-    .rp-bv-5 { background: #0d8a73; }
-    .rp-bv strong { display: block; font-size: 0.65rem; color: var(--white); margin-bottom: 2px; }
+    .rp-bv-active { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: 4px; }
+    .rp-bv-1 { background: #A8392E; }
+    .rp-bv-2 { background: #A8763E; }
+    .rp-bv-3 { background: #B0863A; }
+    .rp-bv-4 { background: #4E7A60; }
+    .rp-bv-5 { background: #1C3E29; }
+    .rp-bv strong { display: block; font-size: 0.65rem; color: var(--cream); margin-bottom: 2px; }
 
     .rp-quote {
-      border-top: 1px solid rgba(255,255,255,0.06);
+      border-top: 1px solid var(--border);
       padding-top: 20px;
       font-size: 0.82rem;
       font-style: italic;
-      color: rgba(255,255,255,0.5);
+      color: var(--body);
       line-height: 1.6;
     }
     .rp-quote cite {
@@ -245,6 +252,7 @@
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 44px;
+      box-shadow: 0 12px 32px rgba(17,26,19,0.08), 0 2px 6px rgba(17,26,19,0.04);
     }
     .form-title {
       font-family: 'Syne', sans-serif;
@@ -269,7 +277,7 @@
     .form-group select,
     .form-group textarea {
       width: 100%;
-      background: rgba(255,255,255,0.03);
+      background: var(--bg-subtle);
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 12px 16px;
@@ -281,7 +289,7 @@
       -webkit-appearance: none;
     }
     .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--muted); opacity: 0.6; }
+    .form-group textarea::placeholder { color: var(--muted); opacity: 0.7; }
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
@@ -301,7 +309,7 @@
       padding: 16px 36px;
       border-radius: 100px;
       background: var(--teal);
-      color: var(--bg);
+      color: var(--cream);
       font-family: 'DM Sans', sans-serif;
       font-weight: 500;
       font-size: 0.85rem;
@@ -313,7 +321,7 @@
     .btn-submit:hover {
       background: var(--teal-deep);
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(22,211,202,0.2);
+      box-shadow: 0 8px 32px rgba(28,62,41,0.2);
     }
     .btn-submit svg { width: 16px; height: 16px; }
 
@@ -373,7 +381,7 @@
 
   <nav class="nav">
     <a href="./index.html" class="nav-logo">
-      <img src="./logo-mark.svg" alt="" />
+      <img src="./edra-logo.jpg" alt="" />
       <span>EDRA<sup>TM</sup></span>
     </a>
     <a href="./index.html" class="nav-back">&larr; Back to EDRA</a>
@@ -447,7 +455,7 @@
     </div>
     <div class="form-card" style="padding: 0; overflow: hidden;">
       <div class="form-title" style="padding: 28px 44px 0;">Pick a time that works for you</div>
-      <div class="calendly-inline-widget" data-url="https://calendly.com/ohi-edraesg?hide_gdpr_banner=1&hide_event_type_details=1&background_color=111111&text_color=ffffff&primary_color=16d3ca" style="min-width:320px;height:660px;"></div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/ohi-edraesg?hide_gdpr_banner=1&hide_event_type_details=1&background_color=ffffff&text_color=111a13&primary_color=1c3e29" style="min-width:320px;height:660px;"></div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>
   </div>
