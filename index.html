@@ -93,7 +93,7 @@
     .hero-stat-strip {
       width: 100%;
       max-width: 1100px;
-      margin: 0 auto;
+      margin: 48px auto 0;
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 28px;
@@ -215,9 +215,8 @@
     </a>
     <ul class="nav-links" role="list">
       <li><a href="#why-edra">Why EDRA<sup>TM</sup></a></li>
-      <li><a href="#method">Method</a></li>
-      <li><a href="#outputs">Outputs</a></li>
-      <li><a href="#edra-plus">EDRA<sup>TM</sup>+</a></li>
+      <li><a href="#sample-output">Outputs</a></li>
+      <li><a href="#edra-stack">The Stack</a></li>
       <li><a href="#use-cases">Use Cases</a></li>
       <li><a href="./about.html">About</a></li>
       <li class="nav-dropdown" data-dropdown>
@@ -231,7 +230,6 @@
           <li role="none"><a role="menuitem" href="./aus.html">Australia <span class="nav-dd-region">AUS</span></a></li>
         </ul>
       </li>
-      <li><a href="#insights">Insights</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -608,12 +606,103 @@
     </section>
 
     <!-- ============================================================
-         8.5. EDRA+ — Beyond the diagnostic
+         8.6. THE EDRA STACK — four-layer operating model
+         ============================================================ -->
+    <section class="edra-stack-section section-pad" id="edra-stack">
+      <div class="container">
+        <div class="section-header edra-stack-header reveal">
+          <span class="eyebrow">The Operating Model</span>
+          <h2>The EDRA<sup>TM</sup> Stack</h2>
+          <p class="section-intro">Four layers, one governed dataset. Diagnose what&rsquo;s broken, fix the data itself, turn it into decisions &mdash; all sitting on a sustainability data foundation built to audit standard.</p>
+        </div>
+
+        <!-- 4-layer rail -->
+        <div class="edra-stack-rail reveal reveal-d1">
+          <div class="edra-stack-layer">
+            <span class="edra-stack-idx">01</span>
+            <span class="edra-stack-name">EDRA<sup>TM</sup></span>
+            <span class="edra-stack-role">Diagnose</span>
+            <p class="edra-stack-line">Score portfolio readiness and codify every gap that suppresses it.</p>
+            <a href="#why-edra" class="micro-link" data-track="stack_edra_view">See the diagnostic</a>
+          </div>
+          <div class="edra-stack-layer">
+            <span class="edra-stack-idx">02</span>
+            <span class="edra-stack-name">EDRA<sup>TM</sup>+</span>
+            <span class="edra-stack-role">Execute</span>
+            <p class="edra-stack-line">Our team sources, cleans, completes, and validates the actual dataset.</p>
+            <a href="#edra-plus" class="micro-link" data-track="stack_edraplus_view">See EDRA<sup>TM</sup>+</a>
+          </div>
+          <div class="edra-stack-layer is-new">
+            <span class="edra-stack-idx">03</span>
+            <span class="edra-stack-name">EDRA<sup>TM</sup> Intelligence</span>
+            <span class="edra-stack-role">Decide</span>
+            <p class="edra-stack-line">Continuous monitoring, benchmarks, and gap-to-target analytics.</p>
+            <a href="#edra-intelligence" class="micro-link" data-track="stack_intelligence_view">See below</a>
+          </div>
+          <div class="edra-stack-layer is-new">
+            <span class="edra-stack-idx">04</span>
+            <span class="edra-stack-name">EDRA<sup>TM</sup> DW</span>
+            <span class="edra-stack-role">Govern</span>
+            <p class="edra-stack-line">One governed, audit-traceable source of truth for every framework.</p>
+            <a href="#edra-dw" class="micro-link" data-track="stack_dw_view">See below</a>
+          </div>
+        </div>
+
+        <!-- Detail cards for the two new layers -->
+        <div class="edra-plus-grid reveal reveal-d2">
+          <!-- Layer 03: EDRA Intelligence -->
+          <article class="edra-plus-card" id="edra-intelligence">
+            <div class="edra-plus-card-top">
+              <span class="edra-plus-step">03</span>
+              <span class="edra-plus-kicker">Decide &middot; EDRA<sup>TM</sup> Intelligence</span>
+            </div>
+            <h3>From readiness to decisions</h3>
+            <ul class="edra-plus-work">
+              <li>Continuous portfolio monitoring &mdash; readiness tracked over time, not once a year</li>
+              <li>Trend and benchmark analytics across assets, funds, and frameworks</li>
+              <li>Gap-to-target views that show what moves the score next</li>
+              <li>Board- and investor-ready summaries on demand</li>
+            </ul>
+            <div class="edra-plus-deliver">
+              <span class="edra-plus-deliver-label">You receive</span>
+              <p>A <strong>live picture</strong> of where your portfolio stands against every framework you report to &mdash; and the shortest path to the next band.</p>
+            </div>
+          </article>
+
+          <!-- Layer 04: EDRA DW -->
+          <article class="edra-plus-card" id="edra-dw">
+            <div class="edra-plus-card-top">
+              <span class="edra-plus-step">04</span>
+              <span class="edra-plus-kicker">Govern &middot; EDRA<sup>TM</sup> DW</span>
+            </div>
+            <h3>The sustainability data foundation</h3>
+            <ul class="edra-plus-work">
+              <li>One governed source of truth for energy, water, waste, and emissions data</li>
+              <li>Full lineage &mdash; every value traceable to its source, correction, and approver</li>
+              <li>Role-based access, versioning, and audit-grade controls</li>
+              <li>API and integration into your existing reporting and BI stack</li>
+            </ul>
+            <div class="edra-plus-deliver">
+              <span class="edra-plus-deliver-label">You receive</span>
+              <p>A <strong>single, governed dataset</strong> every framework, dashboard, and auditor draws from &mdash; owned by you, built to survive scrutiny.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="edra-plus-footer reveal reveal-d2">
+          <a href="#contact" class="btn btn-primary btn-lg">Talk to us about the full stack</a>
+          <span class="edra-plus-footer-note">EDRA<sup>TM</sup> Intelligence and EDRA<sup>TM</sup> DW are scoped per portfolio</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8.7. EDRA+ — Beyond the diagnostic (detail under the Stack)
          ============================================================ -->
     <section class="edra-plus-section section-pad" id="edra-plus">
       <div class="container">
         <div class="section-header edra-plus-header reveal">
-          <span class="eyebrow">The Fix</span>
+          <span class="eyebrow">The Fix &middot; Layer 02</span>
           <h2>EDRA<sup>TM</sup>+ &mdash; <em>beyond</em> the diagnostic</h2>
           <p class="section-intro">The diagnostic tells you what&rsquo;s broken. EDRA<sup>TM</sup>+ fixes it. Our team sources, cleans, completes, and validates the actual dataset &mdash; then structures it for the framework you&rsquo;re submitting to.</p>
         </div>
@@ -1259,11 +1348,10 @@
         <nav class="footer-nav" aria-label="Footer navigation">
           <ul role="list">
             <li><a href="#why-edra">Why EDRA<sup>TM</sup></a></li>
-            <li><a href="#method">Method</a></li>
-            <li><a href="#outputs">Outputs</a></li>
+            <li><a href="#sample-output">Outputs</a></li>
+            <li><a href="#edra-stack">The Stack</a></li>
             <li><a href="#use-cases">Use Cases</a></li>
             <li><a href="./about.html">About</a></li>
-            <li><a href="#insights">Insights</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>

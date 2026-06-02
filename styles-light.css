@@ -1208,6 +1208,79 @@ h3 {
 }
 
 /* ============================================================
+   THE EDRA STACK — four-layer operating model
+   ============================================================ */
+.edra-stack-section { background: var(--bg-subtle); }
+.edra-stack-header { max-width: 760px; }
+
+.edra-stack-rail {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 56px;
+  align-items: stretch;
+}
+.edra-stack-layer {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.edra-stack-layer:hover {
+  border-color: var(--teal-border);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(17,26,19,0.10);
+}
+.edra-stack-layer.is-new::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+  opacity: 0.5;
+}
+.edra-stack-idx {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+}
+.edra-stack-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text);
+}
+.edra-stack-name sup { font-size: 0.5em; }
+.edra-stack-role {
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.edra-stack-line {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--body);
+}
+.edra-stack-layer .micro-link { margin-top: auto; }
+
+@media (max-width: 880px) {
+  .edra-stack-rail { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 540px) {
+  .edra-stack-rail { grid-template-columns: 1fr; gap: 12px; }
+  .edra-stack-layer { padding: 22px 20px; }
+}
+
+/* ============================================================
    PRICING
    ============================================================ */
 .pricing-section { background: var(--bg-card); }
