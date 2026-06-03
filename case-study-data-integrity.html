@@ -251,17 +251,71 @@
 
 /* ---- standalone screen + print framing ---- */
 html,body{ margin:0; }
-body{ background:#9D9A90; display:flex; justify-content:center; padding:32px 0; }
-.page{ box-shadow:0 18px 50px rgba(0,0,0,.28); }
+body{ background:#9D9A90; display:flex; flex-direction:column; align-items:center; padding:0; }
+.page{ box-shadow:0 18px 50px rgba(0,0,0,.28); margin:44px 0 60px; }
 *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 @page{ size:8.5in 11in; margin:0; }
 @media print{
   body{ background:#fff; padding:0; display:block; }
-  .page{ box-shadow:none; }
+  .page{ box-shadow:none; margin:0; }
+  .cs-nav, .cs-footer{ display:none !important; }
+}
+
+/* ============================================================
+   Site shell — full-width chrome around the centred sheet.
+   Scoped with cs- prefix; uses this document's own tokens so
+   it stays palette-cohesive and pulls in no external CSS.
+   ============================================================ */
+.cs-nav{
+  align-self:stretch; position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  height:64px; padding:0 36px;
+  background:rgba(233,230,220,.92);
+  -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--rule);
+  font-family:var(--grotesk);
+}
+.cs-nav__logo{ display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--ink); }
+.cs-nav__logo img{ width:32px; height:32px; border-radius:6px; object-fit:cover; display:block; }
+.cs-nav__logo .wm{ font-weight:300; letter-spacing:.5em; text-transform:uppercase; font-size:14px; padding-left:.5em; }
+.cs-nav__logo sup{ font-size:.5em; letter-spacing:0; }
+.cs-nav__right{ display:flex; align-items:center; gap:24px; }
+.cs-nav__back{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:500; color:var(--ink-3); text-decoration:none; transition:color .2s; }
+.cs-nav__back:hover{ color:var(--ink); }
+.cs-nav__cta{ font-size:11px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:var(--bone); background:var(--forest); padding:11px 18px; border-radius:6px; text-decoration:none; transition:background .2s; }
+.cs-nav__cta:hover{ background:var(--forest-2); }
+
+.cs-footer{ align-self:stretch; background:var(--forest); padding:42px 36px 34px; font-family:var(--grotesk); }
+.cs-footer__inner{ max-width:816px; margin:0 auto; display:flex; justify-content:space-between; align-items:flex-start; gap:32px; flex-wrap:wrap; }
+.cs-footer__brand .wm{ font-weight:300; letter-spacing:.5em; text-transform:uppercase; font-size:16px; color:#F3F1E9; }
+.cs-footer__brand .tg{ font-family:var(--serif); font-style:italic; font-size:13px; color:var(--sage); margin-top:7px; }
+.cs-footer__links{ display:flex; gap:26px; flex-wrap:wrap; }
+.cs-footer__links a{ color:#A9B7A6; text-decoration:none; font-size:11px; letter-spacing:.12em; text-transform:uppercase; transition:color .2s; }
+.cs-footer__links a:hover{ color:#F3F1E9; }
+.cs-footer__legal{ max-width:816px; margin:26px auto 0; padding-top:18px; border-top:1px solid rgba(169,183,166,.2); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(169,183,166,.7); }
+
+/* Make the in-sheet CTA an actual link without losing its look */
+.page a.cta{ text-decoration:none; cursor:pointer; }
+
+@media (max-width:680px){
+  .cs-nav{ padding:0 18px; }
+  .cs-nav__cta{ display:none; }
+  .cs-footer{ padding:34px 20px 28px; }
 }
 </style>
 </head>
 <body>
+
+  <nav class="cs-nav" aria-label="Site">
+    <a href="./index.html" class="cs-nav__logo" aria-label="EDRA home">
+      <img src="./edra-logo.jpg" alt="" width="32" height="32" />
+      <span class="wm">EDRA<sup>TM</sup></span>
+    </a>
+    <div class="cs-nav__right">
+      <a href="./resources.html" class="cs-nav__back">&larr; Resources</a>
+      <a href="./index.html#contact" class="cs-nav__cta">Request an Assessment</a>
+    </div>
+  </nav>
 
   <div class="page d1">
     <div class="topbar">
@@ -319,7 +373,7 @@ body{ background:#9D9A90; display:flex; justify-content:center; padding:32px 0; 
       <div class="lead">Your reporting is only as good as the asset data underneath it.</div>
       <div class="body">
         Wherever you are — first GRESB submission or tenth — if data isn't validated at the source, every report inherits the error, and you won't see it until it's expensive to fix. We've done this across 2,000 assets and 3.3 million validated data points. We can do it for yours.
-        <span class="cta">Book a data-integrity audit&nbsp;&nbsp;→</span>
+        <a href="./index.html#contact" class="cta">Book a data-integrity audit&nbsp;&nbsp;→</a>
       </div>
     </div>
     <div class="footer">
@@ -328,5 +382,26 @@ body{ background:#9D9A90; display:flex; justify-content:center; padding:32px 0; 
       <span>edraindex.com</span>
     </div>
   </div>
+
+  <footer class="cs-footer">
+    <div class="cs-footer__inner">
+      <div class="cs-footer__brand">
+        <div class="wm">EDRA</div>
+        <div class="tg">Know it. Fix it. Report it.</div>
+      </div>
+      <nav class="cs-footer__links" aria-label="Footer">
+        <a href="./index.html#why-edra">Why EDRA</a>
+        <a href="./index.html#edra-stack">The Stack</a>
+        <a href="./resources.html">Resources</a>
+        <a href="./about.html">About</a>
+        <a href="./index.html#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="cs-footer__legal">
+      <span>&copy; 2026 EDRA&trade; &middot; A product of Outsourcing Hub India</span>
+      <span>edraindex.com</span>
+    </div>
+  </footer>
+
 </body>
 </html>
