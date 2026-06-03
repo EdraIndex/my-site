@@ -190,7 +190,16 @@
       <li><a href="./index.html#sample-output">Outputs</a></li>
       <li><a href="./index.html#edra-stack">The Stack</a></li>
       <li><a href="./about.html">About</a></li>
-      <li><a href="./resources.html" aria-current="page">Resources</a></li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="true" aria-controls="resources-menu">
+          Resources <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="resources-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="./resources.html#case-studies">Case Studies</a></li>
+          <li role="none"><a role="menuitem" href="./resources.html#whitepapers">Whitepapers</a></li>
+          <li role="none"><a role="menuitem" href="./blog/index.html">Blog</a></li>
+        </ul>
+      </li>
       <li class="nav-dropdown" data-dropdown>
         <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="region-menu">
           Region <span class="caret" aria-hidden="true"></span>
@@ -225,7 +234,7 @@
     </section>
 
     <!-- ── CASE STUDIES ── -->
-    <section class="res-section section-pad">
+    <section class="res-section section-pad" id="case-studies" style="scroll-margin-top:88px;">
       <div class="container">
         <div class="lib-head reveal">
           <div>
@@ -272,7 +281,7 @@
     </section>
 
     <!-- ── WHITEPAPERS ── -->
-    <section class="res-section res-section--alt section-pad">
+    <section class="res-section res-section--alt section-pad" id="whitepapers" style="scroll-margin-top:88px;">
       <div class="container">
         <div class="lib-head reveal">
           <div>

@@ -12,96 +12,341 @@
     gtag('config', 'AW-18160005662');
     gtag('config', 'G-3WVP61B4BR');
   </script>
-  <meta name="description" content="What happens when you submit to GRESB with incomplete data: rejected submissions, lost cycles, non-refundable fees, and damaged investor credibility." />
-  <title>What Happens When You Submit to GRESB With Incomplete Data — EDRA</title>
+
+  <title>What Happens When You Submit to GRESB With Incomplete Data — EDRA™</title>
+  <meta name="description" content="What happens when you submit to GRESB with incomplete data: rejected submissions, lost cycles, non-refundable fees, and damaged investor credibility — and how a pre-submission scan prevents all of it." />
+  <link rel="canonical" href="https://edraindex.com/blog/gresb-incomplete-data-submission.html" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="EDRA" />
+  <meta property="og:title" content="What Happens When You Submit to GRESB With Incomplete Data" />
+  <meta property="og:description" content="Rejected submissions, a lost 12-month cycle, non-refundable fees, and investors who get an explanation instead of a score. What goes wrong — and how to prevent it." />
+  <meta property="og:url" content="https://edraindex.com/blog/gresb-incomplete-data-submission.html" />
+  <meta property="og:image" content="https://edraindex.com/edra-logo.jpg" />
+  <meta property="article:published_time" content="2026-05-19" />
+  <meta property="article:section" content="GRESB Readiness" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What Happens When You Submit to GRESB With Incomplete Data" />
+  <meta name="twitter:description" content="A failed GRESB cycle is a material event: lost year, non-refundable fees, investor friction. How to find out before the deadline." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles-light.css" />
-  <style>
-    .blog-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 18px 56px; display: flex; align-items: center; justify-content: space-between; background: #FAFAF7; }
-    .blog-nav .nav-logo { display: flex; align-items: center; gap: 10px; } .blog-nav .nav-logo-mark { width: 40px; height: 40px; border-radius: 6px; object-fit: cover; }
-    .blog-nav .nav-logo-wordmark { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0A0A0A; letter-spacing: -0.04em; }
-    .blog-nav .back-link { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; color: #0A0A0A; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s; }
-    .blog-nav .back-link:hover { color: #1C3E29; }
-    .blog-hero { position: relative; width: 100%; height: 40vh; min-height: 320px; overflow: hidden; margin-top: 64px; }
-    .blog-hero img { width: 100%; height: 100%; object-fit: cover; }
-    .blog-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3), rgba(10,10,10,0.8)); }
-    .blog-article { max-width: 780px; margin: 0 auto; padding: 80px 56px 60px; }
-    .blog-date { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
-    .blog-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 40px; }
-    .blog-body p { color: var(--body); line-height: 1.8; margin-bottom: 24px; font-size: 1.05rem; }
-    .blog-body p strong { color: var(--white-off); }
-    .case-study-card { margin-top: 60px; padding: 40px; background: var(--bg-card); border: 1px solid var(--border-hi); border-radius: var(--radius-lg); }
-    .case-study-card .cs-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-    .case-study-card .cs-eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--teal); }
-    .case-study-card p { color: var(--body); line-height: 1.7; margin-bottom: 24px; font-size: 0.98rem; }
-    .case-study-card .btn-teal { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.82rem; background: var(--teal); color: var(--bg); border: 1.5px solid var(--teal); transition: all 0.35s; text-decoration: none; }
-    .case-study-card .btn-teal:hover { background: var(--teal-deep); border-color: var(--teal-deep); transform: translateY(-2px); box-shadow: 0 8px 32px var(--teal-glow); }
-    .blog-footer { border-top: 1px solid var(--border); margin-top: 0; }
-    .blog-footer .container { max-width: 1200px; margin: 0 auto; padding: 40px 56px; }
-    .blog-footer .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-    .blog-footer .footer-text { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--muted); }
-    .blog-footer .footer-text a { color: var(--teal); }
-    @media (max-width: 768px) {
-      .blog-nav { padding: 14px 24px; }
-      .blog-article { padding: 50px 24px 40px; }
-      .case-study-card { padding: 28px; }
-      .blog-footer .container { padding: 30px 24px; }
-    }
-  </style>
-</head>
-<body>
+  <link rel="stylesheet" href="../styles-institutional.css" />
+  <link rel="stylesheet" href="./blog.css" />
+  <link rel="icon" type="image/jpeg" href="../edra-logo.jpg" />
+  <link rel="apple-touch-icon" href="../edra-logo.jpg" />
 
-  <nav class="blog-nav" role="navigation" aria-label="Blog navigation">
+  <!-- ── Structured data: Article + Breadcrumb + FAQ (GEO/AEO) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "What Happens When You Submit to GRESB With Incomplete Data",
+        "description": "What happens when you submit to GRESB with incomplete data: rejected submissions, lost cycles, non-refundable fees, and damaged investor credibility — and how a pre-submission scan prevents all of it.",
+        "image": "https://edraindex.com/edra-logo.jpg",
+        "datePublished": "2026-05-19",
+        "dateModified": "2026-05-19",
+        "author": { "@type": "Organization", "name": "EDRA", "url": "https://edraindex.com" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "EDRA — a product of Outsourcing Hub India",
+          "logo": { "@type": "ImageObject", "url": "https://edraindex.com/edra-logo.jpg" }
+        },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://edraindex.com/blog/gresb-incomplete-data-submission.html" },
+        "articleSection": "GRESB Readiness",
+        "keywords": "GRESB incomplete data, GRESB submission rejected, GRESB fees non-refundable, lost GRESB cycle, pre-submission data readiness, EDRA scan",
+        "wordCount": 857
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://edraindex.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://edraindex.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Submitting to GRESB With Incomplete Data", "item": "https://edraindex.com/blog/gresb-incomplete-data-submission.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What happens if you submit to GRESB with incomplete data?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Assets are rejected for data incompleteness. The rejected submission cannot be resubmitted until the next cycle, so roughly 12 months are lost, the submission fees are non-refundable, and investors who expected a GRESB rating for their reporting receive an explanation instead of a score. For institutional funds this is a material event, not an administrative inconvenience." }
+          },
+          {
+            "@type": "Question",
+            "name": "Are GRESB submission fees refundable if your submission is rejected?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. GRESB submission fees are non-refundable. A rejection for data incompleteness means the fee is spent with no rating produced, and the same fee must be paid again to resubmit in the next cycle." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long until you can resubmit to GRESB after a rejection?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A rejected submission cannot be resubmitted until the next annual cycle — roughly 12 months later. That delay is what makes a failed submission so costly: the fund spends a full year without the rating its LP reporting and mandates depend on." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you prevent a GRESB rejection before the deadline?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. A pre-submission EDRA scan costs a fraction of the GRESB submission fee and takes 48 hours rather than 12 months. It identifies which assets are ready, which have gaps, what those gaps are, and how long they take to fix — so the team can submit the ready assets and remediate the rest before the deadline." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="blog-page">
+
+  <nav id="nav" role="navigation" aria-label="Main navigation">
     <a href="../index.html" class="nav-logo" aria-label="EDRA home">
-      <img class="nav-logo-mark" src="../edra-logo.jpg" alt="" width="40" height="40" /><span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
+      <img class="nav-logo-mark" src="../edra-logo.jpg" alt="" width="40" height="40" />
+      <span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
     </a>
-    <a href="../index.html" class="back-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-      Back to EDRA
-    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html#why-edra">Why EDRA<sup>TM</sup></a></li>
+      <li><a href="../index.html#sample-output">Outputs</a></li>
+      <li><a href="../index.html#edra-stack">The Stack</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">
+          Resources <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="resources-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="../resources.html#case-studies">Case Studies</a></li>
+          <li role="none"><a role="menuitem" href="../resources.html#whitepapers">Whitepapers</a></li>
+          <li role="none"><a role="menuitem" href="./index.html" aria-current="page">Blog</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="region-menu">
+          Region <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="region-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="../usa.html">United States <span class="nav-dd-region">USA</span></a></li>
+          <li role="none"><a role="menuitem" href="../uk.html">United Kingdom <span class="nav-dd-region">UK</span></a></li>
+          <li role="none"><a role="menuitem" href="../apac.html">Asia Pacific <span class="nav-dd-region">APAC</span></a></li>
+          <li role="none"><a role="menuitem" href="../aus.html">Australia <span class="nav-dd-region">AUS</span></a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="../demo.html" class="btn btn-outline">Book a Demo</a>
+      <a href="../index.html#contact" class="btn btn-primary" data-track="nav_cta_click">Request an Assessment</a>
+    </div>
+    <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <div class="blog-hero">
-    <img src="https://images.unsplash.com/photo-1450101499163-c8848e968bfc?w=1920&q=80" alt="Rejected document on desk" />
-  </div>
-
   <main>
-    <article class="blog-article">
-      <div class="blog-date">August 1, 2025</div>
-      <h1 class="blog-title">What Happens When You Submit to GRESB With Incomplete Data</h1>
+    <article>
 
-      <div class="blog-body">
-        <p>The GRESB submission deadline passes. The data has been compiled, reviewed internally, and uploaded. The team celebrates. Then the results arrive — and assets are rejected for data incompleteness. <strong>The consequences cascade quickly:</strong> the rejected submission cannot be resubmitted until the next cycle, which means 12 months lost. The submission fees are non-refundable. And the investors who expected a GRESB rating for their quarterly reporting now receive an explanation instead of a score.</p>
+      <!-- ── Hero ── -->
+      <header class="article-hero">
+        <div class="article-hero__art" aria-hidden="true">
+          <svg viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- submission funnel: data narrows toward a gate -->
+            <path d="M150 120 H370 L300 270 V400 L220 400 V270 Z" stroke="#4E7A60" stroke-opacity="0.5" stroke-width="2"/>
+            <!-- document with a missing portion (dashed gap) -->
+            <rect x="196" y="150" width="128" height="170" rx="6" stroke="#C8A96E" stroke-width="2" fill="none"/>
+            <line x1="216" y1="182" x2="304" y2="182" stroke="#C8A96E" stroke-width="2" stroke-opacity="0.7"/>
+            <line x1="216" y1="206" x2="304" y2="206" stroke="#C8A96E" stroke-width="2" stroke-opacity="0.7"/>
+            <line x1="216" y1="230" x2="276" y2="230" stroke="#C8A96E" stroke-width="2" stroke-opacity="0.7"/>
+            <!-- the missing block -->
+            <rect x="216" y="252" width="88" height="48" rx="3" stroke="#C8A96E" stroke-width="2" stroke-dasharray="5 6" fill="none"/>
+            <!-- subtle rejected mark -->
+            <circle cx="340" cy="356" r="34" stroke="#4E7A60" stroke-width="2.5" fill="none"/>
+            <line x1="320" y1="336" x2="360" y2="376" stroke="#4E7A60" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="container">
+          <nav class="article-breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">EDRA</a> <span aria-hidden="true">/</span>
+            <a href="./index.html">Blog</a> <span aria-hidden="true">/</span>
+            <span>GRESB Readiness</span>
+          </nav>
+          <span class="article-cat">GRESB Readiness</span>
+          <h1>What happens when you submit to GRESB with <em>incomplete</em> data</h1>
+          <p class="article-dek">A failed GRESB cycle isn't an administrative inconvenience — it's a material event. A lost year, non-refundable fees, and investors who get an explanation instead of a score. Here's the cascade, and how to see it coming.</p>
+          <div class="article-byline">
+            <span>EDRA Research</span><span class="dot"></span>
+            <time datetime="2026-05-19">May 19, 2026</time><span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </header>
 
-        <p>For institutional funds, a failed GRESB cycle isn't just an administrative inconvenience — it's a material event. LP reporting depends on GRESB scores to demonstrate ESG commitment. Investor confidence is directly tied to the fund's ability to deliver on its sustainability promises. In some cases, GRESB ratings are written into fund mandates or side letters. A missing rating can trigger questions from investment committees, affect refinancing terms, and create friction in capital raising conversations.</p>
+      <!-- ── Body ── -->
+      <div class="article-shell">
+        <div class="article-body">
 
-        <p>The data issues that cause rejection are almost always fixable. Coverage below 75%, missing structural fields, incomplete time periods — these are not complex technical problems. They're data collection gaps that accumulate over years of informal processes and fragmented systems. The tragedy is that they're discoverable in 48 hours but typically only surface after 12 months of work culminating in a failed submission.</p>
+          <div class="tldr">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li>Submit to GRESB with incomplete data and assets are <strong>rejected for data incompleteness</strong> — the building might be excellent, but it cannot be scored.</li>
+              <li>A rejection cannot be resubmitted until the next cycle: <strong>12 months lost</strong>, and the submission fees are <strong>non-refundable</strong>.</li>
+              <li>For institutional funds this is a material event — LP reporting, fund mandates, refinancing terms and capital raising all depend on the rating.</li>
+              <li>The data gaps are almost always fixable and discoverable in <strong>48 hours</strong> — but they typically surface only after 12 months of work culminating in a failed submission.</li>
+            </ul>
+          </div>
 
-        <p><strong>The cost of not knowing your data readiness before submission is always higher than finding out.</strong> A pre-submission EDRA scan costs a fraction of the GRESB submission fee. It takes 48 hours, not 12 months. And it produces specific, actionable findings: which assets are ready, which have gaps, what those gaps are, and how long they take to fix. The fund manager can then make an informed decision — submit the ready assets, remediate the others, and avoid the reputational damage of a blanket rejection.</p>
+          <p>The GRESB submission deadline passes. The data has been compiled, reviewed internally, and uploaded. The team celebrates. Then the results arrive — and assets are rejected for data incompleteness. <strong>The consequences cascade quickly:</strong> the rejected submission cannot be resubmitted until the next cycle, which means 12 months lost. The submission fees are non-refundable. And the investors who expected a GRESB rating for their quarterly reporting now receive an explanation instead of a score.</p>
 
-        <p>Every failed GRESB submission represents the same pattern: data assumptions that weren't verified before the deadline. The fix isn't better ESG strategy or more expensive platforms. It's a systematic data readiness check that runs before the submission cycle begins — not after it ends.</p>
+          <div class="metric-row">
+            <div class="stat-block"><div class="v is-warn">12<small> mo</small></div><div class="l">Lost before you can resubmit — the next cycle is a year away</div></div>
+            <div class="stat-block"><div class="v is-warn">$0</div><div class="l">Refunded — GRESB submission fees are non-refundable on rejection</div></div>
+            <div class="stat-block"><div class="v is-gold">48<small> hrs</small></div><div class="l">To find the same gaps with a pre-submission EDRA scan</div></div>
+          </div>
+
+          <h2>A failed cycle is a <em>material event</em>, not an inconvenience</h2>
+          <p>For institutional funds, a failed GRESB cycle isn't just an administrative inconvenience — it's a material event. LP reporting depends on GRESB scores to demonstrate ESG commitment. Investor confidence is directly tied to the fund's ability to deliver on its sustainability promises. In some cases, GRESB ratings are written into fund mandates or side letters. A missing rating can trigger questions from investment committees, affect refinancing terms, and create friction in capital raising conversations.</p>
+
+          <p>The data issues that cause rejection are almost always fixable. Coverage below 75%, missing structural fields, incomplete time periods — these are not complex technical problems. They're data collection gaps that accumulate over years of informal processes and fragmented systems. The tragedy is that they're discoverable in 48 hours but typically only surface after 12 months of work culminating in a failed submission.</p>
+
+          <div class="flow">
+            <div class="flow__title">The cascade after an incomplete submission</div>
+            <div class="flow__steps">
+              <div class="flow-step"><div class="n">01</div><div class="t">Submit incomplete</div><div class="d">Data is uploaded on assumptions that were never verified.</div></div>
+              <div class="flow-step"><div class="n">02</div><div class="t">Assets rejected</div><div class="d">Flagged for data incompleteness — no score produced.</div></div>
+              <div class="flow-step"><div class="n">03</div><div class="t">Fees lost</div><div class="d">Non-refundable submission fees are spent with nothing to show.</div></div>
+              <div class="flow-step"><div class="n">04</div><div class="t">Wait a year</div><div class="d">No resubmission until the next cycle — 12 months gone.</div></div>
+            </div>
+          </div>
+
+          <h2>The cost of not knowing is <em>always higher</em></h2>
+          <p><strong>The cost of not knowing your data readiness before submission is always higher than finding out.</strong> A pre-submission EDRA scan costs a fraction of the GRESB submission fee. It takes 48 hours, not 12 months. And it produces specific, actionable findings: which assets are ready, which have gaps, what those gaps are, and how long they take to fix. The fund manager can then make an informed decision — submit the ready assets, remediate the others, and avoid the reputational damage of a blanket rejection.</p>
+
+          <div class="callout">Every failed GRESB submission represents the same pattern — data assumptions that <em>weren't verified before the deadline.</em></div>
+
+          <p>The fix isn't better ESG strategy or more expensive platforms. It's a systematic data readiness check that runs before the submission cycle begins — not after it ends.</p>
+
+          <!-- ── Case study card ── -->
+          <div class="cs-card">
+            <div class="cs-eyebrow">Case Study</div>
+            <p>A Canadian pension fund's real estate arm submitted 40 assets to GRESB. 12 were rejected for data incompleteness — coverage gaps in tenant-metered spaces and structural field issues in property type classifications. EDRA would have flagged all 12 assets in <strong style="color:#fff">48 hours, giving the team 8 weeks to remediate</strong> before the submission deadline.</p>
+            <a href="./case-studies/gresb-incomplete-data-submission.pdf" class="btn-dl">Download Case Study (PDF)
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          </div>
+
+          <!-- ── FAQ ── -->
+          <section class="faq" aria-label="Frequently asked questions">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+              <h3>What happens if you submit to GRESB with incomplete data?</h3>
+              <p>Assets are rejected for data incompleteness. The rejected submission cannot be resubmitted until the next cycle, so roughly 12 months are lost, the submission fees are non-refundable, and investors who expected a GRESB rating for their reporting receive an explanation instead of a score. For institutional funds this is a material event, not an administrative inconvenience.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Are GRESB submission fees refundable if your submission is rejected?</h3>
+              <p>No. GRESB submission fees are non-refundable. A rejection for data incompleteness means the fee is spent with no rating produced, and the same fee must be paid again to resubmit in the next cycle.</p>
+            </div>
+            <div class="faq-item">
+              <h3>How long until you can resubmit to GRESB after a rejection?</h3>
+              <p>A rejected submission cannot be resubmitted until the next annual cycle — roughly 12 months later. That delay is what makes a failed submission so costly: the fund spends a full year without the rating its LP reporting and mandates depend on.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Can you prevent a GRESB rejection before the deadline?</h3>
+              <p>Yes. A pre-submission EDRA scan costs a fraction of the GRESB submission fee and takes 48 hours rather than 12 months. It identifies which assets are ready, which have gaps, what those gaps are, and how long they take to fix — so the team can submit the ready assets and remediate the rest before the deadline.</p>
+            </div>
+          </section>
+
+        </div>
       </div>
 
-      <div class="case-study-card">
-        <div class="cs-eyebrow">Case Study</div>
-        <p>A Canadian pension fund's real estate arm submitted 40 assets to GRESB. 12 were rejected for data incompleteness — coverage gaps in tenant-metered spaces and structural field issues in property type classifications. EDRA would have flagged all 12 assets in 48 hours, giving the team 8 weeks to remediate before the submission deadline.</p>
-        <a href="./case-studies/gresb-incomplete-data-submission.pdf" class="btn-teal">Download Case Study (PDF)
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </a>
+      <!-- ── End CTA ── -->
+      <div class="article-end">
+        <div class="article-end__inner">
+          <p>Know your readiness <em>before</em> the deadline.</p>
+          <a href="../index.html#contact" class="btn btn-primary" data-track="blog_cta_click">Request a data-readiness assessment</a>
+        </div>
       </div>
+
     </article>
   </main>
 
-  <footer class="blog-footer" role="contentinfo">
+  <footer role="contentinfo">
     <div class="container">
-      <div class="footer-inner">
-        <span class="footer-text">EDRA<sup>TM</sup> — Environmental Data Readiness Assessment. A product of <a href="../index.html">Outsourcing Hub India</a>.</span>
-        <span class="footer-text">GRESB Certified</span>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img class="footer-logo-mark" src="../edra-logo.jpg" alt="" width="36" height="36" />
+          <div>
+            <div class="footer-wordmark">EDRA<sup>TM</sup></div>
+            <div class="footer-tagline">ESG Data Readiness Assessment</div>
+            <div class="footer-mission">Built for real estate ESG data qualification</div>
+          </div>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="../index.html#why-edra">Why EDRA<sup>TM</sup></a></li>
+            <li><a href="../index.html#edra-stack">The Stack</a></li>
+            <li><a href="../resources.html">Resources</a></li>
+            <li><a href="./index.html">Blog</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-actions">
+          <a href="../index.html#contact" class="btn btn-primary btn-sm">Request an Assessment</a>
+          <a href="../index.html#sample-output" class="btn btn-outline btn-sm">See Sample Output</a>
+          <a href="mailto:hello@edraindex.com" class="footer-email">hello@edraindex.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 EDRA<sup>TM</sup>. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="../index.html#contact">Privacy</a>
+          <a href="../index.html#contact">Terms</a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('nav');
+      function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 10); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      var toggle = document.getElementById('nav-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var open = nav.classList.toggle('nav-open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          document.body.classList.toggle('nav-open-lock', open);
+        });
+      }
+      document.querySelectorAll('[data-dropdown]').forEach(function (dd) {
+        var btn = dd.querySelector('.nav-dropdown-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          document.querySelectorAll('[data-dropdown].is-open').forEach(function (o) { if (o !== dd) o.classList.remove('is-open'); });
+          var open = dd.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+          if (!dd.contains(e.target)) {
+            dd.classList.remove('is-open');
+            var b = dd.querySelector('.nav-dropdown-toggle');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+          dd.classList.remove('is-open');
+          var b = dd.querySelector('.nav-dropdown-toggle'); if (b) b.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>

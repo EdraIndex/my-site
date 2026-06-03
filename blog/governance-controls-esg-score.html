@@ -12,96 +12,361 @@
     gtag('config', 'AW-18160005662');
     gtag('config', 'G-3WVP61B4BR');
   </script>
-  <meta name="description" content="EDRA's B5 governance component measures 8 binary controls. The 5 most impactful can move your score from Dependent Mode to Decision-Grade." />
-  <title>The 5 Governance Controls That Unlock Your ESG Score — EDRA</title>
+
+  <title>The 5 Governance Controls That Unlock Your ESG Score — EDRA™</title>
+  <meta name="description" content="EDRA's B5 governance component measures 8 binary controls. The 5 most impactful can move a portfolio from Dependent Mode to Decision-Grade — usually through documentation, not new systems." />
+  <link rel="canonical" href="https://edraindex.com/blog/governance-controls-esg-score.html" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="EDRA" />
+  <meta property="og:title" content="The 5 Governance Controls That Unlock Your ESG Score" />
+  <meta property="og:description" content="EDRA's B5 measures 8 binary governance controls. The 5 that matter most can move you from Dependent Mode to Decision-Grade — mostly through documentation." />
+  <meta property="og:url" content="https://edraindex.com/blog/governance-controls-esg-score.html" />
+  <meta property="og:image" content="https://edraindex.com/edra-logo.jpg" />
+  <meta property="article:published_time" content="2026-04-22" />
+  <meta property="article:section" content="Data Governance" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The 5 Governance Controls That Unlock Your ESG Score" />
+  <meta name="twitter:description" content="The 5 governance controls that move an ESG score from Dependent Mode to Decision-Grade — usually through documentation, not new systems." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles-light.css" />
-  <style>
-    .blog-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 18px 56px; display: flex; align-items: center; justify-content: space-between; background: #FAFAF7; }
-    .blog-nav .nav-logo { display: flex; align-items: center; gap: 10px; } .blog-nav .nav-logo-mark { width: 40px; height: 40px; border-radius: 6px; object-fit: cover; }
-    .blog-nav .nav-logo-wordmark { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0A0A0A; letter-spacing: -0.04em; }
-    .blog-nav .back-link { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; color: #0A0A0A; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s; }
-    .blog-nav .back-link:hover { color: #1C3E29; }
-    .blog-hero { position: relative; width: 100%; height: 40vh; min-height: 320px; overflow: hidden; margin-top: 64px; }
-    .blog-hero img { width: 100%; height: 100%; object-fit: cover; }
-    .blog-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3), rgba(10,10,10,0.8)); }
-    .blog-article { max-width: 780px; margin: 0 auto; padding: 80px 56px 60px; }
-    .blog-date { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
-    .blog-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 40px; }
-    .blog-body p { color: var(--body); line-height: 1.8; margin-bottom: 24px; font-size: 1.05rem; }
-    .blog-body p strong { color: var(--white-off); }
-    .case-study-card { margin-top: 60px; padding: 40px; background: var(--bg-card); border: 1px solid var(--border-hi); border-radius: var(--radius-lg); }
-    .case-study-card .cs-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-    .case-study-card .cs-eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--teal); }
-    .case-study-card p { color: var(--body); line-height: 1.7; margin-bottom: 24px; font-size: 0.98rem; }
-    .case-study-card .btn-teal { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.82rem; background: var(--teal); color: var(--bg); border: 1.5px solid var(--teal); transition: all 0.35s; text-decoration: none; }
-    .case-study-card .btn-teal:hover { background: var(--teal-deep); border-color: var(--teal-deep); transform: translateY(-2px); box-shadow: 0 8px 32px var(--teal-glow); }
-    .blog-footer { border-top: 1px solid var(--border); margin-top: 0; }
-    .blog-footer .container { max-width: 1200px; margin: 0 auto; padding: 40px 56px; }
-    .blog-footer .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-    .blog-footer .footer-text { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--muted); }
-    .blog-footer .footer-text a { color: var(--teal); }
-    @media (max-width: 768px) {
-      .blog-nav { padding: 14px 24px; }
-      .blog-article { padding: 50px 24px 40px; }
-      .case-study-card { padding: 28px; }
-      .blog-footer .container { padding: 30px 24px; }
-    }
-  </style>
-</head>
-<body>
+  <link rel="stylesheet" href="../styles-institutional.css" />
+  <link rel="stylesheet" href="./blog.css" />
+  <link rel="icon" type="image/jpeg" href="../edra-logo.jpg" />
+  <link rel="apple-touch-icon" href="../edra-logo.jpg" />
 
-  <nav class="blog-nav" role="navigation" aria-label="Blog navigation">
+  <!-- ── Structured data: Article + Breadcrumb + FAQ (GEO/AEO) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "The 5 Governance Controls That Unlock Your ESG Score",
+        "description": "EDRA's B5 governance component measures 8 binary controls. The 5 most impactful can move a portfolio from Dependent Mode to Decision-Grade — usually through documentation, not new systems.",
+        "image": "https://edraindex.com/edra-logo.jpg",
+        "datePublished": "2026-04-22",
+        "dateModified": "2026-04-22",
+        "author": { "@type": "Organization", "name": "EDRA", "url": "https://edraindex.com" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "EDRA — a product of Outsourcing Hub India",
+          "logo": { "@type": "ImageObject", "url": "https://edraindex.com/edra-logo.jpg" }
+        },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://edraindex.com/blog/governance-controls-esg-score.html" },
+        "articleSection": "Data Governance",
+        "keywords": "ESG governance controls, EDRA B5, G Score, Dependent Mode, Decision-Grade, emission factor versioning, evidence retrievability, data governance",
+        "wordCount": 886
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://edraindex.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://edraindex.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "The 5 Governance Controls That Unlock Your ESG Score", "item": "https://edraindex.com/blog/governance-controls-esg-score.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are governance controls in an ESG score?",
+            "acceptedAnswer": { "@type": "Answer", "text": "In EDRA, governance controls are measured by the B5 component as 8 binary controls. Each is a yes/no: the control either exists in a formalized, documented form, or it doesn't. They cover how data is bounded, sourced, approved, converted, and reviewed — including boundary definition, evidence retrievability, approval workflows, emission factor versioning, and assurance review. An informal process that lives in one person's knowledge does not count; a documented process with defined responsibilities, timelines, and evidence requirements does." }
+          },
+          {
+            "@type": "Question",
+            "name": "Which governance controls matter most for an EDRA score?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Of the 8 binary controls in B5, 5 have the most material impact on overall EDRA scores and are the fastest to implement: boundary definition, evidence retrievability, approval workflows, emission factor versioning, and assurance review. Boundary definition documents each asset's data perimeter; evidence retrievability ensures every data point's source document can be produced in a defined timeframe; approval workflows replace informal email chains with documented sign-off; emission factor versioning makes conversion factors dated and traceable; and assurance review validates the data before submission." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Dependent Mode versus Decision-Grade?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Dependent Mode describes portfolios with EDRA scores of 31–50 — data that still depends on informal knowledge and cannot stand on its own. Decision-Grade is the threshold at which the dataset can be trusted and reported with confidence. Because B5 carries meaningful weight, formalizing governance is consistently the shortest path from Dependent Mode to Decision-Grade." }
+          },
+          {
+            "@type": "Question",
+            "name": "How much can formalizing governance controls move an EDRA score?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Moving from 2 of 8 controls formalized to 7 of 8 can shift the G Score by 30–40 points. Because B5 carries meaningful weight, that improvement alone can push a Dependent Mode portfolio past the Decision-Grade threshold without changing a single data point in the building systems. In one case, a listed REIT formalized 5 controls in 6 weeks, its G Score moved from 35 to 72, and its overall EDRA score rose from 44 to 61 — crossing the Decision-Grade threshold." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="blog-page">
+
+  <nav id="nav" role="navigation" aria-label="Main navigation">
     <a href="../index.html" class="nav-logo" aria-label="EDRA home">
-      <img class="nav-logo-mark" src="../edra-logo.jpg" alt="" width="40" height="40" /><span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
+      <img class="nav-logo-mark" src="../edra-logo.jpg" alt="" width="40" height="40" />
+      <span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
     </a>
-    <a href="../index.html" class="back-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-      Back to EDRA
-    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html#why-edra">Why EDRA<sup>TM</sup></a></li>
+      <li><a href="../index.html#sample-output">Outputs</a></li>
+      <li><a href="../index.html#edra-stack">The Stack</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">
+          Resources <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="resources-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="../resources.html#case-studies">Case Studies</a></li>
+          <li role="none"><a role="menuitem" href="../resources.html#whitepapers">Whitepapers</a></li>
+          <li role="none"><a role="menuitem" href="./index.html" aria-current="page">Blog</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="region-menu">
+          Region <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="region-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="../usa.html">United States <span class="nav-dd-region">USA</span></a></li>
+          <li role="none"><a role="menuitem" href="../uk.html">United Kingdom <span class="nav-dd-region">UK</span></a></li>
+          <li role="none"><a role="menuitem" href="../apac.html">Asia Pacific <span class="nav-dd-region">APAC</span></a></li>
+          <li role="none"><a role="menuitem" href="../aus.html">Australia <span class="nav-dd-region">AUS</span></a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="../demo.html" class="btn btn-outline">Book a Demo</a>
+      <a href="../index.html#contact" class="btn btn-primary" data-track="nav_cta_click">Request an Assessment</a>
+    </div>
+    <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <div class="blog-hero">
-    <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=1920&q=80" alt="Governance and compliance documentation" />
-  </div>
-
   <main>
-    <article class="blog-article">
-      <div class="blog-date">May 15, 2025</div>
-      <h1 class="blog-title">The 5 Governance Controls That Unlock Your ESG Score</h1>
+    <article>
 
-      <div class="blog-body">
-        <p>EDRA's B5 component measures governance maturity through 8 binary controls. Each is a yes/no: the control either exists in a formalized, documented form, or it doesn't. Of these 8, <strong>5 have the most material impact on overall EDRA scores</strong> — and they're the fastest to implement. For organizations stuck in Dependent Mode (EDRA scores 31-50), governance formalization is consistently the shortest path to Decision-Grade status.</p>
+      <!-- ── Hero ── -->
+      <header class="article-hero">
+        <div class="article-hero__art" aria-hidden="true">
+          <svg viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- governance controls: a column of 8 toggle cells, 5 filled gold + 3 sage-outline -->
+            <line x1="260" y1="70" x2="260" y2="450" stroke="#4E7A60" stroke-opacity="0.16" stroke-width="2"/>
+            <g stroke-width="1.5">
+              <rect x="212" y="70"  width="96" height="34" rx="17" fill="#C8A96E" fill-opacity="0.55" stroke="#C8A96E"/>
+              <circle cx="284" cy="87" r="11" fill="#C8A96E" fill-opacity="0.9"/>
+              <rect x="212" y="116" width="96" height="34" rx="17" fill="#C8A96E" fill-opacity="0.55" stroke="#C8A96E"/>
+              <circle cx="284" cy="133" r="11" fill="#C8A96E" fill-opacity="0.9"/>
+              <rect x="212" y="162" width="96" height="34" rx="17" fill="#C8A96E" fill-opacity="0.55" stroke="#C8A96E"/>
+              <circle cx="284" cy="179" r="11" fill="#C8A96E" fill-opacity="0.9"/>
+              <rect x="212" y="208" width="96" height="34" rx="17" fill="#C8A96E" fill-opacity="0.55" stroke="#C8A96E"/>
+              <circle cx="284" cy="225" r="11" fill="#C8A96E" fill-opacity="0.9"/>
+              <rect x="212" y="254" width="96" height="34" rx="17" fill="#C8A96E" fill-opacity="0.55" stroke="#C8A96E"/>
+              <circle cx="284" cy="271" r="11" fill="#C8A96E" fill-opacity="0.9"/>
+              <rect x="212" y="300" width="96" height="34" rx="17" fill="none" stroke="#4E7A60"/>
+              <circle cx="236" cy="317" r="11" fill="none" stroke="#4E7A60"/>
+              <rect x="212" y="346" width="96" height="34" rx="17" fill="none" stroke="#4E7A60"/>
+              <circle cx="236" cy="363" r="11" fill="none" stroke="#4E7A60"/>
+              <rect x="212" y="392" width="96" height="34" rx="17" fill="none" stroke="#4E7A60"/>
+              <circle cx="236" cy="409" r="11" fill="none" stroke="#4E7A60"/>
+            </g>
+          </svg>
+        </div>
+        <div class="container">
+          <nav class="article-breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">EDRA</a> <span aria-hidden="true">/</span>
+            <a href="./index.html">Blog</a> <span aria-hidden="true">/</span>
+            <span>Data Governance</span>
+          </nav>
+          <span class="article-cat">Data Governance</span>
+          <h1>The 5 governance controls that <em>unlock</em> your ESG score</h1>
+          <p class="article-dek">EDRA's B5 component measures governance as 8 binary controls. Five of them carry most of the weight — and formalizing them is consistently the shortest path from Dependent Mode to Decision-Grade, usually without touching a single data point.</p>
+          <div class="article-byline">
+            <span>EDRA Research</span><span class="dot"></span>
+            <time datetime="2026-04-22">April 22, 2026</time><span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </header>
 
-        <p>The 5 controls that matter most are: <strong>boundary definition, evidence retrievability, approval workflows, emission factor versioning, and assurance review.</strong> Boundary definition means documenting what each asset's data perimeter includes — which meters, which spaces, which utility accounts. Evidence retrievability means that for every data point in the submission, the source document (invoice, meter reading, utility statement) can be located and produced within a defined timeframe. Approval workflows mean that data corrections and submissions go through a documented sign-off process, not informal email chains.</p>
+      <!-- ── Body ── -->
+      <div class="article-shell">
+        <div class="article-body">
 
-        <p>Emission factor versioning is often overlooked but critical. When converting utility consumption to carbon emissions, the conversion factors used must be documented, dated, and traceable to their source (national grid factors, DEFRA tables, EPA factors). If an auditor asks "which emission factor did you use for this asset's Scope 2 calculation, and where did it come from?" — the answer must be immediate and documented. Assurance review, the fifth control, means that an internal or external review process validates the data before submission.</p>
+          <div class="tldr">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li>EDRA's B5 component scores governance as <strong>8 binary controls</strong> — each is a yes/no: formalized and documented, or not.</li>
+              <li>Five carry most of the weight: <strong>boundary definition, evidence retrievability, approval workflows, emission factor versioning, and assurance review.</strong></li>
+              <li>Most organizations already do these informally. The gap is <strong>formalization</strong> — often just 2–3 weeks of documentation, not new systems.</li>
+              <li>Moving from 2 of 8 to 7 of 8 controls can shift the G Score by <strong>30–40 points</strong> — enough to push a Dependent Mode portfolio past the Decision-Grade threshold.</li>
+            </ul>
+          </div>
 
-        <p>Most organizations already have informal versions of these controls. Someone knows the meter boundaries. Someone can find the invoices. Someone approves the data before it goes out. <strong>The gap is formalization.</strong> An informal process that lives in one person's knowledge is not a governance control. A documented process with defined responsibilities, timelines, and evidence requirements is. The difference between the two is often just 2-3 weeks of documentation work.</p>
+          <p>EDRA's B5 component measures governance maturity through 8 binary controls. Each is a yes/no: the control either exists in a formalized, documented form, or it doesn't. Of these 8, <strong>5 have the most material impact on overall EDRA scores</strong> — and they're the fastest to implement. For organizations stuck in Dependent Mode (EDRA scores 31–50), governance formalization is consistently the shortest path to Decision-Grade status.</p>
 
-        <p>The impact on EDRA scores is significant. B5 carries meaningful weight in the overall score calculation. Moving from 2 out of 8 controls formalized to 7 out of 8 can shift the G Score by 30-40 points. For a portfolio in Dependent Mode, that governance improvement alone can push the overall EDRA score past the Decision-Grade threshold — without changing a single data point in the building systems.</p>
+          <div class="metric-row">
+            <div class="stat-block"><div class="v">8</div><div class="l">Binary controls measured by the B5 governance component</div></div>
+            <div class="stat-block"><div class="v is-gold">5</div><div class="l">Controls carrying the most material impact on the score</div></div>
+            <div class="stat-block"><div class="v">30<small>–40</small></div><div class="l">G Score points unlocked by moving from 2 of 8 to 7 of 8</div></div>
+          </div>
+
+          <h2>The five controls that <em>actually move the score</em></h2>
+          <p>The 5 controls that matter most are: <strong>boundary definition, evidence retrievability, approval workflows, emission factor versioning, and assurance review.</strong> Boundary definition means documenting what each asset's data perimeter includes — which meters, which spaces, which utility accounts. Evidence retrievability means that for every data point in the submission, the source document (invoice, meter reading, utility statement) can be located and produced within a defined timeframe. Approval workflows mean that data corrections and submissions go through a documented sign-off process, not informal email chains.</p>
+
+          <p>Emission factor versioning is often overlooked but critical. When converting utility consumption to carbon emissions, the conversion factors used must be documented, dated, and traceable to their source (national grid factors, DEFRA tables, EPA factors). If an auditor asks "which emission factor did you use for this asset's Scope 2 calculation, and where did it come from?" — the answer must be immediate and documented. Assurance review, the fifth control, means that an internal or external review process validates the data before submission.</p>
+
+          <div class="flow">
+            <div class="flow__title">The five controls, in sequence</div>
+            <div class="flow__steps">
+              <div class="flow-step"><div class="n">01</div><div class="t">Boundary definition</div><div class="d">Document each asset's data perimeter — meters, spaces, accounts.</div></div>
+              <div class="flow-step"><div class="n">02</div><div class="t">Evidence retrievability</div><div class="d">Every data point's source document is locatable on demand.</div></div>
+              <div class="flow-step"><div class="n">03</div><div class="t">Approval &amp; versioning</div><div class="d">Documented sign-off; dated, traceable emission factors.</div></div>
+              <div class="flow-step"><div class="n">04</div><div class="t">Assurance review</div><div class="d">A review process validates the data before submission.</div></div>
+            </div>
+          </div>
+
+          <h2>The gap is formalization, <em>not capability</em></h2>
+          <p>Most organizations already have informal versions of these controls. Someone knows the meter boundaries. Someone can find the invoices. Someone approves the data before it goes out. <strong>The gap is formalization.</strong> An informal process that lives in one person's knowledge is not a governance control. A documented process with defined responsibilities, timelines, and evidence requirements is. The difference between the two is often just 2–3 weeks of documentation work.</p>
+
+          <div class="callout">A documented process with defined responsibilities, timelines, and evidence requirements is a control. <em>An informal one that lives in one person's knowledge is not.</em></div>
+
+          <p>The impact on EDRA scores is significant. B5 carries meaningful weight in the overall score calculation. Moving from 2 out of 8 controls formalized to 7 out of 8 can shift the G Score by 30–40 points. For a portfolio in Dependent Mode, that governance improvement alone can push the overall EDRA score past the Decision-Grade threshold — without changing a single data point in the building systems.</p>
+
+          <div class="metric-bar">
+            <div class="metric-bar__head">
+              <span class="metric-bar__label">Overall EDRA score after formalizing 5 controls</span>
+              <span class="metric-bar__val">44 → 61</span>
+            </div>
+            <div class="metric-bar__track">
+              <div class="metric-bar__fill" style="width:61%"></div>
+              <div class="metric-bar__threshold" style="left:50%"><span>Decision-Grade</span></div>
+            </div>
+            <div class="metric-bar__note">Dependent Mode (31–50) → past the Decision-Grade threshold</div>
+          </div>
+
+          <!-- ── Case study card ── -->
+          <div class="cs-card">
+            <div class="cs-eyebrow">Case Study</div>
+            <p>A listed REIT formalized 5 governance controls in 6 weeks — boundary documentation for all 28 assets, evidence packs organized by asset and utility type, and a three-tier approval workflow for data submissions. Their G Score moved from 35 to 72, and their overall EDRA score rose from <strong style="color:#fff">44 to 61, crossing the Decision-Grade threshold</strong>.</p>
+            <a href="./case-studies/governance-controls-esg-score.pdf" class="btn-dl">Download Case Study (PDF)
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          </div>
+
+          <!-- ── FAQ ── -->
+          <section class="faq" aria-label="Frequently asked questions">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+              <h3>What are governance controls in an ESG score?</h3>
+              <p>In EDRA, governance controls are measured by the B5 component as 8 binary controls. Each is a yes/no: the control either exists in a formalized, documented form, or it doesn't. They cover how data is bounded, sourced, approved, converted, and reviewed — including boundary definition, evidence retrievability, approval workflows, emission factor versioning, and assurance review. An informal process that lives in one person's knowledge does not count; a documented process with defined responsibilities, timelines, and evidence requirements does.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Which governance controls matter most for an EDRA score?</h3>
+              <p>Of the 8 binary controls in B5, 5 have the most material impact on overall EDRA scores and are the fastest to implement: boundary definition, evidence retrievability, approval workflows, emission factor versioning, and assurance review. Boundary definition documents each asset's data perimeter; evidence retrievability ensures every data point's source document can be produced in a defined timeframe; approval workflows replace informal email chains with documented sign-off; emission factor versioning makes conversion factors dated and traceable; and assurance review validates the data before submission.</p>
+            </div>
+            <div class="faq-item">
+              <h3>What is Dependent Mode versus Decision-Grade?</h3>
+              <p>Dependent Mode describes portfolios with EDRA scores of 31–50 — data that still depends on informal knowledge and cannot stand on its own. Decision-Grade is the threshold at which the dataset can be trusted and reported with confidence. Because B5 carries meaningful weight, formalizing governance is consistently the shortest path from Dependent Mode to Decision-Grade.</p>
+            </div>
+            <div class="faq-item">
+              <h3>How much can formalizing governance controls move an EDRA score?</h3>
+              <p>Moving from 2 of 8 controls formalized to 7 of 8 can shift the G Score by 30–40 points. Because B5 carries meaningful weight, that improvement alone can push a Dependent Mode portfolio past the Decision-Grade threshold without changing a single data point in the building systems. In one case, a listed REIT formalized 5 controls in 6 weeks, its G Score moved from 35 to 72, and its overall EDRA score rose from 44 to 61 — crossing the Decision-Grade threshold.</p>
+            </div>
+          </section>
+
+        </div>
       </div>
 
-      <div class="case-study-card">
-        <div class="cs-eyebrow">Case Study</div>
-        <p>A listed REIT formalized 5 governance controls in 6 weeks — boundary documentation for all 28 assets, evidence packs organized by asset and utility type, and a three-tier approval workflow for data submissions. Their G Score moved from 35 to 72, and their overall EDRA score rose from 44 to 61, crossing the Decision-Grade threshold.</p>
-        <a href="./case-studies/governance-controls-esg-score.pdf" class="btn-teal">Download Case Study (PDF)
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </a>
+      <!-- ── End CTA ── -->
+      <div class="article-end">
+        <div class="article-end__inner">
+          <p>See which controls are <em>quietly capping</em> your score.</p>
+          <a href="../index.html#contact" class="btn btn-primary" data-track="blog_cta_click">Request a data-readiness assessment</a>
+        </div>
       </div>
+
     </article>
   </main>
 
-  <footer class="blog-footer" role="contentinfo">
+  <footer role="contentinfo">
     <div class="container">
-      <div class="footer-inner">
-        <span class="footer-text">EDRA<sup>TM</sup> — Environmental Data Readiness Assessment. A product of <a href="../index.html">Outsourcing Hub India</a>.</span>
-        <span class="footer-text">GRESB Certified</span>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img class="footer-logo-mark" src="../edra-logo.jpg" alt="" width="36" height="36" />
+          <div>
+            <div class="footer-wordmark">EDRA<sup>TM</sup></div>
+            <div class="footer-tagline">ESG Data Readiness Assessment</div>
+            <div class="footer-mission">Built for real estate ESG data qualification</div>
+          </div>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="../index.html#why-edra">Why EDRA<sup>TM</sup></a></li>
+            <li><a href="../index.html#edra-stack">The Stack</a></li>
+            <li><a href="../resources.html">Resources</a></li>
+            <li><a href="./index.html">Blog</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-actions">
+          <a href="../index.html#contact" class="btn btn-primary btn-sm">Request an Assessment</a>
+          <a href="../index.html#sample-output" class="btn btn-outline btn-sm">See Sample Output</a>
+          <a href="mailto:hello@edraindex.com" class="footer-email">hello@edraindex.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 EDRA<sup>TM</sup>. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="../index.html#contact">Privacy</a>
+          <a href="../index.html#contact">Terms</a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('nav');
+      function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 10); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      var toggle = document.getElementById('nav-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var open = nav.classList.toggle('nav-open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          document.body.classList.toggle('nav-open-lock', open);
+        });
+      }
+      document.querySelectorAll('[data-dropdown]').forEach(function (dd) {
+        var btn = dd.querySelector('.nav-dropdown-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          document.querySelectorAll('[data-dropdown].is-open').forEach(function (o) { if (o !== dd) o.classList.remove('is-open'); });
+          var open = dd.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+          if (!dd.contains(e.target)) {
+            dd.classList.remove('is-open');
+            var b = dd.querySelector('.nav-dropdown-toggle');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+          dd.classList.remove('is-open');
+          var b = dd.querySelector('.nav-dropdown-toggle'); if (b) b.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>

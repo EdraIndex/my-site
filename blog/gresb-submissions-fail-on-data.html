@@ -12,96 +12,357 @@
     gtag('config', 'AW-18160005662');
     gtag('config', 'G-3WVP61B4BR');
   </script>
+
+  <title>Why 68% of GRESB Submissions Fail on Data — EDRA™</title>
   <meta name="description" content="Why 68% of GRESB submissions fail on data quality, not building performance. Learn how data gaps block scoring." />
-  <title>Why 68% of GRESB Submissions Fail on Data — EDRA</title>
+  <link rel="canonical" href="https://edraindex.com/blog/gresb-submissions-fail-on-data.html" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="EDRA" />
+  <meta property="og:title" content="Why 68% of GRESB Submissions Fail on Data — Not Performance" />
+  <meta property="og:description" content="68% of GRESB submission failures trace back to data gaps, not building performance. Why submissions fail on data, and how to fix it before the deadline." />
+  <meta property="og:url" content="https://edraindex.com/blog/gresb-submissions-fail-on-data.html" />
+  <meta property="og:image" content="https://edraindex.com/edra-logo.jpg" />
+  <meta property="article:published_time" content="2026-03-15" />
+  <meta property="article:section" content="GRESB Readiness" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why 68% of GRESB Submissions Fail on Data — Not Performance" />
+  <meta name="twitter:description" content="Most GRESB failures are data gaps, not performance gaps. How to find and close them before you submit." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles-light.css" />
-  <style>
-    .blog-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 18px 56px; display: flex; align-items: center; justify-content: space-between; background: #FAFAF7; }
-    .blog-nav .nav-logo { display: flex; align-items: center; gap: 10px; } .blog-nav .nav-logo-mark { width: 40px; height: 40px; border-radius: 6px; object-fit: cover; }
-    .blog-nav .nav-logo-wordmark { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0A0A0A; letter-spacing: -0.04em; }
-    .blog-nav .back-link { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; color: #0A0A0A; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s; }
-    .blog-nav .back-link:hover { color: #1C3E29; }
-    .blog-hero { position: relative; width: 100%; height: 40vh; min-height: 320px; overflow: hidden; margin-top: 64px; }
-    .blog-hero img { width: 100%; height: 100%; object-fit: cover; }
-    .blog-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3), rgba(10,10,10,0.8)); }
-    .blog-article { max-width: 780px; margin: 0 auto; padding: 80px 56px 60px; }
-    .blog-date { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
-    .blog-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 40px; }
-    .blog-body p { color: var(--body); line-height: 1.8; margin-bottom: 24px; font-size: 1.05rem; }
-    .blog-body p strong { color: var(--white-off); }
-    .case-study-card { margin-top: 60px; padding: 40px; background: var(--bg-card); border: 1px solid var(--border-hi); border-radius: var(--radius-lg); }
-    .case-study-card .cs-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-    .case-study-card .cs-eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--teal); }
-    .case-study-card p { color: var(--body); line-height: 1.7; margin-bottom: 24px; font-size: 0.98rem; }
-    .case-study-card .btn-teal { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.82rem; background: var(--teal); color: var(--bg); border: 1.5px solid var(--teal); transition: all 0.35s; text-decoration: none; }
-    .case-study-card .btn-teal:hover { background: var(--teal-deep); border-color: var(--teal-deep); transform: translateY(-2px); box-shadow: 0 8px 32px var(--teal-glow); }
-    .blog-footer { border-top: 1px solid var(--border); margin-top: 0; }
-    .blog-footer .container { max-width: 1200px; margin: 0 auto; padding: 40px 56px; }
-    .blog-footer .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-    .blog-footer .footer-text { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--muted); }
-    .blog-footer .footer-text a { color: var(--teal); }
-    @media (max-width: 768px) {
-      .blog-nav { padding: 14px 24px; }
-      .blog-article { padding: 50px 24px 40px; }
-      .case-study-card { padding: 28px; }
-      .blog-footer .container { padding: 30px 24px; }
-    }
-  </style>
-</head>
-<body>
+  <link rel="stylesheet" href="../styles-institutional.css" />
+  <link rel="stylesheet" href="./blog.css" />
+  <link rel="icon" type="image/jpeg" href="../edra-logo.jpg" />
+  <link rel="apple-touch-icon" href="../edra-logo.jpg" />
 
-  <nav class="blog-nav" role="navigation" aria-label="Blog navigation">
+  <!-- ── Structured data: Article + Breadcrumb + FAQ (GEO/AEO) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Why 68% of GRESB Submissions Fail on Data — Not Performance",
+        "description": "68% of GRESB submission failures trace back to data gaps, not building performance. Why submissions fail on data, and how to close the gaps before the deadline.",
+        "image": "https://edraindex.com/edra-logo.jpg",
+        "datePublished": "2026-03-15",
+        "dateModified": "2026-03-15",
+        "author": { "@type": "Organization", "name": "EDRA", "url": "https://edraindex.com" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "EDRA — a product of Outsourcing Hub India",
+          "logo": { "@type": "ImageObject", "url": "https://edraindex.com/edra-logo.jpg" }
+        },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://edraindex.com/blog/gresb-submissions-fail-on-data.html" },
+        "articleSection": "GRESB Readiness",
+        "keywords": "GRESB submission failure, ESG data readiness, data coverage 75%, GRESB scoring, metering data gaps, pre-submission check, EDRA",
+        "wordCount": 790
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://edraindex.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://edraindex.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Why 68% of GRESB Submissions Fail on Data", "item": "https://edraindex.com/blog/gresb-submissions-fail-on-data.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why do most GRESB submissions fail?",
+            "acceptedAnswer": { "@type": "Answer", "text": "68% of GRESB submission failures trace back to data gaps, not building performance. The buildings are often performing well — the data behind them is fragmented. When coverage falls below 75%, scoring is blocked entirely; when completeness drops under 12 months, the submission is flagged as incomplete. These are infrastructure problems, not performance problems." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a high-performing building still fail GRESB?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. A building can have best-in-class HVAC and green certifications and still fail GRESB because three of its eight meters aren't reporting data. GRESB scores the dataset, not the intent — so fragmented metering, billing, and utility records can sink an otherwise efficient asset regardless of how green it is." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does it cost to fail a GRESB submission?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A failed submission means 12 months lost, non-refundable fees, and damaged credibility with investors who expected a rating. With more than 150 institutional investors using GRESB benchmarks to make allocation decisions, the cost of not knowing your data readiness is always higher than finding out before you submit." }
+          },
+          {
+            "@type": "Question",
+            "name": "How does EDRA prevent GRESB data failures?",
+            "acceptedAnswer": { "@type": "Answer", "text": "EDRA scores data readiness before submission — measuring coverage, completeness, continuity, structural integrity, and governance — so portfolios can identify and close gaps weeks before the GRESB deadline. It turns the risk of a failed submission into a pre-flight check that takes 48 hours, not 12 months." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="blog-page">
+
+  <nav id="nav" role="navigation" aria-label="Main navigation">
     <a href="../index.html" class="nav-logo" aria-label="EDRA home">
-      <img class="nav-logo-mark" src="../edra-logo.jpg" alt="" width="40" height="40" /><span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
+      <img class="nav-logo-mark" src="../edra-logo.jpg" alt="" width="40" height="40" />
+      <span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
     </a>
-    <a href="../index.html" class="back-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-      Back to EDRA
-    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html#why-edra">Why EDRA<sup>TM</sup></a></li>
+      <li><a href="../index.html#sample-output">Outputs</a></li>
+      <li><a href="../index.html#edra-stack">The Stack</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">
+          Resources <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="resources-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="../resources.html#case-studies">Case Studies</a></li>
+          <li role="none"><a role="menuitem" href="../resources.html#whitepapers">Whitepapers</a></li>
+          <li role="none"><a role="menuitem" href="./index.html" aria-current="page">Blog</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="region-menu">
+          Region <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="region-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="../usa.html">United States <span class="nav-dd-region">USA</span></a></li>
+          <li role="none"><a role="menuitem" href="../uk.html">United Kingdom <span class="nav-dd-region">UK</span></a></li>
+          <li role="none"><a role="menuitem" href="../apac.html">Asia Pacific <span class="nav-dd-region">APAC</span></a></li>
+          <li role="none"><a role="menuitem" href="../aus.html">Australia <span class="nav-dd-region">AUS</span></a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="../demo.html" class="btn btn-outline">Book a Demo</a>
+      <a href="../index.html#contact" class="btn btn-primary" data-track="nav_cta_click">Request an Assessment</a>
+    </div>
+    <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <div class="blog-hero">
-    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80" alt="Data analytics dashboard" />
-  </div>
-
   <main>
-    <article class="blog-article">
-      <div class="blog-date">March 15, 2026</div>
-      <h1 class="blog-title">Why 68% of GRESB Submissions Fail on Data — Not Performance</h1>
+    <article>
 
-      <div class="blog-body">
-        <p>Every year, thousands of real estate portfolios submit to GRESB expecting their sustainability investments to translate into strong scores. The reality is starkly different. <strong>68% of submission failures trace back to data gaps</strong> — not building performance. The buildings are often performing well. The data behind them is not.</p>
+      <!-- ── Hero ── -->
+      <header class="article-hero">
+        <div class="article-hero__art" aria-hidden="true">
+          <svg viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- failure gauge: faint full track + gold arc swept to ~68% -->
+            <circle cx="260" cy="260" r="180" stroke="#C8A96E" stroke-opacity="0.16" stroke-width="2"/>
+            <path d="M260 80 A180 180 0 1 1 86.5 314" stroke="#C8A96E" stroke-width="3" stroke-linecap="round"/>
+            <!-- 68% marker tick on the gauge -->
+            <circle cx="86.5" cy="314" r="5" fill="#C8A96E" fill-opacity="0.6"/>
+            <!-- stack of submission cards, some flagged with a subtle ✕ -->
+            <g stroke="#4E7A60" stroke-width="1.5">
+              <rect x="205" y="206" width="110" height="26" rx="4" fill="#4E7A60" fill-opacity="0.5"/>
+              <rect x="205" y="240" width="110" height="26" rx="4" fill="none"/>
+              <rect x="205" y="274" width="110" height="26" rx="4" fill="#4E7A60" fill-opacity="0.5"/>
+              <rect x="205" y="308" width="110" height="26" rx="4" fill="none"/>
+            </g>
+            <!-- ✕ marks on the empty (failed) cards -->
+            <g stroke="#C8A96E" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round">
+              <path d="M293 246 l14 14 M307 246 l-14 14"/>
+              <path d="M293 314 l14 14 M307 314 l-14 14"/>
+            </g>
+          </svg>
+        </div>
+        <div class="container">
+          <nav class="article-breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">EDRA</a> <span aria-hidden="true">/</span>
+            <a href="./index.html">Blog</a> <span aria-hidden="true">/</span>
+            <span>GRESB Readiness</span>
+          </nav>
+          <span class="article-cat">GRESB Readiness</span>
+          <h1>Why 68% of GRESB submissions fail on data — not <em>performance</em></h1>
+          <p class="article-dek">Every year thousands of portfolios submit to GRESB expecting strong scores. Most failures never touch building performance — they trace back to data gaps. Here's why your buildings can be green and your submission still fails, and how the gap closes before the deadline.</p>
+          <div class="article-byline">
+            <span>EDRA Research</span><span class="dot"></span>
+            <time datetime="2026-03-15">March 15, 2026</time><span class="dot"></span>
+            <span>4 min read</span>
+          </div>
+        </div>
+      </header>
 
-        <p>The numbers tell the story. Over <strong>2,000 entities now report to GRESB</strong>, representing $8.8 trillion in assets under management. More than 150 institutional investors use these benchmarks to make allocation decisions. Yet most submitters don't know their coverage percentage before hitting the submit button. When coverage falls below 75%, scoring is blocked entirely. When completeness drops under 12 months, the submission is flagged as incomplete. These aren't performance problems — they're infrastructure problems.</p>
+      <!-- ── Body ── -->
+      <div class="article-shell">
+        <div class="article-body">
 
-        <p>The root cause is a disconnect between ESG strategy and data operations. Fund managers invest in energy-efficient systems, green building certifications, and sustainability consultants. But the metering infrastructure, billing data collection, and utility records that feed the actual submission remain fragmented. A building can have best-in-class HVAC and still fail GRESB because three of its eight meters aren't reporting data.</p>
+          <div class="tldr">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li><strong>68%</strong> of GRESB submission failures trace back to data gaps — not building performance. The buildings are often performing well; the data behind them is not.</li>
+              <li>Over <strong>2,000 entities</strong> now report to GRESB, representing <strong>$8.8 trillion</strong> in AUM, and more than 150 institutional investors use the benchmarks for allocation decisions.</li>
+              <li>Below <strong>75%</strong> coverage, scoring is blocked entirely; under <strong>12 months</strong> of completeness, the submission is flagged incomplete. These are infrastructure problems, not performance problems.</li>
+              <li>EDRA scores data readiness before submission, turning a failed-submission risk into a <strong>48-hour</strong> pre-flight check — not a 12-month loss.</li>
+            </ul>
+          </div>
 
-        <p>This is the problem EDRA was designed to solve. By scoring data readiness before submission — measuring coverage, completeness, continuity, structural integrity, and governance — portfolios can identify and close gaps weeks before the GRESB deadline. The question isn't whether your buildings are green. It's whether your data can prove it.</p>
+          <p>Every year, thousands of real estate portfolios submit to GRESB expecting their sustainability investments to translate into strong scores. The reality is starkly different. <strong>68% of submission failures trace back to data gaps</strong> — not building performance. The buildings are often performing well. The data behind them is not.</p>
 
-        <p><strong>The cost of not knowing is always higher than finding out.</strong> A failed submission means 12 months lost, non-refundable fees, and damaged credibility with investors who expected a rating. EDRA turns that risk into a pre-flight check — one that takes 48 hours, not 12 months.</p>
+          <div class="metric-bar">
+            <div class="metric-bar__head">
+              <span class="metric-bar__label">Share of GRESB submission failures caused by data gaps, not performance</span>
+              <span class="metric-bar__val">68%</span>
+            </div>
+            <div class="metric-bar__track">
+              <div class="metric-bar__fill is-warn" style="width:68%"></div>
+            </div>
+            <div class="metric-bar__note">More than two thirds of failures are infrastructure problems, not building problems</div>
+          </div>
+
+          <h2>The numbers tell the <em>story</em></h2>
+          <p>Over <strong>2,000 entities now report to GRESB</strong>, representing $8.8 trillion in assets under management. More than 150 institutional investors use these benchmarks to make allocation decisions. Yet most submitters don't know their coverage percentage before hitting the submit button. When coverage falls below 75%, scoring is blocked entirely. When completeness drops under 12 months, the submission is flagged as incomplete. These aren't performance problems — they're infrastructure problems.</p>
+
+          <div class="metric-row">
+            <div class="stat-block"><div class="v">2,000<small>+</small></div><div class="l">Entities reporting to GRESB, representing $8.8T in AUM</div></div>
+            <div class="stat-block"><div class="v is-gold">75<small>%</small></div><div class="l">Coverage floor — below it, performance scoring is blocked</div></div>
+            <div class="stat-block"><div class="v is-warn">12<small>mo</small></div><div class="l">Minimum completeness — under it, the submission is flagged incomplete</div></div>
+          </div>
+
+          <h2>A green building can still <em>fail</em></h2>
+          <p>The root cause is a disconnect between ESG strategy and data operations. Fund managers invest in energy-efficient systems, green building certifications, and sustainability consultants. But the metering infrastructure, billing data collection, and utility records that feed the actual submission remain fragmented. A building can have best-in-class HVAC and still fail GRESB because three of its eight meters aren't reporting data.</p>
+
+          <p>This is the problem EDRA was designed to solve. By scoring data readiness before submission — measuring coverage, completeness, continuity, structural integrity, and governance — portfolios can identify and close gaps weeks before the GRESB deadline. The question isn't whether your buildings are green. It's whether your data can prove it.</p>
+
+          <div class="flow">
+            <div class="flow__title">From fragmented data to a clean submission</div>
+            <div class="flow__steps">
+              <div class="flow-step"><div class="n">01</div><div class="t">Score data readiness</div><div class="d">Measure coverage, completeness, continuity, integrity, governance.</div></div>
+              <div class="flow-step"><div class="n">02</div><div class="t">Surface the gaps</div><div class="d">Find where meters, billing, and utility records fall short.</div></div>
+              <div class="flow-step"><div class="n">03</div><div class="t">Close before deadline</div><div class="d">Fix gaps weeks ahead — not after rejection.</div></div>
+              <div class="flow-step"><div class="n">04</div><div class="t">Submit with proof</div><div class="d">Coverage clears 75%; the score reflects the buildings.</div></div>
+            </div>
+          </div>
+
+          <div class="callout">The question isn't whether your buildings are <em>green</em> — it's whether your data can prove it.</div>
+
+          <p><strong>The cost of not knowing is always higher than finding out.</strong> A failed submission means 12 months lost, non-refundable fees, and damaged credibility with investors who expected a rating. EDRA turns that risk into a pre-flight check — one that takes 48 hours, not 12 months.</p>
+
+          <!-- ── Case study card ── -->
+          <div class="cs-card">
+            <div class="cs-eyebrow">Case Study</div>
+            <p>A 15-asset office portfolio discovered 4 coverage gaps via EDRA scoring, fixed them in 3 weeks, and qualified for GRESB submission for the first time. The gaps were in tenant-metered areas where utility data had never been collected — <strong style="color:#fff">invisible without a systematic data readiness scan</strong>.</p>
+            <a href="./case-studies/gresb-submissions-fail-on-data.pdf" class="btn-dl">Download Case Study (PDF)
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          </div>
+
+          <!-- ── FAQ ── -->
+          <section class="faq" aria-label="Frequently asked questions">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+              <h3>Why do most GRESB submissions fail?</h3>
+              <p>68% of GRESB submission failures trace back to data gaps, not building performance. The buildings are often performing well — the data behind them is fragmented. When coverage falls below 75%, scoring is blocked entirely; when completeness drops under 12 months, the submission is flagged as incomplete. These are infrastructure problems, not performance problems.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Can a high-performing building still fail GRESB?</h3>
+              <p>Yes. A building can have best-in-class HVAC and green certifications and still fail GRESB because three of its eight meters aren't reporting data. GRESB scores the dataset, not the intent — so fragmented metering, billing, and utility records can sink an otherwise efficient asset regardless of how green it is.</p>
+            </div>
+            <div class="faq-item">
+              <h3>What does it cost to fail a GRESB submission?</h3>
+              <p>A failed submission means 12 months lost, non-refundable fees, and damaged credibility with investors who expected a rating. With more than 150 institutional investors using GRESB benchmarks to make allocation decisions, the cost of not knowing your data readiness is always higher than finding out before you submit.</p>
+            </div>
+            <div class="faq-item">
+              <h3>How does EDRA prevent GRESB data failures?</h3>
+              <p>EDRA scores data readiness before submission — measuring coverage, completeness, continuity, structural integrity, and governance — so portfolios can identify and close gaps weeks before the GRESB deadline. It turns the risk of a failed submission into a pre-flight check that takes 48 hours, not 12 months.</p>
+            </div>
+          </section>
+
+        </div>
       </div>
 
-      <div class="case-study-card">
-        <div class="cs-eyebrow">Case Study</div>
-        <p>A 15-asset office portfolio discovered 4 coverage gaps via EDRA scoring, fixed them in 3 weeks, and qualified for GRESB submission for the first time. The gaps were in tenant-metered areas where utility data had never been collected — invisible without a systematic data readiness scan.</p>
-        <a href="./case-studies/gresb-submissions-fail-on-data.pdf" class="btn-teal">Download Case Study (PDF)
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </a>
+      <!-- ── End CTA ── -->
+      <div class="article-end">
+        <div class="article-end__inner">
+          <p>Know your data <em>before</em> you hit submit.</p>
+          <a href="../index.html#contact" class="btn btn-primary" data-track="blog_cta_click">Request a data-readiness assessment</a>
+        </div>
       </div>
+
     </article>
   </main>
 
-  <footer class="blog-footer" role="contentinfo">
+  <footer role="contentinfo">
     <div class="container">
-      <div class="footer-inner">
-        <span class="footer-text">EDRA<sup>TM</sup> — Environmental Data Readiness Assessment. A product of <a href="../index.html">Outsourcing Hub India</a>.</span>
-        <span class="footer-text">GRESB Certified</span>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img class="footer-logo-mark" src="../edra-logo.jpg" alt="" width="36" height="36" />
+          <div>
+            <div class="footer-wordmark">EDRA<sup>TM</sup></div>
+            <div class="footer-tagline">ESG Data Readiness Assessment</div>
+            <div class="footer-mission">Built for real estate ESG data qualification</div>
+          </div>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="../index.html#why-edra">Why EDRA<sup>TM</sup></a></li>
+            <li><a href="../index.html#edra-stack">The Stack</a></li>
+            <li><a href="../resources.html">Resources</a></li>
+            <li><a href="./index.html">Blog</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-actions">
+          <a href="../index.html#contact" class="btn btn-primary btn-sm">Request an Assessment</a>
+          <a href="../index.html#sample-output" class="btn btn-outline btn-sm">See Sample Output</a>
+          <a href="mailto:hello@edraindex.com" class="footer-email">hello@edraindex.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 EDRA<sup>TM</sup>. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="../index.html#contact">Privacy</a>
+          <a href="../index.html#contact">Terms</a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('nav');
+      function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 10); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      var toggle = document.getElementById('nav-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var open = nav.classList.toggle('nav-open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          document.body.classList.toggle('nav-open-lock', open);
+        });
+      }
+      document.querySelectorAll('[data-dropdown]').forEach(function (dd) {
+        var btn = dd.querySelector('.nav-dropdown-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          document.querySelectorAll('[data-dropdown].is-open').forEach(function (o) { if (o !== dd) o.classList.remove('is-open'); });
+          var open = dd.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+          if (!dd.contains(e.target)) {
+            dd.classList.remove('is-open');
+            var b = dd.querySelector('.nav-dropdown-toggle');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+          dd.classList.remove('is-open');
+          var b = dd.querySelector('.nav-dropdown-toggle'); if (b) b.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>

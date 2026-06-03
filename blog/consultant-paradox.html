@@ -12,96 +12,351 @@
     gtag('config', 'AW-18160005662');
     gtag('config', 'G-3WVP61B4BR');
   </script>
-  <meta name="description" content="ESG consultants build strategies on data assumptions. Without a data readiness scan, those assumptions fail at submission." />
-  <title>The Consultant Paradox: Why Advisory Firms Can't Solve Your Data Problem — EDRA</title>
+
+  <title>The Consultant Paradox: Why Advisory Firms Can't Solve Your Data Problem — EDRA™</title>
+  <meta name="description" content="ESG consultants build strategies on data assumptions. Without a data readiness scan, those assumptions fail at submission. Why advisory firms can't fix your data problem — and what does." />
+  <link rel="canonical" href="https://edraindex.com/blog/consultant-paradox.html" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="EDRA" />
+  <meta property="og:title" content="The Consultant Paradox: Why Advisory Firms Can't Solve Your Data Problem" />
+  <meta property="og:description" content="ESG advisory operates at the strategy layer. Data quality lives at the infrastructure layer. Why strategies built on data assumptions fail at submission — and how to fix it." />
+  <meta property="og:url" content="https://edraindex.com/blog/consultant-paradox.html" />
+  <meta property="og:image" content="https://edraindex.com/edra-logo.jpg" />
+  <meta property="article:published_time" content="2026-04-09" />
+  <meta property="article:section" content="Advisory" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Consultant Paradox: Why Advisory Firms Can't Solve Your Data Problem" />
+  <meta name="twitter:description" content="ESG strategy is built on data assumptions. When the data doesn't pass integrity checks, the strategy fails. Here's the structural gap — and the fix." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles-light.css" />
-  <style>
-    .blog-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 18px 56px; display: flex; align-items: center; justify-content: space-between; background: #FAFAF7; }
-    .blog-nav .nav-logo { display: flex; align-items: center; gap: 10px; } .blog-nav .nav-logo-mark { width: 40px; height: 40px; border-radius: 6px; object-fit: cover; }
-    .blog-nav .nav-logo-wordmark { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0A0A0A; letter-spacing: -0.04em; }
-    .blog-nav .back-link { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; color: #0A0A0A; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s; }
-    .blog-nav .back-link:hover { color: #1C3E29; }
-    .blog-hero { position: relative; width: 100%; height: 40vh; min-height: 320px; overflow: hidden; margin-top: 64px; }
-    .blog-hero img { width: 100%; height: 100%; object-fit: cover; }
-    .blog-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3), rgba(10,10,10,0.8)); }
-    .blog-article { max-width: 780px; margin: 0 auto; padding: 80px 56px 60px; }
-    .blog-date { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
-    .blog-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 40px; }
-    .blog-body p { color: var(--body); line-height: 1.8; margin-bottom: 24px; font-size: 1.05rem; }
-    .blog-body p strong { color: var(--white-off); }
-    .case-study-card { margin-top: 60px; padding: 40px; background: var(--bg-card); border: 1px solid var(--border-hi); border-radius: var(--radius-lg); }
-    .case-study-card .cs-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-    .case-study-card .cs-eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--teal); }
-    .case-study-card p { color: var(--body); line-height: 1.7; margin-bottom: 24px; font-size: 0.98rem; }
-    .case-study-card .btn-teal { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.82rem; background: var(--teal); color: var(--bg); border: 1.5px solid var(--teal); transition: all 0.35s; text-decoration: none; }
-    .case-study-card .btn-teal:hover { background: var(--teal-deep); border-color: var(--teal-deep); transform: translateY(-2px); box-shadow: 0 8px 32px var(--teal-glow); }
-    .blog-footer { border-top: 1px solid var(--border); margin-top: 0; }
-    .blog-footer .container { max-width: 1200px; margin: 0 auto; padding: 40px 56px; }
-    .blog-footer .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-    .blog-footer .footer-text { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--muted); }
-    .blog-footer .footer-text a { color: var(--teal); }
-    @media (max-width: 768px) {
-      .blog-nav { padding: 14px 24px; }
-      .blog-article { padding: 50px 24px 40px; }
-      .case-study-card { padding: 28px; }
-      .blog-footer .container { padding: 30px 24px; }
-    }
-  </style>
-</head>
-<body>
+  <link rel="stylesheet" href="../styles-institutional.css" />
+  <link rel="stylesheet" href="./blog.css" />
+  <link rel="icon" type="image/jpeg" href="../edra-logo.jpg" />
+  <link rel="apple-touch-icon" href="../edra-logo.jpg" />
 
-  <nav class="blog-nav" role="navigation" aria-label="Blog navigation">
+  <!-- ── Structured data: Article + Breadcrumb + FAQ (GEO/AEO) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "The Consultant Paradox: Why Advisory Firms Can't Solve Your Data Problem",
+        "description": "ESG consultants build strategies on data assumptions. Without a data readiness scan, those assumptions fail at submission. Why advisory firms can't fix your data problem — and what does.",
+        "image": "https://edraindex.com/edra-logo.jpg",
+        "datePublished": "2026-04-09",
+        "dateModified": "2026-04-09",
+        "author": { "@type": "Organization", "name": "EDRA", "url": "https://edraindex.com" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "EDRA — a product of Outsourcing Hub India",
+          "logo": { "@type": "ImageObject", "url": "https://edraindex.com/edra-logo.jpg" }
+        },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://edraindex.com/blog/consultant-paradox.html" },
+        "articleSection": "Advisory",
+        "keywords": "ESG consultant, ESG advisory, data readiness scan, GRESB submission strategy, consultant paradox, data assumptions, strategy layer, infrastructure layer",
+        "wordCount": 855
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://edraindex.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://edraindex.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "The Consultant Paradox", "item": "https://edraindex.com/blog/consultant-paradox.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can ESG consultants fix data problems?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Not on their own. ESG advisory firms operate at the strategy layer — framework selection, certification pathways, timelines, stakeholder engagement. Data quality lives at the infrastructure layer. Consultants have had no standardized way to assess data readiness before building a strategy, so they assume the data their clients describe is the data that actually exists. That assumption is where strategies fail. Consulting needs a data layer beneath it — it doesn't replace one." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the consultant paradox?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The consultant paradox is the pattern where a sound ESG strategy fails at submission because the data foundation underneath it was never scanned. A consultant spends 3–6 months building a certification pathway and resource plan that looks excellent on paper, then submission day arrives and the data doesn't pass basic integrity checks — coverage is below threshold, billing periods have gaps, critical fields are missing. The strategy was sound; the data foundation was not." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a data readiness scan?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A data readiness scan is a factual assessment of what a portfolio's data can actually support before any strategy is built on top of it. An EDRA scan tells the consultant and the client — in 48 hours — which assets are ready, which have coverage gaps, which have continuity failures, and which are missing structural fields. The strategy then gets built on facts, not assumptions." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does EDRA replace ESG consultants?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. EDRA gives consultants and their clients a factual starting point — it makes consulting work rather than replacing it. The strategy layer needs a data layer beneath it; that is what EDRA provides. The best ESG consultants already ask for this, because their reputation is tied to outcomes and outcomes are tied to data quality." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="blog-page">
+
+  <nav id="nav" role="navigation" aria-label="Main navigation">
     <a href="../index.html" class="nav-logo" aria-label="EDRA home">
-      <img class="nav-logo-mark" src="../edra-logo.jpg" alt="" width="40" height="40" /><span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
+      <img class="nav-logo-mark" src="../edra-logo.jpg" alt="" width="40" height="40" />
+      <span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
     </a>
-    <a href="../index.html" class="back-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-      Back to EDRA
-    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html#why-edra">Why EDRA<sup>TM</sup></a></li>
+      <li><a href="../index.html#sample-output">Outputs</a></li>
+      <li><a href="../index.html#edra-stack">The Stack</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">
+          Resources <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="resources-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="../resources.html#case-studies">Case Studies</a></li>
+          <li role="none"><a role="menuitem" href="../resources.html#whitepapers">Whitepapers</a></li>
+          <li role="none"><a role="menuitem" href="./index.html" aria-current="page">Blog</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="region-menu">
+          Region <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="region-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="../usa.html">United States <span class="nav-dd-region">USA</span></a></li>
+          <li role="none"><a role="menuitem" href="../uk.html">United Kingdom <span class="nav-dd-region">UK</span></a></li>
+          <li role="none"><a role="menuitem" href="../apac.html">Asia Pacific <span class="nav-dd-region">APAC</span></a></li>
+          <li role="none"><a role="menuitem" href="../aus.html">Australia <span class="nav-dd-region">AUS</span></a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="../demo.html" class="btn btn-outline">Book a Demo</a>
+      <a href="../index.html#contact" class="btn btn-primary" data-track="nav_cta_click">Request an Assessment</a>
+    </div>
+    <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <div class="blog-hero">
-    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80" alt="Business consulting meeting" />
-  </div>
-
   <main>
-    <article class="blog-article">
-      <div class="blog-date">September 12, 2025</div>
-      <h1 class="blog-title">The Consultant Paradox: Why Advisory Firms Can't Solve Your Data Problem</h1>
+    <article>
 
-      <div class="blog-body">
-        <p>ESG consulting is a booming market. Advisory firms offer framework selection, strategy development, stakeholder engagement, and reporting guidance. They're staffed with talented people who understand GRESB, TCFD, ISSB, and every acronym in between. <strong>But none of them start by scanning the data.</strong> They can't — there hasn't been a system to do it. So they build plans on assumptions about data that may be incomplete, discontinuous, or structurally flawed.</p>
+      <!-- ── Hero ── -->
+      <header class="article-hero">
+        <div class="article-hero__art" aria-hidden="true">
+          <svg viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- a bridge with a visible gap: strategy on one side, data on the other -->
+            <!-- strategy span (gold) reaching from the left -->
+            <path d="M40 300 L230 300" stroke="#C8A96E" stroke-width="3" stroke-linecap="round"/>
+            <path d="M40 300 L40 360" stroke="#C8A96E" stroke-width="2" stroke-linecap="round"/>
+            <path d="M120 300 L120 360" stroke="#C8A96E" stroke-width="1.5" stroke-opacity="0.6" stroke-linecap="round"/>
+            <path d="M200 300 L200 360" stroke="#C8A96E" stroke-width="1.5" stroke-opacity="0.6" stroke-linecap="round"/>
+            <!-- data span (sage) reaching from the right -->
+            <path d="M290 300 L480 300" stroke="#4E7A60" stroke-width="3" stroke-linecap="round"/>
+            <path d="M480 300 L480 360" stroke="#4E7A60" stroke-width="2" stroke-linecap="round"/>
+            <path d="M400 300 L400 360" stroke="#4E7A60" stroke-width="1.5" stroke-opacity="0.6" stroke-linecap="round"/>
+            <path d="M320 300 L320 360" stroke="#4E7A60" stroke-width="1.5" stroke-opacity="0.6" stroke-linecap="round"/>
+            <!-- the gap — dashed, unbridged -->
+            <path d="M230 300 L290 300" stroke="#C8A96E" stroke-width="1.5" stroke-dasharray="5 9" stroke-opacity="0.5"/>
+            <!-- diverging assumption lines above the gap -->
+            <path d="M230 300 L150 150" stroke="#C8A96E" stroke-width="1.5" stroke-opacity="0.35"/>
+            <path d="M290 300 L370 150" stroke="#4E7A60" stroke-width="1.5" stroke-opacity="0.35"/>
+            <!-- gap markers -->
+            <circle cx="230" cy="300" r="5" fill="#C8A96E" fill-opacity="0.7"/>
+            <circle cx="290" cy="300" r="5" fill="#4E7A60" fill-opacity="0.7"/>
+            <!-- faint nodes on each platform -->
+            <circle cx="150" cy="150" r="4" fill="none" stroke="#C8A96E" stroke-width="1.5" stroke-opacity="0.5"/>
+            <circle cx="370" cy="150" r="4" fill="none" stroke="#4E7A60" stroke-width="1.5" stroke-opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="container">
+          <nav class="article-breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">EDRA</a> <span aria-hidden="true">/</span>
+            <a href="./index.html">Blog</a> <span aria-hidden="true">/</span>
+            <span>Advisory</span>
+          </nav>
+          <span class="article-cat">Advisory</span>
+          <h1>The Consultant Paradox: why advisory firms can't solve your <em>data problem</em></h1>
+          <p class="article-dek">ESG consultants are staffed with talented people who understand every framework in the alphabet — but none of them start by scanning the data. They build excellent strategies on assumptions that fail at submission. Here's the structural gap, and what closes it.</p>
+          <div class="article-byline">
+            <span>EDRA Research</span><span class="dot"></span>
+            <time datetime="2026-04-09">April 9, 2026</time><span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </header>
 
-        <p>The result is a pattern that repeats across the industry. A consultant spends 3-6 months developing an ESG strategy. They recommend a certification pathway, timeline, and resource plan. The strategy looks excellent on paper. Then submission day arrives and the data doesn't pass basic integrity checks. Coverage is below threshold. Billing periods have gaps. Critical fields are missing from the data exports. The strategy was sound — the data foundation was not.</p>
+      <!-- ── Body ── -->
+      <div class="article-shell">
+        <div class="article-body">
 
-        <p>This isn't a criticism of consultants. It's a structural problem. ESG advisory firms operate at the strategy layer. Data quality lives at the infrastructure layer. There has been no standardized way to assess data readiness before building a strategy on top of it. Consultants have had to assume that the data their clients describe is the data that actually exists. That assumption fails more often than anyone in the industry is comfortable admitting.</p>
+          <div class="tldr">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li>ESG consultants operate at the <strong>strategy layer</strong>; data quality lives at the <strong>infrastructure layer</strong> — and the two have never had a standard handoff.</li>
+              <li>Consultants build framework, certification, and timeline plans on the assumption that the data their clients describe is the data that <strong>actually exists</strong>. That assumption fails often.</li>
+              <li>A sound 3–6 month strategy collapses at submission when coverage is below threshold, billing periods have gaps, or critical fields are missing.</li>
+              <li>A data readiness scan gives the consultant and client a factual starting point in <strong>48 hours</strong> — the strategy then gets built on facts, not assumptions. EDRA doesn't replace consulting; it makes it work.</li>
+            </ul>
+          </div>
 
-        <p><strong>EDRA gives consultants (and their clients) a factual starting point.</strong> Before the strategy is designed, before the certification pathway is selected, before the timeline is committed — run an EDRA scan. In 48 hours, both the consultant and the client know exactly what the data can support. Which assets are ready. Which have coverage gaps. Which have continuity failures. Which are missing structural fields. The strategy then gets built on facts, not assumptions.</p>
+          <p>ESG consulting is a booming market. Advisory firms offer framework selection, strategy development, stakeholder engagement, and reporting guidance. They're staffed with talented people who understand GRESB, TCFD, ISSB, and every acronym in between. <strong>But none of them start by scanning the data.</strong> They can't — there hasn't been a system to do it. So they build plans on assumptions about data that may be incomplete, discontinuous, or structurally flawed.</p>
 
-        <p>The best ESG consultants are already asking for this. They know that their reputation is tied to outcomes, and outcomes are tied to data quality. EDRA doesn't replace consulting — it makes consulting work. The strategy layer needs a data layer beneath it. That's what EDRA provides.</p>
+          <h2>The strategy was sound — the data foundation <em>was not</em></h2>
+          <p>The result is a pattern that repeats across the industry. A consultant spends 3–6 months developing an ESG strategy. They recommend a certification pathway, timeline, and resource plan. The strategy looks excellent on paper. Then submission day arrives and the data doesn't pass basic integrity checks. Coverage is below threshold. Billing periods have gaps. Critical fields are missing from the data exports. The strategy was sound — the data foundation was not.</p>
+
+          <div class="metric-row">
+            <div class="stat-block"><div class="v">3<small>–6</small></div><div class="l">Months of strategy work built on unscanned data assumptions</div></div>
+            <div class="stat-block"><div class="v is-warn">5<small>/8</small></div><div class="l">Hotels with critical fields missing in one advisory engagement</div></div>
+            <div class="stat-block"><div class="v is-gold">48<small>h</small></div><div class="l">For an EDRA scan to return what the data can actually support</div></div>
+          </div>
+
+          <p>This isn't a criticism of consultants. It's a structural problem. ESG advisory firms operate at the strategy layer. Data quality lives at the infrastructure layer. There has been no standardized way to assess data readiness before building a strategy on top of it. Consultants have had to assume that the data their clients describe is the data that actually exists. That assumption fails more often than anyone in the industry is comfortable admitting.</p>
+
+          <div class="flow">
+            <div class="flow__title">The paradox, as a sequence</div>
+            <div class="flow__steps">
+              <div class="flow-step"><div class="n">01</div><div class="t">Consultant engaged</div><div class="d">Talented advisors set out to design an ESG strategy.</div></div>
+              <div class="flow-step"><div class="n">02</div><div class="t">Strategy on assumptions</div><div class="d">The data is described, not scanned — and assumed sound.</div></div>
+              <div class="flow-step"><div class="n">03</div><div class="t">Submission day</div><div class="d">The plan meets the data for the first time.</div></div>
+              <div class="flow-step"><div class="n">04</div><div class="t">Integrity failure</div><div class="d">Coverage gaps and missing fields sink the submission.</div></div>
+            </div>
+          </div>
+
+          <h2>EDRA gives consultants a <em>factual starting point</em></h2>
+          <p><strong>EDRA gives consultants (and their clients) a factual starting point.</strong> Before the strategy is designed, before the certification pathway is selected, before the timeline is committed — run an EDRA scan. In 48 hours, both the consultant and the client know exactly what the data can support. Which assets are ready. Which have coverage gaps. Which have continuity failures. Which are missing structural fields. The strategy then gets built on facts, not assumptions.</p>
+
+          <div class="callout">The best ESG consultants are already asking for this — they know their reputation is tied to outcomes, and outcomes are tied to <em>data quality</em>.</div>
+
+          <p>EDRA doesn't replace consulting — it makes consulting work. The strategy layer needs a data layer beneath it. That's what EDRA provides.</p>
+
+          <!-- ── Case study card ── -->
+          <div class="cs-card">
+            <div class="cs-eyebrow">Case Study</div>
+            <p>An ESG consultant recommended a GRESB submission strategy for a hotel portfolio. EDRA scoring revealed that 5 of 8 hotels had critical fields missing — property type classifications, GFA figures, and occupancy data that are required for benchmarking. This work would have surfaced only after submission rejection, <strong style="color:#fff">costing the client a full 12-month cycle</strong>.</p>
+            <a href="./case-studies/consultant-paradox.pdf" class="btn-dl">Download Case Study (PDF)
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          </div>
+
+          <!-- ── FAQ ── -->
+          <section class="faq" aria-label="Frequently asked questions">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+              <h3>Can ESG consultants fix data problems?</h3>
+              <p>Not on their own. ESG advisory firms operate at the strategy layer — framework selection, certification pathways, timelines, stakeholder engagement. Data quality lives at the infrastructure layer. Consultants have had no standardized way to assess data readiness before building a strategy, so they assume the data their clients describe is the data that actually exists. That assumption is where strategies fail. Consulting needs a data layer beneath it — it doesn't replace one.</p>
+            </div>
+            <div class="faq-item">
+              <h3>What is the consultant paradox?</h3>
+              <p>The consultant paradox is the pattern where a sound ESG strategy fails at submission because the data foundation underneath it was never scanned. A consultant spends 3–6 months building a certification pathway and resource plan that looks excellent on paper, then submission day arrives and the data doesn't pass basic integrity checks — coverage is below threshold, billing periods have gaps, critical fields are missing. The strategy was sound; the data foundation was not.</p>
+            </div>
+            <div class="faq-item">
+              <h3>What is a data readiness scan?</h3>
+              <p>A data readiness scan is a factual assessment of what a portfolio's data can actually support before any strategy is built on top of it. An EDRA scan tells the consultant and the client — in 48 hours — which assets are ready, which have coverage gaps, which have continuity failures, and which are missing structural fields. The strategy then gets built on facts, not assumptions.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Does EDRA replace ESG consultants?</h3>
+              <p>No. EDRA gives consultants and their clients a factual starting point — it makes consulting work rather than replacing it. The strategy layer needs a data layer beneath it; that is what EDRA provides. The best ESG consultants already ask for this, because their reputation is tied to outcomes and outcomes are tied to data quality.</p>
+            </div>
+          </section>
+
+        </div>
       </div>
 
-      <div class="case-study-card">
-        <div class="cs-eyebrow">Case Study</div>
-        <p>An ESG consultant recommended a GRESB submission strategy for a hotel portfolio. EDRA scoring revealed that 5 of 8 hotels had critical fields missing — property type classifications, GFA figures, and occupancy data that are required for benchmarking. This work would have surfaced only after submission rejection, costing the client a full 12-month cycle.</p>
-        <a href="./case-studies/consultant-paradox.pdf" class="btn-teal">Download Case Study (PDF)
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </a>
+      <!-- ── End CTA ── -->
+      <div class="article-end">
+        <div class="article-end__inner">
+          <p>Build the strategy on <em>facts</em>, not assumptions.</p>
+          <a href="../index.html#contact" class="btn btn-primary" data-track="blog_cta_click">Request a data-readiness assessment</a>
+        </div>
       </div>
+
     </article>
   </main>
 
-  <footer class="blog-footer" role="contentinfo">
+  <footer role="contentinfo">
     <div class="container">
-      <div class="footer-inner">
-        <span class="footer-text">EDRA<sup>TM</sup> — Environmental Data Readiness Assessment. A product of <a href="../index.html">Outsourcing Hub India</a>.</span>
-        <span class="footer-text">GRESB Certified</span>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img class="footer-logo-mark" src="../edra-logo.jpg" alt="" width="36" height="36" />
+          <div>
+            <div class="footer-wordmark">EDRA<sup>TM</sup></div>
+            <div class="footer-tagline">ESG Data Readiness Assessment</div>
+            <div class="footer-mission">Built for real estate ESG data qualification</div>
+          </div>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="../index.html#why-edra">Why EDRA<sup>TM</sup></a></li>
+            <li><a href="../index.html#edra-stack">The Stack</a></li>
+            <li><a href="../resources.html">Resources</a></li>
+            <li><a href="./index.html">Blog</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-actions">
+          <a href="../index.html#contact" class="btn btn-primary btn-sm">Request an Assessment</a>
+          <a href="../index.html#sample-output" class="btn btn-outline btn-sm">See Sample Output</a>
+          <a href="mailto:hello@edraindex.com" class="footer-email">hello@edraindex.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 EDRA<sup>TM</sup>. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="../index.html#contact">Privacy</a>
+          <a href="../index.html#contact">Terms</a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('nav');
+      function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 10); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      var toggle = document.getElementById('nav-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var open = nav.classList.toggle('nav-open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          document.body.classList.toggle('nav-open-lock', open);
+        });
+      }
+      document.querySelectorAll('[data-dropdown]').forEach(function (dd) {
+        var btn = dd.querySelector('.nav-dropdown-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          document.querySelectorAll('[data-dropdown].is-open').forEach(function (o) { if (o !== dd) o.classList.remove('is-open'); });
+          var open = dd.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+          if (!dd.contains(e.target)) {
+            dd.classList.remove('is-open');
+            var b = dd.querySelector('.nav-dropdown-toggle');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+          dd.classList.remove('is-open');
+          var b = dd.querySelector('.nav-dropdown-toggle'); if (b) b.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>

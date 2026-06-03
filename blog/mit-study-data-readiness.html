@@ -12,96 +12,344 @@
     gtag('config', 'AW-18160005662');
     gtag('config', 'G-3WVP61B4BR');
   </script>
+
+  <title>MIT Study: Data Readiness Is the #1 Predictor of Certification Success — EDRA™</title>
   <meta name="description" content="MIT research shows data readiness is the top predictor of ESG certification success. Learn why data infrastructure matters more than ESG spend." />
-  <title>MIT Study: Data Readiness Is the #1 Predictor of Certification Success — EDRA</title>
+  <link rel="canonical" href="https://edraindex.com/blog/mit-study-data-readiness.html" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="EDRA" />
+  <meta property="og:title" content="MIT Study: Data Readiness Is the #1 Predictor of Certification Success" />
+  <meta property="og:description" content="MIT's 2025 research found structured data governance — not ESG spend — is the top predictor of certification success. Organizations with it certified 3x faster." />
+  <meta property="og:url" content="https://edraindex.com/blog/mit-study-data-readiness.html" />
+  <meta property="og:image" content="https://edraindex.com/edra-logo.jpg" />
+  <meta property="article:published_time" content="2026-02-22" />
+  <meta property="article:section" content="Research" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MIT Study: Data Readiness Is the #1 Predictor of Certification Success" />
+  <meta name="twitter:description" content="Structured data governance, not ESG budget, is the top predictor of certification success. Organizations with it certified 3x faster." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles-light.css" />
-  <style>
-    .blog-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 18px 56px; display: flex; align-items: center; justify-content: space-between; background: #FAFAF7; }
-    .blog-nav .nav-logo { display: flex; align-items: center; gap: 10px; } .blog-nav .nav-logo-mark { width: 40px; height: 40px; border-radius: 6px; object-fit: cover; }
-    .blog-nav .nav-logo-wordmark { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0A0A0A; letter-spacing: -0.04em; }
-    .blog-nav .back-link { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; color: #0A0A0A; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s; }
-    .blog-nav .back-link:hover { color: #1C3E29; }
-    .blog-hero { position: relative; width: 100%; height: 40vh; min-height: 320px; overflow: hidden; margin-top: 64px; }
-    .blog-hero img { width: 100%; height: 100%; object-fit: cover; }
-    .blog-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3), rgba(10,10,10,0.8)); }
-    .blog-article { max-width: 780px; margin: 0 auto; padding: 80px 56px 60px; }
-    .blog-date { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
-    .blog-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 40px; }
-    .blog-body p { color: var(--body); line-height: 1.8; margin-bottom: 24px; font-size: 1.05rem; }
-    .blog-body p strong { color: var(--white-off); }
-    .case-study-card { margin-top: 60px; padding: 40px; background: var(--bg-card); border: 1px solid var(--border-hi); border-radius: var(--radius-lg); }
-    .case-study-card .cs-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-    .case-study-card .cs-eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--teal); }
-    .case-study-card p { color: var(--body); line-height: 1.7; margin-bottom: 24px; font-size: 0.98rem; }
-    .case-study-card .btn-teal { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.82rem; background: var(--teal); color: var(--bg); border: 1.5px solid var(--teal); transition: all 0.35s; text-decoration: none; }
-    .case-study-card .btn-teal:hover { background: var(--teal-deep); border-color: var(--teal-deep); transform: translateY(-2px); box-shadow: 0 8px 32px var(--teal-glow); }
-    .blog-footer { border-top: 1px solid var(--border); margin-top: 0; }
-    .blog-footer .container { max-width: 1200px; margin: 0 auto; padding: 40px 56px; }
-    .blog-footer .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-    .blog-footer .footer-text { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--muted); }
-    .blog-footer .footer-text a { color: var(--teal); }
-    @media (max-width: 768px) {
-      .blog-nav { padding: 14px 24px; }
-      .blog-article { padding: 50px 24px 40px; }
-      .case-study-card { padding: 28px; }
-      .blog-footer .container { padding: 30px 24px; }
-    }
-  </style>
-</head>
-<body>
+  <link rel="stylesheet" href="../styles-institutional.css" />
+  <link rel="stylesheet" href="./blog.css" />
+  <link rel="icon" type="image/jpeg" href="../edra-logo.jpg" />
+  <link rel="apple-touch-icon" href="../edra-logo.jpg" />
 
-  <nav class="blog-nav" role="navigation" aria-label="Blog navigation">
+  <!-- ── Structured data: Article + Breadcrumb + FAQ (GEO/AEO) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "MIT Study: Data Readiness Is the #1 Predictor of Certification Success",
+        "description": "MIT's 2025 research found structured data governance — not ESG spend — is the top predictor of certification success. Organizations with it certified 3x faster than peers with bigger budgets but poor data foundations.",
+        "image": "https://edraindex.com/edra-logo.jpg",
+        "datePublished": "2026-02-22",
+        "dateModified": "2026-02-22",
+        "author": { "@type": "Organization", "name": "EDRA", "url": "https://edraindex.com" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "EDRA — a product of Outsourcing Hub India",
+          "logo": { "@type": "ImageObject", "url": "https://edraindex.com/edra-logo.jpg" }
+        },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://edraindex.com/blog/mit-study-data-readiness.html" },
+        "articleSection": "Research",
+        "keywords": "MIT data readiness study, ESG certification predictor, data infrastructure maturity, data governance, EDRA B Score, GRESB certification",
+        "wordCount": 815
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://edraindex.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://edraindex.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "MIT Study: Data Readiness Is the #1 Predictor", "item": "https://edraindex.com/blog/mit-study-data-readiness.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What did the MIT study find about ESG data readiness?",
+            "acceptedAnswer": { "@type": "Answer", "text": "MIT's 2025 research on data infrastructure maturity found that data readiness is the single strongest predictor of ESG certification success. Organizations with structured data governance certified 3x faster than those with higher ESG spend but poor data foundations. The differentiator was not budget, portfolio size, or building type — it was three specific data governance capabilities: boundary definitions, evidence trails, and approval workflows." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is data readiness the top predictor of certification success?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Certification engines score data, not buildings. Without defined boundaries, retrievable evidence, and documented approvals, even an efficient asset cannot be reliably scored. The MIT study quantified what practitioners already knew: the bottleneck is never the building, it is always the data. Organizations that formalized these governance processes moved through certification pipelines at three times the speed of their peers, regardless of ESG maturity level." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does data infrastructure maturity mean?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Data infrastructure maturity describes how well an organization's data is governed before it ever reaches a reporting platform: whether boundaries are defined, whether evidence is retrievable, whether approvals are documented, and whether the data itself is complete and continuous. A mature data infrastructure produces decision-grade, auditable evidence — the opposite of fragmented utility data collected on spreadsheets." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does ESG spend improve certification odds?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Not on its own. The MIT study found that money spent on platforms, consultants, and green building technologies is wasted if the underlying data is not decision-grade. A six-figure platform sitting on top of fragmented, incomplete data produces the same outcome as no platform at all: a failed submission. ESG budgets need rebalancing toward the data layer first." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="blog-page">
+
+  <nav id="nav" role="navigation" aria-label="Main navigation">
     <a href="../index.html" class="nav-logo" aria-label="EDRA home">
-      <img class="nav-logo-mark" src="../edra-logo.jpg" alt="" width="40" height="40" /><span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
+      <img class="nav-logo-mark" src="../edra-logo.jpg" alt="" width="40" height="40" />
+      <span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
     </a>
-    <a href="../index.html" class="back-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-      Back to EDRA
-    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html#why-edra">Why EDRA<sup>TM</sup></a></li>
+      <li><a href="../index.html#sample-output">Outputs</a></li>
+      <li><a href="../index.html#edra-stack">The Stack</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">
+          Resources <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="resources-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="../resources.html#case-studies">Case Studies</a></li>
+          <li role="none"><a role="menuitem" href="../resources.html#whitepapers">Whitepapers</a></li>
+          <li role="none"><a role="menuitem" href="./index.html" aria-current="page">Blog</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="region-menu">
+          Region <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="region-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="../usa.html">United States <span class="nav-dd-region">USA</span></a></li>
+          <li role="none"><a role="menuitem" href="../uk.html">United Kingdom <span class="nav-dd-region">UK</span></a></li>
+          <li role="none"><a role="menuitem" href="../apac.html">Asia Pacific <span class="nav-dd-region">APAC</span></a></li>
+          <li role="none"><a role="menuitem" href="../aus.html">Australia <span class="nav-dd-region">AUS</span></a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="../demo.html" class="btn btn-outline">Book a Demo</a>
+      <a href="../index.html#contact" class="btn btn-primary" data-track="nav_cta_click">Request an Assessment</a>
+    </div>
+    <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <div class="blog-hero">
-    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1920&q=80" alt="Research and data analysis" />
-  </div>
-
   <main>
-    <article class="blog-article">
-      <div class="blog-date">February 22, 2026</div>
-      <h1 class="blog-title">MIT Study: Data Readiness Is the #1 Predictor of Certification Success</h1>
+    <article>
 
-      <div class="blog-body">
-        <p>MIT's 2025 research on data infrastructure maturity in ESG reporting produced a finding that should reshape how the industry approaches certification. <strong>Organizations with structured data governance certified 3x faster</strong> than those with higher ESG spend but poor data foundations. The implication is clear: money spent on platforms, consultants, and green building technologies is wasted if the underlying data isn't decision-grade.</p>
+      <!-- ── Hero ── -->
+      <header class="article-hero">
+        <div class="article-hero__art" aria-hidden="true">
+          <svg viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- ranked predictor bars: tallest (data readiness) highlighted gold, on a faint baseline -->
+            <line x1="120" y1="400" x2="440" y2="400" stroke="#4E7A60" stroke-opacity="0.2" stroke-width="1.5"/>
+            <rect x="130" y="160" width="44" height="240" rx="3" fill="#C8A96E" fill-opacity="0.55" stroke="#C8A96E" stroke-width="1.5"/>
+            <rect x="194" y="230" width="44" height="170" rx="3" fill="none" stroke="#4E7A60" stroke-width="1.5"/>
+            <rect x="258" y="288" width="44" height="112" rx="3" fill="none" stroke="#4E7A60" stroke-width="1.5"/>
+            <rect x="322" y="328" width="44" height="72" rx="3" fill="none" stroke="#4E7A60" stroke-width="1.5"/>
+            <rect x="386" y="356" width="44" height="44" rx="3" fill="none" stroke="#4E7A60" stroke-width="1.5"/>
+            <!-- correlation dots tracing the descending rank -->
+            <circle cx="152" cy="140" r="4" fill="#C8A96E"/>
+            <circle cx="216" cy="210" r="3" fill="#4E7A60" fill-opacity="0.6"/>
+            <circle cx="280" cy="268" r="3" fill="#4E7A60" fill-opacity="0.6"/>
+            <circle cx="344" cy="308" r="3" fill="#4E7A60" fill-opacity="0.6"/>
+            <circle cx="408" cy="336" r="3" fill="#4E7A60" fill-opacity="0.6"/>
+            <path d="M152 140 L216 210 L280 268 L344 308 L408 336" stroke="#C8A96E" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="4 5"/>
+          </svg>
+        </div>
+        <div class="container">
+          <nav class="article-breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">EDRA</a> <span aria-hidden="true">/</span>
+            <a href="./index.html">Blog</a> <span aria-hidden="true">/</span>
+            <span>Research</span>
+          </nav>
+          <span class="article-cat">Research</span>
+          <h1>MIT study: data readiness is the #1 predictor of <em>certification success</em></h1>
+          <p class="article-dek">MIT's 2025 research on data infrastructure maturity found a result that should reshape ESG budgets: structured data governance — not spend — is what separates first-attempt certifications from repeated failures. Organizations that had it certified three times faster.</p>
+          <div class="article-byline">
+            <span>EDRA Research</span><span class="dot"></span>
+            <time datetime="2026-02-22">February 22, 2026</time><span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </header>
 
-        <p>The study examined what separated organizations that certified on their first attempt from those that required multiple cycles. The differentiator wasn't budget, portfolio size, or building type. It was three specific data governance capabilities: <strong>boundary definitions, evidence trails, and approval workflows</strong>. Organizations that had formalized these processes — regardless of their ESG maturity level — moved through certification pipelines at three times the speed of their peers.</p>
+      <!-- ── Body ── -->
+      <div class="article-shell">
+        <div class="article-body">
 
-        <p>This maps directly to what EDRA measures. The B Score — EDRA's data integrity assessment — evaluates exactly these dimensions: whether your data boundaries are defined, whether evidence is retrievable, whether approvals are documented, and whether the data itself is complete and continuous. The B Score exists because the MIT finding isn't new to practitioners — it's just newly quantified. Anyone who has managed a GRESB submission knows that the bottleneck is never the building. It's always the data.</p>
+          <div class="tldr">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li>MIT's 2025 study identifies <strong>data readiness</strong> — not ESG budget — as the single strongest predictor of certification success.</li>
+              <li>Organizations with structured data governance certified <strong>3x faster</strong> than peers with higher ESG spend but poor data foundations.</li>
+              <li>The differentiator was three capabilities: <strong>boundary definitions, evidence trails, and approval workflows</strong> — independent of ESG maturity level.</li>
+              <li>A six-figure platform on top of fragmented data produces the same outcome as no platform at all: a failed submission. Budgets need rebalancing to the data layer first.</li>
+            </ul>
+          </div>
 
-        <p>The practical takeaway is that ESG budgets need rebalancing. Portfolios spending six figures on sustainability platforms while running data collection on spreadsheets are optimizing the wrong layer. A $200K platform sitting on top of fragmented, incomplete utility data produces the same outcome as no platform at all: a failed submission.</p>
+          <p>MIT's 2025 research on data infrastructure maturity in ESG reporting produced a finding that should reshape how the industry approaches certification. <strong>Organizations with structured data governance certified 3x faster</strong> than those with higher ESG spend but poor data foundations. The implication is clear: money spent on platforms, consultants, and green building technologies is wasted if the underlying data isn't decision-grade.</p>
 
-        <p><strong>EDRA's B Score measures exactly this — data integrity before performance.</strong> It gives fund managers, asset managers, and consultants a single number that answers the question MIT's research posed: is your data infrastructure ready to support certification? If the answer is no, every dollar spent downstream is at risk.</p>
+          <div class="metric-bar">
+            <div class="metric-bar__head">
+              <span class="metric-bar__label">Certification speed — structured data governance vs. higher ESG spend</span>
+              <span class="metric-bar__val">3x</span>
+            </div>
+            <div class="metric-bar__track">
+              <div class="metric-bar__fill" style="width:100%"></div>
+            </div>
+            <div class="metric-bar__note">Data readiness, not budget, set the pace through the certification pipeline</div>
+          </div>
+
+          <h2>The differentiator wasn't budget — it was <em>data governance</em></h2>
+          <p>The study examined what separated organizations that certified on their first attempt from those that required multiple cycles. The differentiator wasn't budget, portfolio size, or building type. It was three specific data governance capabilities: <strong>boundary definitions, evidence trails, and approval workflows</strong>. Organizations that had formalized these processes — regardless of their ESG maturity level — moved through certification pipelines at three times the speed of their peers.</p>
+
+          <div class="metric-row">
+            <div class="stat-block"><div class="v is-gold">#1</div><div class="l">Data readiness, ranked the top predictor of certification success</div></div>
+            <div class="stat-block"><div class="v">3<small>x</small></div><div class="l">Faster certification for structured data governance vs. higher spend</div></div>
+            <div class="stat-block"><div class="v">3</div><div class="l">Governance capabilities that decide outcomes: boundaries, evidence, approvals</div></div>
+          </div>
+
+          <p>This maps directly to what EDRA measures. The B Score — EDRA's data integrity assessment — evaluates exactly these dimensions: whether your data boundaries are defined, whether evidence is retrievable, whether approvals are documented, and whether the data itself is complete and continuous. The B Score exists because the MIT finding isn't new to practitioners — it's just newly quantified. Anyone who has managed a GRESB submission knows that the bottleneck is never the building. It's always the data.</p>
+
+          <div class="callout">The MIT study quantified what practitioners already knew: the bottleneck is never the building — it's <em>always the data</em>.</div>
+
+          <h2>ESG budgets are optimizing the <em>wrong layer</em></h2>
+          <p>The practical takeaway is that ESG budgets need rebalancing. Portfolios spending six figures on sustainability platforms while running data collection on spreadsheets are optimizing the wrong layer. A $200K platform sitting on top of fragmented, incomplete utility data produces the same outcome as no platform at all: a failed submission.</p>
+
+          <p><strong>EDRA's B Score measures exactly this — data integrity before performance.</strong> It gives fund managers, asset managers, and consultants a single number that answers the question MIT's research posed: is your data infrastructure ready to support certification? If the answer is no, every dollar spent downstream is at risk.</p>
+
+          <!-- ── Case study card ── -->
+          <div class="cs-card">
+            <div class="cs-eyebrow">Case Study</div>
+            <p>A UK REIT with strong ESG budgets but fragmented data systems moved from Dependent Mode (score: 38) to Decision-Grade (score: 76) in 18 months using EDRA diagnostics. The transformation started with governance controls and evidence trail formalization — <strong style="color:#fff">not new technology purchases</strong>.</p>
+            <a href="./case-studies/mit-study-data-readiness.pdf" class="btn-dl">Download Case Study (PDF)
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          </div>
+
+          <!-- ── FAQ ── -->
+          <section class="faq" aria-label="Frequently asked questions">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+              <h3>What did the MIT study find about ESG data readiness?</h3>
+              <p>MIT's 2025 research on data infrastructure maturity found that data readiness is the single strongest predictor of ESG certification success. Organizations with structured data governance certified 3x faster than those with higher ESG spend but poor data foundations. The differentiator was not budget, portfolio size, or building type — it was three specific data governance capabilities: boundary definitions, evidence trails, and approval workflows.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Why is data readiness the top predictor of certification success?</h3>
+              <p>Certification engines score data, not buildings. Without defined boundaries, retrievable evidence, and documented approvals, even an efficient asset cannot be reliably scored. The MIT study quantified what practitioners already knew: the bottleneck is never the building, it is always the data. Organizations that formalized these governance processes moved through certification pipelines at three times the speed of their peers, regardless of ESG maturity level.</p>
+            </div>
+            <div class="faq-item">
+              <h3>What does data infrastructure maturity mean?</h3>
+              <p>Data infrastructure maturity describes how well an organization's data is governed before it ever reaches a reporting platform: whether boundaries are defined, whether evidence is retrievable, whether approvals are documented, and whether the data itself is complete and continuous. A mature data infrastructure produces decision-grade, auditable evidence — the opposite of fragmented utility data collected on spreadsheets.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Does ESG spend improve certification odds?</h3>
+              <p>Not on its own. The MIT study found that money spent on platforms, consultants, and green building technologies is wasted if the underlying data is not decision-grade. A six-figure platform sitting on top of fragmented, incomplete data produces the same outcome as no platform at all: a failed submission. ESG budgets need rebalancing toward the data layer first.</p>
+            </div>
+          </section>
+
+        </div>
       </div>
 
-      <div class="case-study-card">
-        <div class="cs-eyebrow">Case Study</div>
-        <p>A UK REIT with strong ESG budgets but fragmented data systems moved from Dependent Mode (score: 38) to Decision-Grade (score: 76) in 18 months using EDRA diagnostics. The transformation started with governance controls and evidence trail formalization — not new technology purchases.</p>
-        <a href="./case-studies/mit-study-data-readiness.pdf" class="btn-teal">Download Case Study (PDF)
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </a>
+      <!-- ── End CTA ── -->
+      <div class="article-end">
+        <div class="article-end__inner">
+          <p>Know if your data is <em>ready</em> before you spend on the platform.</p>
+          <a href="../index.html#contact" class="btn btn-primary" data-track="blog_cta_click">Request a data-readiness assessment</a>
+        </div>
       </div>
+
     </article>
   </main>
 
-  <footer class="blog-footer" role="contentinfo">
+  <footer role="contentinfo">
     <div class="container">
-      <div class="footer-inner">
-        <span class="footer-text">EDRA<sup>TM</sup> — Environmental Data Readiness Assessment. A product of <a href="../index.html">Outsourcing Hub India</a>.</span>
-        <span class="footer-text">GRESB Certified</span>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img class="footer-logo-mark" src="../edra-logo.jpg" alt="" width="36" height="36" />
+          <div>
+            <div class="footer-wordmark">EDRA<sup>TM</sup></div>
+            <div class="footer-tagline">ESG Data Readiness Assessment</div>
+            <div class="footer-mission">Built for real estate ESG data qualification</div>
+          </div>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="../index.html#why-edra">Why EDRA<sup>TM</sup></a></li>
+            <li><a href="../index.html#edra-stack">The Stack</a></li>
+            <li><a href="../resources.html">Resources</a></li>
+            <li><a href="./index.html">Blog</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-actions">
+          <a href="../index.html#contact" class="btn btn-primary btn-sm">Request an Assessment</a>
+          <a href="../index.html#sample-output" class="btn btn-outline btn-sm">See Sample Output</a>
+          <a href="mailto:hello@edraindex.com" class="footer-email">hello@edraindex.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 EDRA<sup>TM</sup>. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="../index.html#contact">Privacy</a>
+          <a href="../index.html#contact">Terms</a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('nav');
+      function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 10); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      var toggle = document.getElementById('nav-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var open = nav.classList.toggle('nav-open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          document.body.classList.toggle('nav-open-lock', open);
+        });
+      }
+      document.querySelectorAll('[data-dropdown]').forEach(function (dd) {
+        var btn = dd.querySelector('.nav-dropdown-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          document.querySelectorAll('[data-dropdown].is-open').forEach(function (o) { if (o !== dd) o.classList.remove('is-open'); });
+          var open = dd.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+          if (!dd.contains(e.target)) {
+            dd.classList.remove('is-open');
+            var b = dd.querySelector('.nav-dropdown-toggle');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+          dd.classList.remove('is-open');
+          var b = dd.querySelector('.nav-dropdown-toggle'); if (b) b.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
