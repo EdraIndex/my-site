@@ -844,6 +844,22 @@ body.hero-v3-page nav#nav .nav-links .nav-dropdown-menu a[aria-current="page"] {
     color: var(--gold, #C8A96E); background: rgba(255,255,255,0.04);
   }
   body.hero-v3-page nav#nav.nav-open .nav-dropdown-menu .nav-dd-region { color: rgba(255,255,255,0.45); }
+
+  /* Tighten the mobile menu. The desktop hero rule `.nav-links { gap: 36px }`
+     (0,1,2,2) out-specifies the mobile `#nav.nav-open .nav-links { gap: 4px }`
+     (0,1,2,0), so the 36px gap leaked onto mobile and made the rows ~80px
+     tall. Reset the gap and compact the row padding/min-height. */
+  body.hero-v3-page nav#nav.nav-open .nav-links,
+  body.hero-image-page nav#nav.nav-open .nav-links {
+    gap: 4px;
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+  #nav.nav-open .nav-links a,
+  #nav.nav-open .nav-dropdown > .nav-dropdown-toggle {
+    padding: 8px 4px;
+    min-height: 42px;
+  }
 }
 
 /* ============================================================
