@@ -123,9 +123,11 @@
       .nav-links > li { width: 100%; }
       .nav-links a, .nav-dropdown-toggle { padding: 12px 0; width: 100%; justify-content: space-between; }
       .nav-dropdown-menu {
-        position: static; transform: none; box-shadow: none; border: none;
+        position: static; transform: none; box-shadow: none;
+        border: none; border-left: 2px solid var(--border); border-radius: 0;
+        background: transparent; margin: 0 0 4px 8px;
         opacity: 1; visibility: visible; pointer-events: auto;
-        max-height: 0; overflow: hidden; padding: 0 0 0 14px; min-width: 0;
+        max-height: 0; overflow: hidden; padding: 0 0 0 16px; min-width: 0;
         transition: max-height 0.2s ease;
       }
       .nav-dropdown.is-open .nav-dropdown-menu { max-height: 320px; transform: none; padding: 4px 0 8px 14px; }
