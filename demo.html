@@ -22,7 +22,7 @@
   <title>Request a Demo — EDRA™</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
@@ -60,28 +60,76 @@
 
     sup { font-size: 0.45em; vertical-align: super; opacity: 0.6; font-weight: 400; }
 
-    /* Nav */
+    /* ── Full site nav (self-contained, demo tokens) ── */
     .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 56px;
-      background: #FAFAF7;
-      border-bottom: 1px solid rgba(17,26,19,0.08);
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      padding: 0 48px; height: 72px;
+      background: #FAFAF7; border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 500;
     }
-    .nav-logo { display: flex; align-items: center; gap: 14px; }
-    .nav-logo img { height: 48px; width: 48px; }
-    .nav-logo span {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700; font-size: 1.5rem;
-      color: #111A13; letter-spacing: 0.06em;
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo img { height: 40px; width: 40px; border-radius: 8px; object-fit: cover; }
+    .nav-logo-wordmark { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.3rem; color: #111A13; letter-spacing: -0.02em; }
+    .nav-links { display: flex; align-items: center; gap: 26px; list-style: none; }
+    .nav-links > li { position: relative; }
+    .nav-links a, .nav-dropdown-toggle {
+      font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #777;
+      background: none; border: none; transition: color 0.2s; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 7px;
     }
-    .nav-back {
-      font-size: 0.82rem; font-weight: 500;
-      color: var(--muted); letter-spacing: 0.04em;
-      transition: color 0.2s;
+    .nav-links a:hover, .nav-dropdown-toggle:hover, .nav-dropdown-toggle[aria-expanded="true"] { color: #111A13; }
+    .caret { width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); margin-top: -3px; transition: transform 0.2s; }
+    .nav-dropdown-toggle[aria-expanded="true"] .caret { transform: rotate(225deg); margin-top: 2px; }
+    .nav-dropdown-menu {
+      position: absolute; top: calc(100% + 14px); left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      min-width: 220px; background: #FFFFFF; border: 1px solid var(--border);
+      border-radius: 10px; box-shadow: 0 18px 40px rgba(17,26,19,0.12);
+      padding: 10px; list-style: none;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease; z-index: 1000;
     }
+    .nav-dropdown.is-open .nav-dropdown-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown-menu a {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 18px;
+      padding: 10px 14px; border-radius: 6px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.92rem; font-weight: 500;
+      letter-spacing: 0; text-transform: none; color: #111A13;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-dropdown-menu a:hover, .nav-dropdown-menu a[aria-current="page"] { background: var(--bg-subtle); color: var(--teal); }
+    .nav-dd-region { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .nav-dropdown-menu a:hover .nav-dd-region { color: var(--gold-deep); }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .nav-actions .btn { display: inline-flex; align-items: center; padding: 11px 20px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.02em; transition: all 0.25s; }
+    .btn-primary { background: var(--teal); color: var(--cream); border: 1.5px solid var(--teal); }
+    .btn-primary:hover { background: var(--teal-deep); border-color: var(--teal-deep); }
+    .nav-back { font-size: 0.78rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; transition: color 0.2s; }
     .nav-back:hover { color: #111A13; }
+    .nav-mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 6px; }
+    .nav-mobile-toggle span { width: 24px; height: 2px; background: #111A13; border-radius: 2px; }
+    @media (max-width: 1024px) {
+      .nav { padding: 0 20px; }
+      .nav-mobile-toggle { display: flex; }
+      .nav-actions { display: none; }
+      .nav-links {
+        position: absolute; top: 72px; left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 2px;
+        background: #FAFAF7; border-bottom: 1px solid var(--border);
+        padding: 12px 20px 20px; display: none;
+      }
+      .nav.nav-open .nav-links { display: flex; }
+      .nav-links > li { width: 100%; }
+      .nav-links a, .nav-dropdown-toggle { padding: 12px 0; width: 100%; justify-content: space-between; }
+      .nav-dropdown-menu {
+        position: static; transform: none; box-shadow: none; border: none;
+        opacity: 1; visibility: visible; pointer-events: auto;
+        max-height: 0; overflow: hidden; padding: 0 0 0 14px; min-width: 0;
+        transition: max-height 0.2s ease;
+      }
+      .nav-dropdown.is-open .nav-dropdown-menu { max-height: 320px; transform: none; padding: 4px 0 8px 14px; }
+    }
 
     /* Hero */
     .hero {
@@ -386,12 +434,46 @@
 </head>
 <body>
 
-  <nav class="nav">
-    <a href="./index.html" class="nav-logo">
-      <img src="./edra-logo.jpg" alt="" />
-      <span>EDRA<sup>TM</sup></span>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="./index.html" class="nav-logo" aria-label="EDRA home">
+      <img src="./edra-logo.jpg" alt="" width="40" height="40" />
+      <span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
     </a>
-    <a href="./index.html" class="nav-back">&larr; Back to EDRA</a>
+    <ul class="nav-links" role="list">
+      <li><a href="./index.html#why-edra">Why EDRA<sup>TM</sup></a></li>
+      <li><a href="./index.html#sample-output">Outputs</a></li>
+      <li><a href="./index.html#edra-stack">The Stack</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">
+          Resources <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="resources-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="./resources.html#case-studies">Case Studies</a></li>
+          <li role="none"><a role="menuitem" href="./resources.html#whitepapers">Whitepapers</a></li>
+          <li role="none"><a role="menuitem" href="./blog/index.html">Insights</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="region-menu">
+          Region <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="region-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="./usa.html">United States <span class="nav-dd-region">USA</span></a></li>
+          <li role="none"><a role="menuitem" href="./uk.html">United Kingdom <span class="nav-dd-region">UK</span></a></li>
+          <li role="none"><a role="menuitem" href="./apac.html">Asia Pacific <span class="nav-dd-region">APAC</span></a></li>
+          <li role="none"><a role="menuitem" href="./aus.html">Australia <span class="nav-dd-region">AUS</span></a></li>
+        </ul>
+      </li>
+      <li><a href="./index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="./index.html" class="nav-back">&larr; Back to EDRA</a>
+      <a href="./index.html#contact" class="btn btn-primary">Request an Assessment</a>
+    </div>
+    <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <div class="hero">
@@ -487,6 +569,40 @@
     <div class="footer-text">A product of Outsourcing Hub India</div>
   </footer>
 
+  <script>
+    (function () {
+      var nav = document.querySelector('.nav');
+      var toggle = document.getElementById('nav-toggle');
+      if (toggle) toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('nav-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.querySelectorAll('[data-dropdown]').forEach(function (dd) {
+        var btn = dd.querySelector('.nav-dropdown-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          document.querySelectorAll('[data-dropdown].is-open').forEach(function (o) { if (o !== dd) o.classList.remove('is-open'); });
+          var open = dd.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+          if (!dd.contains(e.target)) {
+            dd.classList.remove('is-open');
+            var b = dd.querySelector('.nav-dropdown-toggle'); if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+          dd.classList.remove('is-open');
+          var b = dd.querySelector('.nav-dropdown-toggle'); if (b) b.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
