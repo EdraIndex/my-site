@@ -831,7 +831,7 @@ body.hero-v3-page nav#nav .nav-links .nav-dropdown-menu a[aria-current="page"] {
     overflow: hidden;
     transition: max-height 0.25s ease;
   }
-  .nav-dropdown.is-open .nav-dropdown-menu { max-height: 480px; }
+  .nav-dropdown.is-open .nav-dropdown-menu { max-height: 480px; transform: none; }
   .nav-dropdown-menu a {
     padding: 10px 8px;
     color: var(--ink, #111A13);
