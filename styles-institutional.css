@@ -330,19 +330,14 @@ body.hero-image-page .inst-photo-band {
 body.hero-image-page .inst-photo-band::before {
   content: "";
   position: absolute; inset: 0; z-index: -2;
-  background-color: #0E2417;
-  /* On-brand SVG (forest + sage + gold faceted-cube motif) — replaces the
-     former stock photo. url() resolves relative to this stylesheet (site
-     root), so it works from /blog/ too. Pages can still override --band-img. */
-  background-image: var(--band-img, url('assets/inst-band-motif.svg'));
+  background-image: var(--band-img, url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=2400&q=80&auto=format&fit=crop'));
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 }
 body.hero-image-page .inst-photo-band::after {
   content: "";
   position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(180deg, rgba(8,22,14,0.55) 0%, rgba(8,22,14,0.32) 48%, rgba(8,22,14,0.62) 100%);
+  background: linear-gradient(180deg, rgba(8,22,14,0.78) 0%, rgba(8,22,14,0.6) 50%, rgba(8,22,14,0.82) 100%);
 }
 body.hero-image-page .inst-photo-band .eyebrow { color: var(--gold); justify-content: center; }
 body.hero-image-page .inst-photo-band .eyebrow::before { background: var(--gold); opacity: 0.7; }
