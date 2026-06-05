@@ -312,6 +312,50 @@ body{ background:#9D9A90; display:flex; flex-direction:column; align-items:cente
 /* Make the in-sheet CTA an actual link without losing its look */
 .page a.cta{ text-decoration:none; cursor:pointer; }
 
+/* ============================================================
+   Mobile — reflow the fixed 816px artboard into a fluid sheet.
+   The sheet is a print artboard; below ~880px it overflows and
+   gets clipped, so we drop the fixed dims and stack the grids.
+   ============================================================ */
+@media (max-width:880px){
+  body{ background:var(--bone); }
+  .page.d1{
+    width:100%; height:auto;
+    margin:0; box-shadow:none; overflow:visible;
+  }
+  .d1{ padding:30px 22px 0; }
+
+  .d1 .herorow{ grid-template-columns:1fr; gap:18px; }
+  .d1 .heromark{
+    width:170px; height:170px;
+    margin:2px auto 0; order:2;          /* cube sits below the hero copy */
+  }
+  .d1 .herotext h1, .d1 h1{ font-size:30px; max-width:none; }
+  .d1 .dek{ max-width:none; }
+
+  /* stat row → readable stacked ledger */
+  .d1 .statband{ grid-template-columns:1fr; }
+  .d1 .stat{
+    border-left:0; padding:14px 0 13px;
+    border-top:1px solid var(--rule);
+  }
+  .d1 .stat:first-child{ border-top:0; }
+
+  .d1 .cols{ grid-template-columns:1fr; gap:26px; }
+
+  .d1 .matters{
+    grid-template-columns:1fr; gap:14px;
+    margin-left:-22px; margin-right:-22px; padding:24px 22px;
+  }
+  .d1 .matters .lead{ font-size:20px; max-width:none; }
+  .d1 .matters .body{ max-width:none; }
+
+  .d1 .footer{
+    margin-left:-22px; margin-right:-22px; padding:0 22px 22px;
+    flex-direction:column; gap:6px; line-height:1.8;
+  }
+}
+
 @media (max-width:680px){
   .cs-nav{ padding:0 18px; }
   .cs-nav__cta{ display:none; }
