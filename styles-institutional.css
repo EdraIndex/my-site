@@ -374,6 +374,14 @@ body.hero-image-page .inst-photo-band .btn-pri:hover {
   background: var(--gold-deep);
   transform: translateY(-1px);
 }
+/* Mobile: the 150px vertical / 40px side padding leaves ~300px of dead
+   space around the CTA on a phone — tighten it for small screens. */
+@media (max-width: 768px) {
+  body.hero-image-page .inst-photo-band { padding: 84px 24px; }
+}
+@media (max-width: 480px) {
+  body.hero-image-page .inst-photo-band { padding: 60px 20px; }
+}
 
 /* ============================================================
    FOOTER — deep forest band (bookends the hero)
@@ -494,6 +502,18 @@ body.hero-image-page .about-quote em { font-style: italic; color: var(--gold-dee
   body.hero-image-page .about-grid { grid-template-columns: 1fr; gap: 36px; }
   body.hero-image-page .about-values { grid-template-columns: 1fr 1fr; gap: 28px 0; }
   body.hero-image-page .about-values li:nth-child(3) { padding-left: 0; border-left: none; }
+}
+/* Phone: stack the 4 values into one column with top-rule dividers —
+   at 2-up the "Customer-first" value (non-breaking hyphen) overflows its column. */
+@media (max-width: 560px) {
+  body.hero-image-page .about-values { grid-template-columns: 1fr; gap: 0; }
+  body.hero-image-page .about-values li {
+    padding-left: 0; border-left: none;
+    padding-top: 22px; margin-top: 22px; border-top: 1px solid var(--border);
+  }
+  body.hero-image-page .about-values li:first-child {
+    padding-top: 0; margin-top: 0; border-top: none;
+  }
 }
 
 /* ============================================================
