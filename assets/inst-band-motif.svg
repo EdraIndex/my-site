@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid slice" role="presentation">
+  <defs>
+    <radialGradient id="edraBandBg" cx="50%" cy="0%" r="120%">
+      <stop offset="0%" stop-color="#1C3E29"/>
+      <stop offset="52%" stop-color="#0E2417"/>
+      <stop offset="100%" stop-color="#07150D"/>
+    </radialGradient>
+    <pattern id="edraBandGrid" width="60" height="34" patternUnits="userSpaceOnUse">
+      <path d="M30 0 L60 17 L30 34 L0 17 Z" fill="none" stroke="#92A992" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- forest ground + faint isometric lattice -->
+  <rect width="1440" height="720" fill="url(#edraBandBg)"/>
+  <rect width="1440" height="720" fill="url(#edraBandGrid)"/>
+
+  <!-- EDRA faceted-cube motif, bleeding off the right edge -->
+  <g>
+    <polygon points="980,180 1240,30 1500,180 1240,330" fill="#4E7A60" fill-opacity="0.16"/>
+    <polygon points="980,180 1240,330 1240,630 980,480" fill="#1C3E29" fill-opacity="0.30"/>
+    <polygon points="1500,180 1500,480 1240,630 1240,330" fill="#102A1B" fill-opacity="0.42"/>
+    <g fill="none" stroke="#92A992" stroke-opacity="0.22" stroke-width="1.25">
+      <polygon points="980,180 1240,30 1500,180 1240,330"/>
+      <polygon points="980,180 1240,330 1240,630 980,480"/>
+      <polygon points="1500,180 1500,480 1240,630 1240,330"/>
+    </g>
+    <path d="M980,180 L1240,30 L1500,180" fill="none" stroke="#C8A96E" stroke-opacity="0.45" stroke-width="1.5"/>
+    <line x1="1240" y1="330" x2="1240" y2="630" stroke="#C8A96E" stroke-opacity="0.20" stroke-width="1.25"/>
+  </g>
+
+  <!-- secondary cube wireframe, lower-left, quiet -->
+  <g fill="none" stroke="#92A992" stroke-opacity="0.11" stroke-width="1">
+    <polygon points="120,470 250,395 380,470 250,545"/>
+    <polygon points="120,470 250,545 250,690 120,615"/>
+    <polygon points="380,470 380,615 250,690 250,545"/>
+  </g>
+</svg>
