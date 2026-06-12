@@ -286,8 +286,29 @@
 
 /* ---- standalone screen + print framing ---- */
 html,body{ margin:0; }
-body{ background:#9D9A90; display:flex; flex-direction:column; align-items:center; padding:0; }
-.page{ box-shadow:0 18px 50px rgba(0,0,0,.28); margin:44px 0 60px; }
+/* Deep-forest "desk": the cream sheet floats on a dark institutional
+   surface — a tonal forest gradient + a thin isometric sage lattice +
+   a few sparse gold nodes. All pure CSS (no external asset); fixed
+   attachment keeps the lattice steady so the sheet reads as laid on it. */
+body{
+  background-color:#0E1A13;
+  background-image:
+    radial-gradient(circle at 13% 21%, rgba(200,169,110,.16) 0, rgba(200,169,110,0) 2.5px),
+    radial-gradient(circle at 87% 13%, rgba(200,169,110,.12) 0, rgba(200,169,110,0) 2.5px),
+    radial-gradient(circle at 81% 66%, rgba(200,169,110,.11) 0, rgba(200,169,110,0) 2.5px),
+    radial-gradient(circle at 19% 78%, rgba(200,169,110,.12) 0, rgba(200,169,110,0) 2.5px),
+    repeating-linear-gradient( 30deg, rgba(146,169,146,.055) 0 1px, transparent 1px 48px),
+    repeating-linear-gradient(-30deg, rgba(146,169,146,.055) 0 1px, transparent 1px 48px),
+    radial-gradient(130% 90% at 50% -10%, rgba(35,70,52,.55) 0%, rgba(14,26,19,0) 58%),
+    linear-gradient(180deg, #16271C 0%, #0E1A13 100%);
+  background-attachment:fixed;
+  display:flex; flex-direction:column; align-items:center; padding:0;
+}
+.page{
+  box-shadow:0 30px 70px rgba(0,0,0,.45), 0 3px 10px rgba(0,0,0,.3);
+  outline:1px solid rgba(200,169,110,.16);
+  margin:44px 0 60px;
+}
 *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 @page{ size:8.5in 11in; margin:0; }
 @media print{
