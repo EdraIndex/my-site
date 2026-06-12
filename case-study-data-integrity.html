@@ -19,6 +19,16 @@
     (function(){var b=Math.random().toString(36).substring(7),a=document.createElement("script");a.src="https://static-packages-prod.lusha.com/website-visitor-pixel/latest/insights.min.js?nocache="+b;a.async=!0;a.defer=!0;a.onload=function(){window.trackingLusha.onLoad({siteId:"1767909b-6df0-4a3d-89f9-3c2219b6c47e"})};document.head.appendChild(a)})();
   </script>
 
+  <!-- Google Tag (gtag.js) — Google Ads + Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18160005662"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18160005662');
+    gtag('config', 'G-3WVP61B4BR');
+  </script>
+
 <title>ESG Data Integrity Case Study: 250+ Portfolios Validated — EDRA™</title>
 <meta name="description" content="How EDRA validated 250+ portfolios — 2,000 assets and 3.3 million data points — for a global real estate private equity firm, making every downstream ESG report trustworthy at the source."/>
 <link rel="canonical" href="https://edraindex.com/case-study-data-integrity.html"/>
@@ -371,6 +381,111 @@ body{ background:#9D9A90; display:flex; flex-direction:column; align-items:cente
   .cs-nav__cta{ display:none; }
   .cs-footer{ padding:34px 20px 28px; }
 }
+
+/* ============================================================
+   Assessment form — landing-page conversion block.
+   Scoped with cs- prefix; built from THIS document's own tokens
+   and fonts (Spectral / Archivo / IBM Plex Mono) so it stays
+   palette-cohesive and pulls in no external CSS.
+   ============================================================ */
+.cs-assess{
+  align-self:stretch; background:var(--bone);
+  border-top:1px solid var(--rule);
+  padding:64px 36px 72px; font-family:var(--grotesk);
+  scroll-margin-top:80px;
+}
+.cs-assess__inner{
+  max-width:816px; margin:0 auto;
+  display:grid; grid-template-columns:0.82fr 1fr; gap:48px; align-items:start;
+}
+.cs-assess__intro .sec-kicker{ margin-bottom:18px; }
+.cs-assess__intro h2{
+  font-family:var(--serif); font-weight:500; font-size:30px; line-height:1.12;
+  letter-spacing:-.012em; color:var(--ink); margin:0; max-width:14ch; text-wrap:balance;
+}
+.cs-assess__intro h2 em{ font-style:italic; color:var(--moss); }
+.cs-assess__intro .dek{
+  font-family:var(--serif); font-size:13.5px; line-height:1.5; color:var(--ink-2);
+  margin:16px 0 0; max-width:40ch;
+}
+.cs-assess__intro ul{
+  list-style:none; margin:22px 0 0; padding:0;
+  display:flex; flex-direction:column; gap:11px;
+}
+.cs-assess__intro ul li{
+  font-size:12px; line-height:1.45; color:var(--ink-2); padding-left:22px; position:relative;
+}
+.cs-assess__intro ul li::before{
+  content:""; position:absolute; left:0; top:5px; width:9px; height:9px;
+  background:var(--moss);
+}
+
+.cs-form{
+  background:var(--paper-2); border:1px solid var(--rule);
+  padding:28px 28px 26px;
+}
+.cs-form .row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.cs-form .fg{ display:flex; flex-direction:column; margin-bottom:15px; }
+.cs-form label{
+  font-family:var(--grotesk); font-weight:600; font-size:10px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ink-2); margin-bottom:7px;
+}
+.cs-form label .req{ color:var(--band-f); }
+.cs-form label .opt{ color:var(--ink-3); font-weight:500; letter-spacing:.06em; }
+.cs-form input,
+.cs-form select,
+.cs-form textarea{
+  font-family:var(--grotesk); font-size:13px; color:var(--ink);
+  background:var(--paper); border:1px solid var(--rule-2); border-radius:0;
+  padding:11px 13px; width:100%; transition:border-color .18s, box-shadow .18s;
+  -webkit-appearance:none; appearance:none;
+}
+.cs-form textarea{ min-height:88px; resize:vertical; }
+.cs-form select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%236E7268' stroke-width='1.6' d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 13px center; padding-right:34px;
+}
+.cs-form input::placeholder,
+.cs-form textarea::placeholder{ color:var(--ink-3); }
+.cs-form input:focus,
+.cs-form select:focus,
+.cs-form textarea:focus{
+  outline:none; border-color:var(--moss); box-shadow:0 0 0 3px rgba(78,107,83,.14);
+}
+.cs-form [aria-invalid="true"]{ border-color:var(--band-f); }
+.cs-form .err{
+  font-family:var(--grotesk); font-size:10.5px; color:var(--band-f);
+  margin-top:5px; min-height:0; line-height:1.35;
+}
+.cs-form .err:empty{ display:none; }
+.cs-form__status{
+  font-family:var(--serif); font-size:12.5px; line-height:1.45; color:var(--moss);
+  margin:0 0 14px; min-height:0;
+}
+.cs-form__status:empty{ display:none; }
+.cs-form__status.is-error{ color:var(--band-f); font-style:italic; }
+.cs-form__submit{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font-family:var(--grotesk); font-weight:600; font-size:11.5px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--bone); background:var(--forest);
+  border:0; border-radius:6px; padding:14px 22px; width:100%; cursor:pointer;
+  transition:background .2s;
+}
+.cs-form__submit:hover{ background:var(--forest-2); }
+.cs-form__helper{
+  font-family:var(--grotesk); font-size:10.5px; letter-spacing:.04em;
+  color:var(--ink-3); text-align:center; margin:11px 0 0;
+}
+
+@media (max-width:880px){
+  .cs-assess{ padding:48px 22px 56px; }
+  .cs-assess__inner{ grid-template-columns:1fr; gap:30px; }
+  .cs-assess__intro h2{ max-width:none; }
+  .cs-assess__intro .dek{ max-width:none; }
+}
+@media (max-width:560px){
+  .cs-form .row{ grid-template-columns:1fr; gap:0; }
+}
 </style>
 </head>
 <body>
@@ -382,7 +497,7 @@ body{ background:#9D9A90; display:flex; flex-direction:column; align-items:cente
     </a>
     <div class="cs-nav__right">
       <a href="./resources.html" class="cs-nav__back">&larr; Resources</a>
-      <a href="./index.html#contact" class="cs-nav__cta">Request an Assessment</a>
+      <a href="#assess" class="cs-nav__cta">Request an Assessment</a>
     </div>
   </nav>
 
@@ -442,7 +557,7 @@ body{ background:#9D9A90; display:flex; flex-direction:column; align-items:cente
       <div class="lead">Your reporting is only as good as the asset data underneath it.</div>
       <div class="body">
         Wherever you are — first GRESB submission or tenth — if data isn't validated at the source, every report inherits the error, and you won't see it until it's expensive to fix. We've done this across 2,000 assets and 3.3 million validated data points. We can do it for yours.
-        <a href="./index.html#contact" class="cta">Book a data-integrity audit&nbsp;&nbsp;→</a>
+        <a href="#assess" class="cta">Book a data-integrity audit&nbsp;&nbsp;→</a>
       </div>
     </div>
     <div class="footer">
@@ -451,6 +566,85 @@ body{ background:#9D9A90; display:flex; flex-direction:column; align-items:cente
       <span>edraindex.com</span>
     </div>
   </div>
+
+  <!-- ============================================================
+       Assessment request form — on-page conversion (landing page)
+       ============================================================ -->
+  <section class="cs-assess" id="assess" aria-label="Request an assessment">
+    <div class="cs-assess__inner">
+      <div class="cs-assess__intro">
+        <div class="sec-kicker">Get Started</div>
+        <h2>Request an EDRA<sup>TM</sup> <em>diagnostic</em> for your portfolio</h2>
+        <p class="dek">The same data-integrity discipline behind this case study — applied to yours. Tell us about your portfolio and we'll come back with where it stands.</p>
+        <ul>
+          <li>We assess your portfolio's data readiness</li>
+          <li>Identify blockers with codified reason codes</li>
+          <li>Deliver remediation priorities ranked by impact</li>
+        </ul>
+      </div>
+
+      <form class="cs-form" id="contact-form" novalidate aria-describedby="form-status">
+        <div class="row">
+          <div class="fg">
+            <label for="name">Full Name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Your name" required aria-required="true" aria-describedby="name-error" autocomplete="name" />
+            <span class="err" id="name-error" role="alert"></span>
+          </div>
+          <div class="fg">
+            <label for="email">Work Email <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required aria-required="true" aria-describedby="email-error" autocomplete="email" />
+            <span class="err" id="email-error" role="alert"></span>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="company">Company <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="company" name="company" placeholder="Your company" required aria-required="true" aria-describedby="company-error" autocomplete="organization" />
+          <span class="err" id="company-error" role="alert"></span>
+        </div>
+        <div class="row">
+          <div class="fg">
+            <label for="portfolio-type">Portfolio Type <span class="req" aria-hidden="true">*</span></label>
+            <select id="portfolio-type" name="portfolio_type" required aria-required="true" aria-describedby="portfolio-type-error">
+              <option value="" disabled selected>Select portfolio type</option>
+              <option value="multifamily">Multifamily</option>
+              <option value="office">Office</option>
+              <option value="retail">Retail</option>
+              <option value="industrial">Industrial</option>
+              <option value="hospitality">Hospitality</option>
+              <option value="mixed">Mixed Portfolio</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="err" id="portfolio-type-error" role="alert"></span>
+          </div>
+          <div class="fg">
+            <label for="asset-count">Approx. Number of Assets <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="asset-count" name="asset_count" placeholder="e.g. 25" inputmode="numeric" required aria-required="true" aria-describedby="asset-count-error" autocomplete="off" />
+            <span class="err" id="asset-count-error" role="alert"></span>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="objective">Primary Objective <span class="req" aria-hidden="true">*</span></label>
+          <select id="objective" name="objective" required aria-required="true" aria-describedby="objective-error">
+            <option value="" disabled selected>Select primary objective</option>
+            <option value="gresb">GRESB preparation</option>
+            <option value="readiness">Data readiness assessment</option>
+            <option value="diagnosis">Portfolio diagnosis</option>
+            <option value="audit">Audit defensibility</option>
+            <option value="reporting">ESG reporting support</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="err" id="objective-error" role="alert"></span>
+        </div>
+        <div class="fg">
+          <label for="message">Message <span class="opt">(optional)</span></label>
+          <textarea id="message" name="message" placeholder="Tell us about your portfolio or certification goals..."></textarea>
+        </div>
+        <p class="cs-form__status" id="form-status" aria-live="polite"></p>
+        <button type="submit" class="cs-form__submit">Request an Assessment</button>
+        <p class="cs-form__helper">We respond within 1 business day.</p>
+      </form>
+    </div>
+  </section>
 
   <footer class="cs-footer">
     <div class="cs-footer__inner">
@@ -463,7 +657,7 @@ body{ background:#9D9A90; display:flex; flex-direction:column; align-items:cente
         <a href="./index.html#edra-stack">The Stack</a>
         <a href="./resources.html">Resources</a>
         <a href="./about.html">About</a>
-        <a href="./index.html#contact">Contact</a>
+        <a href="#assess">Contact</a>
       </nav>
     </div>
     <div class="cs-footer__legal">
@@ -471,6 +665,135 @@ body{ background:#9D9A90; display:flex; flex-direction:column; align-items:cente
       <span>edraindex.com</span>
     </div>
   </footer>
+
+  <!-- ── Assessment form: validated, posts to /api/contact-form ── -->
+  <script>
+    (function(){
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      var status = form.querySelector('#form-status');
+      var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // Block well-known personal email providers — work emails only.
+      var personalEmailDomains = [
+        'gmail.com','googlemail.com',
+        'yahoo.com','yahoo.co.uk','yahoo.co.in','yahoo.in','ymail.com','rocketmail.com',
+        'hotmail.com','hotmail.co.uk','hotmail.co.in',
+        'outlook.com','live.com','msn.com',
+        'aol.com','aim.com',
+        'icloud.com','me.com','mac.com',
+        'protonmail.com','proton.me','pm.me',
+        'mail.com','gmx.com','gmx.net',
+        'yandex.com','yandex.ru',
+        'rediffmail.com','rediff.com',
+        'fastmail.com','fastmail.fm',
+        'tutanota.com','tuta.io'
+      ];
+      function isPersonalEmail(s){
+        var at = s.indexOf('@');
+        if (at < 0) return false;
+        return personalEmailDomains.indexOf(s.slice(at + 1).trim().toLowerCase()) >= 0;
+      }
+
+      function showError(field, message){
+        field.setAttribute('aria-invalid','true');
+        var errId = field.getAttribute('aria-describedby');
+        var errEl = errId && document.getElementById(errId);
+        if (errEl) errEl.textContent = message;
+      }
+      function clearError(field){
+        field.removeAttribute('aria-invalid');
+        var errId = field.getAttribute('aria-describedby');
+        var errEl = errId && document.getElementById(errId);
+        if (errEl) errEl.textContent = '';
+      }
+
+      form.addEventListener('input', function(e){ if (e.target.hasAttribute('aria-invalid')) clearError(e.target); });
+      form.addEventListener('change', function(e){ if (e.target.hasAttribute('aria-invalid')) clearError(e.target); });
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var firstInvalid = null, errorCount = 0;
+        function check(field, predicate, message){
+          if (!predicate()) { showError(field, message); if (!firstInvalid) firstInvalid = field; errorCount++; }
+          else { clearError(field); }
+        }
+
+        var name = form.querySelector('#name');
+        var email = form.querySelector('#email');
+        var company = form.querySelector('#company');
+        var portfolio = form.querySelector('#portfolio-type');
+        var assetCount = form.querySelector('#asset-count');
+        var objective = form.querySelector('#objective');
+
+        check(name, function(){ return name.value.trim().length > 1; }, 'Please enter your full name.');
+        check(email, function(){ var v = email.value.trim(); return emailRe.test(v) && !isPersonalEmail(v); }, 'Please enter your work email — personal providers like gmail or yahoo aren’t accepted.');
+        check(company, function(){ return company.value.trim().length > 1; }, 'Please enter your company.');
+        check(portfolio, function(){ return !!portfolio.value; }, 'Please select a portfolio type.');
+        check(assetCount, function(){ return assetCount.value.trim().length > 0; }, 'Please enter the approximate number of assets.');
+        check(objective, function(){ return !!objective.value; }, 'Please select your primary objective.');
+
+        if (errorCount > 0) { if (firstInvalid) firstInvalid.focus(); return; }
+
+        if (status) { status.textContent = ''; status.classList.remove('is-error'); }
+
+        var btn = form.querySelector('.cs-form__submit');
+        var originalBtnHtml = btn.innerHTML;
+        btn.textContent = 'Sending…';
+        btn.style.pointerEvents = 'none';
+        btn.style.opacity = '0.85';
+
+        var payload = {
+          name: name.value.trim(),
+          email: email.value.trim(),
+          company: company.value.trim(),
+          portfolio_type: portfolio.value,
+          asset_count: assetCount.value.trim(),
+          objective: objective.value,
+          message: (form.querySelector('#message') && form.querySelector('#message').value || '').trim(),
+          source: 'case-study-data-integrity'
+        };
+
+        fetch('/api/contact-form', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function(r){
+          return r.json().then(function(j){ return { ok: r.ok && j && j.ok, body: j }; });
+        }).then(function(result){
+          if (!result.ok) throw new Error((result.body && result.body.error) || 'send_failed');
+          // Fire Google Ads conversion only AFTER the lead actually delivered.
+          if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18160005662/jUjuCPCzuqwcEJ7krtND',
+              'value': 1.0,
+              'currency': 'INR'
+            });
+          }
+          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Request Received';
+          if (status) status.textContent = 'Thanks — we’ll be in touch within 1 business day.';
+          setTimeout(function(){
+            form.reset();
+            btn.innerHTML = originalBtnHtml;
+            btn.textContent = 'Request an Assessment';
+            btn.style.pointerEvents = '';
+            btn.style.opacity = '';
+            if (status) status.textContent = '';
+          }, 4500);
+        }).catch(function(e){
+          if (window.console) console.error('contact-form submit failed:', e);
+          btn.innerHTML = originalBtnHtml;
+          btn.textContent = 'Request an Assessment';
+          btn.style.pointerEvents = '';
+          btn.style.opacity = '';
+          if (status) {
+            status.textContent = 'Sorry — couldn’t send your request. Please email p.jain@edraindex.com directly.';
+            status.classList.add('is-error');
+          }
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
