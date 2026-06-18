@@ -203,6 +203,29 @@
   .ft .wm{font-family:var(--display);font-size:16px;font-weight:700;color:#fff;}
   .ft a{color:var(--gold);}
 
+  /* ── persistent booking rail (desktop) ── */
+  .bookrail{display:none;}
+  .br-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(20,48,31,0.22);}
+  .br-top{background:linear-gradient(160deg,#1B3A28,#14301F);color:#fff;padding:18px 20px;}
+  .br-eyebrow{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-soft);}
+  .br-title{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-0.02em;margin:6px 0 4px;}
+  .br-sub{font-size:12.5px;line-height:1.45;color:rgba(255,255,255,0.78);}
+  .br-form{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;}
+  .br-form input,.br-form select{font-family:var(--sans);font-size:13.5px;border:1px solid var(--line);border-radius:9px;padding:11px 12px;outline:none;color:var(--ink);width:100%;background:#fff;}
+  .br-form input:focus,.br-form select:focus{border-color:var(--green);}
+  .br-form select{color:var(--gray);}
+  .br-form .btn{margin-top:2px;justify-content:center;}
+  .br-err{display:none;font-size:12px;color:var(--c-crimson);}
+  .br-note{font-size:11px;color:var(--muted);line-height:1.4;text-align:center;}
+  .br-done{display:none;padding:26px 20px 28px;text-align:center;}
+  .br-done .ck{font-size:34px;color:var(--green);line-height:1;}
+  .br-done h4{font-family:var(--display);font-size:18px;font-weight:600;color:var(--forest);margin:8px 0 6px;}
+  .br-done p{font-size:13px;color:var(--gray);margin:0;line-height:1.5;}
+  @media(min-width:1024px){
+    .hero .wrap,.band .wrap,.final .wrap{padding-right:392px;}
+    .bookrail{display:block;position:fixed;z-index:55;top:84px;width:344px;right:max(24px,calc((100vw - 1120px)/2 + 28px));max-height:calc(100vh - 104px);overflow:auto;}
+  }
+
   @media(max-width:920px){
     .hero h1{font-size:40px;}
     .tl,.sc-grid,.final-in{grid-template-columns:1fr;}
@@ -225,6 +248,37 @@
   </div>
 </header>
 
+<!-- PERSISTENT BOOKING RAIL (desktop; mobile falls back to the modal) -->
+<aside class="bookrail" aria-label="Book a meeting at IMN">
+  <div class="br-card">
+    <div class="br-top">
+      <div class="br-eyebrow">● Newport, RI · Jun 24–26</div>
+      <div class="br-title">Meet Priyankar Baid</div>
+      <div class="br-sub">CEO, OHI — 30 minutes at IMN. Tell us a little and we'll lock a slot.</div>
+    </div>
+    <form class="br-form" id="railForm" novalidate>
+      <input id="rlName" required placeholder="Full name" />
+      <input id="rlCompany" required placeholder="Company / fund" />
+      <input id="rlEmail" required type="email" placeholder="Work email" />
+      <select id="rlRole">
+        <option value="Fund leadership / GP">Fund leadership / GP</option>
+        <option value="Asset Management">Asset Management</option>
+        <option value="Finance (CFO / Controller)">Finance (CFO / Controller)</option>
+        <option value="ESG / Sustainability">ESG / Sustainability</option>
+        <option value="Other">Other</option>
+      </select>
+      <div class="br-err" id="rlErr"></div>
+      <button class="btn btn-green" type="submit">Request my slot <span class="arr">→</span></button>
+      <div class="br-note">No data upload. We reply within one business day.</div>
+    </form>
+    <div class="br-done" id="railDone">
+      <div class="ck">✓</div>
+      <h4>Request received.</h4>
+      <p>We'll confirm a Newport time within one business day.</p>
+    </div>
+  </div>
+</aside>
+
 <!-- HERO -->
 <section class="hero">
   <div class="wrap hero-in">
@@ -233,7 +287,6 @@
     <p>To Finance it's a cost. To your accountants it's a liability. To GRESB it's Scope 2 emissions — and the same utility data feeds all three. EDRA™ scores whether that data is actually submission-ready, before you report.</p>
     <div class="hero-cta">
       <a class="btn btn-gold btn-lg" href="#check">Take the 60-second readiness check <span class="arr">→</span></a>
-      <button class="btn btn-ghost btn-lg" data-book>Meet Priyankar Baid at IMN</button>
     </div>
     <p class="hero-note">No data upload. No commitment. An indicative score in under a minute.</p>
     <div class="hero-stats">
@@ -534,9 +587,9 @@
       var sec=document.getElementById('check'); if(sec){ setTimeout(function(){sec.scrollIntoView({behavior:'smooth',block:'start'});},300); } } }
   }catch(e){}
 
-  /* ===== Booking modal ===== */
+  /* ===== Booking (modal + persistent rail share one handler) ===== */
   var bb=document.getElementById('bookBack');
-  function open(){bb.style.display='flex';document.body.style.overflow='hidden';document.getElementById('bookForm').style.display='block';document.getElementById('bookDone').style.display='none';ev('imn_book_open',{});}
+  function open(){bb.style.display='flex';document.body.style.overflow='hidden';document.getElementById('bookForm').style.display='block';document.getElementById('bookDone').style.display='none';ev('imn_book_open',{where:'modal'});}
   function close(){bb.style.display='none';document.body.style.overflow='';}
   document.querySelectorAll('[data-book]').forEach(function(b){b.addEventListener('click',open);});
   document.getElementById('bookX').addEventListener('click',close);
@@ -544,24 +597,12 @@
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
 
   var PERSONAL=/(gmail|googlemail|yahoo|ymail|hotmail|outlook|live|msn|aol|icloud|me|mac|proton|protonmail|pm|gmx|yandex|rediffmail|fastmail)\./i;
-  var bkErr=document.getElementById('bkErr');
-  function showErr(m){ bkErr.textContent=m; bkErr.style.display='block'; }
 
-  document.getElementById('bookForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    bkErr.style.display='none';
-    var name=document.getElementById('bkName').value.trim();
-    var company=document.getElementById('bkCompany').value.trim();
-    var email=document.getElementById('bkEmail').value.trim();
-    var role=document.getElementById('bkRole').value;
-    if(name.length<2){ showErr('Please enter your full name.'); return; }
-    if(company.length<2){ showErr('Please enter your company or fund.'); return; }
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || PERSONAL.test(email.slice(email.indexOf('@')))){ showErr('Please use your work email (not a personal address).'); return; }
-
+  function buildExtra(role){
     var r=window.__edraResult||{score:null};
     var utm=['utm_source','utm_medium','utm_campaign','utm_content'].map(function(k){return k+'='+(camp[k]||'');}).join(' · ');
-    var payload={
-      name:name, email:email, company:company,
+    return {
+      r:r,
       portfolio_type:role,
       asset_count: r.score!=null ? (r.score+'/100 · '+r.band) : 'Not scored',
       objective:'Meet Priyankar Baid (CEO) at IMN Newport',
@@ -574,27 +615,49 @@
         'attribution: '+utm
       ].join('\n')
     };
+  }
 
-    var btn=this.querySelector('button[type=submit]');
-    var orig=btn.innerHTML; btn.textContent='Sending…'; btn.style.pointerEvents='none'; btn.style.opacity='0.85';
+  // Wire any booking form (modal or rail) to the same validate -> POST -> convert flow.
+  function wireBooking(o){
+    var form=document.getElementById(o.form); if(!form) return;
+    var errEl=document.getElementById(o.err);
+    function showErr(m){ if(errEl){ errEl.textContent=m; errEl.style.display='block'; } }
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(errEl) errEl.style.display='none';
+      var name=document.getElementById(o.name).value.trim();
+      var company=document.getElementById(o.company).value.trim();
+      var email=document.getElementById(o.email).value.trim();
+      var role=document.getElementById(o.role).value;
+      if(name.length<2){ showErr('Please enter your full name.'); return; }
+      if(company.length<2){ showErr('Please enter your company or fund.'); return; }
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || PERSONAL.test(email.slice(email.indexOf('@')))){ showErr('Please use your work email (not a personal address).'); return; }
 
-    fetch('/api/contact-form',{
-      method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)
-    }).then(function(res){ return res.json().then(function(j){return {ok:res.ok&&j&&j.ok, body:j};}); })
-    .then(function(result){
-      if(!result.ok){ throw new Error((result.body&&result.body.error)||'send_failed'); }
-      if(typeof gtag==='function'){
-        gtag('event','conversion',{'send_to':'AW-18160005662/jUjuCPCzuqwcEJ7krtND','value':1.0,'currency':'INR'});
-      }
-      ev('imn_book_submit',{ score:(r.score!=null?r.score:''), band:(r.band||''), role:role });
-      document.getElementById('bookForm').style.display='none';
-      document.getElementById('bookDone').style.display='block';
-    }).catch(function(err){
-      if(window.console) console.error('imn booking failed:', err);
-      btn.innerHTML=orig; btn.textContent='Request my slot'; btn.style.pointerEvents=''; btn.style.opacity='';
-      showErr('Sorry — couldn’t send. Please email p.jain@edraindex.com directly.');
+      var x=buildExtra(role);
+      var payload={ name:name, email:email, company:company, portfolio_type:x.portfolio_type, asset_count:x.asset_count, objective:x.objective, message:x.message };
+      var btn=form.querySelector('button[type=submit]');
+      var orig=btn.innerHTML; btn.textContent='Sending…'; btn.style.pointerEvents='none'; btn.style.opacity='0.85';
+
+      fetch('/api/contact-form',{
+        method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)
+      }).then(function(res){ return res.json().then(function(j){return {ok:res.ok&&j&&j.ok, body:j};}); })
+      .then(function(result){
+        if(!result.ok){ throw new Error((result.body&&result.body.error)||'send_failed'); }
+        if(typeof gtag==='function'){
+          gtag('event','conversion',{'send_to':'AW-18160005662/jUjuCPCzuqwcEJ7krtND','value':1.0,'currency':'INR'});
+        }
+        ev('imn_book_submit',{ where:o.label, score:(x.r.score!=null?x.r.score:''), band:(x.r.band||''), role:role });
+        form.style.display='none';
+        var done=document.getElementById(o.done); if(done) done.style.display='block';
+      }).catch(function(err){
+        if(window.console) console.error('imn booking failed:', err);
+        btn.innerHTML=orig; btn.style.pointerEvents=''; btn.style.opacity='';
+        showErr('Sorry — couldn’t send. Please email p.jain@edraindex.com directly.');
+      });
     });
-  });
+  }
+  wireBooking({form:'bookForm', name:'bkName', company:'bkCompany', email:'bkEmail', role:'bkRole', err:'bkErr', done:'bookDone', label:'modal'});
+  wireBooking({form:'railForm', name:'rlName', company:'rlCompany', email:'rlEmail', role:'rlRole', err:'rlErr', done:'railDone', label:'rail'});
 })();
 </script>
 </body>
