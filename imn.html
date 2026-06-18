@@ -204,27 +204,29 @@
   .ft a{color:var(--gold);}
 
   /* ── persistent booking rail (desktop) ── */
-  .bookrail{display:block;padding:22px 28px 4px;}
-  .br-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(20,48,31,0.22);max-width:560px;margin:0 auto;}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:30px;}
+  .bookrail{display:block;}
+  .br-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(20,48,31,0.22);max-width:560px;margin:0 auto;display:flex;flex-direction:column;}
   .br-top{background:linear-gradient(160deg,#1B3A28,#14301F);color:#fff;padding:18px 20px;}
   .br-eyebrow{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-soft);}
   .br-title{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-0.02em;margin:6px 0 4px;}
   .br-sub{font-size:12.5px;line-height:1.45;color:rgba(255,255,255,0.78);}
-  .br-form{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;}
+  .br-form{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1 1 auto;}
   .br-form input,.br-form select{font-family:var(--sans);font-size:13.5px;border:1px solid var(--line);border-radius:9px;padding:11px 12px;outline:none;color:var(--ink);width:100%;background:#fff;}
   .br-form input:focus,.br-form select:focus{border-color:var(--green);}
   .br-form select{color:var(--gray);}
   .br-form .btn{margin-top:2px;justify-content:center;}
   .br-err{display:none;font-size:12px;color:var(--c-crimson);}
-  .br-note{font-size:11px;color:var(--muted);line-height:1.4;text-align:center;}
+  .br-note{font-size:11px;color:var(--muted);line-height:1.4;text-align:center;margin-top:auto;padding-top:8px;}
   .br-done{display:none;padding:26px 20px 28px;text-align:center;}
   .br-done .ck{font-size:34px;color:var(--green);line-height:1;}
   .br-done h4{font-family:var(--display);font-size:18px;font-weight:600;color:var(--forest);margin:8px 0 6px;}
   .br-done p{font-size:13px;color:var(--gray);margin:0;line-height:1.5;}
   @media(min-width:1024px){
-    .hero .wrap,.band .wrap,.final .wrap{padding-right:392px;}
-    .bookrail{display:block;position:fixed;z-index:55;top:84px;width:344px;right:max(24px,calc((100vw - 1120px)/2 + 28px));max-height:calc(100vh - 104px);overflow:auto;padding:0;}
-    .bookrail .br-card{max-width:none;margin:0;}
+    .hero-grid{grid-template-columns:1fr 360px;gap:48px;align-items:stretch;}
+    .hero-main{grid-column:1;grid-row:1;}
+    .bookrail{grid-column:2;grid-row:1;}
+    .bookrail .br-card{max-width:none;margin:0;height:100%;}
   }
 
   @media(max-width:920px){
@@ -249,47 +251,52 @@
   </div>
 </header>
 
-<!-- PERSISTENT BOOKING RAIL (desktop; mobile falls back to the modal) -->
-<aside class="bookrail" aria-label="Book a meeting at IMN">
-  <div class="br-card">
-    <div class="br-top">
-      <div class="br-eyebrow">● Newport, RI · Jun 24–26</div>
-      <div class="br-title">Meet Priyankar Baid</div>
-      <div class="br-sub">CEO, OHI — 30 minutes at IMN. Tell us a little and we'll lock a slot.</div>
-    </div>
-    <form class="br-form" id="railForm" novalidate>
-      <input id="rlName" required placeholder="Full name" />
-      <input id="rlCompany" required placeholder="Company / fund" />
-      <input id="rlEmail" required type="email" placeholder="Work email" />
-      <select id="rlRole">
-        <option value="Fund leadership / GP">Fund leadership / GP</option>
-        <option value="Asset Management">Asset Management</option>
-        <option value="Finance (CFO / Controller)">Finance (CFO / Controller)</option>
-        <option value="ESG / Sustainability">ESG / Sustainability</option>
-        <option value="Other">Other</option>
-      </select>
-      <div class="br-err" id="rlErr"></div>
-      <button class="btn btn-green" type="submit">Request my slot <span class="arr">→</span></button>
-      <div class="br-note">No data upload. We reply within one business day.</div>
-    </form>
-    <div class="br-done" id="railDone">
-      <div class="ck">✓</div>
-      <h4>Request received.</h4>
-      <p>We'll confirm a Newport time within one business day.</p>
-    </div>
-  </div>
-</aside>
-
 <!-- HERO -->
 <section class="hero">
   <div class="wrap hero-in">
-    <span class="eyebrow d">ESG Data Readiness · Real Estate · IMN Newport · Jun 24–26</span>
-    <h1>Same numbers. Three answers. <span class="g">One readiness score.</span></h1>
-    <p>To Finance it's a cost. To your accountants it's a liability. To GRESB it's Scope 2 emissions — and the same utility data feeds all three. EDRA™ scores whether that data is actually submission-ready, before you report.</p>
-    <div class="hero-cta">
-      <a class="btn btn-gold btn-lg" href="#check">Take the 60-second readiness check <span class="arr">→</span></a>
+    <div class="hero-grid">
+      <!-- booking form: right column on desktop, stacked on top on mobile -->
+      <aside class="bookrail" aria-label="Book a meeting at IMN">
+        <div class="br-card">
+          <div class="br-top">
+            <div class="br-eyebrow">● Newport, RI · Jun 24–26</div>
+            <div class="br-title">Meet Priyankar Baid</div>
+            <div class="br-sub">CEO, OHI — 30 minutes at IMN. Tell us a little and we'll lock a slot.</div>
+          </div>
+          <form class="br-form" id="railForm" novalidate>
+            <input id="rlName" required placeholder="Full name" />
+            <input id="rlCompany" required placeholder="Company / fund" />
+            <input id="rlEmail" required type="email" placeholder="Work email" />
+            <select id="rlRole">
+              <option value="Fund leadership / GP">Fund leadership / GP</option>
+              <option value="Asset Management">Asset Management</option>
+              <option value="Finance (CFO / Controller)">Finance (CFO / Controller)</option>
+              <option value="ESG / Sustainability">ESG / Sustainability</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="br-err" id="rlErr"></div>
+            <button class="btn btn-green" type="submit">Request my slot <span class="arr">→</span></button>
+            <div class="br-note">No data upload. We reply within one business day.</div>
+          </form>
+          <div class="br-done" id="railDone">
+            <div class="ck">✓</div>
+            <h4>Request received.</h4>
+            <p>We'll confirm a Newport time within one business day.</p>
+          </div>
+        </div>
+      </aside>
+
+      <div class="hero-main">
+        <span class="eyebrow d">ESG Data Readiness · Real Estate · IMN Newport · Jun 24–26</span>
+        <h1>Same numbers. Three answers. <span class="g">One readiness score.</span></h1>
+        <p>To Finance it's a cost. To your accountants it's a liability. To GRESB it's Scope 2 emissions — and the same utility data feeds all three. EDRA™ scores whether that data is actually submission-ready, before you report.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold btn-lg" href="#check">Take the 60-second readiness check <span class="arr">→</span></a>
+        </div>
+        <p class="hero-note">No data upload. No commitment. An indicative score in under a minute.</p>
+      </div>
     </div>
-    <p class="hero-note">No data upload. No commitment. An indicative score in under a minute.</p>
+
     <div class="hero-stats">
       <div class="hs"><div class="v">2,500</div><div class="l">Assets scored &amp; audited</div></div>
       <div class="hs"><div class="v">3.5M+</div><div class="l">Data points covered</div></div>
