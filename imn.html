@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "x19d6gquej");</script>
+
+  <!-- RB2B visitor identification -->
+  <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("0NW1GHZ08JO4");</script>
+
+  <!-- Leadfeeder / Dealfront visitor tracking -->
+  <script>
+    (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('JMvZ8gv9nrda2pOd');
+  </script>
+
+  <!-- Lusha website visitor tracking -->
+  <script>
+    (function(){var b=Math.random().toString(36).substring(7),a=document.createElement("script");a.src="https://static-packages-prod.lusha.com/website-visitor-pixel/latest/insights.min.js?nocache="+b;a.async=!0;a.defer=!0;a.onload=function(){window.trackingLusha.onLoad({siteId:"1767909b-6df0-4a3d-89f9-3c2219b6c47e"})};document.head.appendChild(a)})();
+  </script>
+
+  <!-- Google Tag (gtag.js) — Google Ads + Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18160005662"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18160005662');
+    gtag('config', 'G-3WVP61B4BR');
+  </script>
+
+  <meta name="description" content="EDRA™ Readiness Check — score whether your ESG data is submission-ready before you report, then meet EDRA at IMN Real Estate Private Funds, Newport RI, Jun 24–26." />
+  <title>EDRA™ Readiness Check — Meet us at IMN Newport, Jun 24–26</title>
+  <link rel="canonical" href="https://edraindex.com/imn" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EDRA™ Readiness Check — IMN Newport" />
+  <meta property="og:description" content="Is your ESG data submission-ready? Score it in 60 seconds, then meet us at IMN Real Estate Private Funds, Newport RI, Jun 24–26." />
+  <meta property="og:url" content="https://edraindex.com/imn" />
+  <meta property="og:image" content="https://edraindex.com/assets/og/imn.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://edraindex.com/assets/og/imn.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="./edra-final-logo.svg" />
+  <link rel="apple-touch-icon" href="./edra-logo.jpg" />
+
+  <!-- ── IMN readiness microsite — self-contained scoped styles (own tokens, no global sheets) ── -->
+  <style>
+  :root{
+    --forest:#14301F; --forest-2:#0E2417; --green:#1F8A5B; --green-deep:#1F6B43;
+    --green-soft:#7FBF9A; --cream:#ECE9E2; --gold:#C8A96E; --gold-deep:#A8842F;
+    --ink:#1A1A17; --gray:#55564E; --muted:#6F8A78; --line:#D7D3C8; --subtle:#F5F3ED;
+    --tint:rgba(31,138,91,0.08);
+    /* grade spectrum: crimson → copper → gold → sage → forest */
+    --c-crimson:#B23A2E; --c-copper:#C2722E; --c-gold:#C8A96E; --c-sage:#4E7A60; --c-forest:#1F6B43;
+    --display:'Syne',sans-serif; --sans:'DM Sans',sans-serif; --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+  .eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--green);}
+  .eyebrow.d{color:var(--gold);}
+
+  /* header */
+  .hdr{position:sticky;top:0;z-index:60;background:rgba(236,233,226,0.9);backdrop-filter:saturate(150%) blur(12px);border-bottom:1px solid var(--line);}
+  .hdr-in{display:flex;align-items:center;justify-content:space-between;height:66px;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand .ring{width:30px;height:30px;}
+  .brand .wm{font-family:var(--display);font-size:21px;font-weight:700;letter-spacing:-0.01em;color:var(--forest);}
+  .brand .wm sup{font-size:9px;font-weight:700;top:-0.9em;}
+  .brand .by{font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--line);padding-left:11px;margin-left:2px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:700;font-size:14px;border-radius:8px;padding:11px 18px;cursor:pointer;border:1.5px solid transparent;transition:background .16s,color .16s,border-color .16s,transform .08s;white-space:nowrap;}
+  .btn:active{transform:translateY(1px);}
+  .btn-green{background:var(--green-deep);color:var(--cream);}
+  .btn-green:hover{background:#185737;}
+  .btn-gold{background:var(--gold);color:var(--forest);}
+  .btn-gold:hover{background:#bd9a5b;}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,0.4);}
+  .btn-ghost:hover{background:rgba(255,255,255,0.1);}
+  .btn-lg{padding:14px 24px;font-size:15px;}
+  .arr{transition:transform .16s;}
+  .btn:hover .arr{transform:translateX(3px);}
+
+  /* hero */
+  .hero{background:linear-gradient(176deg,#1B3A28,#14301F 55%,#0E2417);color:#fff;position:relative;overflow:hidden;}
+  .hero .ring{position:absolute;right:-160px;top:-60px;width:560px;opacity:0.06;pointer-events:none;}
+  .hero-in{position:relative;z-index:2;padding:78px 0 70px;}
+  .hero h1{font-family:var(--display);font-size:54px;line-height:1.04;font-weight:300;letter-spacing:-0.03em;margin:18px 0 0;max-width:16ch;}
+  .hero h1 .g{font-style:italic;color:var(--gold);font-weight:300;}
+  .hero p{font-size:18px;line-height:1.6;color:rgba(255,255,255,0.84);margin:20px 0 0;max-width:55ch;}
+  .hero-cta{display:flex;gap:13px;margin-top:30px;flex-wrap:wrap;align-items:center;}
+  .hero-note{font-size:12.5px;color:rgba(255,255,255,0.6);}
+  .hero-stats{display:flex;gap:36px;margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,255,255,0.16);flex-wrap:wrap;}
+  .hs .v{font-family:var(--display);font-size:30px;font-weight:400;letter-spacing:-0.02em;color:var(--gold);line-height:1;}
+  .hs .l{font-size:12px;font-weight:500;color:rgba(255,255,255,0.74);margin-top:7px;}
+
+  /* section scaffold */
+  .band{padding:74px 0;}
+  .band.alt{background:var(--subtle);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .band-head{max-width:680px;margin-bottom:36px;}
+  .band-head h2{font-family:var(--display);font-size:36px;line-height:1.08;font-weight:300;letter-spacing:-0.025em;color:var(--forest);margin:13px 0 0;}
+  .band-head h2 .b{font-style:italic;color:var(--green);font-weight:300;}
+  .band-head p{font-size:16.5px;line-height:1.6;color:var(--gray);margin:16px 0 0;}
+
+  /* THREE LENSES */
+  .tl{display:grid;grid-template-columns:0.9fr 1.1fr;gap:40px;align-items:center;}
+  .tl-invoice{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 44px rgba(20,48,31,0.10);overflow:hidden;}
+  .tl-inv-top{background:var(--subtle);padding:18px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;}
+  .tl-inv-top .t{font-size:13px;font-weight:700;color:var(--forest);}
+  .tl-inv-top .m{font-family:var(--mono);font-size:11px;color:var(--muted);}
+  .tl-inv-body{padding:22px;}
+  .tl-row{display:flex;justify-content:space-between;font-size:13px;color:var(--gray);padding:9px 0;border-bottom:1px dashed var(--line);}
+  .tl-row.head{color:var(--muted);font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;border-bottom:1px solid var(--line);}
+  .tl-hl{margin-top:14px;border-radius:12px;padding:16px 18px;background:var(--tint);border:2px solid var(--green);transition:background .25s,border-color .25s;}
+  .tl-hl .k{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;color:var(--green);transition:color .25s;}
+  .tl-hl .v{font-family:var(--display);font-size:28px;font-weight:400;letter-spacing:-0.02em;color:var(--forest);margin-top:5px;}
+  .tl-hl .d{font-size:12.5px;color:var(--gray);margin-top:6px;line-height:1.4;}
+  .tl-toggles{display:flex;flex-direction:column;gap:12px;}
+  .tl-tog{text-align:left;border:1px solid var(--line);background:#fff;border-radius:13px;padding:17px 19px;cursor:pointer;transition:border-color .16s,box-shadow .16s;display:flex;gap:14px;align-items:flex-start;}
+  .tl-tog:hover{border-color:var(--green-soft);}
+  .tl-tog.on{border-color:var(--green);box-shadow:0 8px 22px rgba(31,138,91,0.14);}
+  .tl-tog .dot{width:34px;height:34px;border-radius:9px;flex:none;display:flex;align-items:center;justify-content:center;font-size:16px;}
+  .tl-tog h4{font-size:15px;font-weight:700;color:var(--forest);margin:0 0 3px;}
+  .tl-tog p{font-size:12.5px;color:var(--gray);margin:0;line-height:1.4;}
+  .tl-foot{font-size:14px;color:var(--gray);margin-top:24px;line-height:1.6;max-width:60ch;}
+  .tl-foot b{color:var(--forest);}
+
+  /* SCORECARD */
+  .sc{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 22px 56px rgba(20,48,31,0.12);overflow:hidden;}
+  .sc-grid{display:grid;grid-template-columns:1fr 1fr;}
+  .sc-q{padding:34px 36px;border-right:1px solid var(--line);}
+  .sc-side{padding:34px 36px;background:linear-gradient(165deg,#1B3A28,#0E2417);color:#fff;position:relative;overflow:hidden;}
+  .sc-side .ring{position:absolute;right:-90px;bottom:-90px;width:280px;opacity:0.10;}
+  .sc-prog{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:18px;}
+  .q-title{font-family:var(--display);font-size:20px;font-weight:600;color:var(--forest);letter-spacing:-0.015em;line-height:1.2;margin:0 0 4px;}
+  .q-sub{font-size:13px;color:var(--muted);margin:0 0 20px;line-height:1.45;}
+  .opts{display:flex;flex-direction:column;gap:10px;}
+  .opt{text-align:left;border:1px solid var(--line);background:#fff;border-radius:11px;padding:14px 16px;cursor:pointer;font-size:14px;font-weight:600;color:var(--gray);transition:border-color .14s,background .14s,color .14s;display:flex;align-items:center;gap:12px;}
+  .opt:hover{border-color:var(--green-soft);background:var(--subtle);}
+  .opt .pip{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);flex:none;transition:border-color .14s,background .14s;}
+  .opt.sel{border-color:var(--green);color:var(--forest);background:var(--tint);}
+  .opt.sel .pip{border-color:var(--green);background:var(--green);box-shadow:inset 0 0 0 3px #fff;}
+  .sc-nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;}
+  .sc-back{font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;background:none;border:none;padding:6px 0;}
+  .sc-back:hover{color:var(--forest);}
+  .sc-dots{display:flex;gap:7px;}
+  .sc-dots i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .2s,width .2s;}
+  .sc-dots i.on{background:var(--green);width:22px;border-radius:4px;}
+
+  .gauge{position:relative;width:150px;height:150px;margin:6px 0 0;}
+  .gauge svg{transform:rotate(-90deg);}
+  .gauge .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .gauge .num .n{font-family:var(--display);font-size:42px;font-weight:400;letter-spacing:-0.03em;color:#fff;line-height:1;}
+  .gauge .num .o{font-size:11px;color:rgba(255,255,255,0.6);font-weight:600;margin-top:2px;}
+  .sc-side h3{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--green-soft);margin:0 0 6px;}
+  .sc-side .placeholder{font-size:14px;line-height:1.6;color:rgba(255,255,255,0.7);}
+  .band-name{font-family:var(--display);font-size:26px;font-weight:600;letter-spacing:-0.02em;margin:14px 0 2px;}
+  .band-mode{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);}
+  .band-desc{font-size:13.5px;line-height:1.55;color:rgba(255,255,255,0.82);margin:12px 0 0;}
+  .rc{margin-top:16px;display:flex;flex-wrap:wrap;gap:7px;}
+  .rc .chip{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:0.04em;background:rgba(200,169,110,0.14);color:var(--gold);border:1px solid rgba(200,169,110,0.3);border-radius:6px;padding:5px 9px;}
+  .sc-result-cta{margin-top:22px;display:none;}
+  .sc-result-cta.show{display:block;}
+  .suppress{font-size:12px;color:rgba(255,255,255,0.7);margin-top:14px;line-height:1.5;}
+  .suppress b{color:var(--gold);}
+
+  /* bands legend */
+  .bands{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:30px;}
+  .bnd{border:1px solid var(--line);border-radius:11px;padding:15px 14px;background:#fff;}
+  .bnd .r{font-family:var(--mono);font-size:10px;font-weight:500;color:var(--muted);letter-spacing:0.04em;}
+  .bnd h4{font-size:13.5px;font-weight:700;color:var(--forest);margin:7px 0 3px;}
+  .bnd p{font-size:11px;color:var(--gray);margin:0;line-height:1.35;}
+  .bnd .bar{height:4px;border-radius:2px;margin-bottom:11px;}
+
+  /* stack */
+  .stack{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .stk{border:1px solid var(--line);border-radius:15px;padding:24px;background:#fff;transition:box-shadow .2s,transform .2s;}
+  .stk:hover{box-shadow:0 16px 38px rgba(20,48,31,0.1);transform:translateY(-3px);}
+  .stk .n{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--green);letter-spacing:0.08em;}
+  .stk h3{font-family:var(--display);font-size:17px;font-weight:600;color:var(--forest);margin:11px 0 4px;}
+  .stk .verb{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--gold-deep);text-transform:uppercase;letter-spacing:0.06em;}
+  .stk p{font-size:13px;line-height:1.5;color:var(--gray);margin:9px 0 0;}
+
+  /* final cta */
+  .final{background:linear-gradient(120deg,#1B3A28,#0E2417);color:#fff;position:relative;overflow:hidden;}
+  .final .ring{position:absolute;right:5%;top:-90px;width:360px;opacity:0.12;}
+  .final-in{position:relative;z-index:2;padding:70px 0;display:grid;grid-template-columns:1.3fr 0.7fr;gap:44px;align-items:center;}
+  .final h2{font-family:var(--display);font-size:40px;line-height:1.08;font-weight:300;letter-spacing:-0.03em;margin:0;}
+  .final h2 .g{font-style:italic;color:var(--gold);font-weight:300;}
+  .final p{font-size:16.5px;line-height:1.6;color:rgba(255,255,255,0.84);margin:18px 0 0;}
+  .final .ev{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--green-soft);margin-bottom:6px;}
+  .final-actions{display:flex;flex-direction:column;gap:13px;}
+  .final-actions .note{font-size:12.5px;color:rgba(255,255,255,0.62);}
+
+  /* footer */
+  .ft{background:var(--forest-2);color:rgba(255,255,255,0.7);padding:38px 0;}
+  .ft-in{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12.5px;}
+  .ft .wm{font-family:var(--display);font-size:16px;font-weight:700;color:#fff;}
+  .ft a{color:var(--gold);}
+
+  /* ── persistent booking rail (desktop) ── */
+  .bookrail{display:block;padding:22px 28px 4px;}
+  .br-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(20,48,31,0.22);max-width:560px;margin:0 auto;}
+  .br-top{background:linear-gradient(160deg,#1B3A28,#14301F);color:#fff;padding:18px 20px;}
+  .br-eyebrow{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-soft);}
+  .br-title{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-0.02em;margin:6px 0 4px;}
+  .br-sub{font-size:12.5px;line-height:1.45;color:rgba(255,255,255,0.78);}
+  .br-form{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;}
+  .br-form input,.br-form select{font-family:var(--sans);font-size:13.5px;border:1px solid var(--line);border-radius:9px;padding:11px 12px;outline:none;color:var(--ink);width:100%;background:#fff;}
+  .br-form input:focus,.br-form select:focus{border-color:var(--green);}
+  .br-form select{color:var(--gray);}
+  .br-form .btn{margin-top:2px;justify-content:center;}
+  .br-err{display:none;font-size:12px;color:var(--c-crimson);}
+  .br-note{font-size:11px;color:var(--muted);line-height:1.4;text-align:center;}
+  .br-done{display:none;padding:26px 20px 28px;text-align:center;}
+  .br-done .ck{font-size:34px;color:var(--green);line-height:1;}
+  .br-done h4{font-family:var(--display);font-size:18px;font-weight:600;color:var(--forest);margin:8px 0 6px;}
+  .br-done p{font-size:13px;color:var(--gray);margin:0;line-height:1.5;}
+  @media(min-width:1024px){
+    .hero .wrap,.band .wrap,.final .wrap{padding-right:392px;}
+    .bookrail{display:block;position:fixed;z-index:55;top:84px;width:344px;right:max(24px,calc((100vw - 1120px)/2 + 28px));max-height:calc(100vh - 104px);overflow:auto;padding:0;}
+    .bookrail .br-card{max-width:none;margin:0;}
+  }
+
+  @media(max-width:920px){
+    .hero h1{font-size:40px;}
+    .tl,.sc-grid,.final-in{grid-template-columns:1fr;}
+    .sc-q{border-right:none;border-bottom:1px solid var(--line);}
+    .stack,.bands{grid-template-columns:repeat(2,1fr);}
+  }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <div class="brand">
+      <img class="ring" src="./edra-final-logo.svg" alt="EDRA" />
+      <span class="wm">EDRA<sup>™</sup></span>
+      <span class="by">A product of OHI</span>
+    </div>
+    <button class="btn btn-green" data-book>Book a meeting at IMN <span class="arr">→</span></button>
+  </div>
+</header>
+
+<!-- PERSISTENT BOOKING RAIL (desktop; mobile falls back to the modal) -->
+<aside class="bookrail" aria-label="Book a meeting at IMN">
+  <div class="br-card">
+    <div class="br-top">
+      <div class="br-eyebrow">● Newport, RI · Jun 24–26</div>
+      <div class="br-title">Meet Priyankar Baid</div>
+      <div class="br-sub">CEO, OHI — 30 minutes at IMN. Tell us a little and we'll lock a slot.</div>
+    </div>
+    <form class="br-form" id="railForm" novalidate>
+      <input id="rlName" required placeholder="Full name" />
+      <input id="rlCompany" required placeholder="Company / fund" />
+      <input id="rlEmail" required type="email" placeholder="Work email" />
+      <select id="rlRole">
+        <option value="Fund leadership / GP">Fund leadership / GP</option>
+        <option value="Asset Management">Asset Management</option>
+        <option value="Finance (CFO / Controller)">Finance (CFO / Controller)</option>
+        <option value="ESG / Sustainability">ESG / Sustainability</option>
+        <option value="Other">Other</option>
+      </select>
+      <div class="br-err" id="rlErr"></div>
+      <button class="btn btn-green" type="submit">Request my slot <span class="arr">→</span></button>
+      <div class="br-note">No data upload. We reply within one business day.</div>
+    </form>
+    <div class="br-done" id="railDone">
+      <div class="ck">✓</div>
+      <h4>Request received.</h4>
+      <p>We'll confirm a Newport time within one business day.</p>
+    </div>
+  </div>
+</aside>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <span class="eyebrow d">ESG Data Readiness · Real Estate · IMN Newport · Jun 24–26</span>
+    <h1>Same numbers. Three answers. <span class="g">One readiness score.</span></h1>
+    <p>To Finance it's a cost. To your accountants it's a liability. To GRESB it's Scope 2 emissions — and the same utility data feeds all three. EDRA™ scores whether that data is actually submission-ready, before you report.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold btn-lg" href="#check">Take the 60-second readiness check <span class="arr">→</span></a>
+    </div>
+    <p class="hero-note">No data upload. No commitment. An indicative score in under a minute.</p>
+    <div class="hero-stats">
+      <div class="hs"><div class="v">2,500</div><div class="l">Assets scored &amp; audited</div></div>
+      <div class="hs"><div class="v">3.5M+</div><div class="l">Data points covered</div></div>
+      <div class="hs"><div class="v">+28.7</div><div class="l">Avg. readiness lift</div></div>
+      <div class="hs"><div class="v">100%</div><div class="l">Field-level audit trail</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE LENSES -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <span class="eyebrow">The alignment gap</span>
+      <h2>One invoice. <span class="b">Three teams reading it differently.</span></h2>
+      <p>Click each lens to see how the very same utility bill becomes three different "truths" across your platform — and why a single governed source is the only way they reconcile.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-invoice">
+        <div class="tl-inv-top"><span class="t">Metro Power · Utility Invoice</span><span class="m">Asset 14 · Mar 2026</span></div>
+        <div class="tl-inv-body">
+          <div class="tl-row head"><span>Line item</span><span>Value</span></div>
+          <div class="tl-row"><span>Billing period</span><span>Feb 1 – Feb 28</span></div>
+          <div class="tl-row"><span>Consumption</span><span>612,000 kWh</span></div>
+          <div class="tl-row"><span>Amount due</span><span>$48,250.00</span></div>
+          <div class="tl-hl" id="tlHl">
+            <div class="k" id="tlK">Same data point</div>
+            <div class="v" id="tlV">$48,250 · 612,000 kWh</div>
+            <div class="d" id="tlD">Pick a lens to see how this one line is interpreted three different ways.</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="tl-toggles">
+          <button class="tl-tog on" data-lens="finance">
+            <span class="dot" style="background:var(--tint);">💼</span>
+            <div><h4>Finance sees a cost</h4><p>An operating expense to budget, forecast, and control.</p></div>
+          </button>
+          <button class="tl-tog" data-lens="accounting">
+            <span class="dot" style="background:var(--tint);">📒</span>
+            <div><h4>Accounting sees a liability</h4><p>An accrued payable booked to the ledger under GAAP.</p></div>
+          </button>
+          <button class="tl-tog" data-lens="esg">
+            <span class="dot" style="background:rgba(200,169,110,0.2);">🌐</span>
+            <div><h4>Sustainability sees Scope 2</h4><p>Emissions to disclose to GRESB — only if the data qualifies.</p></div>
+          </button>
+        </div>
+        <p class="tl-foot"><b>EDRA™ reconciles all three.</b> The same validated utility record feeds the budget, the ledger, and the carbon disclosure — with one audit trail behind every number.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCORECARD -->
+<section class="band alt" id="check">
+  <div class="wrap">
+    <div class="band-head">
+      <span class="eyebrow">Readiness check</span>
+      <h2>Is your ESG data <span class="b">submission-ready?</span></h2>
+      <p>Five quick questions, scored against the same gating logic certification bodies apply. You'll get an indicative EDRA™ readiness band — no data required.</p>
+    </div>
+
+    <div class="sc">
+      <div class="sc-grid">
+        <div class="sc-q">
+          <div class="sc-prog" id="scProg">Question 1 of 5</div>
+          <div id="qArea"></div>
+          <div class="sc-nav">
+            <button class="sc-back" id="scBack" style="visibility:hidden;">← Back</button>
+            <div class="sc-dots" id="scDots"></div>
+          </div>
+        </div>
+        <div class="sc-side">
+          <img class="ring" src="./edra-final-logo.svg" alt="" />
+          <div id="sideIntro">
+            <h3>Your readiness</h3>
+            <div class="gauge">
+              <svg width="150" height="150" viewBox="0 0 150 150">
+                <circle cx="75" cy="75" r="64" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="13"/>
+                <circle id="gaugeArc" cx="75" cy="75" r="64" fill="none" stroke="var(--gold)" stroke-width="13" stroke-linecap="round" stroke-dasharray="402" stroke-dashoffset="402"/>
+              </svg>
+              <div class="num"><span class="n" id="gaugeNum">—</span><span class="o">/ 100</span></div>
+            </div>
+            <p class="placeholder" id="sidePlaceholder">Answer the questions and your indicative readiness score will build here in real time.</p>
+            <div id="resultBox" style="display:none;">
+              <div class="band-mode" id="resMode"></div>
+              <div class="band-name" id="resName"></div>
+              <div class="band-desc" id="resDesc"></div>
+              <div class="suppress" id="resSuppress"></div>
+              <div class="rc" id="resCodes"></div>
+              <div class="sc-result-cta show">
+                <button class="btn btn-gold" data-book style="width:100%;justify-content:center;">Get your full diagnostic at IMN <span class="arr">→</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bands legend -->
+    <div class="bands">
+      <div class="bnd"><div class="bar" style="background:var(--c-crimson);"></div><div class="r">0–30</div><h4>Reporting Mode</h4><p>Not usable — fix foundational fields first.</p></div>
+      <div class="bnd"><div class="bar" style="background:var(--c-copper);"></div><div class="r">31–50</div><h4>Dependent Mode</h4><p>Manual — close continuity &amp; field gaps.</p></div>
+      <div class="bnd"><div class="bar" style="background:var(--c-gold);"></div><div class="r">51–70</div><h4>Transition Mode</h4><p>Partial — remediate by reason code.</p></div>
+      <div class="bnd"><div class="bar" style="background:var(--c-sage);"></div><div class="r">71–85</div><h4>Decision Grade</h4><p>Dependable — move to final validation.</p></div>
+      <div class="bnd"><div class="bar" style="background:var(--c-forest);"></div><div class="r">86–100</div><h4>Infrastructure Ready</h4><p>Repeatable — maintain &amp; scale governance.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <span class="eyebrow">From score to source of truth</span>
+      <h2>The EDRA™ Stack — <span class="b">diagnose, fix, decide, govern.</span></h2>
+      <p>The readiness check is the front door. Behind it, four layers turn a score into one governed dataset every framework, dashboard, and auditor draws from.</p>
+    </div>
+    <div class="stack">
+      <div class="stk"><div class="n">01</div><div class="verb">Diagnose</div><h3>EDRA™</h3><p>Score portfolio readiness and codify every gap with a reason code.</p></div>
+      <div class="stk"><div class="n">02</div><div class="verb">Execute</div><h3>EDRA™+</h3><p>Our team sources, cleans, completes, and validates the actual dataset.</p></div>
+      <div class="stk"><div class="n">03</div><div class="verb">Decide</div><h3>Intelligence</h3><p>Continuous monitoring, benchmarks, and gap-to-target analytics.</p></div>
+      <div class="stk"><div class="n">04</div><div class="verb">Govern</div><h3>EDRA™ DW</h3><p>One governed, audit-traceable source of truth for every framework.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap final-in">
+    <div>
+      <span class="ev">● Real Estate Private Funds Summer · Newport, RI · Jun 24–26</span>
+      <h2>Meet us in Newport. Leave with your <span class="g">portfolio's readiness score.</span></h2>
+      <p>Priyankar Baid — CEO of OHI, the team behind EDRA — is at the summit. Book 30 minutes and we'll walk a sample of your portfolio through the EDRA™ rubric live — coverage, continuity, governance — and show you the shortest path to a defensible submission.</p>
+    </div>
+    <div class="final-actions">
+      <button class="btn btn-gold btn-lg" data-book>Book a meeting at IMN <span class="arr">→</span></button>
+      <a class="btn btn-ghost btn-lg" href="mailto:p.jain@edraindex.com">p.jain@edraindex.com</a>
+      <span class="note">A product of OHI · ISO 27001 · SOC 2 Type II · GRESB</span>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap ft-in">
+    <div><span class="wm">EDRA™</span> &nbsp;·&nbsp; ESG Data Readiness Assessment &nbsp;·&nbsp; A product of Outsourcing Hub India</div>
+    <div><a href="https://www.edraindex.com" target="_blank" rel="noopener">edraindex.com</a> · <a href="mailto:p.jain@edraindex.com">p.jain@edraindex.com</a></div>
+  </div>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div id="bookBack" style="position:fixed;inset:0;background:rgba(14,36,23,0.6);backdrop-filter:blur(3px);z-index:100;display:none;align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#fff;border-radius:18px;max-width:460px;width:100%;padding:34px 34px 30px;position:relative;box-shadow:0 40px 90px rgba(14,36,23,0.45);">
+    <button id="bookX" style="position:absolute;top:16px;right:18px;background:none;border:none;font-size:22px;color:var(--muted);cursor:pointer;">✕</button>
+    <div class="brand" style="margin-bottom:16px;"><img class="ring" src="./edra-final-logo.svg" style="width:26px;height:26px;" alt="" /><span class="wm" style="font-size:18px;">EDRA<sup style="font-size:8px;">™</sup></span></div>
+    <h2 style="font-family:var(--display);font-size:22px;font-weight:600;color:var(--forest);margin:0 0 4px;letter-spacing:-0.02em;">Book a meeting at IMN Newport</h2>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 20px;line-height:1.5;">Jun 24–26, 2026 · with Priyankar Baid, CEO. Tell us a little and we'll lock a slot.</p>
+    <form id="bookForm">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px;">
+        <input id="bkName" required placeholder="Full name" style="font-family:var(--sans);font-size:14px;border:1px solid var(--line);border-radius:9px;padding:11px 13px;outline:none;" />
+        <input id="bkCompany" required placeholder="Company / fund" style="font-family:var(--sans);font-size:14px;border:1px solid var(--line);border-radius:9px;padding:11px 13px;outline:none;" />
+      </div>
+      <input id="bkEmail" required type="email" placeholder="Work email" style="width:100%;font-family:var(--sans);font-size:14px;border:1px solid var(--line);border-radius:9px;padding:11px 13px;outline:none;margin-top:11px;" />
+      <select id="bkRole" style="width:100%;font-family:var(--sans);font-size:14px;border:1px solid var(--line);border-radius:9px;padding:11px 13px;outline:none;margin-top:11px;color:var(--gray);">
+        <option value="Fund leadership / GP">I'm with — Fund leadership / GP</option>
+        <option value="Asset Management">I'm with — Asset Management</option>
+        <option value="Finance (CFO / Controller)">I'm with — Finance (CFO / Controller)</option>
+        <option value="ESG / Sustainability">I'm with — ESG / Sustainability</option>
+        <option value="Other">Other</option>
+      </select>
+      <div id="bkErr" style="display:none;font-size:12.5px;color:var(--c-crimson);margin-top:10px;"></div>
+      <button class="btn btn-green" type="submit" style="width:100%;justify-content:center;margin-top:16px;">Request my slot <span class="arr">→</span></button>
+    </form>
+    <div id="bookDone" style="display:none;text-align:center;padding:14px 0 4px;">
+      <div style="font-size:40px;color:var(--green);">✓</div>
+      <h2 style="font-family:var(--display);font-size:20px;font-weight:600;color:var(--forest);margin:8px 0 6px;">Request received.</h2>
+      <p style="font-size:14px;color:var(--gray);margin:0;line-height:1.55;">We'll confirm a Newport time within one business day.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ===== Campaign attribution: capture rid + utm from the email link ===== */
+  var camp = {};
+  try{
+    var p = new URLSearchParams(location.search);
+    ['rid','utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){
+      var v = p.get(k); if(v){ camp[k] = v.slice(0,120); }
+    });
+    // persist so a later booking still carries attribution even after scroll/navigation
+    var saved = sessionStorage.getItem('edra_imn_camp');
+    if(saved){ try{ var s=JSON.parse(saved); Object.keys(s).forEach(function(k){ if(!camp[k]) camp[k]=s[k]; }); }catch(e){} }
+    if(Object.keys(camp).length){ sessionStorage.setItem('edra_imn_camp', JSON.stringify(camp)); }
+  }catch(e){}
+  function ev(name, params){ if(typeof gtag==='function'){ gtag('event', name, Object.assign({}, camp, params||{})); } }
+  ev('imn_land', { page_location: location.href });
+
+  /* ===== Three Lenses ===== */
+  var lenses={
+    finance:{k:'Finance · Operating cost',v:'$48,250',d:'A line in the operating budget — forecasted, variance-checked, and controlled against the asset P&L.',col:'#1F8A5B',bg:'rgba(31,138,91,0.08)'},
+    accounting:{k:'Accounting · Accrued liability',v:'$48,250 payable',d:'An accrued expense booked under GAAP until paid — matched to the correct entity and period.',col:'#14301F',bg:'rgba(31,138,91,0.08)'},
+    esg:{k:'Sustainability · Scope 2 emissions',v:'≈ 243 tCO₂e',d:'612,000 kWh converted via grid factor — disclosable to GRESB only if coverage & continuity qualify.',col:'#A8842F',bg:'rgba(200,169,110,0.14)'}
+  };
+  var hl=document.getElementById('tlHl');
+  function setLens(name){
+    var L=lenses[name];
+    document.getElementById('tlK').textContent=L.k;
+    document.getElementById('tlK').style.color=L.col;
+    document.getElementById('tlV').textContent=L.v;
+    document.getElementById('tlD').textContent=L.d;
+    hl.style.borderColor=L.col; hl.style.background=L.bg;
+    document.querySelectorAll('.tl-tog').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-lens')===name);});
+  }
+  document.querySelectorAll('.tl-tog').forEach(function(b){b.addEventListener('click',function(){setLens(b.getAttribute('data-lens'));ev('imn_lens',{lens:b.getAttribute('data-lens')});});});
+  setLens('finance');
+
+  /* ===== Scorecard ===== */
+  var Q=[
+    {t:'How much of your portfolio has complete utility data?',s:'Coverage below 75% blocks performance scoring entirely.',o:[['Under 50%',0],['50–75%',8],['75–90%',15],['Over 90%',20]],code:'COVERAGE_LT_75'},
+    {t:'How consistent is your monthly billing history?',s:'Continuity is judged per asset — gaps corrupt consumption history.',o:[['Frequent gaps',0],['Some gaps',7],['Rare gaps',15],['Continuous',20]],code:'CONTINUITY_BAD_DAYS'},
+    {t:'Are critical asset fields complete?',s:'GFA, build year, use type — the context every score depends on.',o:[['Few captured',0],['Partial',7],['Most',14],['All complete',20]],code:'CRITICAL_FIELDS_MISSING'},
+    {t:'Can every reported value be traced to source & approver?',s:'Audit trail: original value, correction, rationale, approver, timestamp.',o:[['No trail',0],['Partial',7],['Mostly',14],['Fully traceable',20]],code:'GOVERNANCE_WEAK'},
+    {t:'How do you report ESG data today?',s:'The shift from reactive annual to proactive continuous management.',o:[['Annual, reactive',2],['Annual with prep',9],['Quarterly',15],['Continuous',20]],code:'REACTIVE_CYCLE'}
+  ];
+  var ans=new Array(Q.length).fill(null), cur=0;
+  var qArea=document.getElementById('qArea'), prog=document.getElementById('scProg'),
+      dots=document.getElementById('scDots'), back=document.getElementById('scBack');
+  Q.forEach(function(_,i){var d=document.createElement('i');if(i===0)d.className='on';dots.appendChild(d);});
+
+  function render(){
+    var q=Q[cur];
+    prog.textContent='Question '+(cur+1)+' of '+Q.length;
+    var html='<div class="q-title">'+q.t+'</div><div class="q-sub">'+q.s+'</div><div class="opts">';
+    q.o.forEach(function(o,idx){
+      html+='<button class="opt'+(ans[cur]===idx?' sel':'')+'" data-idx="'+idx+'"><span class="pip"></span>'+o[0]+'</button>';
+    });
+    html+='</div>';
+    qArea.innerHTML=html;
+    qArea.querySelectorAll('.opt').forEach(function(b){
+      b.addEventListener('click',function(){
+        ans[cur]=parseInt(b.getAttribute('data-idx'));
+        ev('imn_answer',{question:cur+1, choice:Q[cur].o[ans[cur]][0]});
+        updateGauge();
+        if(cur<Q.length-1){ setTimeout(function(){cur++;render();},220); }
+        else { setTimeout(showResult,260); }
+      });
+    });
+    back.style.visibility = cur>0 ? 'visible':'hidden';
+  }
+  back.addEventListener('click',function(){ if(cur>0){cur--;render();} });
+
+  function curScore(){var t=0,c=0;ans.forEach(function(a,i){if(a!==null){t+=Q[i].o[a][1];c++;}});return {t:t,c:c};}
+  function updateGauge(){
+    var s=curScore(); var shown=s.t;
+    var arc=document.getElementById('gaugeArc'), num=document.getElementById('gaugeNum');
+    var circ=402, off=circ-(circ*Math.min(shown,100)/100);
+    arc.style.transition='stroke-dashoffset .5s cubic-bezier(.4,0,.2,1)';
+    arc.style.strokeDashoffset=off;
+    num.textContent=shown;
+  }
+  var bands=[
+    {min:86,name:'Infrastructure Ready',mode:'05 · Repeatable',col:'#1F6B43',desc:'Decision-grade data with governance to spare. Maintain controls and scale across frameworks.'},
+    {min:71,name:'Decision Grade',mode:'04 · Dependable',col:'#4E7A60',desc:'Dependable enough to move to final validation and submission preparation.'},
+    {min:51,name:'Transition Mode',mode:'03 · Partial',col:'#C8A96E',desc:'Reliable for internal review, but material gaps prevent certification. Remediate by reason code.'},
+    {min:31,name:'Dependent Mode',mode:'02 · Manual',col:'#C2722E',desc:'Heavily manual. Close continuity and field-level gaps before reporting.'},
+    {min:0,name:'Reporting Mode',mode:'01 · Not usable',col:'#B23A2E',desc:'Foundational fields and coverage must be fixed before performance can be scored at all.'}
+  ];
+  // exposed to the booking form so the lead carries the result
+  window.__edraResult = { score:null, band:null, codes:[] };
+  function showResult(){
+    var s=curScore(); var score=s.t;
+    var b=bands.find(function(x){return score>=x.min;});
+    document.getElementById('sidePlaceholder').style.display='none';
+    var box=document.getElementById('resultBox'); box.style.display='block';
+    document.getElementById('resMode').textContent=b.mode;
+    document.getElementById('resMode').style.color=b.col;
+    var nm=document.getElementById('resName'); nm.textContent=b.name; nm.style.color=b.col;
+    document.getElementById('resDesc').textContent=b.desc;
+    var supp=Math.max(0,100-score);
+    document.getElementById('resSuppress').innerHTML='<b>'+supp+' points</b> of readiness are currently suppressed by data gaps.';
+    var codes=document.getElementById('resCodes'); codes.innerHTML=''; var codeList=[];
+    ans.forEach(function(a,i){ if(a!==null && Q[i].o[a][1] <= 8){ var c=document.createElement('span'); c.className='chip'; c.textContent=Q[i].code; codes.appendChild(c); codeList.push(Q[i].code);} });
+    document.getElementById('gaugeArc').style.stroke=b.col;
+    prog.textContent='Your indicative readiness';
+    window.__edraResult = { score:score, band:b.name, codes:codeList };
+    ev('imn_score',{ score:score, band:b.name });
+  }
+  render();
+
+  /* ===== Personalized deep-link: ?a1=0..3 pre-answers Q1 and jumps to Q2 ===== */
+  try{
+    var a1=p.get('a1');
+    if(a1!==null){ var idx=parseInt(a1,10); if(idx>=0&&idx<=3){ ans[0]=idx; cur=1; render(); updateGauge();
+      ev('imn_deeplink',{a1:idx});
+      var sec=document.getElementById('check'); if(sec){ setTimeout(function(){sec.scrollIntoView({behavior:'smooth',block:'start'});},300); } } }
+  }catch(e){}
+
+  /* ===== Booking (modal + persistent rail share one handler) ===== */
+  var bb=document.getElementById('bookBack');
+  function open(){bb.style.display='flex';document.body.style.overflow='hidden';document.getElementById('bookForm').style.display='block';document.getElementById('bookDone').style.display='none';ev('imn_book_open',{where:'modal'});}
+  function close(){bb.style.display='none';document.body.style.overflow='';}
+  document.querySelectorAll('[data-book]').forEach(function(b){b.addEventListener('click',open);});
+  document.getElementById('bookX').addEventListener('click',close);
+  bb.addEventListener('click',function(e){if(e.target===bb)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+
+  var PERSONAL=/(gmail|googlemail|yahoo|ymail|hotmail|outlook|live|msn|aol|icloud|me|mac|proton|protonmail|pm|gmx|yandex|rediffmail|fastmail)\./i;
+
+  function buildExtra(role){
+    var r=window.__edraResult||{score:null};
+    var utm=['utm_source','utm_medium','utm_campaign','utm_content'].map(function(k){return k+'='+(camp[k]||'');}).join(' · ');
+    return {
+      r:r,
+      portfolio_type:role,
+      asset_count: r.score!=null ? (r.score+'/100 · '+r.band) : 'Not scored',
+      objective:'Meet Priyankar Baid (CEO) at IMN Newport',
+      message:[
+        'SOURCE: IMN CEO campaign (edraindex.com/imn)',
+        'Readiness: '+(r.score!=null ? r.score+'/100 ('+r.band+')' : 'check not completed'),
+        'Reason codes: '+((r.codes&&r.codes.length)?r.codes.join(', '):'none'),
+        'Role: '+role,
+        'rid: '+(camp.rid||'(none)'),
+        'attribution: '+utm
+      ].join('\n')
+    };
+  }
+
+  // Wire any booking form (modal or rail) to the same validate -> POST -> convert flow.
+  function wireBooking(o){
+    var form=document.getElementById(o.form); if(!form) return;
+    var errEl=document.getElementById(o.err);
+    function showErr(m){ if(errEl){ errEl.textContent=m; errEl.style.display='block'; } }
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(errEl) errEl.style.display='none';
+      var name=document.getElementById(o.name).value.trim();
+      var company=document.getElementById(o.company).value.trim();
+      var email=document.getElementById(o.email).value.trim();
+      var role=document.getElementById(o.role).value;
+      if(name.length<2){ showErr('Please enter your full name.'); return; }
+      if(company.length<2){ showErr('Please enter your company or fund.'); return; }
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || PERSONAL.test(email.slice(email.indexOf('@')))){ showErr('Please use your work email (not a personal address).'); return; }
+
+      var x=buildExtra(role);
+      var payload={ name:name, email:email, company:company, portfolio_type:x.portfolio_type, asset_count:x.asset_count, objective:x.objective, message:x.message };
+      var btn=form.querySelector('button[type=submit]');
+      var orig=btn.innerHTML; btn.textContent='Sending…'; btn.style.pointerEvents='none'; btn.style.opacity='0.85';
+
+      fetch('/api/contact-form',{
+        method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)
+      }).then(function(res){ return res.json().then(function(j){return {ok:res.ok&&j&&j.ok, body:j};}); })
+      .then(function(result){
+        if(!result.ok){ throw new Error((result.body&&result.body.error)||'send_failed'); }
+        if(typeof gtag==='function'){
+          gtag('event','conversion',{'send_to':'AW-18160005662/jUjuCPCzuqwcEJ7krtND','value':1.0,'currency':'INR'});
+        }
+        ev('imn_book_submit',{ where:o.label, score:(x.r.score!=null?x.r.score:''), band:(x.r.band||''), role:role });
+        form.style.display='none';
+        var done=document.getElementById(o.done); if(done) done.style.display='block';
+      }).catch(function(err){
+        if(window.console) console.error('imn booking failed:', err);
+        btn.innerHTML=orig; btn.style.pointerEvents=''; btn.style.opacity='';
+        showErr('Sorry — couldn’t send. Please email p.jain@edraindex.com directly.');
+      });
+    });
+  }
+  wireBooking({form:'bookForm', name:'bkName', company:'bkCompany', email:'bkEmail', role:'bkRole', err:'bkErr', done:'bookDone', label:'modal'});
+  wireBooking({form:'railForm', name:'rlName', company:'rlCompany', email:'rlEmail', role:'rlRole', err:'rlErr', done:'railDone', label:'rail'});
+})();
+</script>
+</body>
+</html>

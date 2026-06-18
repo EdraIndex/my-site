@@ -7,6 +7,9 @@
       "maxDuration": 60
     }
   },
+  "rewrites": [
+    { "source": "/imn", "destination": "/imn.html" }
+  ],
   "redirects": [
     {
       "source": "/(.*)",
