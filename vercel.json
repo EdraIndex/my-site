@@ -8,7 +8,8 @@
     }
   },
   "rewrites": [
-    { "source": "/imn", "destination": "/imn.html" }
+    { "source": "/imn", "destination": "/imn.html" },
+    { "source": "/time-compression", "destination": "/time-compression.html" }
   ],
   "redirects": [
     {

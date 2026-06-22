@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "x19d6gquej");</script>
+
+<!-- RB2B visitor identification -->
+<script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("0NW1GHZ08JO4");</script>
+
+<!-- Leadfeeder / Dealfront visitor tracking -->
+<script>
+  (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('JMvZ8gv9nrda2pOd');
+</script>
+
+<!-- Lusha website visitor tracking -->
+<script>
+  (function(){var b=Math.random().toString(36).substring(7),a=document.createElement("script");a.src="https://static-packages-prod.lusha.com/website-visitor-pixel/latest/insights.min.js?nocache="+b;a.async=!0;a.defer=!0;a.onload=function(){window.trackingLusha.onLoad({siteId:"1767909b-6df0-4a3d-89f9-3c2219b6c47e"})};document.head.appendChild(a)})();
+</script>
+
+<!-- Google Tag (gtag.js) — Google Ads + Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18160005662"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18160005662');
+  gtag('config', 'G-3WVP61B4BR');
+</script>
+
+<title>EDRA Time Compression Simulator | How much time would EDRA give back?</title>
+<meta name="description" content="A defensible ESG submission usually takes months of reconciling data across teams. Answer three questions and see how many weeks EDRA gives back — then get your verified number in a 30-minute assessment." />
+<link rel="canonical" href="https://edraindex.com/time-compression" />
+<meta name="color-scheme" content="light only" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="EDRA" />
+<meta property="og:title" content="How much time would EDRA give back?" />
+<meta property="og:description" content="A 60-second simulator: answer three questions and watch your ESG-readiness timeline compress. Then get the verified number in a 30-minute EDRA assessment." />
+<meta property="og:url" content="https://edraindex.com/time-compression" />
+<meta property="og:image" content="https://edraindex.com/assets/og/time-compression.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How much time would EDRA give back?" />
+<meta name="twitter:description" content="A 60-second simulator: answer three questions and watch your ESG-readiness timeline compress." />
+<meta name="twitter:image" content="https://edraindex.com/assets/og/time-compression.png" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="./edra-logo.jpg" />
+<link rel="apple-touch-icon" href="./edra-logo.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "EDRA Time Compression Simulator",
+  "description": "Interactive estimator of how much time EDRA gives back on ESG data readiness for real estate portfolios.",
+  "url": "https://edraindex.com/time-compression",
+  "isPartOf": { "@type": "WebSite", "name": "EDRA", "url": "https://www.edraindex.com" },
+  "publisher": { "@type": "Organization", "name": "Outsourcing Hub India" }
+}
+</script>
+
+<style>
+  :root{
+    --ink:#0F3D2E; --forest:#1F5C46; --gold:#C28A3E; --gold-lt:#D9A661;
+    --cream:#F8F5EE; --paper:#FFFFFF; --text:#1F2A24; --body:#3C463E;
+    --muted:#6B7268; --rule:#D9D3C2; --rule-soft:#E7E2D5;
+    --b-rep:#b9c2bb; --b-dep:#8aa394; --b-tra:#1F5C46; --b-dec:#C28A3E; --b-inf:#0F3D2E;
+    --sans:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+    --mono:'JetBrains Mono','Courier New',monospace;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream); color:var(--body);
+    font-family:var(--sans); font-size:16px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:0 22px;}
+
+  /* Topbar */
+  .topbar{background:var(--ink); }
+  .topbar .wrap{display:flex; align-items:center; justify-content:space-between; padding-top:18px; padding-bottom:18px;}
+  .wordmark{font-weight:800; letter-spacing:5px; color:var(--cream); font-size:21px;}
+  .wordmark sup{font-size:9px; color:var(--gold-lt); letter-spacing:0; top:-.7em;}
+  .toolname{font-family:var(--mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold);}
+  .goldrule{height:3px; background:var(--gold);}
+
+  /* Hero */
+  .hero{padding:46px 0 8px;}
+  .eyebrow{font-size:11px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; color:var(--gold); margin:0 0 14px;}
+  .eyebrow .dot{color:var(--forest);}
+  h1{font-size:42px; line-height:1.06; letter-spacing:-1px; color:var(--ink); font-weight:800; margin:0 0 16px; max-width:16ch;}
+  .lede{font-size:18px; line-height:1.5; color:var(--body); max-width:54ch; margin:0;}
+
+  /* Result panel — the signature */
+  .panel{
+    background:var(--paper); border:1px solid var(--rule); border-radius:12px;
+    margin:30px 0 0; padding:28px 30px 30px; box-shadow:0 1px 0 rgba(15,61,46,.04);
+  }
+  .panel-head{display:flex; align-items:flex-end; justify-content:space-between; gap:18px; flex-wrap:wrap;}
+  .index-block{min-width:0;}
+  .index-label{font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin:0 0 4px;}
+  .index-value{font-family:var(--mono); font-weight:700; color:var(--gold); font-size:74px; line-height:.92; letter-spacing:-2px;}
+  .index-value .pct{font-size:34px; color:var(--gold-lt); vertical-align:super;}
+  .index-value.idle{color:var(--rule);}
+  .reclaim{font-size:15px; color:var(--body); margin:8px 0 0;}
+  .reclaim strong{color:var(--ink); font-weight:700;}
+
+  .jump{ text-align:right; }
+  .jump-label{font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin:0 0 8px;}
+  .jump-row{display:flex; align-items:center; gap:10px; justify-content:flex-end;}
+  .chip{font-family:var(--mono); font-size:12px; padding:6px 10px; border-radius:5px; font-weight:500; white-space:nowrap;}
+  .chip.from{background:#eef0ec; color:var(--muted);}
+  .chip.to{background:var(--ink); color:var(--cream);}
+  .arrow{color:var(--gold); font-weight:700;}
+
+  /* Timeline */
+  .timeline{margin:26px 0 4px;}
+  .tl-row{display:grid; grid-template-columns:104px 1fr; align-items:center; gap:14px; margin:0 0 12px;}
+  .tl-name{font-size:12px; font-weight:700; color:var(--ink); text-align:right; line-height:1.2;}
+  .tl-name span{display:block; font-weight:500; color:var(--muted); font-family:var(--mono); font-size:10.5px; letter-spacing:.5px;}
+  .track{position:relative; height:34px; background:#f2f1ea; border-radius:6px; overflow:hidden;}
+  .bar{position:absolute; top:0; bottom:0; left:0; border-radius:6px; transition:width .65s cubic-bezier(.22,.61,.36,1);}
+  .bar.manual{background:repeating-linear-gradient(135deg,#9aa79d,#9aa79d 7px,#909e93 7px,#909e93 14px); width:100%;}
+  .bar.edra{background:linear-gradient(90deg,var(--gold),var(--gold-lt)); width:100%;}
+  .bar-cap{position:absolute; top:50%; transform:translateY(-50%); right:10px; font-family:var(--mono); font-size:12px; font-weight:700; color:#fff; white-space:nowrap;}
+  .reclaimed-zone{position:absolute; top:0; bottom:0; right:0; background:rgba(194,138,62,.10); border-left:2px dashed var(--gold); transition:width .65s cubic-bezier(.22,.61,.36,1); display:flex; align-items:center; justify-content:center;}
+  .reclaimed-zone .rz-label{font-family:var(--mono); font-size:10.5px; letter-spacing:.5px; color:#a9762f; font-weight:700; padding:0 6px; text-align:center;}
+  .ruler{display:flex; justify-content:space-between; margin:10px 0 0 118px; font-family:var(--mono); font-size:10px; color:var(--muted); letter-spacing:.3px;}
+
+  .payoff{margin:22px 0 0; padding:16px 18px; background:var(--cream); border:1px solid var(--rule-soft); border-radius:8px; font-size:14.5px; line-height:1.5; color:var(--body); min-height:22px;}
+  .payoff strong{color:var(--ink);}
+  .payoff.idle{color:var(--muted); font-style:italic;}
+
+  /* ICP selector */
+  .section-label{font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin:38px 0 12px;}
+  .icp-row{display:flex; gap:10px; flex-wrap:wrap;}
+  .icp{appearance:none; cursor:pointer; font-family:var(--sans); font-size:14px; font-weight:600; color:var(--ink);
+       background:var(--paper); border:1px solid var(--rule); border-radius:999px; padding:10px 18px; transition:all .15s;}
+  .icp:hover{border-color:var(--forest);}
+  .icp[aria-pressed="true"]{background:var(--ink); color:var(--cream); border-color:var(--ink);}
+  .icp:focus-visible{outline:3px solid var(--gold-lt); outline-offset:2px;}
+
+  /* Questions */
+  .q{margin:26px 0 0; padding:22px 0 0; border-top:1px solid var(--rule-soft);}
+  .q:first-of-type{border-top:0;}
+  .q-head{display:flex; align-items:baseline; gap:12px; margin:0 0 14px;}
+  .q-num{font-family:var(--mono); font-size:12px; color:var(--gold); font-weight:700;}
+  .q-text{font-size:17px; font-weight:700; color:var(--ink); margin:0;}
+  .opts{display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
+  .opt{appearance:none; cursor:pointer; text-align:left; font-family:var(--sans); background:var(--paper);
+       border:1px solid var(--rule); border-radius:8px; padding:13px 14px; transition:all .15s; color:var(--text);}
+  .opt:hover{border-color:var(--forest); transform:translateY(-1px);}
+  .opt[aria-pressed="true"]{border-color:var(--ink); background:#f3f6f3; box-shadow:inset 0 0 0 1px var(--ink);}
+  .opt:focus-visible{outline:3px solid var(--gold-lt); outline-offset:2px;}
+  .opt .ot{display:block; font-size:14px; font-weight:700; line-height:1.25;}
+  .opt .os{display:block; font-size:12px; color:var(--muted); margin-top:3px;}
+
+  /* CTA */
+  .cta-card{margin:34px 0 0; background:var(--ink); border-radius:12px; padding:30px 30px 32px; color:var(--cream); text-align:center;}
+  .cta-card h2{font-size:24px; line-height:1.18; margin:0 0 8px; color:#fff; font-weight:800; letter-spacing:-.4px;}
+  .cta-card p{margin:0 auto 20px; max-width:46ch; color:#bcd0c6; font-size:15px;}
+  .cta-btn{display:inline-block; background:var(--gold); color:var(--ink); font-weight:800; letter-spacing:.4px;
+           font-size:16px; padding:16px 34px; border-radius:8px; text-decoration:none; transition:background .15s;}
+  .cta-btn:hover{background:var(--gold-lt);}
+  .cta-card.locked{opacity:.62;}
+  .cta-note{font-family:var(--mono); font-size:11px; letter-spacing:.4px; color:#8fa89b; margin:16px 0 0;}
+
+  footer{padding:30px 0 50px; margin-top:30px;}
+  .marks{font-family:var(--mono); font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--gold); font-weight:700;}
+  .fine{font-size:12px; color:var(--muted); margin:10px 0 0; line-height:1.5;}
+  .fine a{color:var(--forest); font-weight:600; text-decoration:none;}
+
+  @media (max-width:680px){
+    h1{font-size:32px;}
+    .index-value{font-size:58px;}
+    .jump{text-align:left;} .jump-row{justify-content:flex-start;}
+    .panel-head{flex-direction:column; align-items:flex-start; gap:16px;}
+    .opts{grid-template-columns:repeat(2,1fr);}
+    .tl-row{grid-template-columns:84px 1fr;}
+    .ruler{margin-left:98px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .bar,.reclaimed-zone{transition:none;}
+  }
+
+  /* Lead-capture gate */
+  .panel{position:relative;}
+  .gate{position:absolute; inset:0; border-radius:12px; background:rgba(248,245,238,.93);
+        -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px);
+        display:flex; align-items:center; justify-content:center; padding:24px; z-index:5;}
+  .gate[hidden]{display:none;}
+  .gate-card{width:100%; max-width:390px; text-align:left;}
+  .gate-title{font-size:19px; font-weight:800; color:var(--ink); margin:0 0 4px; letter-spacing:-.3px;}
+  .gate-sub{font-size:13.5px; color:var(--muted); margin:0 0 16px;}
+  .fld{display:block; margin:0 0 12px;}
+  .fld span{display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin:0 0 5px;}
+  .fld input{width:100%; font-family:var(--sans); font-size:15px; color:var(--text); background:var(--paper);
+             border:1px solid var(--rule); border-radius:7px; padding:11px 12px;}
+  .fld input:focus{outline:none; border-color:var(--forest); box-shadow:0 0 0 3px rgba(31,92,70,.12);}
+  .gate-err{font-size:13px; color:#8f3326; background:#f6e7e2; border:1px solid #e3c2b8; border-radius:6px; padding:9px 11px; margin:0 0 11px;}
+  .gate-err[hidden]{display:none;}
+  .gate-btn{width:100%; cursor:pointer; appearance:none; border:0; background:var(--gold); color:var(--ink);
+            font-family:var(--sans); font-weight:800; letter-spacing:.3px; font-size:15px; padding:13px 18px; border-radius:7px; transition:background .15s;}
+  .gate-btn:hover{background:var(--gold-lt);}
+  .gate-btn:focus-visible{outline:3px solid var(--ink); outline-offset:2px;}
+  .gate-note{font-size:11.5px; line-height:1.45; color:var(--muted); margin:12px 0 0;}
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="wordmark">EDRA<sup>™</sup></div>
+      <div class="toolname">Time Compression Simulator</div>
+    </div>
+  </div>
+  <div class="goldrule"></div>
+
+  <div class="wrap">
+    <section class="hero">
+      <p class="eyebrow"><span class="dot">●</span>&nbsp; ESG Data Readiness &nbsp;·&nbsp; The Time Compression Simulator</p>
+      <h1 id="heroTitle">How much time would EDRA give back?</h1>
+      <p class="lede" id="heroLede">A defensible submission usually takes months of reconciling data across teams. Answer three questions and watch the timeline compress.</p>
+    </section>
+
+    <!-- RESULT PANEL -->
+    <section class="panel" aria-live="polite">
+      <div class="panel-head">
+        <div class="index-block">
+          <p class="index-label">Time compression index</p>
+          <div class="index-value idle" id="indexValue">—<span class="pct">%</span></div>
+          <p class="reclaim" id="reclaimLine">Answer below to compute your estimate.</p>
+        </div>
+        <div class="jump">
+          <p class="jump-label">Readiness jump</p>
+          <div class="jump-row">
+            <span class="chip from" id="chipFrom">—</span>
+            <span class="arrow">→</span>
+            <span class="chip to" id="chipTo">Decision Grade</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="tl-name">Today<span>manual</span></div>
+          <div class="track"><div class="bar manual" id="barManual"><span class="bar-cap" id="capManual"></span></div></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-name">With EDRA<span>assessed</span></div>
+          <div class="track">
+            <div class="bar edra" id="barEdra"><span class="bar-cap" id="capEdra"></span></div>
+            <div class="reclaimed-zone" id="zone"><span class="rz-label" id="zoneLabel"></span></div>
+          </div>
+        </div>
+        <div class="ruler" id="ruler"></div>
+      </div>
+
+      <p class="payoff idle" id="payoff">Pick your seat below to see what the reclaimed time means for your team.</p>
+
+      <div class="gate" id="gate" hidden>
+        <div class="gate-card" role="group" aria-label="Reveal your result">
+          <p class="gate-title">Unlock your Time Compression Index</p>
+          <p class="gate-sub">Tell us where to send it and we’ll reveal your number.</p>
+          <label class="fld"><span>Name</span><input id="fName" type="text" autocomplete="name" placeholder="Jane Doe" /></label>
+          <label class="fld"><span>Work email</span><input id="fEmail" type="email" autocomplete="email" inputmode="email" placeholder="jane@yourfirm.com" /></label>
+          <p class="gate-err" id="gateErr" hidden></p>
+          <button class="gate-btn" id="gateBtn" type="button">Reveal my number →</button>
+          <p class="gate-note">Work email only — free providers (Gmail, Yahoo, Outlook…) aren’t accepted. We’ll send your result and won’t share your details.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ICP -->
+    <p class="section-label">Tune it to your seat</p>
+    <div class="icp-row" id="icpRow" role="group" aria-label="Choose your role">
+      <button class="icp" data-icp="finance" aria-pressed="false">Finance</button>
+      <button class="icp" data-icp="asset" aria-pressed="false">Asset management</button>
+      <button class="icp" data-icp="esg" aria-pressed="false">ESG</button>
+      <button class="icp" data-icp="sustainability" aria-pressed="false">Sustainability</button>
+    </div>
+
+    <!-- QUESTIONS -->
+    <div id="questions"></div>
+
+    <!-- CTA -->
+    <section class="cta-card locked" id="ctaCard">
+      <h2 id="ctaHead">Get your verified number</h2>
+      <p id="ctaSub">This is a model. In a 30-minute EDRA assessment, we run a sample of your portfolio through the rubric — coverage, continuity, governance — and compute the real one.</p>
+      <a class="cta-btn" href="https://edraindex.com/book" target="_blank" rel="noopener">Book a 30-minute assessment →</a>
+      <p class="cta-note">EDRA™ · ESG Data Readiness Assessment · edraindex.com</p>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="marks">ISO 27001 · SOC 2 Type II · GRESB</div>
+      <p class="fine">
+        EDRA™ · ESG Data Readiness Assessment · A product of Outsourcing Hub India · <a href="https://www.edraindex.com">edraindex.com</a><br>
+        Illustrative estimate based on typical engagements — not a guarantee. Your real figures are computed against your own data.
+      </p>
+    </div>
+  </footer>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- Model inputs ----
+  var SCOPE_WEEKS = [4, 8, 13, 18];        // Q1 by option
+  var FRAG_MULT   = [1.0, 1.35, 1.7, 2.1]; // Q2
+  var MAT_MULT    = [1.5, 1.2, 0.95, 0.8]; // Q3
+  var START_SCORE = [20, 38, 55, 48];      // Q3 -> starting readiness
+  var TARGET = 80;                         // Decision Grade
+
+  // ---- ICP config ----
+  var ICP = {
+    finance: {
+      title: "How much time would EDRA give your finance team back?",
+      lede: "Every close and reporting cycle waits on data that three teams read differently. Answer three questions and watch the timeline compress.",
+      q1: { text:"How many entities or funds are in scope?", opts:[["≤ 5","Few"],["6–20","Several"],["21–50","Many"],["50+","Enterprise"]] },
+      payoff: "That’s the close-and-report cycle handed back to your team — <strong>audit-ready numbers without the quarter-end scramble.</strong>"
+    },
+    asset: {
+      title: "How much time would EDRA give back across your portfolio?",
+      lede: "Diligence and LP reporting stall on data that isn’t submission-ready. Answer three questions and watch the timeline compress.",
+      q1: { text:"How many assets are in the portfolio?", opts:[["≤ 50","Focused"],["50–200","Mid"],["200–500","Large"],["500+","Institutional"]] },
+      payoff: "That’s diligence and LP reporting compressed across the whole book — <strong>more deals pressure-tested, faster raises.</strong>"
+    },
+    esg: {
+      title: "How much time would EDRA give back at disclosure season?",
+      lede: "Each framework answer depends on data that isn’t quite reconciled. Answer three questions and watch the timeline compress.",
+      q1: { text:"How many frameworks do you report to?", opts:[["1","Single"],["2","Two"],["3","Three"],["4+","Many"]] },
+      payoff: "That’s disclosure season on your terms — <strong>defensible answers to GRESB and CSRD without the consultant sprint.</strong>"
+    },
+    sustainability: {
+      title: "How much time would EDRA give back on data collection?",
+      lede: "Emissions and intensity figures get rebuilt by hand every cycle. Answer three questions and watch the timeline compress.",
+      q1: { text:"How many assets do you collect data across?", opts:[["≤ 50","Focused"],["50–200","Mid"],["200–500","Large"],["500+","Estate"]] },
+      payoff: "That’s continuous readiness instead of an annual fire drill — <strong>data you can stand behind year-round.</strong>"
+    }
+  };
+  var Q2 = { text:"How many separate systems or teams feed those numbers?", opts:[["1–2","Tight"],["3–4","Several"],["5–6","Many"],["7+","Sprawling"]] };
+  var Q3 = { text:"How are the numbers assembled today?", opts:[["Manual","Spreadsheets"],["Mixed","Sheets + systems"],["Systemized","Some gaps"],["Automated","Unverified"]] };
+
+  var state = { icp:null, a:[null,null,null] };
+
+  // ---- DOM ----
+  var $ = function(id){ return document.getElementById(id); };
+  var elIndex=$("indexValue"), elReclaim=$("reclaimLine"), elFrom=$("chipFrom"),
+      elBarM=$("barManual"), elBarE=$("barEdra"), elCapM=$("capManual"), elCapE=$("capEdra"),
+      elZone=$("zone"), elZoneLabel=$("zoneLabel"), elRuler=$("ruler"), elPayoff=$("payoff"),
+      elCta=$("ctaCard"), elTitle=$("heroTitle"), elLede=$("heroLede"), elQ=$("questions");
+
+  function bandName(s){
+    if(s<=30) return "Reporting"; if(s<=50) return "Dependent";
+    if(s<=70) return "Transition"; if(s<=85) return "Decision Grade";
+    return "Infrastructure Ready";
+  }
+  function weeksToHuman(w){
+    if(w >= 9){ var m = Math.round(w/4.345*10)/10; return w + " weeks (~" + (m % 1 === 0 ? m.toFixed(0) : m.toFixed(1)) + " months)"; }
+    return w + " weeks";
+  }
+
+  // ---- Question rendering ----
+  function renderQuestions(){
+    var cfg = state.icp ? ICP[state.icp] : null;
+    var q1 = cfg ? cfg.q1 : { text:"How large is the scope?", opts:[["Small",""],["Medium",""],["Large",""],["X-large",""]] };
+    var groups = [q1, Q2, Q3];
+    elQ.innerHTML = "";
+    groups.forEach(function(g, gi){
+      var q = document.createElement("div"); q.className = "q";
+      var head = '<div class="q-head"><span class="q-num">Q'+(gi+1)+'</span><p class="q-text">'+g.text+'</p></div>';
+      var opts = '<div class="opts" role="group" aria-label="'+g.text+'">';
+      g.opts.forEach(function(o, oi){
+        var pressed = state.a[gi]===oi ? 'true':'false';
+        opts += '<button class="opt" data-q="'+gi+'" data-o="'+oi+'" aria-pressed="'+pressed+'">'+
+                '<span class="ot">'+o[0]+'</span>'+(o[1]?'<span class="os">'+o[1]+'</span>':'')+'</button>';
+      });
+      opts += '</div>';
+      q.innerHTML = head + opts;
+      elQ.appendChild(q);
+    });
+    elQ.querySelectorAll('.opt').forEach(function(b){
+      b.addEventListener('click', function(){
+        var qi=+b.dataset.q, oi=+b.dataset.o;
+        state.a[qi]=oi;
+        b.parentNode.querySelectorAll('.opt').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+        b.setAttribute('aria-pressed','true');
+        compute();
+      });
+    });
+  }
+
+  // ---- Count-up ----
+  function countTo(el, target){
+    if(REDUCE){ el.firstChild.nodeValue = target; return; }
+    var start = parseInt(el.firstChild.nodeValue,10); if(isNaN(start)) start=0;
+    var t0=null, dur=520;
+    function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1);
+      var v=Math.round(start+(target-start)*(1-Math.pow(1-p,3)));
+      el.firstChild.nodeValue=v; if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+
+  // ---- Compute & render ----
+  function compute(){
+    var a=state.a, answered = a.filter(function(x){return x!==null;}).length;
+
+    // need at least the three to finalize; compute partial with sensible defaults for visualization
+    var i1 = a[0]==null?1:a[0], i2 = a[1]==null?1:a[1], i3 = a[2]==null?0:a[2];
+    var baseline = Math.max(3, Math.round(SCOPE_WEEKS[i1]*FRAG_MULT[i2]*MAT_MULT[i3]));
+    var edra = Math.max(2, Math.round(SCOPE_WEEKS[i1]*0.18 + 1));
+    if(edra>=baseline) edra = Math.max(2, baseline-1);
+    var idx = Math.round((1 - edra/baseline)*100);
+    var reclaimed = baseline - edra;
+    var start = START_SCORE[i3];
+
+    // bars animate live (the hook) regardless of capture
+    var edraPct = Math.max(6, edra/baseline*100);
+    elBarM.style.width="100%";
+    elBarE.style.width = edraPct + "%";
+    elZone.style.width = (100-edraPct) + "%";
+
+    // ruler (axis) always
+    var maxW = baseline; var ticks=[];
+    for(var k=0;k<=4;k++){ ticks.push(Math.round(maxW*k/4)+"w"); }
+    elRuler.innerHTML = ticks.map(function(t){return "<span>"+t+"</span>";}).join("");
+
+    var complete = answered===3 && !!state.icp;
+
+    if(state.captured){
+      // numbers revealed
+      elCapM.textContent = baseline + "w";
+      elCapE.textContent = edra + "w";
+      elZoneLabel.textContent = reclaimed>0 ? ("↤ " + reclaimed + "w reclaimed") : "";
+      elIndex.classList.remove("idle");
+      countTo(elIndex, idx);
+      elReclaim.innerHTML = "≈ <strong>"+weeksToHuman(reclaimed)+"</strong> reclaimed per cycle";
+      elFrom.textContent = bandName(start) + " (" + start + ")";
+      elPayoff.classList.remove("idle");
+      elPayoff.innerHTML = ICP[state.icp].payoff;
+      elCta.classList.remove("locked");
+    } else {
+      // numbers held until details captured
+      elCapM.textContent = ""; elCapE.textContent = ""; elZoneLabel.textContent = "";
+      elIndex.classList.add("idle"); elIndex.firstChild.nodeValue = "—";
+      elReclaim.textContent = complete ? "Enter your details to reveal your number." : "Answer below to compute your estimate.";
+      elFrom.textContent = "—";
+      elPayoff.classList.add("idle");
+      elPayoff.textContent = "Pick your seat below to see what the reclaimed time means for your team.";
+      elCta.classList.add("locked");
+    }
+
+    // gate overlay appears only once it's worth filling in
+    if(complete && !state.captured){ showGate(); } else { hideGate(); }
+  }
+
+  // ---- Lead-capture gate ----
+  var LEAD_ENDPOINT = ""; // <-- set to your POST endpoint (CRM/ESP/webhook) to store leads; empty = log only
+  var FREE_DOMAINS = {};
+  ["gmail.com","googlemail.com","yahoo.com","yahoo.co.uk","yahoo.co.in","yahoo.fr","ymail.com","rocketmail.com",
+   "hotmail.com","hotmail.co.uk","outlook.com","outlook.fr","live.com","msn.com","aol.com","icloud.com","me.com",
+   "mac.com","proton.me","protonmail.com","pm.me","gmx.com","gmx.net","mail.com","yandex.com","zoho.com","hey.com",
+   "fastmail.com","tutanota.com","qq.com","163.com","126.com","duck.com"].forEach(function(d){ FREE_DOMAINS[d]=1; });
+
+  var elGate=$("gate"), elGateErr=$("gateErr");
+  function showGate(){ if(elGate.hasAttribute("hidden")){ elGate.removeAttribute("hidden"); var n=$("fName"); if(n && document.activeElement!==n) n.focus(); } }
+  function hideGate(){ if(!elGate.hasAttribute("hidden")) elGate.setAttribute("hidden",""); }
+  function gErr(m){ elGateErr.textContent=m; elGateErr.removeAttribute("hidden"); }
+  function gClear(){ elGateErr.setAttribute("hidden",""); }
+
+  function submitLead(lead){
+    if(!LEAD_ENDPOINT){ if(window.console) console.log("EDRA lead", lead); return; }
+    try{ fetch(LEAD_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(lead)}); }catch(e){}
+  }
+
+  function submitGate(){
+    gClear();
+    var name=($("fName").value||"").trim();
+    var email=($("fEmail").value||"").trim().toLowerCase();
+    if(name.length<2){ gErr("Please enter your name."); $("fName").focus(); return; }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ gErr("Please enter a valid email address."); $("fEmail").focus(); return; }
+    var domain=email.split("@")[1];
+    if(FREE_DOMAINS[domain]){ gErr("Please use your work email — free providers like Gmail and Yahoo aren’t accepted."); $("fEmail").focus(); return; }
+    state.captured=true;
+    state.lead={ name:name, email:email, icp:state.icp, answers:state.a.slice(), ts:new Date().toISOString() };
+    hideGate(); compute();
+    submitLead(state.lead);
+    setTimeout(function(){ elCta.scrollIntoView({behavior: REDUCE?"auto":"smooth", block:"center"}); }, 220);
+  }
+  $("gateBtn").addEventListener("click", submitGate);
+  ["fName","fEmail"].forEach(function(id){
+    $(id).addEventListener("keydown", function(ev){ if(ev.key==="Enter"){ ev.preventDefault(); submitGate(); } });
+  });
+
+  // ---- ICP selection ----
+  $("icpRow").querySelectorAll('.icp').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      state.icp = btn.dataset.icp;
+      $("icpRow").querySelectorAll('.icp').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+      btn.setAttribute('aria-pressed','true');
+      var c = ICP[state.icp];
+      elTitle.textContent = c.title; elLede.textContent = c.lede;
+      renderQuestions();
+      compute();
+    });
+  });
+
+  // ---- Init: preselect via ?icp=, one orchestrated collapse on load ----
+  function preselect(){
+    var p = new URLSearchParams(location.search).get('icp');
+    if(p && ICP[p]){ var b=$("icpRow").querySelector('[data-icp="'+p+'"]'); if(b) b.click(); }
+    else { renderQuestions(); }
+  }
+  preselect();
+
+  // load demo: collapse the EDRA bar from full to a sample once
+  (function demo(){
+    elBarM.style.width="100%"; elBarE.style.width="100%"; elZone.style.width="0%";
+    elCapM.textContent="32w"; elCapE.textContent="";
+    var sampleRuler=["0w","8w","16w","24w","32w"];
+    elRuler.innerHTML = sampleRuler.map(function(t){return "<span>"+t+"</span>";}).join("");
+    if(REDUCE){ elBarE.style.width="16%"; elZone.style.width="84%"; elCapE.textContent="5w"; elZoneLabel.textContent="↤ 27w reclaimed"; return; }
+    setTimeout(function(){
+      elBarE.style.width="16%"; elZone.style.width="84%";
+      elCapE.textContent="5w"; elZoneLabel.textContent="↤ 27w reclaimed";
+    }, 480);
+  })();
+})();
+</script>
+</body>
+</html>
