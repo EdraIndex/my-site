@@ -181,6 +181,15 @@ module.exports = async (req, res) => {
   }
 
   const body = req.body || {};
+
+  // Honeypot: the hidden "website" field is invisible to humans. Anything that
+  // fills it is a bot — accept silently (so it can't tell it was blocked) and
+  // drop without storing or emailing.
+  if (clean(body.website)) {
+    res.status(200).json({ ok: true, dropped: true });
+    return;
+  }
+
   const { errors, lead } = validate(body);
   if (errors.length) {
     res.status(400).json({ ok: false, error: 'validation_failed', fields: errors });

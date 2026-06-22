@@ -276,6 +276,8 @@
           <p class="gate-sub">Tell us where to send it and we’ll reveal your number.</p>
           <label class="fld"><span>Name</span><input id="fName" type="text" autocomplete="name" placeholder="Jane Doe" /></label>
           <label class="fld"><span>Work email</span><input id="fEmail" type="email" autocomplete="email" inputmode="email" placeholder="jane@yourfirm.com" /></label>
+          <!-- Honeypot: hidden from humans; bots that fill it are silently dropped server-side. -->
+          <input id="fWebsite" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute !important; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;" />
           <p class="gate-err" id="gateErr" hidden></p>
           <button class="gate-btn" id="gateBtn" type="button">Reveal my number →</button>
           <p class="gate-note">Work email only — free providers (Gmail, Yahoo, Outlook…) aren’t accepted. We’ll send your result and won’t share your details.</p>
@@ -506,6 +508,7 @@
     function lbl(opts, i){ return (i!=null && opts[i]) ? opts[i][0] : null; }
     state.lead={
       name:name, email:email,
+      website: ($("fWebsite") && $("fWebsite").value) || "", // honeypot
       role:state.icp, roleLabel: ROLE_LABELS[state.icp] || state.icp,
       answers:state.a.slice(),
       answerLabels:[ lbl(q1opts, state.a[0]), lbl(Q2.opts, state.a[1]), lbl(Q3.opts, state.a[2]) ],
