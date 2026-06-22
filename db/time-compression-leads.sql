@@ -1,7 +1,11 @@
 -- ============================================================================
 -- Time Compression Simulator — leads table
--- Run this in the Supabase project "time compression June-July 2026"
--- (Dashboard → SQL Editor → New query → paste → Run).
+-- Project: "time compression June-July 2026" (Supabase ref nlvkrbzmrtsfjgtcbtye)
+--
+-- This is the EXACT DDL that was applied via the Supabase Management API on
+-- 2026-06-22. Kept here for reference / re-creation. api/lead.js writes with
+-- the project's ANON key under an insert-only RLS policy (anon may insert,
+-- nobody may read), so no Vercel env vars are required.
 -- ============================================================================
 
 create table if not exists public.leads (
@@ -36,7 +40,11 @@ create table if not exists public.leads (
 create index if not exists leads_created_at_idx on public.leads (created_at desc);
 create index if not exists leads_email_idx       on public.leads (email);
 
--- Lock it down: enable RLS with NO public policies. The API writes with the
--- service_role key, which bypasses RLS, so inserts work; anon/public cannot
--- read or write. (Leads must never be publicly readable.)
+-- Insert-only security: anon can write a lead, nobody can read via the API.
+-- (Read your leads in the Supabase dashboard Table Editor, which uses the
+-- service role and bypasses RLS.)
 alter table public.leads enable row level security;
+drop policy if exists "anon can insert leads" on public.leads;
+create policy "anon can insert leads" on public.leads for insert to anon with check (true);
+grant usage on schema public to anon;
+grant insert on public.leads to anon;

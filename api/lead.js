@@ -19,6 +19,14 @@
 
 const NOTIFY_TO = ['p.jain@edraindex.com'];
 
+// Supabase project "time compression June-July 2026" (ref nlvkrbzmrtsfjgtcbtye).
+// We use the ANON key with an INSERT-ONLY row-level-security policy on the
+// `leads` table: anon may insert, nobody may read. The anon key is designed to
+// be publishable, so embedding it here (with env override) is safe and means no
+// Vercel env vars are required. The service_role key is intentionally NOT used.
+const SUPABASE_URL = process.env.SUPABASE_URL || 'https://nlvkrbzmrtsfjgtcbtye.supabase.co';
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sdmtyYnptcnRzZmpndGNidHllIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIwOTg0ODUsImV4cCI6MjA5NzY3NDQ4NX0.Ebyz_6p4LqMySvg_FosDcMdga6bUnvgmAvuqT5mMTew';
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // Kept in sync with the client gate's free-provider list.
 const PERSONAL_EMAIL_DOMAINS = new Set([
@@ -77,10 +85,10 @@ function validate(b) {
 
 // --- Sink 1: Supabase (PostgREST insert) ---------------------------------
 async function insertSupabase(record) {
-  const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const url = SUPABASE_URL;
+  const key = SUPABASE_ANON_KEY;
   if (!url || !key) {
-    console.error('lead: SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY not configured');
+    console.error('lead: Supabase URL / anon key not configured');
     return { success: false, error: 'supabase_not_configured' };
   }
   try {
