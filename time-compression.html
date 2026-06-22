@@ -429,6 +429,9 @@
     var reclaimed = baseline - edra;
     var start = START_SCORE[i3];
 
+    // Stash the latest computed result so the lead payload can carry it.
+    state.result = { baseline:baseline, edra:edra, reclaimed:reclaimed, index:idx, startScore:start, startBand:bandName(start) };
+
     // bars animate live (the hook) regardless of capture
     var edraPct = Math.max(6, edra/baseline*100);
     elBarM.style.width="100%";
@@ -470,7 +473,8 @@
   }
 
   // ---- Lead-capture gate ----
-  var LEAD_ENDPOINT = ""; // <-- set to your POST endpoint (CRM/ESP/webhook) to store leads; empty = log only
+  var LEAD_ENDPOINT = "/api/lead"; // Supabase insert + Resend notify (see api/lead.js)
+  var ROLE_LABELS = { finance:"Finance", asset:"Asset management", esg:"ESG", sustainability:"Sustainability" };
   var FREE_DOMAINS = {};
   ["gmail.com","googlemail.com","yahoo.com","yahoo.co.uk","yahoo.co.in","yahoo.fr","ymail.com","rocketmail.com",
    "hotmail.com","hotmail.co.uk","outlook.com","outlook.fr","live.com","msn.com","aol.com","icloud.com","me.com",
@@ -497,7 +501,17 @@
     var domain=email.split("@")[1];
     if(FREE_DOMAINS[domain]){ gErr("Please use your work email — free providers like Gmail and Yahoo aren’t accepted."); $("fEmail").focus(); return; }
     state.captured=true;
-    state.lead={ name:name, email:email, icp:state.icp, answers:state.a.slice(), ts:new Date().toISOString() };
+    var cfg = ICP[state.icp] || {};
+    var q1opts = (cfg.q1 && cfg.q1.opts) || [];
+    function lbl(opts, i){ return (i!=null && opts[i]) ? opts[i][0] : null; }
+    state.lead={
+      name:name, email:email,
+      role:state.icp, roleLabel: ROLE_LABELS[state.icp] || state.icp,
+      answers:state.a.slice(),
+      answerLabels:[ lbl(q1opts, state.a[0]), lbl(Q2.opts, state.a[1]), lbl(Q3.opts, state.a[2]) ],
+      result: state.result || null,
+      ts:new Date().toISOString()
+    };
     hideGate(); compute();
     submitLead(state.lead);
     setTimeout(function(){ elCta.scrollIntoView({behavior: REDUCE?"auto":"smooth", block:"center"}); }, 220);
