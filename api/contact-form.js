@@ -12,6 +12,17 @@
 
 const RECIPIENTS = ['p.jain@edraindex.com', 'rachit@edraindex.com'];
 
+// Landing-page bookings route to the chosen host's inbox. This is a CLOSED
+// server-side enum — the client sends only a `book_with` key ('preyanka' |
+// 'priyankar'), never a raw address, so it can't be turned into an open relay.
+const BOOKING_ROUTES = {
+  preyanka:  ['p.jain@edraindex.com'],
+  priyankar: ['priyankar@outsourcinghubindia.com'],
+};
+
+// Sources where only name + work email are required (short on-site booking forms).
+const LENIENT_SOURCES = new Set(['imn-danapoint']);
+
 // Same regex + personal-domain list as the client. Kept in sync intentionally.
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PERSONAL_EMAIL_DOMAINS = new Set([
@@ -40,7 +51,7 @@ function clean(v, max = 500) {
   return String(v == null ? '' : v).trim().slice(0, max);
 }
 
-function validate(b) {
+function validate(b, lenient = false) {
   const errors = [];
   const name = clean(b.name, 120);
   const email = clean(b.email, 200);
@@ -52,10 +63,13 @@ function validate(b) {
 
   if (name.length < 2) errors.push('name');
   if (!EMAIL_RE.test(email) || isPersonalEmail(email)) errors.push('email');
-  if (company.length < 2) errors.push('company');
-  if (portfolio_type.length < 1) errors.push('portfolio_type');
-  if (asset_count.length < 1) errors.push('asset_count');
-  if (objective.length < 1) errors.push('objective');
+  // Short booking forms (e.g. the IMN landing page) only require name + work email.
+  if (!lenient) {
+    if (company.length < 2) errors.push('company');
+    if (portfolio_type.length < 1) errors.push('portfolio_type');
+    if (asset_count.length < 1) errors.push('asset_count');
+    if (objective.length < 1) errors.push('objective');
+  }
 
   return { errors, lead: { name, email, company, portfolio_type, asset_count, objective, message } };
 }
@@ -95,7 +109,27 @@ async function sendEmail({ to, subject, body, replyTo }) {
   return { success: true, email_id: data.id };
 }
 
-function formatBody(lead, meta) {
+function formatBody(lead, meta, opts = {}) {
+  if (opts.lenient) {
+    return [
+      'A new on-site meeting booking was submitted from the EDRA+ IMN landing page.',
+      '',
+      '— Lead —',
+      `Name:        ${lead.name}`,
+      `Work email:  ${lead.email}`,
+      `Company:     ${lead.company || '(not given)'}`,
+      '',
+      '— Booking —',
+      lead.message || '(none)',
+      '',
+      '— Meta —',
+      `Submitted:   ${meta.ts}`,
+      `Source IP:   ${meta.ip || 'unknown'}`,
+      `Referer:     ${meta.referer || 'direct'}`,
+      '',
+      'Reply directly to this email — it routes to the lead.',
+    ].join('\n');
+  }
   return [
     'A new assessment request was submitted on edraindex.com.',
     '',
@@ -127,7 +161,10 @@ module.exports = async (req, res) => {
   }
 
   const body = req.body || {};
-  const { errors, lead } = validate(body);
+  const source = clean(body.source, 60).toLowerCase();
+  const bookWith = clean(body.book_with, 40).toLowerCase();
+  const lenient = LENIENT_SOURCES.has(source);
+  const { errors, lead } = validate(body, lenient);
   if (errors.length) {
     res.status(400).json({ ok: false, error: 'validation_failed', fields: errors });
     return;
@@ -140,10 +177,15 @@ module.exports = async (req, res) => {
     referer: req.headers['referer'] || req.headers['referrer'],
   };
 
+  const recipients = (lenient && BOOKING_ROUTES[bookWith]) ? BOOKING_ROUTES[bookWith] : RECIPIENTS;
+  const subject = lenient
+    ? `New IMN Dana Point booking — ${lead.name}${lead.company ? ' · ' + lead.company : ''}`
+    : `New EDRA assessment request — ${lead.company}`;
+
   const result = await sendEmail({
-    to: RECIPIENTS,
-    subject: `New EDRA assessment request — ${lead.company}`,
-    body: formatBody(lead, meta),
+    to: recipients,
+    subject,
+    body: formatBody(lead, meta, { lenient, source }),
     replyTo: lead.email,
   });
 
