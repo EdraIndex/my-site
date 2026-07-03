@@ -21,7 +21,12 @@ const BOOKING_ROUTES = {
 };
 
 // Sources where only name + work email are required (short on-site booking forms).
-const LENIENT_SOURCES = new Set(['imn-danapoint']);
+const LENIENT_SOURCES = new Set(['imn-danapoint', 'imn-sales']);
+
+// The /imn-sales variant is a copy of the IMN landing page used by the sales team
+// for their own outreach campaigns. Bookings from it go to the normal host route
+// AND get CC'd to this inbox, so the team gets a copy of every lead they source.
+const SALES_CC = 'sudhanshu@outsourcinghubindia.com';
 
 // Same regex + personal-domain list as the client. Kept in sync intentionally.
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -177,7 +182,8 @@ module.exports = async (req, res) => {
     referer: req.headers['referer'] || req.headers['referrer'],
   };
 
-  const recipients = (lenient && BOOKING_ROUTES[bookWith]) ? BOOKING_ROUTES[bookWith] : RECIPIENTS;
+  const recipients = ((lenient && BOOKING_ROUTES[bookWith]) ? BOOKING_ROUTES[bookWith] : RECIPIENTS).slice();
+  if (source === 'imn-sales' && !recipients.includes(SALES_CC)) recipients.push(SALES_CC);
   const subject = lenient
     ? `New IMN Dana Point booking — ${lead.name}${lead.company ? ' · ' + lead.company : ''}`
     : `New EDRA assessment request — ${lead.company}`;
