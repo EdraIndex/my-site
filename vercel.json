@@ -8,6 +8,7 @@
     }
   },
   "rewrites": [
+    { "source": "/sample-report", "destination": "/sample-report.html" },
     { "source": "/imn", "destination": "/imn-danapoint.html" },
     { "source": "/imn-sales", "destination": "/imn-sales.html" },
     { "source": "/imn-newport", "destination": "/imn-newport.html" },

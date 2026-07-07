@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "x19d6gquej");</script>
+
+  <!-- RB2B visitor identification -->
+  <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("0NW1GHZ08JO4");</script>
+
+  <!-- Leadfeeder / Dealfront visitor tracking -->
+  <script>
+    (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('JMvZ8gv9nrda2pOd');
+  </script>
+
+  <!-- Lusha website visitor tracking -->
+  <script>
+    (function(){var b=Math.random().toString(36).substring(7),a=document.createElement("script");a.src="https://static-packages-prod.lusha.com/website-visitor-pixel/latest/insights.min.js?nocache="+b;a.async=!0;a.defer=!0;a.onload=function(){window.trackingLusha.onLoad({siteId:"1767909b-6df0-4a3d-89f9-3c2219b6c47e"})};document.head.appendChild(a)})();
+  </script>
+
+  <!-- Google Tag (gtag.js) — Google Ads + Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18160005662"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18160005662');
+    gtag('config', 'G-3WVP61B4BR');
+  </script>
+  <meta name="description" content="Download the EDRA sample report — a scored, codified ESG Data Readiness Assessment of a real (anonymised) 23-asset portfolio: coverage, temporal continuity, and governance graded against framework thresholds." />
+  <title>Sample Report — ESG Data Readiness Assessment | EDRA™</title>
+  <link rel="canonical" href="https://edraindex.com/sample-report" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EDRA Sample Report — ESG Data Readiness Assessment" />
+  <meta property="og:description" content="See what decision-grade ESG data looks like: a scored diagnostic of a real portfolio's data integrity, graded against framework thresholds." />
+  <meta property="og:url" content="https://edraindex.com/sample-report" />
+  <meta property="og:image" content="https://edraindex.com/assets/og/sample-report.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://edraindex.com/assets/og/sample-report.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles-light.css" />
+  <link rel="stylesheet" href="./styles-institutional.css" />
+  <link rel="icon" type="image/jpeg" href="./edra-logo.jpg" />
+  <link rel="apple-touch-icon" href="./edra-logo.jpg" />
+
+  <!-- ── Sample-report gated page — scoped styles (extend the institutional system) ── -->
+  <style>
+    .sr-section { background: var(--bg); }
+    .sr-wrap {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;
+    }
+    /* ── Left: report preview ── */
+    .sr-preview { position: sticky; top: 108px; }
+    .sr-cover {
+      border: 1px solid var(--border); border-radius: var(--radius-lg, 14px);
+      overflow: hidden; box-shadow: 0 24px 60px rgba(13,27,42,0.16);
+      background: var(--bg-card); line-height: 0;
+    }
+    .sr-cover img { width: 100%; height: auto; display: block; }
+    .sr-inside { margin-top: 30px; }
+    .sr-inside h3 {
+      font-family: 'Syne', sans-serif; font-weight: 300; font-size: 1.15rem;
+      letter-spacing: -0.02em; margin: 0 0 16px; color: var(--text);
+    }
+    .sr-inside ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+    .sr-inside li {
+      font-family: 'DM Sans', sans-serif; font-size: 0.92rem; line-height: 1.5;
+      color: var(--body); padding-left: 26px; position: relative;
+    }
+    .sr-inside li::before {
+      content: ''; position: absolute; left: 0; top: 7px; width: 10px; height: 10px;
+      border: 1.5px solid var(--teal); border-radius: 2px; transform: rotate(45deg);
+    }
+    .sr-meta {
+      display: flex; flex-wrap: wrap; gap: 26px 40px; margin-top: 30px;
+      padding-top: 26px; border-top: 1px solid var(--border);
+    }
+    .sr-meta .m { display: flex; flex-direction: column; gap: 3px; }
+    .sr-meta .m-v {
+      font-family: 'Syne', sans-serif; font-weight: 400; font-size: 1.5rem;
+      line-height: 1; color: var(--text); letter-spacing: -0.02em;
+    }
+    .sr-meta .m-l {
+      font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.13em;
+      text-transform: uppercase; color: var(--muted);
+    }
+
+    /* ── Right: gated form card ── */
+    .sr-form-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: 40px 40px 44px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    }
+    .sr-form-card .eyebrow { margin-bottom: 12px; }
+    .sr-form-card h2 {
+      font-family: 'Syne', sans-serif; font-weight: 300;
+      font-size: clamp(1.5rem, 2.6vw, 2rem); letter-spacing: -0.03em;
+      line-height: 1.1; margin: 0 0 10px; color: var(--text);
+    }
+    .sr-form-card h2 em { font-style: italic; color: var(--teal); font-weight: 300; }
+    .sr-form-lede {
+      font-family: 'DM Sans', sans-serif; font-size: 0.92rem; line-height: 1.6;
+      color: var(--body); margin: 0 0 28px;
+    }
+    .sr-privacy {
+      font-family: 'DM Sans', sans-serif; font-size: 0.76rem; line-height: 1.55;
+      color: var(--muted); margin: 16px 0 0;
+    }
+    .sr-privacy a { color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--teal-border); }
+
+    /* ── Success / download panel ── */
+    .sr-download { display: none; text-align: center; padding: 12px 0 4px; }
+    .sr-download.is-visible { display: block; }
+    .sr-form-card.is-done .contact-form { display: none; }
+    .sr-download .sr-check {
+      width: 54px; height: 54px; border-radius: 50%; margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--teal-dim); color: var(--teal); border: 1px solid var(--teal-border);
+    }
+    .sr-download h2 { margin-bottom: 10px; }
+    .sr-download p {
+      font-family: 'DM Sans', sans-serif; font-size: 0.92rem; line-height: 1.6;
+      color: var(--body); margin: 0 auto 26px; max-width: 40ch;
+    }
+    .sr-download .btn { margin-bottom: 10px; }
+    .sr-dl-note { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .sr-wrap { grid-template-columns: 1fr; gap: 44px; }
+      .sr-preview { position: static; order: 2; }
+      .sr-form-card { order: 1; padding: 32px 26px 36px; }
+    }
+  </style>
+</head>
+<body class="hero-v3-page hero-image-page">
+
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <a href="./index.html" class="nav-logo" aria-label="EDRA home">
+      <img class="nav-logo-mark" src="./edra-logo.jpg" alt="" width="40" height="40" />
+      <span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="./index.html#why-edra">Why EDRA<sup>TM</sup></a></li>
+      <li><a href="./index.html#sample-output">Outputs</a></li>
+      <li><a href="./index.html#edra-stack">The Stack</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">
+          Resources <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="resources-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="./resources.html#case-studies">Case Studies</a></li>
+          <li role="none"><a role="menuitem" href="./resources.html#whitepapers">Whitepapers</a></li>
+          <li role="none"><a role="menuitem" href="./blog/index.html">Insights</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown" data-dropdown>
+        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="region-menu">
+          Region <span class="caret" aria-hidden="true"></span>
+        </button>
+        <ul id="region-menu" class="nav-dropdown-menu" role="menu">
+          <li role="none"><a role="menuitem" href="./usa.html">United States <span class="nav-dd-region">USA</span></a></li>
+          <li role="none"><a role="menuitem" href="./uk.html">United Kingdom <span class="nav-dd-region">UK</span></a></li>
+          <li role="none"><a role="menuitem" href="./apac.html">Asia Pacific <span class="nav-dd-region">APAC</span></a></li>
+          <li role="none"><a role="menuitem" href="./aus.html">Australia <span class="nav-dd-region">AUS</span></a></li>
+        </ul>
+      </li>
+      <li><a href="./index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="./demo.html" class="btn btn-outline">Book a Demo</a>
+      <a href="./index.html#contact" class="btn btn-primary" data-track="nav_cta_click">Request an Assessment</a>
+    </div>
+    <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main>
+
+    <!-- Forest page-header band -->
+    <section class="about-hero">
+      <div class="container">
+        <span class="eyebrow">Sample Report</span>
+        <h1>See what decision-grade <em>data</em> looks like</h1>
+        <p class="about-hero-intro">A full EDRA<sup>TM</sup>+ ESG Data Readiness Assessment of a real, anonymised 23-asset portfolio &mdash; every value scored for coverage, temporal continuity, and governance, then benchmarked against the thresholds a framework submission actually has to clear. This is the same report we deliver to clients.</p>
+      </div>
+    </section>
+
+    <!-- Gated download -->
+    <section class="sr-section section-pad">
+      <div class="container">
+        <div class="sr-wrap">
+
+          <!-- Left: preview -->
+          <div class="sr-preview reveal">
+            <div class="sr-cover">
+              <img src="./assets/sample-report-cover.png" alt="Cover of the EDRA sample report — Portfolio Readiness Report, ESG Data Readiness Assessment" width="860" height="672" />
+            </div>
+            <div class="sr-inside">
+              <h3>What's inside</h3>
+              <ul>
+                <li>An A&ndash;F data-readiness grade for the portfolio, with the reason codes behind it</li>
+                <li>Coverage tested against the 75% threshold that gates performance scoring</li>
+                <li>Temporal continuity &mdash; where billing gaps and missing months break the record</li>
+                <li>Governance &amp; lineage &mdash; every value traceable to its source, correction, and approver</li>
+                <li>An asset&times;utility heat-map showing exactly where the data fails and why</li>
+              </ul>
+            </div>
+            <div class="sr-meta">
+              <div class="m"><span class="m-v">23</span><span class="m-l">Assets scored</span></div>
+              <div class="m"><span class="m-v">5.76M</span><span class="m-l">Sq ft covered</span></div>
+              <div class="m"><span class="m-v">3</span><span class="m-l">Utilities · E/W/W</span></div>
+            </div>
+          </div>
+
+          <!-- Right: gated form -->
+          <div class="reveal reveal-d1">
+            <div class="sr-form-card" id="sr-card">
+              <span class="eyebrow">Free download</span>
+              <h2>Get the <em>sample report</em></h2>
+              <p class="sr-form-lede">Tell us where to send it. The PDF opens as soon as you submit &mdash; and we'll email you a copy for your records.</p>
+
+              <form class="contact-form" id="contact-form" novalidate aria-describedby="form-status">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Full Name <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required aria-required="true" aria-describedby="name-error" autocomplete="name" />
+                    <span class="form-error" id="name-error" role="alert"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Work Email <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="you@company.com" required aria-required="true" aria-describedby="email-error" autocomplete="email" />
+                    <span class="form-error" id="email-error" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="company">Company <span class="required-mark" aria-hidden="true">*</span></label>
+                  <input type="text" id="company" name="company" placeholder="Your company" required aria-required="true" aria-describedby="company-error" autocomplete="organization" />
+                  <span class="form-error" id="company-error" role="alert"></span>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="portfolio-type">Portfolio Type <span class="required-mark" aria-hidden="true">*</span></label>
+                    <select id="portfolio-type" name="portfolio_type" required aria-required="true" aria-describedby="portfolio-type-error">
+                      <option value="" disabled selected>Select portfolio type</option>
+                      <option value="multifamily">Multifamily</option>
+                      <option value="office">Office</option>
+                      <option value="retail">Retail</option>
+                      <option value="industrial">Industrial</option>
+                      <option value="hospitality">Hospitality</option>
+                      <option value="mixed">Mixed Portfolio</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <span class="form-error" id="portfolio-type-error" role="alert"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="asset-count">Approx. Number of Assets <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input type="text" id="asset-count" name="asset_count" placeholder="e.g. 25" inputmode="numeric" required aria-required="true" aria-describedby="asset-count-error" autocomplete="off" />
+                    <span class="form-error" id="asset-count-error" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="objective">Primary Objective <span class="required-mark" aria-hidden="true">*</span></label>
+                  <select id="objective" name="objective" required aria-required="true" aria-describedby="objective-error">
+                    <option value="" disabled selected>Select primary objective</option>
+                    <option value="gresb">GRESB preparation</option>
+                    <option value="readiness">Data readiness assessment</option>
+                    <option value="diagnosis">Portfolio diagnosis</option>
+                    <option value="audit">Audit defensibility</option>
+                    <option value="reporting">ESG reporting support</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <span class="form-error" id="objective-error" role="alert"></span>
+                </div>
+                <p class="form-status" id="form-status" aria-live="polite"></p>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-lg form-submit" data-track="sample_report_submit">Download the report</button>
+                  <p class="sr-privacy">We use your details only to send the report and follow up about EDRA<sup>TM</sup>. No spam. See our <a href="./privacy.html">privacy policy</a>.</p>
+                </div>
+              </form>
+
+              <!-- Success / download panel -->
+              <div class="sr-download" id="sr-download" aria-live="polite">
+                <div class="sr-check" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h2>Your report is <em>ready</em></h2>
+                <p>The download should have started automatically. We've also emailed a copy to your inbox.</p>
+                <a href="./reports/sample-report.pdf" class="btn btn-primary btn-lg" id="sr-dl-btn" download="EDRA-Sample-Report.pdf" data-track="sample_report_download">Download the report (PDF)</a>
+                <p class="sr-dl-note">EDRA™ · ESG Data Readiness Assessment · PDF</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img class="footer-logo-mark" src="./edra-logo.jpg" alt="" width="36" height="36" />
+          <div>
+            <div class="footer-wordmark">EDRA<sup>TM</sup></div>
+            <div class="footer-tagline">ESG Data Readiness Assessment</div>
+            <div class="footer-mission">Built for real estate ESG data qualification</div>
+          </div>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="./index.html#why-edra">Why EDRA<sup>TM</sup></a></li>
+            <li><a href="./index.html#sample-output">Outputs</a></li>
+            <li><a href="./index.html#edra-stack">The Stack</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./resources.html">Resources</a></li>
+            <li><a href="./index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-actions">
+          <a href="./index.html#contact" class="btn btn-primary btn-sm">Request an Assessment</a>
+          <a href="./index.html#sample-output" class="btn btn-outline btn-sm">See Sample Output</a>
+          <a href="mailto:hello@edraindex.com" class="footer-email">hello@edraindex.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 EDRA<sup>TM</sup>. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="./privacy.html">Privacy</a>
+          <a href="./cookies.html">Cookies</a>
+          <a href="./terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Nav (scroll state, mobile toggle, dropdowns, reveal) ──
+    (function () {
+      var nav = document.getElementById('nav');
+      function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 10); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      var toggle = document.getElementById('nav-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var open = nav.classList.toggle('nav-open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          document.body.classList.toggle('nav-open-lock', open);
+        });
+      }
+      document.querySelectorAll('[data-dropdown]').forEach(function (dd) {
+        var btn = dd.querySelector('.nav-dropdown-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var open = dd.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+          if (!dd.contains(e.target)) {
+            dd.classList.remove('is-open');
+            var b = dd.querySelector('.nav-dropdown-toggle');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
+            dd.classList.remove('is-open');
+            var b = dd.querySelector('.nav-dropdown-toggle');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+      var rv = document.querySelectorAll('.reveal');
+      for (var i = 0; i < rv.length; i++) rv[i].classList.add('visible');
+    })();
+
+    function trackEvent(name, params) {
+      try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {}
+    }
+
+    // ── Gated sample-report form ──
+    (function(){
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      var started = false;
+      var status = form.querySelector('#form-status');
+      var card = document.getElementById('sr-card');
+      var panel = document.getElementById('sr-download');
+      var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      var personalEmailDomains = [
+        'gmail.com','googlemail.com','yahoo.com','yahoo.co.uk','yahoo.co.in','yahoo.in','ymail.com','rocketmail.com',
+        'hotmail.com','hotmail.co.uk','hotmail.co.in','outlook.com','live.com','msn.com','aol.com','aim.com',
+        'icloud.com','me.com','mac.com','protonmail.com','proton.me','pm.me','mail.com','gmx.com','gmx.net',
+        'yandex.com','yandex.ru','rediffmail.com','rediff.com','fastmail.com','fastmail.fm','tutanota.com','tuta.io'
+      ];
+      function isPersonalEmail(s) {
+        var at = s.indexOf('@');
+        if (at < 0) return false;
+        return personalEmailDomains.indexOf(s.slice(at + 1).trim().toLowerCase()) >= 0;
+      }
+      function showError(field, message) {
+        field.setAttribute('aria-invalid', 'true');
+        var errId = field.getAttribute('aria-describedby');
+        var errEl = errId && document.getElementById(errId);
+        if (errEl) errEl.textContent = message;
+      }
+      function clearError(field) {
+        field.removeAttribute('aria-invalid');
+        var errId = field.getAttribute('aria-describedby');
+        var errEl = errId && document.getElementById(errId);
+        if (errEl) errEl.textContent = '';
+      }
+      form.addEventListener('input', function(e) { if (e.target.hasAttribute('aria-invalid')) clearError(e.target); });
+      form.addEventListener('change', function(e) { if (e.target.hasAttribute('aria-invalid')) clearError(e.target); });
+      form.addEventListener('focusin', function() {
+        if (!started) { trackEvent('sample_report_start', { section: 'sample-report' }); started = true; }
+      });
+
+      function triggerDownload() {
+        var a = document.createElement('a');
+        a.href = './reports/sample-report.pdf';
+        a.setAttribute('download', 'EDRA-Sample-Report.pdf');
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var firstInvalid = null, errorCount = 0;
+        function check(field, predicate, message) {
+          if (!predicate()) { showError(field, message); if (!firstInvalid) firstInvalid = field; errorCount++; }
+          else { clearError(field); }
+        }
+        var name = form.querySelector('#name');
+        var email = form.querySelector('#email');
+        var company = form.querySelector('#company');
+        var portfolio = form.querySelector('#portfolio-type');
+        var assetCount = form.querySelector('#asset-count');
+        var objective = form.querySelector('#objective');
+
+        check(name, function(){ return name.value.trim().length > 1; }, 'Please enter your full name.');
+        check(email, function(){ var v = email.value.trim(); return emailRe.test(v) && !isPersonalEmail(v); }, 'Please enter your work email — personal providers like gmail or yahoo aren’t accepted.');
+        check(company, function(){ return company.value.trim().length > 1; }, 'Please enter your company.');
+        check(portfolio, function(){ return !!portfolio.value; }, 'Please select a portfolio type.');
+        check(assetCount, function(){ return assetCount.value.trim().length > 0; }, 'Please enter the approximate number of assets.');
+        check(objective, function(){ return !!objective.value; }, 'Please select your primary objective.');
+
+        if (errorCount > 0) { if (firstInvalid) firstInvalid.focus(); return; }
+
+        if (status) { status.textContent = ''; status.classList.remove('is-error'); }
+        trackEvent('sample_report_submit', { section: 'sample-report' });
+
+        var btn = form.querySelector('.form-submit');
+        var originalBtnHtml = btn.innerHTML;
+        btn.textContent = 'Preparing…';
+        btn.style.pointerEvents = 'none';
+        btn.style.opacity = '0.85';
+
+        var payload = {
+          name: name.value.trim(),
+          email: email.value.trim(),
+          company: company.value.trim(),
+          portfolio_type: portfolio.value,
+          asset_count: assetCount.value.trim(),
+          objective: objective.value,
+          message: 'Requested the sample report download.',
+          source: 'sample-report'
+        };
+
+        fetch('/api/contact-form', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function(r) {
+          return r.json().then(function(j) { return { ok: r.ok && j && j.ok, body: j }; });
+        }).then(function(result) {
+          if (!result.ok) { throw new Error((result.body && result.body.error) || 'send_failed'); }
+          if (typeof gtag === 'function') {
+            gtag('event', 'conversion', { 'send_to': 'AW-18160005662/jUjuCPCzuqwcEJ7krtND', 'value': 1.0, 'currency': 'INR' });
+          }
+          // Reveal download + auto-start
+          if (card) card.classList.add('is-done');
+          if (panel) panel.classList.add('is-visible');
+          triggerDownload();
+          if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }).catch(function(e) {
+          if (window.console) console.error('sample-report submit failed:', e);
+          btn.innerHTML = originalBtnHtml;
+          btn.textContent = 'Download the report';
+          btn.style.pointerEvents = '';
+          btn.style.opacity = '';
+          if (status) { status.textContent = 'Sorry — something went wrong. Please email hello@edraindex.com and we’ll send it over.'; status.classList.add('is-error'); }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

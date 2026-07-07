@@ -186,7 +186,9 @@ module.exports = async (req, res) => {
   if (source === 'imn-sales' && !recipients.includes(SALES_CC)) recipients.push(SALES_CC);
   const subject = lenient
     ? `New IMN Dana Point booking — ${lead.name}${lead.company ? ' · ' + lead.company : ''}`
-    : `New EDRA assessment request — ${lead.company}`;
+    : source === 'sample-report'
+      ? `New Sample Report download — ${lead.company}`
+      : `New EDRA assessment request — ${lead.company}`;
 
   const result = await sendEmail({
     to: recipients,
@@ -198,6 +200,35 @@ module.exports = async (req, res) => {
   if (!result.success) {
     res.status(502).json({ ok: false, error: 'email_send_failed' });
     return;
+  }
+
+  // Sample-report downloads: email the requester their copy (best-effort — a
+  // failure here must not fail the request, since the page already unlocked
+  // the in-browser download on the 200 below).
+  if (source === 'sample-report') {
+    await sendEmail({
+      to: [lead.email],
+      subject: 'Your EDRA sample report',
+      body: [
+        `Hi ${lead.name.split(' ')[0] || 'there'},`,
+        '',
+        'Thanks for your interest in EDRA. Here is the sample report you requested —',
+        'a full ESG Data Readiness Assessment of a real (anonymised) 23-asset portfolio:',
+        '',
+        'https://edraindex.com/reports/sample-report.pdf',
+        '',
+        'It walks through exactly how we score a portfolio\'s data — coverage, temporal',
+        'continuity and governance — against the thresholds a framework submission has to clear.',
+        '',
+        'If you\'d like to see what your own portfolio looks like through the same rubric, just',
+        'reply to this email and we\'ll set up a short walkthrough.',
+        '',
+        'Priyanka Jain',
+        'EDRA · a product of Outsourcing Hub India',
+        'edraindex.com',
+      ].join('\n'),
+      replyTo: 'p.jain@edraindex.com',
+    });
   }
 
   res.status(200).json({ ok: true });
