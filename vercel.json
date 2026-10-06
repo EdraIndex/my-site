@@ -9,6 +9,30 @@
   },
   "rewrites": [
     {
+      "source": "/sign-in",
+      "destination": "/sign-in.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/frameworks",
+      "destination": "/frameworks.html"
+    },
+    {
+      "source": "/platform",
+      "destination": "/platform.html"
+    },
+    {
+      "source": "/approach",
+      "destination": "/approach.html"
+    },
+    {
       "source": "/brsr-core",
       "destination": "/brsr-core.html"
     },

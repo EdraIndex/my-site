@@ -1,0 +1,60 @@
+/* ==========================================================================
+   EDRA — typesetting + chrome fixes shared by every page.
+   Changes layout only, never wording:
+   - headings balance their lines (no single word dangling on the last line)
+   - paragraphs avoid a one-word last line
+   - the top bar spans the full content width
+   - a menu button for the top bar on small screens
+   ========================================================================== */
+
+h1, h2, h3, h4 { text-wrap: balance; }
+p, li, dd, figcaption, blockquote { text-wrap: pretty; }
+
+/* Top bar: fill the 1280 container instead of shrinking to its contents. */
+#home > header { width: 100%; }
+
+/* Hero headings sit tight at 1.0; give multi-line section headings a touch more air. */
+section h2 { line-height: 1.08 !important; }
+
+/* ── Small-screen menu ─────────────────────────────────────────────────── */
+.nav-toggle {
+  display: none;
+  align-items: center; justify-content: center;
+  width: 44px; height: 44px; padding: 0;
+  border: 1px solid #dcd9cc; border-radius: 999px; background: rgba(255, 255, 255, 0.72);
+  color: #18201b; cursor: pointer;
+}
+.nav-toggle svg { width: 20px; height: 20px; }
+.nav-panel {
+  display: none;
+  position: absolute; left: 16px; right: 16px; top: 88px; z-index: 30;
+  flex-direction: column; gap: 2px;
+  padding: 12px; border: 1px solid #dcd9cc; border-radius: 16px;
+  background: #fbfaf5; box-shadow: 0 24px 48px -28px rgba(24, 32, 27, 0.35);
+}
+.nav-panel a {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 14px; border-radius: 10px;
+  font-size: 16px; color: #18201b; text-decoration: none;
+}
+.nav-panel a:hover { background: #f1efe7; }
+.nav-panel.open { display: flex; }
+@media (max-width: 900px) {
+  .nav-toggle { display: inline-flex; }
+}
+@media (max-width: 520px) {
+  /* keep the primary action; Sign in lives in the menu */
+  .head-actions .head-signin { display: none !important; }
+}
+
+/* BRSR Core hero: trim the empty band under the hero (content + animation fit in 860). */
+@media (min-width: 901px) { #home:has(+ #attributes) { min-height: 860px !important; } }
+
+/* Phones: keep the logo, "Talk to us" and the menu button on one line. */
+@media (max-width: 900px) {
+  #home > header { flex-wrap: nowrap !important; padding: 20px !important; gap: 12px !important; }
+  #home > header .head-actions { gap: 10px !important; }
+}
+@media (max-width: 380px) {
+  #home > header > a span { letter-spacing: 0.3em !important; font-size: 17px !important; }
+}
