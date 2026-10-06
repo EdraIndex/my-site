@@ -35,26 +35,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://edraindex.com/usa.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://edraindex.com/uk.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://edraindex.com/apac.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://edraindex.com/aus.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://edraindex.com/blog/coverage-problem-75-percent.html</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>

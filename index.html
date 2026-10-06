@@ -28,1783 +28,575 @@
     gtag('config', 'AW-18160005662');
     gtag('config', 'G-3WVP61B4BR');
   </script>
-  <meta name="description" content="EDRA helps real estate funds, asset owners, and GRESB teams assess ESG data readiness before submission. Score portfolio data, identify blockers, and prioritize remediation." />
+  <title>EDRA | BRSR Core for Indian listed companies</title>
+  <meta name="description" content="Send one .xlsx workbook. EDRA returns your BRSR Core position from what was sent — not an assurance, not a rating. What is missing is an ask, not a guess." />
   <link rel="canonical" href="https://edraindex.com/" />
-  <title>EDRA | ESG Data Readiness Assessment for Real Estate Portfolios</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Single consolidated font request: Syne (display) + DM Sans (body) + JetBrains Mono (numerics). Fraunces/Inter Tight removed in favor of brand consistency. -->
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles-light.css" />
-  <link rel="stylesheet" href="./styles-institutional.css" />
 
-  <!-- ============================================================
-       HERO VARIANT — full-bleed photographic hero (crediblesg / vantara style)
-       Scoped under body.hero-image-page so it only affects this page.
-       Swap the image by editing --hero-img below.
-       ============================================================ -->
-  <style>
-    body.hero-image-page {
-      /* The hero background image. Replace this URL (or point to a local
-         file e.g. url('./assets/hero.jpg')) to change the photo. */
-      --hero-img: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=80&auto=format&fit=crop');
-    }
-    /* Hide the gradient-glow + grid + particle layers of the default hero */
-    body.hero-image-page .hero-v3::before,
-    body.hero-image-page .hero-v3::after,
-    body.hero-image-page .hero-motion { display: none !important; }
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EDRA" />
+  <meta property="og:url" content="https://edraindex.com/" />
+  <meta property="og:title" content="EDRA | BRSR Core, from what was sent" />
+  <meta property="og:description" content="One workbook in. The position from what was sent out. What is missing is an ask, not a guess." />
+  <meta property="og:image" content="https://edraindex.com/assets/og/brsr-core.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EDRA | BRSR Core, from what was sent" />
+  <meta name="twitter:description" content="One workbook in. The position from what was sent out. What is missing is an ask, not a guess." />
+  <meta name="twitter:image" content="https://edraindex.com/assets/og/brsr-core.png" />
 
-    body.hero-image-page .hero-v3 {
-      background: var(--panel-deep, #081A10);
-      isolation: isolate;
-    }
-    /* Full-bleed photo layer with a slow cinematic zoom */
-    body.hero-image-page .hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
-    }
-    body.hero-image-page .hero-bg::before {
-      content: "";
-      position: absolute;
-      inset: -3%;
-      background-image: var(--hero-img);
-      background-size: cover;
-      background-position: center;
-      transform: scale(1.05);
-      animation: heroKenBurns 26s ease-in-out infinite alternate;
-      will-change: transform;
-    }
-    /* Forest-tinted legibility overlay + fade into the cream page below */
-    body.hero-image-page .hero-bg::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg,
-          rgba(8,22,14,0.66) 0%,
-          rgba(8,22,14,0.30) 42%,
-          rgba(8,22,14,0.55) 100%),
-        radial-gradient(125% 85% at 50% 28%, transparent 42%, rgba(8,22,14,0.5) 100%);
-    }
-    @keyframes heroKenBurns {
-      from { transform: scale(1.05); }
-      to   { transform: scale(1.14); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      body.hero-image-page .hero-bg::before { animation: none; }
-    }
-
-    /* ── Hero stat strip — institutional 6-stat ledger over the photo ── */
-    /* Compact + vertically-centered so the whole hero (incl. stats) fits in one viewport */
-    body.hero-image-page .hero-v3 { overflow: hidden; align-items: center; }
-    body.hero-image-page .hero-v3 .stack { padding: 40px 0; gap: 28px; }
-    body.hero-image-page .hero-v3 h1 { font-size: clamp(1.6rem, 6vw, 4.4rem); }
-    body.hero-image-page .hero-v3 .sub { margin-top: 0; }
-    @media (max-width: 768px) {
-      body.hero-image-page .hero-v3 { min-height: auto; }
-      body.hero-image-page .hero-v3 .stack { padding: 100px 0 48px; }
-      body.hero-image-page .hero-eyebrow { font-size: 0.6rem; letter-spacing: 0.14em; }
-    }
-    .hero-stat-strip {
-      width: 100%;
-      max-width: 1100px;
-      margin: 48px auto 0;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 28px;
-      padding-top: 28px;
-      border-top: 1px solid rgba(255,255,255,0.18);
-    }
-    .hero-stat { text-align: center; }
-    .hero-stat-label {
-      font-family: var(--font-mono);
-      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-      color: rgba(255,255,255,0.62); font-weight: 500; margin-bottom: 12px;
-    }
-    .hero-stat-value {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(26px, 2.4vw, 38px); font-weight: 400;
-      letter-spacing: -0.02em; color: #FFFFFF; line-height: 1;
-    }
-    .hero-stat-value .small {
-      font-size: 0.45em; color: rgba(255,255,255,0.5);
-      margin-left: 2px; font-weight: 400; vertical-align: middle;
-    }
-    .hero-stat-sub {
-      font-family: var(--font-mono);
-      font-size: 9.5px; letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.45); margin-top: 8px;
-    }
-    @media (max-width: 900px) {
-      .hero-stat-strip { grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 560px; }
-    }
-    @media (max-width: 560px) {
-      .hero-stat-strip { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    /* ── Bright + bold: match all hero text to the white headline ── */
-    body.hero-image-page .hero-v3 h1,
-    body.hero-image-page .hero-v3 h1 .static-line { color: #FFFFFF; }
-    body.hero-image-page .hero-v3 h1 { text-shadow: 0 2px 30px rgba(0,0,0,0.28); }
-    body.hero-image-page .hero-eyebrow {
-      color: #FFFFFF; font-weight: 600;
-    }
-    body.hero-image-page .hero-v3 .sub {
-      color: #FFFFFF; font-weight: 500;
-    }
-    body.hero-image-page .hero-stat-label {
-      color: #FFFFFF; font-weight: 600;
-    }
-    body.hero-image-page .hero-stat-value {
-      color: #FFFFFF; font-weight: 500;
-    }
-    body.hero-image-page .hero-stat-value .small { color: rgba(255,255,255,0.75); }
-    body.hero-image-page .hero-stat-sub {
-      color: rgba(255,255,255,0.85); font-weight: 500;
-    }
-    body.hero-image-page .hero-v3 .btn-v3.outline {
-      color: #FFFFFF; border-color: rgba(255,255,255,0.55);
-    }
-
-    /* ── Nav bar — bright + bold over the photo ── */
-    body.hero-image-page nav#nav .nav-links a {
-      color: rgba(255,255,255,0.92); font-weight: 600;
-    }
-    body.hero-image-page nav#nav .nav-links a:hover { color: #FFFFFF; }
-    body.hero-image-page nav#nav .nav-logo-wordmark {
-      color: #FFFFFF; font-weight: 700;
-    }
-    body.hero-image-page nav#nav .btn-outline {
-      color: #FFFFFF; font-weight: 600; border-color: rgba(255,255,255,0.55);
-    }
-    body.hero-image-page nav#nav .btn-outline:hover {
-      color: #FFFFFF; border-color: #FFFFFF; background: rgba(255,255,255,0.10);
-    }
-  </style>
-
-  <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="./edra-logo.jpg" />
   <link rel="apple-touch-icon" href="./edra-logo.jpg" />
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "EDRA",
-    "description": "ESG Data Readiness Assessment for real estate portfolios",
-    "url": "https://www.edraindex.com"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "EDRA",
-    "url": "https://www.edraindex.com"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "EDRA Diagnostic",
-    "description": "ESG data readiness assessment and certification preparation for real estate portfolios",
-    "provider": {
-      "@type": "Organization",
-      "name": "Outsourcing Hub India"
-    },
-    "serviceType": "ESG Data Assessment"
-  }
-  </script>
-</head>
-<body class="hero-v3-page hero-image-page">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- ============================================================
-       1. HEADER / NAV
-       ============================================================ -->
-  <nav id="nav" role="navigation" aria-label="Main navigation">
-    <a href="./index.html" class="nav-logo" aria-label="EDRA home">
-      <img class="nav-logo-mark" src="./edra-logo.jpg" alt="" width="40" height="40" />
-      <span class="nav-logo-wordmark">EDRA<sup>TM</sup></span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="#why-edra">Why EDRA<sup>TM</sup></a></li>
-      <li><a href="#sample-output">Outputs</a></li>
-      <li><a href="#edra-stack">The Stack</a></li>
-      <li><a href="./about.html">About</a></li>
-      <li class="nav-dropdown" data-dropdown>
-        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">
-          Resources <span class="caret" aria-hidden="true"></span>
-        </button>
-        <ul id="resources-menu" class="nav-dropdown-menu" role="menu">
-          <li role="none"><a role="menuitem" href="./resources.html#case-studies">Case Studies</a></li>
-          <li role="none"><a role="menuitem" href="./resources.html#whitepapers">Whitepapers</a></li>
-          <li role="none"><a role="menuitem" href="./blog/index.html">Insights</a></li>
-        </ul>
-      </li>
-      <li class="nav-dropdown" data-dropdown>
-        <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="region-menu">
-          Region <span class="caret" aria-hidden="true"></span>
-        </button>
-        <ul id="region-menu" class="nav-dropdown-menu" role="menu">
-          <li role="none"><a role="menuitem" href="./usa.html">United States <span class="nav-dd-region">USA</span></a></li>
-          <li role="none"><a role="menuitem" href="./uk.html">United Kingdom <span class="nav-dd-region">UK</span></a></li>
-          <li role="none"><a role="menuitem" href="./apac.html">Asia Pacific <span class="nav-dd-region">APAC</span></a></li>
-          <li role="none"><a role="menuitem" href="./aus.html">Australia <span class="nav-dd-region">AUS</span></a></li>
-        </ul>
-      </li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="./demo.html" class="btn btn-outline">Book a Demo</a>
-      <a href="#contact" class="btn btn-primary" data-track="nav_cta_click">Request an Assessment</a>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://edraindex.com/#org",
+        "name": "EDRA",
+        "url": "https://edraindex.com/",
+        "logo": "https://edraindex.com/edra-logo.jpg",
+        "parentOrganization": { "@type": "Organization", "name": "Outsourcing Hub India", "url": "https://outsourcinghubindia.com" }
+      },
+      {
+        "@type": "WebSite",
+        "name": "EDRA",
+        "url": "https://edraindex.com/",
+        "publisher": { "@id": "https://edraindex.com/#org" }
+      },
+      {
+        "@type": "Service",
+        "name": "EDRA BRSR Core engagement",
+        "description": "BRSR Core figures calculated from the client's own workbook, with every gap issued as a request and every accepted figure held to its source file.",
+        "provider": { "@id": "https://edraindex.com/#org" },
+        "areaServed": "IN",
+        "serviceType": "BRSR Core data calculation"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --cream: #EDEAE2;
+      --cream-2: #E4E0D5;
+      --card: #FFFFFF;
+      --ink: #14251A;
+      --ink-2: #44554A;
+      --ink-3: #6E7B72;
+      --rule: #D3CEC1;
+      --forest-deep: #0E2417;
+      --forest: #1C3E29;
+      --sage: #4E7A60;
+      --gold: #C8A96E;
+      --gold-ink: #8C6F37;
+      --copper: #B0703F;
+      --crimson: #9B3B32;
+      --display: 'Syne', sans-serif;
+      --body: 'DM Sans', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+      --wrap: 1120px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+    @media (max-width: 560px) { .wrap { padding: 0 16px; } }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+    }
+    h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: -0.02em; margin: 0; }
+    h1 em, h2 em { font-style: italic; color: var(--gold); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--body); font-weight: 500; font-size: 15px;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 2px;
+      background: var(--gold); color: var(--forest-deep);
+      border: 1px solid var(--gold);
+      transition: background .2s, color .2s;
+    }
+    .btn:hover { background: #D6BB86; }
+    .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .btn svg { width: 16px; height: 16px; }
+
+    /* ── Nav ───────────────────────────────────────────── */
+    .nav {
+      position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+    }
+    .nav .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 76px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+    .nav-brand img { width: 36px; height: 36px; border-radius: 2px; display: block; }
+    .nav-brand span { font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: 0.02em; }
+    .nav-brand sup { font-size: 9px; font-weight: 400; margin-left: 1px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a:not(.btn) { color: rgba(255,255,255,.82); text-decoration: none; font-size: 14px; }
+    .nav-links a:not(.btn):hover { color: #fff; }
+    .nav .btn { padding: 10px 18px; font-size: 14px; }
+    @media (max-width: 760px) { .nav-links li.nav-anchor { display: none; } }
+
+    /* ── Hero ──────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      background: var(--forest-deep);
+      color: #fff;
+      padding: 168px 0 96px;
+      overflow: hidden;
+    }
+    .hero-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(200,169,110,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,169,110,.06) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+      -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+    }
+    .hero .wrap { position: relative; display: grid; grid-template-columns: 1.15fr 1fr; gap: 64px; align-items: center; }
+    .hero .eyebrow { color: var(--gold); }
+    .hero h1 { font-size: clamp(2.4rem, 5.2vw, 4.1rem); line-height: 1.04; margin: 20px 0 24px; font-weight: 400; }
+    .hero-sub { font-size: 19px; line-height: 1.55; color: rgba(255,255,255,.84); max-width: 34em; margin: 0 0 36px; font-weight: 300; }
+    .hero-note { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; color: rgba(255,255,255,.55); margin-top: 18px; text-transform: uppercase; }
+    @media (max-width: 900px) {
+      .hero { padding: 132px 0 72px; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    /* Flow diagram in hero */
+    .flow { width: 100%; height: auto; display: block; }
+    .flow text { font-family: var(--mono); }
+
+    /* ── Sequence ──────────────────────────────────────── */
+    .section { padding: 112px 0; }
+    @media (max-width: 760px) { .section { padding: 80px 0; } }
+    .section-head { max-width: 760px; margin-bottom: 56px; }
+    .section-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.1; margin-top: 16px; }
+    .section-head p { color: var(--ink-2); margin: 20px 0 0; font-size: 18px; }
+
+    .steps { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+    .step {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr) minmax(0, 1.1fr);
+      gap: 32px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+    }
+    .step-no { font-family: var(--mono); font-size: 13px; color: var(--gold-ink); letter-spacing: .08em; padding-top: 8px; }
+    .step h3 { font-size: clamp(1.35rem, 2.2vw, 1.7rem); line-height: 1.2; }
+    .step-body { color: var(--ink-2); margin: 0; }
+    .step-body p { margin: 0 0 10px; }
+    .step-body p:last-child { margin-bottom: 0; }
+    .rule-line {
+      display: block;
+      font-family: var(--mono); font-size: 12.5px; letter-spacing: .02em;
+      color: var(--forest);
+      border-left: 2px solid var(--gold);
+      padding: 2px 0 2px 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 860px) {
+      .step { grid-template-columns: 56px minmax(0, 1fr); gap: 12px 20px; padding: 28px 0; }
+      .step-body { grid-column: 2; }
+    }
+
+    /* Board line specimen */
+    .board {
+      background: var(--forest-deep);
+      color: #fff;
+      border-radius: 2px;
+      padding: 28px 28px 22px;
+      margin-top: 56px;
+    }
+    .board-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; border-bottom: 1px solid rgba(255,255,255,.14); padding-bottom: 14px; }
+    .board-head .eyebrow { color: var(--gold); }
+    .board-head small { font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,.5); letter-spacing: .06em; }
+    .board-rows { list-style: none; margin: 0; padding: 0; }
+    .board-rows li { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .board-rows li:last-child { border-bottom: 0; }
+    .board-rows .k { font-size: 15.5px; color: rgba(255,255,255,.9); }
+    .tag {
+      font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+      padding: 5px 10px; border-radius: 2px; white-space: nowrap; border: 1px solid;
+    }
+    .tag.answered { color: #9CC3A8; border-color: rgba(156,195,168,.45); }
+    .tag.partial { color: var(--gold); border-color: rgba(200,169,110,.5); }
+    .tag.unsayable { color: rgba(255,255,255,.55); border-color: rgba(255,255,255,.22); border-style: dashed; }
+    .tag.calc { color: var(--forest); border-color: rgba(28,62,41,.35); background: rgba(78,122,96,.08); }
+    .tag.pending { color: var(--ink-3); border-color: var(--rule); border-style: dashed; }
+    .board-foot { font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,.45); margin-top: 14px; letter-spacing: .04em; }
+
+    /* ── Coverage ──────────────────────────────────────── */
+    .coverage { background: var(--cream-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .attr-table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--rule); }
+    .attr-table th, .attr-table td { text-align: left; vertical-align: top; padding: 18px 22px; border-bottom: 1px solid var(--rule); }
+    .attr-table thead th { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; background: #FAF8F3; }
+    .attr-table tbody tr:last-child td, .attr-table tbody tr:last-child th { border-bottom: 0; }
+    .attr-no { font-family: var(--mono); font-size: 12px; color: var(--gold-ink); width: 56px; }
+    .attr-name { font-family: var(--display); font-size: 17px; font-weight: 500; letter-spacing: -0.01em; }
+    .attr-lines { list-style: none; margin: 0; padding: 0; }
+    .attr-lines li { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 4px 0; font-size: 15.5px; color: var(--ink-2); }
+    .attr-table tr.off .attr-name { color: var(--ink-3); }
+    .attr-note { font-size: 13.5px; color: var(--ink-3); margin-top: 8px; }
+    .coverage-rules { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 40px; }
+    .coverage-rules div { border-top: 2px solid var(--gold); padding-top: 14px; }
+    .coverage-rules strong { display: block; font-family: var(--display); font-weight: 500; font-size: 17px; margin-bottom: 6px; }
+    .coverage-rules span { color: var(--ink-2); font-size: 15.5px; }
+    @media (max-width: 760px) {
+      .attr-table thead { display: none; }
+      .attr-table, .attr-table tbody, .attr-table tr, .attr-table td, .attr-table th { display: block; width: 100%; }
+      .attr-table tr { border-bottom: 1px solid var(--rule); padding: 16px 18px; }
+      .attr-table tbody tr:last-child { border-bottom: 0; }
+      .attr-table th, .attr-table td { padding: 0; border: 0; }
+      .attr-no { width: auto; margin-bottom: 4px; }
+      .attr-name { margin-bottom: 8px; }
+      .coverage-rules { grid-template-columns: 1fr; }
+    }
+
+    /* ── CTA ───────────────────────────────────────────── */
+    .cta { background: var(--forest-deep); color: #fff; text-align: center; }
+    .cta h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 16px auto 20px; max-width: 18em; }
+    .cta .eyebrow { color: var(--gold); }
+    .cta p { color: rgba(255,255,255,.78); max-width: 36em; margin: 0 auto 36px; font-weight: 300; font-size: 18px; }
+    .cta-addr { display: block; margin-top: 20px; font-family: var(--mono); font-size: 13px; color: rgba(255,255,255,.6); }
+    .cta-addr a { color: rgba(255,255,255,.85); }
+
+    /* ── Footer ────────────────────────────────────────── */
+    footer { background: var(--forest-deep); color: rgba(255,255,255,.6); border-top: 1px solid rgba(255,255,255,.1); font-size: 13.5px; }
+    footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px 32px; padding-top: 28px; padding-bottom: 28px; flex-wrap: wrap; }
+    footer .f-brand { display: flex; align-items: center; gap: 12px; }
+    footer .f-brand img { width: 28px; height: 28px; border-radius: 2px; }
+    footer nav { display: flex; gap: 20px; }
+    footer a { color: rgba(255,255,255,.75); text-decoration: none; }
+    footer a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="nav-brand" href="/" aria-label="EDRA home">
+        <img src="./edra-logo.jpg" alt="" width="36" height="36" />
+        <span>EDRA<sup>TM</sup></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li class="nav-anchor"><a href="#sequence">How it runs</a></li>
+        <li class="nav-anchor"><a href="#calculated">What is calculated</a></li>
+        <li><a class="btn" href="mailto:hello@edraindex.com?subject=BRSR%20Core%20walkthrough" data-track="walkthrough_click" data-loc="nav">Request a walkthrough</a></li>
+      </ul>
     </div>
-    <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  </header>
 
   <main>
 
-    <!-- ============================================================
-         2. HERO — animated rotating word, dark cinematic
-         ============================================================ -->
-    <section class="hero-v3" aria-label="Hero">
-      <!-- Full-bleed photographic background (image hero variant) -->
-      <div class="hero-bg" aria-hidden="true"></div>
-      <!-- Subtle motion layers -->
-      <div class="hero-motion" aria-hidden="true">
-        <div class="grid"></div>
-        <!-- Antigravity-style drifting particle field. Populated by JS for
-             density variation + prefers-reduced-motion respect. -->
-        <div class="particle-field"></div>
-      </div>
-
-      <div class="container-v3">
-        <div class="stack">
-
-          <div class="hero-eyebrow">The World's First Data Readiness Index</div>
-
-          <div class="headline">
-            <h1>
-              <span class="static-line">Make your ESG data</span>
-              <span class="rotator" aria-live="polite">
-                <span class="ghost" aria-hidden="true">submission-ready</span>
-                <span class="word is-active" data-i="0">certifiable</span>
-                <span class="word" data-i="1">defensible</span>
-                <span class="word" data-i="2">audit-ready</span>
-                <span class="word" data-i="3">fund-grade</span>
-                <span class="word" data-i="4">submission-ready</span>
-              </span>
-            </h1>
-
-            <p class="sub">
-              Most portfolios begin ESG reporting without knowing if their data is actually ready. EDRA measures the gaps, risks, and readiness behind every submission.
-            </p>
-          </div>
-
-          <div class="ctas">
-            <a href="./demo.html" class="btn-v3 outline" data-track="hero_secondary_cta_click">
-              Book a demo
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
-              </svg>
-            </a>
-            <a href="#contact" class="btn-v3 primary" data-track="hero_primary_cta_click">
-              Request an Assessment
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M13 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-
-          <div class="hero-stat-strip">
-            <div class="hero-stat">
-              <div class="hero-stat-label">Assets Scored</div>
-              <div class="hero-stat-value">2,500</div>
-              <div class="hero-stat-sub">&amp; AUDITED</div>
-            </div>
-            <div class="hero-stat">
-              <div class="hero-stat-label">Data Points</div>
-              <div class="hero-stat-value">3.5M<span class="small">+</span></div>
-              <div class="hero-stat-sub">COVERED</div>
-            </div>
-            <div class="hero-stat">
-              <div class="hero-stat-label">Regions</div>
-              <div class="hero-stat-value">5</div>
-              <div class="hero-stat-sub">US · UK · AUS · APAC · UAE</div>
-            </div>
-            <div class="hero-stat">
-              <div class="hero-stat-label">Avg Score Lift</div>
-              <div class="hero-stat-value">+28.7</div>
-              <div class="hero-stat-sub">PHASE 2</div>
-            </div>
-            <div class="hero-stat">
-              <div class="hero-stat-label">Audit Trail</div>
-              <div class="hero-stat-value">100<span class="small">%</span></div>
-              <div class="hero-stat-sub">FIELD-LEVEL</div>
-            </div>
-            <div class="hero-stat">
-              <div class="hero-stat-label">Methodology</div>
-              <div class="hero-stat-value">v3.1</div>
-              <div class="hero-stat-sub">EDRA-METH-2026</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         3. TRUST STRIP
-         ============================================================ -->
-    <section class="trust-strip" aria-label="Credentials">
-      <div class="container">
-        <div class="trust-grid">
-          <div class="trust-card">
-            <div class="trust-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-            </div>
-            <span class="trust-text">20+ years in real estate operations</span>
-          </div>
-          <div class="trust-card">
-            <div class="trust-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <span class="trust-text">US, Canada, and UK delivery experience</span>
-          </div>
-          <div class="trust-card">
-            <div class="trust-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            </div>
-            <span class="trust-text">Built from real client data workflows</span>
-          </div>
-          <div class="trust-card">
-            <div class="trust-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <span class="trust-text">Founder-led GRESB expertise</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         4. WHY EDRA EXISTS
-         ============================================================ -->
-    <section class="why-section section-pad" id="why-edra">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">The Problem</span>
-          <h2>Why EDRA<sup>TM</sup> <em>exists</em></h2>
-          <p class="section-intro">Most portfolios submit ESG data without knowing whether it meets certification thresholds. EDRA<sup>TM</sup> changes that.</p>
-        </div>
-
-        <div class="inst-compare reveal reveal-d1">
-          <div class="inst-compare-col without">
-            <div class="inst-compare-head">Without EDRA<sup>TM</sup></div>
-            <div class="inst-compare-item"><span class="inst-compare-mark">&minus;</span>Portfolios submit without knowing whether data meets threshold logic</div>
-            <div class="inst-compare-item"><span class="inst-compare-mark">&minus;</span>Coverage gaps block performance scoring</div>
-            <div class="inst-compare-item"><span class="inst-compare-mark">&minus;</span>Missing structural fields break asset eligibility</div>
-            <div class="inst-compare-item"><span class="inst-compare-mark">&minus;</span>Billing discontinuity corrupts consumption history</div>
-            <div class="inst-compare-item"><span class="inst-compare-mark">&minus;</span>Governance weaknesses make data non-defensible</div>
-          </div>
-          <div class="inst-compare-col with">
-            <div class="inst-compare-head">With EDRA<sup>TM</sup></div>
-            <div class="inst-compare-item"><span class="inst-compare-mark">+</span>Every asset is scored before reporting starts</div>
-            <div class="inst-compare-item"><span class="inst-compare-mark">+</span>Every blocker is tagged with a reason code</div>
-            <div class="inst-compare-item"><span class="inst-compare-mark">+</span>Remediation is prioritized by certification impact</div>
-            <div class="inst-compare-item"><span class="inst-compare-mark">+</span>Outputs are reviewable, auditable, and portfolio-wide</div>
-            <div class="inst-compare-item"><span class="inst-compare-mark">+</span>Teams know exactly what to fix next</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         5. WHO WE ARE — compact institutional proof
-         ============================================================ -->
-    <section class="proof-strip">
-      <div class="container">
-        <div class="proof-content reveal">
-          <h2>Built <em>inside</em> real estate operations, not outside them.</h2>
-          <p>EDRA<sup>TM</sup> comes from years of working with portfolio data, financial operations, and reporting workflows across real estate portfolios in the US, Canada, and UK.</p>
-          <span class="proof-footnote">A product of Outsourcing Hub India.</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         6. HOW EDRA SCORES — methodology pipeline
-         ============================================================ -->
-    <section class="method-section section-pad" id="method">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Methodology</span>
-          <h2>How EDRA<sup>TM</sup> scores <em>readiness</em></h2>
-        </div>
-
-        <div class="pipeline reveal reveal-d1">
-          <div class="pipeline-step">
-            <span class="pipeline-letter">A</span>
-            <span class="pipeline-name">Asset Context</span>
-          </div>
-          <div class="pipeline-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 12" fill="none"><path d="M0 6h20M16 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="pipeline-step">
-            <span class="pipeline-letter">B</span>
-            <span class="pipeline-name">Data Integrity</span>
-          </div>
-          <div class="pipeline-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 12" fill="none"><path d="M0 6h20M16 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="pipeline-step">
-            <span class="pipeline-letter">C</span>
-            <span class="pipeline-name">Performance</span>
-          </div>
-          <div class="pipeline-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 12" fill="none"><path d="M0 6h20M16 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="pipeline-step">
-            <span class="pipeline-letter">G</span>
-            <span class="pipeline-name">Governance</span>
-          </div>
-          <div class="pipeline-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 12" fill="none"><path d="M0 6h20M16 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="pipeline-step pipeline-final">
-            <span class="pipeline-letter">Score</span>
-            <span class="pipeline-name">Composite EDRA<sup>TM</sup></span>
-          </div>
-        </div>
-
-        <div class="inst-grade reveal reveal-d2">
-          <div class="inst-grade-cell">
-            <span class="inst-grade-letter">A</span>
-            <span class="inst-grade-name">Asset Context</span>
-            <p class="inst-grade-desc">Operating hours, construction year, and use characteristics that frame every score.</p>
-            <span class="inst-grade-meta">Foundational</span>
-          </div>
-          <div class="inst-grade-cell">
-            <span class="inst-grade-letter">B</span>
-            <span class="inst-grade-name">Data Integrity</span>
-            <p class="inst-grade-desc">Completeness, coverage, continuity, structural fields, and assurance.</p>
-            <span class="inst-grade-meta">Gating</span>
-          </div>
-          <div class="inst-grade-cell">
-            <span class="inst-grade-letter">C</span>
-            <span class="inst-grade-name">Performance</span>
-            <p class="inst-grade-desc">Energy, water, waste, and GHG &mdash; only activated once data qualifies.</p>
-            <span class="inst-grade-meta">Conditional</span>
-          </div>
-          <div class="inst-grade-cell">
-            <span class="inst-grade-letter">G</span>
-            <span class="inst-grade-name">Governance</span>
-            <p class="inst-grade-desc">Approvals, evidence traceability, and audit controls.</p>
-            <span class="inst-grade-meta">Assurance</span>
-          </div>
-        </div>
-
-        <p class="method-footnote reveal reveal-d3">Performance is never scored on invalid data.</p>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         7. STATUS BANDS — decision table
-         ============================================================ -->
-    <section class="bands-section section-pad">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Status Bands</span>
-          <h2>Where does your portfolio <em>stand?</em></h2>
-          <p class="section-intro">Every portfolio scores 0&ndash;100 against the EDRA<sup>TM</sup> rubric. The score maps to one of five readiness modes &mdash; each with its own remediation path.</p>
-        </div>
-
-        <!-- Suppressed → Activated reveal (scroll-triggered signature interaction) -->
-        <div class="inst-suppress reveal reveal-d1" id="suppress-reveal">
-          <span class="inst-suppress-kicker">Portfolio readiness &middot; latent potential</span>
-          <div class="inst-suppress-row">
-            <div class="inst-suppress-stat">
-              <span class="inst-suppress-num" data-count="65">0</span>
-              <span class="inst-suppress-cap">Current score</span>
-            </div>
-            <span class="inst-suppress-op" aria-hidden="true">+</span>
-            <div class="inst-suppress-stat">
-              <span class="inst-suppress-num gold" data-count="27" data-prefix="+">+0</span>
-              <span class="inst-suppress-cap">Suppressed</span>
-            </div>
-            <span class="inst-suppress-op" aria-hidden="true">=</span>
-            <div class="inst-suppress-stat">
-              <span class="inst-suppress-num pot" data-count="92">0</span>
-              <span class="inst-suppress-cap">Activated potential</span>
-            </div>
-          </div>
-          <div class="inst-suppress-bar" role="img" aria-label="Current score 65 of 100; 27 points suppressed by data gaps; 92 potential once activated">
-            <div class="inst-suppress-track"></div>
-            <div class="inst-suppress-fill"></div>
-            <div class="inst-suppress-ghost"></div>
-            <span class="inst-suppress-mark mark-now"><span>65</span></span>
-            <span class="inst-suppress-mark mark-pot"><span>92</span></span>
-          </div>
-          <p class="inst-suppress-caption">
-            <strong>27 points</strong> of portfolio score are currently <strong>suppressed</strong> by data gaps &mdash;
-            <span class="gap-chip">coverage</span><span class="gap-chip">continuity</span><span class="gap-chip">completeness</span>
-          </p>
-        </div>
-
-        <!-- Readiness-mode ledger -->
-        <div class="inst-modes reveal reveal-d2">
-          <div class="inst-mode-row">
-            <div class="inst-mode-range"><span class="inst-mode-dot" style="background:#A8392E"></span>0&ndash;30</div>
-            <div class="inst-mode-name">Reporting Mode</div>
-            <div class="inst-mode-action">Fix foundational fields and portfolio coverage first.</div>
-            <div class="inst-mode-tag">01 &middot; Not usable</div>
-          </div>
-          <div class="inst-mode-row">
-            <div class="inst-mode-range"><span class="inst-mode-dot" style="background:#A8763E"></span>31&ndash;50</div>
-            <div class="inst-mode-name">Dependent Mode</div>
-            <div class="inst-mode-action">Close continuity and field-level gaps.</div>
-            <div class="inst-mode-tag">02 &middot; Manual</div>
-          </div>
-          <div class="inst-mode-row">
-            <div class="inst-mode-range"><span class="inst-mode-dot" style="background:#C8A96E"></span>51&ndash;70</div>
-            <div class="inst-mode-name">Transition Mode</div>
-            <div class="inst-mode-action">Prioritize reason-coded remediation by asset.</div>
-            <div class="inst-mode-tag">03 &middot; Partial</div>
-          </div>
-          <div class="inst-mode-row">
-            <div class="inst-mode-range"><span class="inst-mode-dot" style="background:#4E7A60"></span>71&ndash;85</div>
-            <div class="inst-mode-name">Decision Grade</div>
-            <div class="inst-mode-action">Move to final validation and submission preparation.</div>
-            <div class="inst-mode-tag">04 &middot; Dependable</div>
-          </div>
-          <div class="inst-mode-row">
-            <div class="inst-mode-range"><span class="inst-mode-dot" style="background:#1C3E29"></span>86&ndash;100</div>
-            <div class="inst-mode-name">Infrastructure Ready</div>
-            <div class="inst-mode-action">Maintain controls and scale governance.</div>
-            <div class="inst-mode-tag">05 &middot; Repeatable</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         8. WHAT YOU RECEIVE — deliverables
-         ============================================================ -->
-    <section class="deliverables-section section-pad" id="outputs">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Deliverables</span>
-          <h2>What you <em>receive</em></h2>
-        </div>
-
-        <div class="inst-deliv reveal reveal-d1">
-          <div class="inst-deliv-cell">
-            <span class="inst-deliv-idx">01</span>
-            <span class="inst-deliv-name">Executive Summary</span>
-            <p class="inst-deliv-desc">Portfolio score, status band, and submission readiness at a glance.</p>
-            <a href="#sample-output" class="micro-link" data-track="sample_output_view">View sample</a>
-          </div>
-          <div class="inst-deliv-cell">
-            <span class="inst-deliv-idx">02</span>
-            <span class="inst-deliv-name">Asset-Level Diagnostic</span>
-            <p class="inst-deliv-desc">Every asset scored with pass/fail blockers and reason codes.</p>
-            <a href="#sample-output" class="micro-link" data-track="sample_output_view">View sample</a>
-          </div>
-          <div class="inst-deliv-cell">
-            <span class="inst-deliv-idx">03</span>
-            <span class="inst-deliv-name">Remediation Plan</span>
-            <p class="inst-deliv-desc">The exact fixes required, ranked by certification impact.</p>
-            <a href="#sample-output" class="micro-link" data-track="sample_output_view">View sample</a>
-          </div>
-          <div class="inst-deliv-cell">
-            <span class="inst-deliv-idx">04</span>
-            <span class="inst-deliv-name">Audit Trail</span>
-            <p class="inst-deliv-desc">Original value, corrected value, rationale, approver, timestamp.</p>
-            <a href="#sample-output" class="micro-link" data-track="sample_output_view">View sample</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         8.6. THE EDRA STACK — four-layer operating model
-         ============================================================ -->
-    <section class="edra-stack-section section-pad" id="edra-stack">
-      <div class="container">
-        <div class="section-header edra-stack-header reveal">
-          <span class="eyebrow">The Operating Model</span>
-          <h2>The EDRA<sup>TM</sup> Stack</h2>
-          <p class="section-intro">Four layers, one governed dataset. Diagnose what&rsquo;s broken, fix the data itself, turn it into decisions &mdash; all sitting on a sustainability data foundation built to audit standard.</p>
-        </div>
-
-        <!-- 4-layer rail -->
-        <div class="edra-stack-rail reveal reveal-d1">
-          <div class="edra-stack-layer">
-            <span class="edra-stack-idx">01</span>
-            <span class="edra-stack-name">EDRA<sup>TM</sup></span>
-            <span class="edra-stack-role">Diagnose</span>
-            <p class="edra-stack-line">Score portfolio readiness and codify every gap that suppresses it.</p>
-            <a href="#why-edra" class="micro-link" data-track="stack_edra_view">See the diagnostic</a>
-          </div>
-          <div class="edra-stack-layer">
-            <span class="edra-stack-idx">02</span>
-            <span class="edra-stack-name">EDRA<sup>TM</sup>+</span>
-            <span class="edra-stack-role">Execute</span>
-            <p class="edra-stack-line">Our team sources, cleans, completes, and validates the actual dataset.</p>
-            <a href="#edra-plus" class="micro-link" data-track="stack_edraplus_view">See EDRA<sup>TM</sup>+</a>
-          </div>
-          <div class="edra-stack-layer is-new">
-            <span class="edra-stack-idx">03</span>
-            <span class="edra-stack-name">EDRA<sup>TM</sup> Intelligence</span>
-            <span class="edra-stack-role">Decide</span>
-            <p class="edra-stack-line">Continuous monitoring, benchmarks, and gap-to-target analytics.</p>
-            <a href="#edra-intelligence" class="micro-link" data-track="stack_intelligence_view">See below</a>
-          </div>
-          <div class="edra-stack-layer is-new">
-            <span class="edra-stack-idx">04</span>
-            <span class="edra-stack-name">EDRA<sup>TM</sup> DW</span>
-            <span class="edra-stack-role">Govern</span>
-            <p class="edra-stack-line">One governed, audit-traceable source of truth for every framework.</p>
-            <a href="#edra-dw" class="micro-link" data-track="stack_dw_view">See below</a>
-          </div>
-        </div>
-
-        <!-- Detail cards for the two new layers -->
-        <div class="edra-plus-grid reveal reveal-d2">
-          <!-- Layer 03: EDRA Intelligence -->
-          <article class="edra-plus-card" id="edra-intelligence">
-            <div class="edra-plus-card-top">
-              <span class="edra-plus-step">03</span>
-              <span class="edra-plus-kicker">Decide &middot; EDRA<sup>TM</sup> Intelligence</span>
-            </div>
-            <h3>From readiness to decisions</h3>
-            <ul class="edra-plus-work">
-              <li>Continuous portfolio monitoring &mdash; readiness tracked over time, not once a year</li>
-              <li>Trend and benchmark analytics across assets, funds, and frameworks</li>
-              <li>Gap-to-target views that show what moves the score next</li>
-              <li>Board- and investor-ready summaries on demand</li>
-            </ul>
-            <div class="edra-plus-deliver">
-              <span class="edra-plus-deliver-label">You receive</span>
-              <p>A <strong>live picture</strong> of where your portfolio stands against every framework you report to &mdash; and the shortest path to the next band.</p>
-            </div>
-          </article>
-
-          <!-- Layer 04: EDRA DW -->
-          <article class="edra-plus-card" id="edra-dw">
-            <div class="edra-plus-card-top">
-              <span class="edra-plus-step">04</span>
-              <span class="edra-plus-kicker">Govern &middot; EDRA<sup>TM</sup> DW</span>
-            </div>
-            <h3>The sustainability data foundation</h3>
-            <ul class="edra-plus-work">
-              <li>One governed source of truth for energy, water, waste, and emissions data</li>
-              <li>Full lineage &mdash; every value traceable to its source, correction, and approver</li>
-              <li>Role-based access, versioning, and audit-grade controls</li>
-              <li>API and integration into your existing reporting and BI stack</li>
-            </ul>
-            <div class="edra-plus-deliver">
-              <span class="edra-plus-deliver-label">You receive</span>
-              <p>A <strong>single, governed dataset</strong> every framework, dashboard, and auditor draws from &mdash; owned by you, built to survive scrutiny.</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="edra-plus-footer reveal reveal-d2">
-          <a href="#contact" class="btn btn-primary btn-lg">Talk to us about the full stack</a>
-          <span class="edra-plus-footer-note">EDRA<sup>TM</sup> Intelligence and EDRA<sup>TM</sup> DW are scoped per portfolio</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         8.7. EDRA+ — Beyond the diagnostic (detail under the Stack)
-         ============================================================ -->
-    <section class="edra-plus-section section-pad" id="edra-plus">
-      <div class="container">
-        <div class="section-header edra-plus-header reveal">
-          <span class="eyebrow">The Fix &middot; Layer 02</span>
-          <h2>EDRA<sup>TM</sup>+ &mdash; <em>beyond</em> the diagnostic</h2>
-          <p class="section-intro">The diagnostic tells you what&rsquo;s broken. EDRA<sup>TM</sup>+ fixes it. Our team sources, cleans, completes, and validates the actual dataset &mdash; then structures it for the framework you&rsquo;re submitting to.</p>
-        </div>
-
-        <div class="edra-plus-grid reveal reveal-d1">
-          <!-- Pillar 1: Discovery, cleaning, completion -->
-          <article class="edra-plus-card">
-            <div class="edra-plus-card-top">
-              <span class="edra-plus-step">01</span>
-              <span class="edra-plus-kicker">What our team does</span>
-            </div>
-            <h3>Discovery, cleaning, and completion</h3>
-            <ul class="edra-plus-work">
-              <li>Source utility data, tenant data, and historical reconstructions</li>
-              <li>Clean and normalise against certification schemas</li>
-              <li>Fill data gaps across meters, spaces, and reporting periods</li>
-              <li>Correct asset boundaries and scope assignments</li>
-            </ul>
-            <div class="edra-plus-deliver">
-              <span class="edra-plus-deliver-label">You receive</span>
-              <p>A complete, validated, standardised dataset &mdash; <strong>the actual data, not just a diagnostic</strong>.</p>
-            </div>
-          </article>
-
-          <!-- Pillar 2: Framework-ready preparation -->
-          <article class="edra-plus-card">
-            <div class="edra-plus-card-top">
-              <span class="edra-plus-step">02</span>
-              <span class="edra-plus-kicker">Structured for submission</span>
-            </div>
-            <h3>Framework-ready preparation</h3>
-            <ul class="edra-plus-work edra-plus-frameworks">
-              <li>GRESB</li>
-              <li>ENERGY STAR Portfolio Manager</li>
-              <li>NABERS</li>
-              <li>LEED</li>
-              <li>BREEAM</li>
-              <li>CDP</li>
-              <li>Third-party audit</li>
-            </ul>
-            <div class="edra-plus-deliver">
-              <span class="edra-plus-deliver-label">You receive</span>
-              <p>Submission-ready packages with full audit trails: <strong>field, original value, corrected value, approver, timestamp</strong>.</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="edra-plus-footer reveal reveal-d2">
-          <a href="#contact" class="btn btn-primary btn-lg">Request EDRA<sup>TM</sup>+</a>
-          <span class="edra-plus-footer-note">Requires a Tier&nbsp;1 diagnostic as the starting point</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         9. SAMPLE OUTPUT PREVIEW
-         ============================================================ -->
-    <section class="preview-section" id="sample-output">
-      <div class="preview-container">
-
-        <!-- HEADER -->
-        <div class="preview-header reveal">
-          <div class="preview-eyebrow">Product Preview</div>
-          <h2 class="preview-title">See what an EDRA<sup style="font-size:0.4em;font-weight:400;vertical-align:super;">™</sup> diagnostic <em>actually</em> looks like.</h2>
-          <p class="preview-subtitle">Not a feature list. The real artefact you'll receive — scored, codified, and ready to action on day one.</p>
-        </div>
-
-        <!-- MAIN GRID -->
-        <div class="preview-grid">
-
-          <!-- LEFT — STACKED PAGE SNAPSHOTS -->
-          <div class="snapshot-stack reveal reveal-d1">
-
-            <!-- Page 2 (back, peeking) -->
-            <div class="snapshot-back">
-              <div class="report-page report-page-2">
-
-                <div class="p2-hdr">
-                  <div class="brand">EDRA<span class="plus">+</span> Portfolio Report</div>
-                  <div>Section 01 · Score Summary</div>
-                </div>
-
-                <div class="p2-eyebrow">01 · Score Summary</div>
-                <div class="p2-title">Portfolio readiness at a glance.</div>
-                <div class="p2-deck">A weighted, GFA-confidence-adjusted readiness score across 23 multifamily assets.</div>
-
-                <div class="p2-grid">
-                  <div class="score-hero">
-                    <div class="lbl">Portfolio Readiness</div>
-                    <div class="big">65<span class="of">/100</span></div>
-                    <div class="band">TRANSITION MODE</div>
-                    <div class="interpret">"Reliable enough for internal review. Material gaps prevent certification submission."</div>
-                  </div>
-                  <div class="score-stats">
-                    <div class="lbl">Composition</div>
-                    <div class="row"><div class="num">23</div><div class="desc"><strong>Total assets</strong> across one property type. Multifamily portfolio.</div></div>
-                    <div class="row"><div class="num">5.76M</div><div class="desc"><strong>Square feet</strong> of GFA. Average 250K sqft per asset.</div></div>
-                    <div class="row"><div class="num">3</div><div class="desc"><strong>Utility tracks</strong> assessed independently — Energy, Water, Waste.</div></div>
-                  </div>
-                </div>
-
-                <div class="utilities">
-                  <div class="util-card-mini energy">
-                    <div class="name">Energy</div>
-                    <div class="score-line"><span class="v">68.0</span><span class="of">/100</span></div>
-                    <div class="funnel"><strong>17/23</strong> ELIGIBLE</div>
-                  </div>
-                  <div class="util-card-mini water">
-                    <div class="name">Water</div>
-                    <div class="score-line"><span class="v">60.5</span><span class="of">/100</span></div>
-                    <div class="funnel"><strong>10/23</strong> ELIGIBLE</div>
-                  </div>
-                  <div class="util-card-mini waste">
-                    <div class="name">Waste</div>
-                    <div class="score-line"><span class="v">46.9</span><span class="of">/100</span></div>
-                    <div class="funnel"><strong>0/23</strong> BLOCKED</div>
-                  </div>
-                </div>
-
-                <div class="findings-mini">
-                  <div class="lbl">Key Findings</div>
-                  <ul>
-                    <li><strong>Energy is strongest.</strong> 17 of 23 eligible.</li>
-                    <li><strong>Water has coverage gaps.</strong> Tracked, not eligible.</li>
-                    <li><strong>Waste is portfolio-wide blocked.</strong> 9-month gate failing.</li>
-                    <li><strong>One asset needs triage.</strong> Failing all three utilities.</li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- Page 1 (front, cover) -->
-            <div class="snapshot-front">
-              <div class="report-page">
-
-                <div class="cover-band-top">
-                  <div class="label">Portfolio Readiness Report</div>
-                  <div class="ref"><strong>Issued</strong> Mar 18, 2026<br>EDRA-PR-2026-0318</div>
-                </div>
-
-                <div class="cover-mid">
-                  <div class="cube-mark">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                      <g stroke="#a8b89a" stroke-width="0.5" fill="none" opacity="0.6">
-                        <path d="M50 8 L88 30 L88 72 L50 92 L12 72 L12 30 Z"/>
-                        <path d="M50 8 L50 92 M12 30 L88 30 M12 72 L88 72"/>
-                        <path d="M50 30 L12 50 M50 30 L88 50 M12 50 L50 70 M88 50 L50 70 M50 50 L50 70"/>
-                      </g>
-                      <g>
-                        <path d="M50 30 L72 42 L50 54 L28 42 Z" fill="#1a5f3f" opacity="0.9"/>
-                        <path d="M28 42 L28 64 L50 76 L50 54 Z" fill="#0f3f29" opacity="0.95"/>
-                        <path d="M72 42 L72 64 L50 76 L50 54 Z" fill="#1a5f3f"/>
-                      </g>
-                    </svg>
-                  </div>
-                  <div class="cover-text">
-                    <h1>EDRA<span class="plus">+</span></h1>
-                    <h2>ESG Data Readiness Assessment</h2>
-                    <div class="desc">A scored, codified diagnostic of portfolio data integrity across energy, water, and waste.</div>
-                  </div>
-                </div>
-
-                <div class="cover-data">
-                  <div class="item">
-                    <div class="lbl">Assets</div>
-                    <div class="val">23</div>
-                    <div class="sub">Multifamily</div>
-                  </div>
-                  <div class="item">
-                    <div class="lbl">Total GFA</div>
-                    <div class="val">5.76M</div>
-                    <div class="sub">Square feet</div>
-                  </div>
-                  <div class="item">
-                    <div class="lbl">Year</div>
-                    <div class="val">2025</div>
-                    <div class="sub">Calendar</div>
-                  </div>
-                  <div class="item">
-                    <div class="lbl">Engagement</div>
-                    <div class="val score-tier">Tier 1</div>
-                    <div class="sub">Diagnostic</div>
-                  </div>
-                </div>
-
-                <div class="cover-band-btm">
-                  <div class="who-row">
-                    <div class="who">
-                      <div class="lbl">Prepared for</div>
-                      <div class="val">Sample Portfolio Holdings</div>
-                    </div>
-                    <div class="who">
-                      <div class="lbl">Prepared by</div>
-                      <div class="val">EDRA · A product of OHI</div>
-                    </div>
-                  </div>
-                  <div class="tagline">Know it. Fix it. Report it.</div>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- Page indicator dots -->
-            <div class="page-indicator">
-              <span class="label">Cover</span>
-              <div class="dots">
-                <div class="dot active"></div>
-                <div class="dot"></div>
-              </div>
-              <span class="label">Score</span>
-            </div>
-
-          </div>
-
-          <!-- RIGHT — NARRATIVE -->
-          <div class="narrative reveal reveal-d2">
-
-            <div class="narrative-tag">
-              <span class="pulse"></span>
-              The deliverable, not a description
-            </div>
-
-            <h3 class="narrative-headline">
-              A scored snapshot. A codified gap list. A roadmap you can <em>action</em>.
-            </h3>
-
-            <p class="narrative-body">
-              Every EDRA<sup>™</sup> Diagnosis produces the same artefact: <strong>a portfolio readiness report</strong> built on the same gating logic certification bodies apply. No generic gap analysis. No consulting deck. The actual document your team takes to remediation — same day.
-            </p>
-
-            <div class="includes">
-              <div class="includes-label">What's inside the diagnostic</div>
-
-              <div class="include-item">
-                <div class="include-icon">
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 8l3 3 7-7"/>
-                  </svg>
-                </div>
-                <div class="text">
-                  Portfolio readiness score (0–100) with status band
-                  <span class="meta">Five bands from Reporting Mode through Infrastructure Ready</span>
-                </div>
-              </div>
-
-              <div class="include-item">
-                <div class="include-icon">
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 8l3 3 7-7"/>
-                  </svg>
-                </div>
-                <div class="text">
-                  Reason-coded gap list, asset by asset
-                  <span class="meta">COVERAGE_LT_75 · CRITICAL_FIELDS_MISSING · CONTINUITY_BAD_DAYS</span>
-                </div>
-              </div>
-
-              <div class="include-item">
-                <div class="include-icon">
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 8l3 3 7-7"/>
-                  </svg>
-                </div>
-                <div class="text">
-                  Framework alignment across GRESB, ENERGY STAR, LEED, BREEAM, CDP
-                  <span class="meta">What you can submit to today, what needs remediation first</span>
-                </div>
-              </div>
-
-              <div class="include-item">
-                <div class="include-icon">
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 8l3 3 7-7"/>
-                  </svg>
-                </div>
-                <div class="text">
-                  Priority roadmap ranked by portfolio lift
-                  <span class="meta">Top 5 fixes, ordered by impact and effort</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="cta-row">
-                <a href="#contact" class="btn btn-primary" data-track="hero_primary_cta_click">
-                  Request an Assessment
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 8h10M9 4l4 4-4 4"/>
-                  </svg>
-                </a>
-                <a id="download-sample-btn" class="btn btn-ghost" href="/reports/sample-report.pdf" target="_blank" rel="noopener" download="EDRA-Sample-Report.pdf" data-track="sample_output_view">
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M8 1v10M4 7l4 4 4-4M2 14h12"/>
-                  </svg>
-                  Download Sample PDF
-                </a>
-              </div>
-              <div class="cta-helper">
-                No-commitment. Response within 24 hours.
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         10. USE-CASE TABS
-         ============================================================ -->
-    <section class="usecases-section section-pad" id="use-cases">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Use Cases</span>
-          <h2>Built for every <em>stakeholder</em> in real estate ESG</h2>
-        </div>
-
-        <div class="tabs-wrap reveal reveal-d1">
-          <div class="tabs-nav" role="tablist">
-            <button class="tab-btn active" role="tab" aria-selected="true" data-tab="funds" data-track="use_case_tab_change">Funds &amp; Asset Owners</button>
-            <button class="tab-btn" role="tab" aria-selected="false" data-tab="gresb" data-track="use_case_tab_change">GRESB &amp; ESG Teams</button>
-            <button class="tab-btn" role="tab" aria-selected="false" data-tab="consultants" data-track="use_case_tab_change">Consultants</button>
-            <button class="tab-btn" role="tab" aria-selected="false" data-tab="investors" data-track="use_case_tab_change">Investors</button>
-          </div>
-
-          <div class="tab-panel active" id="tab-funds" role="tabpanel">
-            <div class="tab-content">
-              <div class="tab-pain">
-                <h3>The challenge</h3>
-                <p>You cannot plan certification confidently if asset data quality is unknown.</p>
-              </div>
-              <div class="tab-role">
-                <h3>How EDRA<sup>TM</sup> helps</h3>
-                <p>EDRA<sup>TM</sup> establishes portfolio-wide readiness before money, time, and reputation are put at risk.</p>
-              </div>
-              <div class="tab-outcomes">
-                <h3>Outcomes</h3>
-                <ul>
-                  <li>See which assets block reporting</li>
-                  <li>Prioritize remediation by threshold impact</li>
-                  <li>Enter certification cycles with decision-grade data</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="tab-panel" id="tab-gresb" role="tabpanel">
-            <div class="tab-content">
-              <div class="tab-pain">
-                <h3>The challenge</h3>
-                <p>Submission deadlines arrive before data quality is verified against actual GRESB thresholds.</p>
-              </div>
-              <div class="tab-role">
-                <h3>How EDRA<sup>TM</sup> helps</h3>
-                <p>EDRA<sup>TM</sup> runs data through the same gating logic used in certification — coverage, completeness, continuity — before you submit.</p>
-              </div>
-              <div class="tab-outcomes">
-                <h3>Outcomes</h3>
-                <ul>
-                  <li>Validate data against real certification thresholds</li>
-                  <li>Eliminate submission rejections from data gaps</li>
-                  <li>Build audit-ready documentation ahead of review</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="tab-panel" id="tab-consultants" role="tabpanel">
-            <div class="tab-content">
-              <div class="tab-pain">
-                <h3>The challenge</h3>
-                <p>Client engagements start without a scored baseline, making progress hard to measure.</p>
-              </div>
-              <div class="tab-role">
-                <h3>How EDRA<sup>TM</sup> helps</h3>
-                <p>EDRA<sup>TM</sup> gives every engagement a codified starting point with scored assets, reason-coded gaps, and measurable remediation targets.</p>
-              </div>
-              <div class="tab-outcomes">
-                <h3>Outcomes</h3>
-                <ul>
-                  <li>Start every engagement with a scored baseline</li>
-                  <li>Deliver measurable progress against thresholds</li>
-                  <li>Differentiate with data-first advisory services</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="tab-panel" id="tab-investors" role="tabpanel">
-            <div class="tab-content">
-              <div class="tab-pain">
-                <h3>The challenge</h3>
-                <p>ESG data quality across portfolio companies is opaque and difficult to benchmark before capital allocation.</p>
-              </div>
-              <div class="tab-role">
-                <h3>How EDRA<sup>TM</sup> helps</h3>
-                <p>EDRA<sup>TM</sup> provides independent data readiness assessments that investment committees can use for ESG due diligence.</p>
-              </div>
-              <div class="tab-outcomes">
-                <h3>Outcomes</h3>
-                <ul>
-                  <li>Assess ESG data quality before capital allocation</li>
-                  <li>Benchmark readiness across portfolio companies</li>
-                  <li>Reduce post-investment ESG remediation costs</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         11. EDRA RULES — methodology principles
-         ============================================================ -->
-    <section class="rules-section section-pad">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Methodology</span>
-          <h2>The rules EDRA<sup>TM</sup> <em>will not break</em></h2>
-        </div>
-
-        <div class="inst-rules reveal reveal-d1">
-          <div class="inst-rule">
-            <span class="inst-rule-no">01</span>
-            <div class="inst-rule-text">Null is never treated as zero<span>Missing data is flagged, never silently scored.</span></div>
-          </div>
-          <div class="inst-rule">
-            <span class="inst-rule-no">02</span>
-            <div class="inst-rule-text">Coverage is tested before performance<span>No performance score until the data qualifies.</span></div>
-          </div>
-          <div class="inst-rule">
-            <span class="inst-rule-no">03</span>
-            <div class="inst-rule-text">Continuity is judged at asset level<span>Billing gaps are caught per asset, not in aggregate.</span></div>
-          </div>
-          <div class="inst-rule">
-            <span class="inst-rule-no">04</span>
-            <div class="inst-rule-text">Inference is avoided where evidence is missing<span>We don't estimate what can't be substantiated.</span></div>
-          </div>
-          <div class="inst-rule">
-            <span class="inst-rule-no">05</span>
-            <div class="inst-rule-text">Threshold logic is explicit, not implied<span>Every gate is documented and reproducible.</span></div>
-          </div>
-          <div class="inst-rule">
-            <span class="inst-rule-no">06</span>
-            <div class="inst-rule-text">Every correction carries an audit trail<span>Original, corrected, rationale, approver, timestamp.</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         12. INSIGHTS — 3 articles only
-         ============================================================ -->
-    <section class="insights-section section-pad" id="insights">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Insights</span>
-          <h2>The ESG data gap &mdash; <em>explained</em></h2>
-        </div>
-
-        <div class="insights-grid reveal reveal-d1">
-          <a href="./blog/coverage-problem-75-percent.html" class="insight-card" data-track="insight_article_click">
-            <span class="insight-category">Methodology</span>
-            <h3>The Coverage Problem: When 75% of Your Building Data Is Missing</h3>
-            <p>Coverage below 75% blocks performance scoring entirely. Most portfolios don't know they're below the threshold.</p>
-            <span class="insight-link">Read article</span>
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="wrap">
+        <div>
+          <div class="eyebrow">BRSR Core &middot; for Indian listed companies</div>
+          <h1 id="hero-title">Your BRSR Core position, from what you <em>sent</em>.</h1>
+          <p class="hero-sub">Send one workbook. EDRA calculates what it can support, asks for what it cannot, and holds every accepted figure to the file it came from. Nothing is guessed to close a gap.</p>
+          <a class="btn" href="mailto:hello@edraindex.com?subject=BRSR%20Core%20walkthrough" data-track="walkthrough_click" data-loc="hero">
+            Request a walkthrough
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
-          <a href="./blog/gresb-submissions-fail-on-data.html" class="insight-card" data-track="insight_article_click">
-            <span class="insight-category">GRESB Readiness</span>
-            <h3>Why GRESB Submissions Fail on Data, Not Performance</h3>
-            <p>The biggest barrier to ESG certification isn't building performance. It's data completeness and structural integrity.</p>
-            <span class="insight-link">Read article</span>
-          </a>
-          <a href="./blog/governance-controls-esg-score.html" class="insight-card" data-track="insight_article_click">
-            <span class="insight-category">Data Governance</span>
-            <h3>The 5 Governance Controls That Unlock Your ESG Score</h3>
-            <p>Boundary definition. Evidence retrievability. Approval workflows. The fastest path from Dependent Mode to Decision Grade.</p>
-            <span class="insight-link">Read article</span>
-          </a>
+          <div class="hero-note">Not an assurance &middot; Not a rating</div>
         </div>
-        <div style="text-align:center;margin-top:40px;">
-          <a href="./blog/index.html" class="btn btn-outline" data-track="insights_view_all">View all articles</a>
-        </div>
+
+        <!-- Workbook → position → ask → accept/reject → rerun → board line -->
+        <svg class="flow" viewBox="0 0 440 400" role="img" aria-labelledby="flow-t">
+          <title id="flow-t">One workbook goes in. EDRA returns a position. Gaps go back as asks; replies with their files are accepted or rejected by an analyst; a rerun produces a new calculation, and the board line reads the latest.</title>
+          <g fill="none" stroke-width="1">
+            <!-- workbook -->
+            <rect x="20" y="24" width="120" height="76" stroke="#C8A96E"/>
+            <path d="M20 44h120M20 62h120M20 80h120M60 24v76M100 24v76" stroke="#C8A96E" stroke-opacity=".35"/>
+            <text x="20" y="122" fill="#C8A96E" font-size="10" letter-spacing="1.2">ONE .XLSX</text>
+
+            <!-- arrow to position -->
+            <path d="M148 62h86" stroke="#ffffff" stroke-opacity=".4"/>
+            <path d="M228 57l6 5-6 5" stroke="#ffffff" stroke-opacity=".4"/>
+
+            <!-- position -->
+            <rect x="244" y="24" width="176" height="76" stroke="#ffffff" stroke-opacity=".55"/>
+            <text x="258" y="50" fill="#ffffff" fill-opacity=".9" font-size="11">POSITION</text>
+            <text x="258" y="70" fill="#ffffff" fill-opacity=".55" font-size="9.5">from what was sent</text>
+            <text x="258" y="86" fill="#ffffff" fill-opacity=".55" font-size="9.5">calculation 1 · preserved</text>
+
+            <!-- down to asks -->
+            <path d="M332 108v52" stroke="#ffffff" stroke-opacity=".4"/>
+            <path d="M327 154l5 6 5-6" stroke="#ffffff" stroke-opacity=".4"/>
+
+            <!-- asks -->
+            <rect x="244" y="170" width="176" height="62" stroke="#C8A96E" stroke-dasharray="3 3"/>
+            <text x="258" y="194" fill="#C8A96E" font-size="11">ASK</text>
+            <text x="258" y="214" fill="#ffffff" fill-opacity=".55" font-size="9.5">figure + its source file</text>
+
+            <!-- to analyst -->
+            <path d="M236 201h-60" stroke="#ffffff" stroke-opacity=".4"/>
+            <path d="M182 196l-6 5 6 5" stroke="#ffffff" stroke-opacity=".4"/>
+
+            <!-- analyst -->
+            <rect x="20" y="170" width="148" height="62" stroke="#ffffff" stroke-opacity=".55"/>
+            <text x="34" y="194" fill="#ffffff" fill-opacity=".9" font-size="11">ANALYST</text>
+            <text x="34" y="214" fill="#ffffff" fill-opacity=".55" font-size="9.5">accept · reject</text>
+
+            <!-- down to rerun -->
+            <path d="M94 240v52" stroke="#ffffff" stroke-opacity=".4"/>
+            <path d="M89 286l5 6 5-6" stroke="#ffffff" stroke-opacity=".4"/>
+
+            <!-- rerun -->
+            <rect x="20" y="302" width="148" height="62" stroke="#ffffff" stroke-opacity=".55"/>
+            <text x="34" y="326" fill="#ffffff" fill-opacity=".9" font-size="11">RERUN</text>
+            <text x="34" y="346" fill="#ffffff" fill-opacity=".55" font-size="9.5">calculation 2 · new</text>
+
+            <!-- to board -->
+            <path d="M176 333h60" stroke="#ffffff" stroke-opacity=".4"/>
+            <path d="M230 328l6 5-6 5" stroke="#ffffff" stroke-opacity=".4"/>
+
+            <!-- board line -->
+            <rect x="244" y="302" width="176" height="62" fill="#C8A96E" fill-opacity=".1" stroke="#C8A96E"/>
+            <text x="258" y="326" fill="#C8A96E" font-size="11">BOARD LINE</text>
+            <text x="258" y="346" fill="#ffffff" fill-opacity=".7" font-size="9.5">reads the latest run</text>
+          </g>
+        </svg>
       </div>
     </section>
 
-    <!-- ============================================================
-         ACCENT BAND #2 — photographic CTA break
-         ============================================================ -->
-    <section class="inst-photo-band" aria-label="Get certification-ready">
-      <span class="eyebrow">Before you submit</span>
-      <h2>Know exactly where your portfolio <em>stands.</em></h2>
-      <p>EDRA<sup>TM</sup> scores your data, flags every blocker with a reason code, and hands you a prioritized path to a defensible submission.</p>
-      <a href="#contact" class="btn-pri">Request a Tier&nbsp;1 Diagnosis
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </a>
-    </section>
+    <!-- Sequence -->
+    <section class="section" id="sequence" aria-labelledby="seq-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">The engagement, in order</div>
+          <h2 id="seq-title">Six steps. None of them <em>fills a gap</em> for you.</h2>
+        </div>
 
-    <!-- ============================================================
-         13. CONTACT / DIAGNOSTIC FORM
-         (Standalone CTA section above this was removed — was a
-         duplicate of the contact section's headline + bullets.)
-         ============================================================ -->
-    <section class="contact-section section-pad" id="contact">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="contact-text reveal">
-            <span class="eyebrow">Get Started</span>
-            <h2>Request an EDRA<sup>TM</sup> <em>diagnostic</em> for your portfolio</h2>
-            <ul class="contact-bullets">
-              <li>We assess your portfolio's data readiness</li>
-              <li>Identify blockers with codified reason codes</li>
-              <li>Deliver remediation priorities ranked by impact</li>
-            </ul>
+        <ol class="steps">
+          <li class="step">
+            <div class="step-no">01</div>
+            <h3>Send what you have.</h3>
+            <div class="step-body">
+              <p>One .xlsx workbook, holding the figures you already have, in the shape you already hold them.</p>
+              <span class="rule-line">A blank cell stays blank.</span>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-no">02</div>
+            <h3>EDRA returns the position from what was sent.</h3>
+            <div class="step-body">
+              <p>For each requirement: what the workbook supports, and what it does not.</p>
+              <span class="rule-line">Not an assurance. Not a rating.</span>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-no">03</div>
+            <h3>What is missing is an ask, not a guess.</h3>
+            <div class="step-body">
+              <p>Each gap goes back to you as a specific request. You send the figure with the file it came from.</p>
+              <span class="rule-line">The file is held and hashed, not read.</span>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-no">04</div>
+            <h3>An analyst accepts or rejects.</h3>
+            <div class="step-body">
+              <p>A person decides on every reply. Nothing is accepted automatically.</p>
+              <span class="rule-line">An estimate is refused. A reply with no file waits.</span>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-no">05</div>
+            <h3>The rerun is a new calculation.</h3>
+            <div class="step-body">
+              <p>Accepted figures go into a fresh run. It does not overwrite the one before it.</p>
+              <span class="rule-line">The first is preserved.</span>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-no">06</div>
+            <h3>The board line is the latest calculation.</h3>
+            <div class="step-body">
+              <p>Each line says one of three things, and only what the latest run supports.</p>
+              <span class="rule-line">Answered, partial, or not sayable.</span>
+            </div>
+          </li>
+        </ol>
+
+        <div class="board" role="figure" aria-label="How a board line reads">
+          <div class="board-head">
+            <span class="eyebrow">Board line &middot; how it reads</span>
+            <small>Layout only. No client figures shown.</small>
           </div>
-          <div class="reveal reveal-d1">
-            <form class="contact-form" id="contact-form" novalidate aria-describedby="form-status">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="name">Full Name <span class="required-mark" aria-hidden="true">*</span></label>
-                  <input type="text" id="name" name="name" placeholder="Your name" required aria-required="true" aria-describedby="name-error" autocomplete="name" data-track="contact_form_start" />
-                  <span class="form-error" id="name-error" role="alert"></span>
-                </div>
-                <div class="form-group">
-                  <label for="email">Work Email <span class="required-mark" aria-hidden="true">*</span></label>
-                  <input type="email" id="email" name="email" placeholder="you@company.com" required aria-required="true" aria-describedby="email-error" autocomplete="email" />
-                  <span class="form-error" id="email-error" role="alert"></span>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="company">Company <span class="required-mark" aria-hidden="true">*</span></label>
-                <input type="text" id="company" name="company" placeholder="Your company" required aria-required="true" aria-describedby="company-error" autocomplete="organization" />
-                <span class="form-error" id="company-error" role="alert"></span>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="portfolio-type">Portfolio Type <span class="required-mark" aria-hidden="true">*</span></label>
-                  <select id="portfolio-type" name="portfolio_type" required aria-required="true" aria-describedby="portfolio-type-error">
-                    <option value="" disabled selected>Select portfolio type</option>
-                    <option value="multifamily">Multifamily</option>
-                    <option value="office">Office</option>
-                    <option value="retail">Retail</option>
-                    <option value="industrial">Industrial</option>
-                    <option value="hospitality">Hospitality</option>
-                    <option value="mixed">Mixed Portfolio</option>
-                    <option value="other">Other</option>
-                  </select>
-                  <span class="form-error" id="portfolio-type-error" role="alert"></span>
-                </div>
-                <div class="form-group">
-                  <label for="asset-count">Approx. Number of Assets <span class="required-mark" aria-hidden="true">*</span></label>
-                  <input type="text" id="asset-count" name="asset_count" placeholder="e.g. 25" inputmode="numeric" required aria-required="true" aria-describedby="asset-count-error" autocomplete="off" />
-                  <span class="form-error" id="asset-count-error" role="alert"></span>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="objective">Primary Objective <span class="required-mark" aria-hidden="true">*</span></label>
-                <select id="objective" name="objective" required aria-required="true" aria-describedby="objective-error">
-                  <option value="" disabled selected>Select primary objective</option>
-                  <option value="gresb">GRESB preparation</option>
-                  <option value="readiness">Data readiness assessment</option>
-                  <option value="diagnosis">Portfolio diagnosis</option>
-                  <option value="audit">Audit defensibility</option>
-                  <option value="reporting">ESG reporting support</option>
-                  <option value="other">Other</option>
-                </select>
-                <span class="form-error" id="objective-error" role="alert"></span>
-              </div>
-              <div class="form-group">
-                <label for="message">Message <span class="optional">(optional)</span></label>
-                <textarea id="message" name="message" placeholder="Tell us about your portfolio or certification goals..."></textarea>
-              </div>
-              <p class="form-status" id="form-status" aria-live="polite"></p>
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg form-submit" data-track="contact_form_submit">Request an Assessment</button>
-                <p class="form-helper">We respond within 1 business day.</p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         14b. CERTIFICATIONS & MEMBERSHIPS — full section
-         ============================================================ -->
-    <section class="cert-section section-pad" id="certifications" aria-label="Certifications and memberships">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Trust &amp; Compliance</span>
-          <h2>Certifications &amp; Memberships</h2>
-          <p class="section-intro">EDRA<sup>TM</sup> is built and operated by Outsourcing Hub India under enterprise-grade security, audit, and industry standards.</p>
-        </div>
-      </div>
-
-      <!-- Continuous running banner (CSS-only loop: two identical groups) -->
-      <div class="cert-marquee reveal reveal-d1" aria-label="Certifications and memberships">
-        <div class="cert-marquee-track">
-          <ul class="cert-marquee-group" role="list">
-            <li><img src="./assets/cert/iso-27001.png" alt="ISO 27001 — Information Security Management" loading="lazy" /></li>
-            <li><img src="./assets/cert/soc-2-type-2.png" alt="SOC 2 Type II" loading="lazy" /></li>
-            <li><img src="./assets/cert/gresb.webp" alt="GRESB" loading="lazy" /></li>
-            <li><img src="./assets/cert/nahma.webp" alt="NAHMA — National Affordable Housing Management Association" loading="lazy" /></li>
-            <li><img src="./assets/cert/naa.png" alt="NAA — National Apartment Association" loading="lazy" /></li>
-            <li><img src="./assets/cert/cii.png" alt="CII — Confederation of Indian Industry" loading="lazy" /></li>
-            <li><img src="./assets/cert/iacc.jpg" alt="IACC — Indo-American Chamber of Commerce" loading="lazy" /></li>
-            <li><img src="./assets/cert/nasscom.png" alt="NASSCOM" loading="lazy" /></li>
-            <li><img src="./assets/cert/cai.jpg" alt="CAI Business Partner" loading="lazy" /></li>
-            <li><img src="./assets/cert/quadel.png" alt="Quadel" loading="lazy" /></li>
+          <ul class="board-rows" role="list">
+            <li><span class="k">A line every site and every source supports</span><span class="tag answered">Answered</span></li>
+            <li><span class="k">A line with some of what it needs, carried as partial</span><span class="tag partial">Partial</span></li>
+            <li><span class="k">A line the latest calculation cannot support</span><span class="tag unsayable">Not sayable</span></li>
           </ul>
-          <ul class="cert-marquee-group" role="list" aria-hidden="true">
-            <li><img src="./assets/cert/iso-27001.png" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/soc-2-type-2.png" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/gresb.webp" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/nahma.webp" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/naa.png" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/cii.png" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/iacc.jpg" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/nasscom.png" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/cai.jpg" alt="" loading="lazy" /></li>
-            <li><img src="./assets/cert/quadel.png" alt="" loading="lazy" /></li>
-          </ul>
+          <div class="board-foot">A partial figure is never shown as a total.</div>
         </div>
+      </div>
+    </section>
+
+    <!-- What is calculated -->
+    <section class="section coverage" id="calculated" aria-labelledby="calc-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">What is calculated today</div>
+          <h2 id="calc-title">Four BRSR Core attributes on this engagement. Five <em>not yet</em>.</h2>
+          <p>BRSR Core has nine attributes. These are the lines EDRA calculates today, and the ones it does not.</p>
+        </div>
+
+        <table class="attr-table">
+          <thead>
+            <tr><th scope="col">#</th><th scope="col">BRSR Core attribute</th><th scope="col">On this engagement</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="attr-no">01</td>
+              <th scope="row" class="attr-name">Greenhouse gas footprint</th>
+              <td>
+                <ul class="attr-lines" role="list">
+                  <li>Scope 1 emissions <span class="tag calc">Calculated</span></li>
+                  <li>Scope 2 emissions <span class="tag calc">Calculated</span></li>
+                  <li>Emissions intensity <span class="tag pending">Not sayable yet</span></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="attr-no">02</td>
+              <th scope="row" class="attr-name">Water footprint</th>
+              <td>
+                <ul class="attr-lines" role="list">
+                  <li>Water consumption <span class="tag calc">Calculated</span></li>
+                  <li>Water intensity <span class="tag pending">Not sayable yet</span></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="attr-no">03</td>
+              <th scope="row" class="attr-name">Energy footprint</th>
+              <td>
+                <ul class="attr-lines" role="list">
+                  <li>Energy consumption <span class="tag calc">Calculated</span></li>
+                  <li>Energy intensity <span class="tag pending">Not sayable yet</span></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="attr-no">04</td>
+              <th scope="row" class="attr-name">Embracing circularity</th>
+              <td>
+                <ul class="attr-lines" role="list">
+                  <li>Waste generated <span class="tag calc">Calculated</span></li>
+                  <li>Waste recovered <span class="tag calc">Calculated</span></li>
+                  <li>Waste disposed <span class="tag calc">Calculated</span></li>
+                  <li>Waste intensity <span class="tag pending">Not sayable yet</span></li>
+                </ul>
+                <div class="attr-note">Called a total only when every waste type is in, at every site.</div>
+              </td>
+            </tr>
+            <tr class="off">
+              <td class="attr-no">05</td>
+              <th scope="row" class="attr-name">Enhancing employee wellbeing and safety</th>
+              <td><span class="tag pending">Not on this engagement yet</span></td>
+            </tr>
+            <tr class="off">
+              <td class="attr-no">06</td>
+              <th scope="row" class="attr-name">Enabling gender diversity in business</th>
+              <td><span class="tag pending">Not on this engagement yet</span></td>
+            </tr>
+            <tr class="off">
+              <td class="attr-no">07</td>
+              <th scope="row" class="attr-name">Enabling inclusive development</th>
+              <td><span class="tag pending">Not on this engagement yet</span></td>
+            </tr>
+            <tr class="off">
+              <td class="attr-no">08</td>
+              <th scope="row" class="attr-name">Fairness in engaging with customers and suppliers</th>
+              <td><span class="tag pending">Not on this engagement yet</span></td>
+            </tr>
+            <tr class="off">
+              <td class="attr-no">09</td>
+              <th scope="row" class="attr-name">Openness of business</th>
+              <td><span class="tag pending">Not on this engagement yet</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="coverage-rules">
+          <div><strong>A partial figure stays partial.</strong><span>It is reported as partial, never rounded up into a whole.</span></div>
+          <div><strong>Intensity is not sayable yet.</strong><span>No intensity figure is stated on any attribute today.</span></div>
+          <div><strong>Missing is not zero.</strong><span>An absent figure is an open ask, never a nil.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta" id="walkthrough" aria-labelledby="cta-title">
+      <div class="wrap">
+        <div class="eyebrow">One action</div>
+        <h2 id="cta-title">See the sequence run, <em>end to end</em>.</h2>
+        <p>A walkthrough of the engagement: workbook in, position out, ask, decision, rerun, board line.</p>
+        <a class="btn" href="mailto:hello@edraindex.com?subject=BRSR%20Core%20walkthrough" data-track="walkthrough_click" data-loc="cta">
+          Request a walkthrough
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <span class="cta-addr"><a href="mailto:hello@edraindex.com?subject=BRSR%20Core%20walkthrough">hello@edraindex.com</a></span>
       </div>
     </section>
 
   </main>
 
-  <!-- ============================================================
-       15. FOOTER — institutional
-       ============================================================ -->
-  <footer role="contentinfo">
-    <div class="container">
-      <div class="footer-main">
-        <div class="footer-brand">
-          <img class="footer-logo-mark" src="./edra-logo.jpg" alt="" width="36" height="36" />
-          <div>
-            <div class="footer-wordmark">EDRA<sup>TM</sup></div>
-            <div class="footer-tagline">ESG Data Readiness Assessment</div>
-            <div class="footer-mission">Built for real estate ESG data qualification</div>
-          </div>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <ul role="list">
-            <li><a href="#why-edra">Why EDRA<sup>TM</sup></a></li>
-            <li><a href="#sample-output">Outputs</a></li>
-            <li><a href="#edra-stack">The Stack</a></li>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./resources.html">Resources</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="footer-actions">
-          <a href="#contact" class="btn btn-primary btn-sm">Request an Assessment</a>
-          <a href="#sample-output" class="btn btn-outline btn-sm">See Sample Output</a>
-          <a href="mailto:hello@edraindex.com" class="footer-email">hello@edraindex.com</a>
-        </div>
+  <footer>
+    <div class="wrap">
+      <div class="f-brand">
+        <img src="./edra-logo.jpg" alt="" width="28" height="28" />
+        <span>EDRA<sup>TM</sup> is built and operated by Outsourcing Hub India.</span>
       </div>
-      <div class="footer-bottom">
-        <span>A product of Outsourcing Hub India</span>
-        <span>&copy; 2026 EDRA<sup>TM</sup>. All rights reserved.</span>
-        <div class="footer-legal">
-          <a href="./privacy.html">Privacy</a>
-          <a href="./cookies.html">Cookies</a>
-          <a href="./terms.html">Terms</a>
-        </div>
-      </div>
+      <nav aria-label="Legal">
+        <a href="./privacy.html">Privacy</a>
+        <a href="./cookies.html">Cookies</a>
+        <a href="./terms.html">Terms</a>
+      </nav>
+      <span>&copy; 2026 EDRA<sup>TM</sup></span>
     </div>
   </footer>
 
   <script>
-    // ── Analytics tracking ──
-    function trackEvent(name, meta) {
-      meta = meta || {};
-      meta.page = window.location.pathname;
-      meta.device_type = window.innerWidth < 768 ? 'mobile' : window.innerWidth < 1024 ? 'tablet' : 'desktop';
-      if (typeof gtag === 'function') {
-        gtag('event', name, meta);
-      }
-      // console.log('[EDRA Event]', name, meta);
-    }
-
-    document.querySelectorAll('[data-track]').forEach(function(el) {
-      el.addEventListener('click', function() {
-        var section = this.closest('section');
-        trackEvent(this.dataset.track, {
-          section: section ? section.id || section.className.split(' ')[0] : 'unknown',
-          button_label: this.textContent.trim()
-        });
+    document.querySelectorAll('[data-track]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', el.dataset.track, { location: el.dataset.loc || '', page: location.pathname });
+        }
       });
     });
-
-    // ── Sticky nav ──
-    (function(){
-      var nav = document.getElementById('nav'), lastY = 0, ticking = false;
-      function update() {
-        var y = window.scrollY;
-        if (y > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
-        // Sticky: nav stays pinned and visible at all times (no hide-on-scroll).
-        nav.classList.remove('hidden');
-        lastY = y; ticking = false;
-      }
-      window.addEventListener('scroll', function() {
-        if (!ticking) { requestAnimationFrame(update); ticking = true; }
-      }, { passive: true });
-    })();
-
-    // ── Mobile nav toggle ──
-    (function(){
-      var toggle = document.getElementById('nav-toggle');
-      var nav = document.getElementById('nav');
-      function setOpen(open) {
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        nav.classList.toggle('nav-open', open);
-        // Lock body scroll while menu is open so the page behind doesn't move
-        document.body.classList.toggle('nav-open-lock', open);
-      }
-      toggle.addEventListener('click', function() {
-        setOpen(this.getAttribute('aria-expanded') !== 'true');
-      });
-      // Close on nav-link or CTA click
-      document.querySelectorAll('.nav-links a, .nav-actions a').forEach(function(link) {
-        link.addEventListener('click', function() { setOpen(false); });
-      });
-      // Close on Escape
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && nav.classList.contains('nav-open')) setOpen(false);
-      });
-    })();
-
-    // ── Region dropdown ──
-    (function(){
-      document.querySelectorAll('[data-dropdown]').forEach(function (dd) {
-        var btn = dd.querySelector('.nav-dropdown-toggle');
-        if (!btn) return;
-        btn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var open = dd.classList.toggle('is-open');
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-      });
-      document.addEventListener('click', function (e) {
-        document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
-          if (!dd.contains(e.target)) {
-            dd.classList.remove('is-open');
-            var b = dd.querySelector('.nav-dropdown-toggle');
-            if (b) b.setAttribute('aria-expanded', 'false');
-          }
-        });
-      });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-          document.querySelectorAll('[data-dropdown].is-open').forEach(function (dd) {
-            dd.classList.remove('is-open');
-            var b = dd.querySelector('.nav-dropdown-toggle');
-            if (b) b.setAttribute('aria-expanded', 'false');
-          });
-        }
-      });
-    })();
-
-    // ── Reveal on scroll ──
-    (function(){
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) {
-        els.forEach(function(el) { el.classList.add('visible'); });
-        return;
-      }
-      var io = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-      els.forEach(function(el) { io.observe(el); });
-    })();
-
-    // ── Smooth scroll ──
-    (function(){
-      document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          var id = this.getAttribute('href').slice(1);
-          if (!id) return;
-          var target = document.getElementById(id);
-          if (!target) return;
-          e.preventDefault();
-          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
-        });
-      });
-    })();
-
-    // ── Tabs ──
-    (function(){
-      var btns = document.querySelectorAll('.tab-btn');
-      var panels = document.querySelectorAll('.tab-panel');
-      btns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          btns.forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
-          panels.forEach(function(p) { p.classList.remove('active'); });
-          this.classList.add('active');
-          this.setAttribute('aria-selected', 'true');
-          document.getElementById('tab-' + this.dataset.tab).classList.add('active');
-          trackEvent('use_case_tab_change', { section: 'use-cases', button_label: this.textContent.trim() });
-        });
-      });
-    })();
-
-    // ── Contact form (validated with inline error states) ──
-    (function(){
-      var form = document.getElementById('contact-form');
-      if (!form) return;
-      var started = false;
-      var status = form.querySelector('#form-status');
-      // Loose email check — strict enough to catch typos, lenient enough to
-      // pass anything a real MTA would accept.
-      var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      // Block well-known personal email providers — we want work emails only.
-      // Compared case-insensitively against the full domain (after the @).
-      var personalEmailDomains = [
-        'gmail.com', 'googlemail.com',
-        'yahoo.com', 'yahoo.co.uk', 'yahoo.co.in', 'yahoo.in', 'ymail.com', 'rocketmail.com',
-        'hotmail.com', 'hotmail.co.uk', 'hotmail.co.in',
-        'outlook.com', 'live.com', 'msn.com',
-        'aol.com', 'aim.com',
-        'icloud.com', 'me.com', 'mac.com',
-        'protonmail.com', 'proton.me', 'pm.me',
-        'mail.com', 'gmx.com', 'gmx.net',
-        'yandex.com', 'yandex.ru',
-        'rediffmail.com', 'rediff.com',
-        'fastmail.com', 'fastmail.fm',
-        'tutanota.com', 'tuta.io'
-      ];
-      function isPersonalEmail(s) {
-        var at = s.indexOf('@');
-        if (at < 0) return false;
-        return personalEmailDomains.indexOf(s.slice(at + 1).trim().toLowerCase()) >= 0;
-      }
-
-      function showError(field, message) {
-        field.setAttribute('aria-invalid', 'true');
-        var errId = field.getAttribute('aria-describedby');
-        var errEl = errId && document.getElementById(errId);
-        if (errEl) errEl.textContent = message;
-      }
-      function clearError(field) {
-        field.removeAttribute('aria-invalid');
-        var errId = field.getAttribute('aria-describedby');
-        var errEl = errId && document.getElementById(errId);
-        if (errEl) errEl.textContent = '';
-      }
-
-      // Clear errors as the user fixes them
-      form.addEventListener('input', function(e) {
-        if (e.target.hasAttribute('aria-invalid')) clearError(e.target);
-      });
-      form.addEventListener('change', function(e) {
-        if (e.target.hasAttribute('aria-invalid')) clearError(e.target);
-      });
-
-      form.addEventListener('focusin', function() {
-        if (!started) { trackEvent('contact_form_start', { section: 'contact' }); started = true; }
-      });
-
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var firstInvalid = null;
-        var errorCount = 0;
-
-        function check(field, predicate, message) {
-          if (!predicate()) {
-            showError(field, message);
-            if (!firstInvalid) firstInvalid = field;
-            errorCount++;
-          } else {
-            clearError(field);
-          }
-        }
-
-        var name = form.querySelector('#name');
-        var email = form.querySelector('#email');
-        var company = form.querySelector('#company');
-        var portfolio = form.querySelector('#portfolio-type');
-        var assetCount = form.querySelector('#asset-count');
-        var objective = form.querySelector('#objective');
-
-        check(name, function(){ return name.value.trim().length > 1; }, 'Please enter your full name.');
-        check(email, function(){
-          var v = email.value.trim();
-          return emailRe.test(v) && !isPersonalEmail(v);
-        }, 'Please enter your work email — personal providers like gmail or yahoo aren’t accepted.');
-        check(company, function(){ return company.value.trim().length > 1; }, 'Please enter your company.');
-        check(portfolio, function(){ return !!portfolio.value; }, 'Please select a portfolio type.');
-        check(assetCount, function(){ return assetCount.value.trim().length > 0; }, 'Please enter the approximate number of assets.');
-        check(objective, function(){ return !!objective.value; }, 'Please select your primary objective.');
-
-        if (errorCount > 0) {
-          if (firstInvalid) firstInvalid.focus();
-          return;
-        }
-
-        if (status) { status.textContent = ''; status.classList.remove('is-error'); }
-        trackEvent('contact_form_submit', { section: 'contact' });
-
-        var btn = form.querySelector('.form-submit');
-        var originalBtnHtml = btn.innerHTML;
-        btn.textContent = 'Sending…';
-        btn.style.pointerEvents = 'none';
-        btn.style.opacity = '0.85';
-
-        var payload = {
-          name: name.value.trim(),
-          email: email.value.trim(),
-          company: company.value.trim(),
-          portfolio_type: portfolio.value,
-          asset_count: assetCount.value.trim(),
-          objective: objective.value,
-          message: (form.querySelector('#message') && form.querySelector('#message').value || '').trim()
-        };
-
-        fetch('/api/contact-form', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        }).then(function(r) {
-          return r.json().then(function(j) { return { ok: r.ok && j && j.ok, body: j }; });
-        }).then(function(result) {
-          if (!result.ok) {
-            throw new Error((result.body && result.body.error) || 'send_failed');
-          }
-          // Fire Google Ads conversion only AFTER the lead actually delivered.
-          if (typeof gtag === 'function') {
-            gtag('event', 'conversion', {
-              'send_to': 'AW-18160005662/jUjuCPCzuqwcEJ7krtND',
-              'value': 1.0,
-              'currency': 'INR'
-            });
-          }
-          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Request Received';
-          if (status) status.textContent = 'Thanks — we’ll be in touch within 1 business day.';
-          setTimeout(function() {
-            form.reset();
-            btn.innerHTML = originalBtnHtml;
-            btn.textContent = 'Request an Assessment';
-            btn.style.pointerEvents = '';
-            btn.style.opacity = '';
-            if (status) status.textContent = '';
-            started = false;
-          }, 4500);
-        }).catch(function(e) {
-          if (window.console) console.error('contact-form submit failed:', e);
-          btn.innerHTML = originalBtnHtml;
-          btn.textContent = 'Request an Assessment';
-          btn.style.pointerEvents = '';
-          btn.style.opacity = '';
-          if (status) {
-            status.textContent = 'Sorry — couldn’t send your request. Please email p.jain@edraindex.com directly.';
-            status.classList.add('is-error');
-          }
-        });
-      });
-    })();
-
-    // ── Antigravity particle field (hero ambient drift) ──
-    // Modeled on the auth-success page at antigravity.google: dust-like
-    // particles drifting slowly across a deep field. Random origin, angle,
-    // size, opacity, duration — ~70 nodes, ambient and weightless.
-    (function () {
-      var field = document.querySelector('.hero-motion .particle-field');
-      if (!field) return;
-      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var count = reduceMotion ? 24 : 72;
-      var frag = document.createDocumentFragment();
-      function rand(min, max) { return Math.random() * (max - min) + min; }
-      for (var i = 0; i < count; i++) {
-        var p = document.createElement('span');
-        p.className = 'particle';
-        // Random origin across the hero
-        var x = rand(0, 100);
-        var y = rand(0, 100);
-        // Drift vector — degrees biased toward upward (60% favor an upward angle)
-        var biasUp = Math.random() < 0.6;
-        var angle = biasUp ? rand(200, 340) : rand(0, 360); // 200–340° = sweeping up
-        var distance = rand(60, 180);
-        var dx = Math.cos(angle * Math.PI / 180) * distance;
-        var dy = Math.sin(angle * Math.PI / 180) * distance;
-        // Size and opacity for depth (smaller = dimmer = farther)
-        var size = rand(1, 3.2);
-        var alpha = 0.18 + (size - 1) * 0.18; // bigger particles slightly brighter
-        // ~12% of particles get a brand teal tint for cohesion
-        var tinted = Math.random() < 0.12;
-        var color = tinted
-          ? 'rgba(200,169,110,1)'
-          : 'rgba(244,241,232,1)';
-        var glow = (size > 2.2 || tinted)
-          ? '0 0 ' + (size * 2.5).toFixed(1) + 'px ' + (tinted ? 'rgba(200,169,110,0.5)' : 'rgba(244,241,232,0.25)')
-          : 'none';
-        var dur = rand(22, 44);
-        // Negative delay (-dur..0) so particles spawn mid-cycle, no synchronized swarm
-        var delay = -rand(0, dur);
-        p.style.cssText =
-          'left:' + x.toFixed(2) + '%;' +
-          'top:' + y.toFixed(2) + '%;' +
-          'width:' + size.toFixed(2) + 'px;' +
-          'height:' + size.toFixed(2) + 'px;' +
-          'background:' + color + ';' +
-          'box-shadow:' + glow + ';' +
-          '--dx:' + dx.toFixed(1) + 'px;' +
-          '--dy:' + dy.toFixed(1) + 'px;' +
-          '--alpha:' + alpha.toFixed(2) + ';' +
-          'animation-duration:' + dur.toFixed(1) + 's;' +
-          'animation-delay:' + delay.toFixed(1) + 's;';
-        frag.appendChild(p);
-      }
-      field.appendChild(frag);
-    })();
-
-    // ── Hero rotator (animated word) ──
-    (function () {
-      var words = Array.prototype.slice.call(document.querySelectorAll('.hero-v3 .rotator .word'));
-      if (!words.length) return;
-      var current = 0;
-      function tick() {
-        var next = (current + 1) % words.length;
-        words[current].classList.remove('is-active');
-        words[current].classList.add('is-prev');
-        words[next].classList.remove('is-prev');
-        words[next].classList.add('is-active');
-        setTimeout(function () {
-          if (!words[current].classList.contains('is-active')) {
-            words[current].classList.remove('is-prev');
-          }
-        }, 900);
-        current = next;
-      }
-      setInterval(tick, 2000);
-    })();
-
-    // ── Suppressed → Activated reveal (scroll-triggered + count-up) ──
-    (function () {
-      var block = document.getElementById('suppress-reveal');
-      if (!block) return;
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      function countUp(el) {
-        var target = parseInt(el.getAttribute('data-count'), 10) || 0;
-        var prefix = el.getAttribute('data-prefix') || '';
-        if (reduce) { el.textContent = prefix + target; return; }
-        var dur = 1100, start = null;
-        function step(ts) {
-          if (!start) start = ts;
-          var p = Math.min((ts - start) / dur, 1);
-          var eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = prefix + Math.round(target * eased);
-          if (p < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      }
-      function reveal() {
-        block.classList.add('is-revealed');
-        var nums = block.querySelectorAll('[data-count]');
-        for (var i = 0; i < nums.length; i++) countUp(nums[i]);
-      }
-      if (reduce || !('IntersectionObserver' in window)) { reveal(); return; }
-      var io = new IntersectionObserver(function (entries) {
-        for (var i = 0; i < entries.length; i++) {
-          if (entries[i].isIntersecting) { reveal(); io.disconnect(); break; }
-        }
-      }, { threshold: 0.4 });
-      io.observe(block);
-    })();
   </script>
-
 </body>
 </html>

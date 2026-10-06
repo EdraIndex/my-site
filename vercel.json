@@ -8,16 +8,76 @@
     }
   },
   "rewrites": [
-    { "source": "/sample-report", "destination": "/sample-report.html" },
-    { "source": "/imn", "destination": "/imn-danapoint.html" },
-    { "source": "/imn-sales", "destination": "/imn-sales.html" },
-    { "source": "/imn-newport", "destination": "/imn-newport.html" },
-    { "source": "/time-compression", "destination": "/time-compression.html" }
+    {
+      "source": "/sample-report",
+      "destination": "/sample-report.html"
+    },
+    {
+      "source": "/imn",
+      "destination": "/imn-danapoint.html"
+    },
+    {
+      "source": "/imn-sales",
+      "destination": "/imn-sales.html"
+    },
+    {
+      "source": "/imn-newport",
+      "destination": "/imn-newport.html"
+    },
+    {
+      "source": "/time-compression",
+      "destination": "/time-compression.html"
+    }
   ],
   "redirects": [
     {
+      "source": "/usa",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/usa.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/uk",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/uk.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/apac",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/apac.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/aus",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/aus.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.edraindex.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.edraindex.com"
+        }
+      ],
       "destination": "https://edraindex.com/$1",
       "permanent": true
     }
