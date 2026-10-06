@@ -28,20 +28,20 @@
     gtag('config', 'AW-18160005662');
     gtag('config', 'G-3WVP61B4BR');
   </script>
-  <title>EDRA | BRSR Core for Indian listed companies</title>
+  <title>EDRA ONE | BRSR Core for Indian listed companies</title>
   <meta name="description" content="Send one .xlsx workbook. EDRA returns your BRSR Core position from what was sent — not an assurance, not a rating. What is missing is an ask, not a guess." />
   <link rel="canonical" href="https://edraindex.com/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="EDRA" />
+  <meta property="og:site_name" content="EDRA ONE" />
   <meta property="og:url" content="https://edraindex.com/" />
-  <meta property="og:title" content="EDRA | BRSR Core, from what was sent" />
+  <meta property="og:title" content="EDRA ONE | BRSR Core, from what was sent" />
   <meta property="og:description" content="One workbook in. The position from what was sent out. What is missing is an ask, not a guess." />
   <meta property="og:image" content="https://edraindex.com/assets/og/brsr-core.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EDRA | BRSR Core, from what was sent" />
+  <meta name="twitter:title" content="EDRA ONE | BRSR Core, from what was sent" />
   <meta name="twitter:description" content="One workbook in. The position from what was sent out. What is missing is an ask, not a guess." />
   <meta name="twitter:image" content="https://edraindex.com/assets/og/brsr-core.png" />
 
@@ -50,7 +50,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <script type="application/ld+json">
   {
@@ -66,13 +66,13 @@
       },
       {
         "@type": "WebSite",
-        "name": "EDRA",
+        "name": "EDRA ONE",
         "url": "https://edraindex.com/",
         "publisher": { "@id": "https://edraindex.com/#org" }
       },
       {
         "@type": "Service",
-        "name": "EDRA BRSR Core engagement",
+        "name": "EDRA ONE BRSR Core engagement",
         "description": "BRSR Core figures calculated from the client's own workbook, with every gap issued as a request and every accepted figure held to its source file.",
         "provider": { "@id": "https://edraindex.com/#org" },
         "areaServed": "IN",
@@ -84,23 +84,21 @@
 
   <style>
     :root {
-      --cream: #EDEAE2;
-      --cream-2: #E4E0D5;
-      --card: #FFFFFF;
-      --ink: #14251A;
-      --ink-2: #44554A;
-      --ink-3: #6E7B72;
-      --rule: #D3CEC1;
-      --forest-deep: #0E2417;
-      --forest: #1C3E29;
-      --sage: #4E7A60;
-      --gold: #C8A96E;
-      --gold-ink: #8C6F37;
-      --copper: #B0703F;
-      --crimson: #9B3B32;
-      --display: 'Syne', sans-serif;
-      --body: 'DM Sans', system-ui, sans-serif;
-      --mono: 'JetBrains Mono', ui-monospace, monospace;
+      --bg: #f3f0e9;
+      --bg-2: #ebe7dd;
+      --ink: #1c1f1d;
+      --navy: #1f3a5c;
+      --navy-hover: #13263d;
+      --teal: #267a76;
+      --muted: #4f534c;
+      --muted-2: #7a7d75;
+      --line: #e2ddd2;
+      --field-line: #c9c3b6;
+      --focus: #c99a3c;
+      --card: rgba(255, 255, 255, 0.84);
+      --sans: 'IBM Plex Sans', 'Helvetica Neue', sans-serif;
+      --serif: 'Fraunces', Georgia, serif;
+      --mono: 'IBM Plex Mono', ui-monospace, monospace;
       --wrap: 1120px;
     }
     *, *::before, *::after { box-sizing: border-box; }
@@ -108,171 +106,181 @@
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body {
       margin: 0;
-      background: var(--cream);
+      background: var(--bg);
       color: var(--ink);
-      font-family: var(--body);
+      font-family: var(--sans);
       font-size: 17px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
     .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
     @media (max-width: 560px) { .wrap { padding: 0 16px; } }
 
-    .eyebrow {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--sage);
-      font-weight: 500;
+    .mark { font-family: var(--sans); font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; }
+    .label {
+      font-family: var(--sans); font-weight: 600; font-size: 12px;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--navy);
     }
-    h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: -0.02em; margin: 0; }
-    h1 em, h2 em { font-style: italic; color: var(--gold); }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.005em; margin: 0; }
+    h1 em, h2 em { font-style: italic; color: var(--teal); }
 
     .btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: var(--body); font-weight: 500; font-size: 15px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      height: 48px; padding: 0 24px;
+      border-radius: 6px;
+      background: var(--navy); color: #fff;
+      font-family: var(--sans); font-size: 15px; font-weight: 500;
       text-decoration: none;
-      padding: 14px 24px;
-      border-radius: 2px;
-      background: var(--gold); color: var(--forest-deep);
-      border: 1px solid var(--gold);
-      transition: background .2s, color .2s;
+      transition: background .2s;
     }
-    .btn:hover { background: #D6BB86; }
-    .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .btn:hover { background: var(--navy-hover); }
     .btn svg { width: 16px; height: 16px; }
 
-    /* ── Nav ───────────────────────────────────────────── */
-    .nav {
-      position: absolute; top: 0; left: 0; right: 0; z-index: 10;
-    }
-    .nav .wrap {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 76px;
-    }
-    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
-    .nav-brand img { width: 36px; height: 36px; border-radius: 2px; display: block; }
-    .nav-brand span { font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: 0.02em; }
-    .nav-brand sup { font-size: 9px; font-weight: 400; margin-left: 1px; }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; margin: 0; padding: 0; }
-    .nav-links a:not(.btn) { color: rgba(255,255,255,.82); text-decoration: none; font-size: 14px; }
-    .nav-links a:not(.btn):hover { color: #fff; }
-    .nav .btn { padding: 10px 18px; font-size: 14px; }
-    @media (max-width: 760px) { .nav-links li.nav-anchor { display: none; } }
-
-    /* ── Hero ──────────────────────────────────────────── */
+    /* ── Hero: the EDRA ONE screen ─────────────────────── */
     .hero {
       position: relative;
-      background: var(--forest-deep);
-      color: #fff;
-      padding: 168px 0 96px;
+      min-height: clamp(680px, 100vh, 1000px);
+      min-height: clamp(680px, 100dvh, 1000px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 120px 24px 96px;
       overflow: hidden;
+      background: var(--bg);
     }
-    .hero-grid {
-      position: absolute; inset: 0; pointer-events: none;
-      background-image:
-        linear-gradient(rgba(200,169,110,.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200,169,110,.06) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
-      -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+    .streams { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; }
+    .corner {
+      position: absolute; top: 44px; left: 56px; right: 56px; z-index: 2;
+      display: flex; justify-content: space-between; align-items: center; gap: 24px;
     }
-    .hero .wrap { position: relative; display: grid; grid-template-columns: 1.15fr 1fr; gap: 64px; align-items: center; }
-    .hero .eyebrow { color: var(--gold); }
-    .hero h1 { font-size: clamp(2.4rem, 5.2vw, 4.1rem); line-height: 1.04; margin: 20px 0 24px; font-weight: 400; }
-    .hero-sub { font-size: 19px; line-height: 1.55; color: rgba(255,255,255,.84); max-width: 34em; margin: 0 0 36px; font-weight: 300; }
-    .hero-note { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; color: rgba(255,255,255,.55); margin-top: 18px; text-transform: uppercase; }
-    @media (max-width: 900px) {
-      .hero { padding: 132px 0 72px; }
-      .hero .wrap { grid-template-columns: 1fr; gap: 48px; }
+    .corner .mark { font-size: 30px; letter-spacing: 0.34em; color: var(--ink); text-decoration: none; }
+    .corner nav { display: flex; gap: 28px; }
+    .corner nav a { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; }
+    .corner nav a:hover { color: var(--navy); }
+
+    .column {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 480px;
+      display: flex; flex-direction: column; align-items: center; gap: 22px;
+    }
+    .card {
+      width: 100%;
+      padding: 44px 40px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      display: flex; flex-direction: column; gap: 20px;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+    .card .mark { font-size: 24px; letter-spacing: 0.30em; color: var(--navy); }
+    .card h1 { font-size: 32px; line-height: 1.15; }
+    .card p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
+    .card .btn { width: 100%; }
+    .card .fine { text-align: center; font-size: 13px; color: var(--muted-2); letter-spacing: 0.04em; }
+    .tagline { font-size: 15px; letter-spacing: 0.32em; color: var(--navy); text-align: center; }
+
+    .legend {
+      position: absolute; left: 0; right: 0; bottom: 32px; z-index: 1;
+      display: flex; justify-content: center; gap: 28px; flex-wrap: wrap;
+      font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; color: var(--muted);
+      padding: 0 16px;
+    }
+    .legend span { display: inline-flex; align-items: center; gap: 8px; }
+    .g { display: inline-block; width: 8px; height: 8px; }
+    .g.raw { background: rgba(31,58,92,.28); }
+    .g.ans { background: var(--navy); }
+    .g.par { background: var(--teal); }
+    .g.gap { border: 1.3px solid var(--navy); }
+
+    @media (max-width: 760px) {
+      .corner { top: 28px; left: 20px; right: 20px; }
+      .corner .mark { font-size: 22px; }
+      .corner nav { display: none; }
+      .hero { padding: 104px 16px 112px; }
+      .card { padding: 32px 24px; }
+      .card h1 { font-size: 27px; }
+      .legend { gap: 10px 18px; bottom: 24px; }
     }
 
-    /* Flow diagram in hero */
-    .flow { width: 100%; height: auto; display: block; }
-    .flow text { font-family: var(--mono); }
-
-    /* ── Sequence ──────────────────────────────────────── */
-    .section { padding: 112px 0; }
+    /* ── Sections ──────────────────────────────────────── */
+    .section { padding: 112px 0; border-top: 1px solid var(--line); }
     @media (max-width: 760px) { .section { padding: 80px 0; } }
     .section-head { max-width: 760px; margin-bottom: 56px; }
-    .section-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.1; margin-top: 16px; }
-    .section-head p { color: var(--ink-2); margin: 20px 0 0; font-size: 18px; }
+    .section-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); line-height: 1.12; margin-top: 18px; }
+    .section-head p { color: var(--muted); margin: 20px 0 0; font-size: 18px; }
 
-    .steps { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+    .steps { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
     .step {
       display: grid;
       grid-template-columns: 88px minmax(0, 1fr) minmax(0, 1.1fr);
       gap: 32px;
       padding: 36px 0;
-      border-bottom: 1px solid var(--rule);
+      border-bottom: 1px solid var(--line);
       align-items: start;
     }
-    .step-no { font-family: var(--mono); font-size: 13px; color: var(--gold-ink); letter-spacing: .08em; padding-top: 8px; }
-    .step h3 { font-size: clamp(1.35rem, 2.2vw, 1.7rem); line-height: 1.2; }
-    .step-body { color: var(--ink-2); margin: 0; }
+    .step-no { font-family: var(--mono); font-size: 13px; color: var(--teal); letter-spacing: .08em; padding-top: 8px; }
+    .step h3 { font-size: clamp(1.35rem, 2.2vw, 1.65rem); line-height: 1.25; }
+    .step-body { color: var(--muted); }
     .step-body p { margin: 0 0 10px; }
-    .step-body p:last-child { margin-bottom: 0; }
     .rule-line {
       display: block;
-      font-family: var(--mono); font-size: 12.5px; letter-spacing: .02em;
-      color: var(--forest);
-      border-left: 2px solid var(--gold);
+      font-family: var(--mono); font-size: 13px;
+      color: var(--navy);
+      border-left: 2px solid var(--focus);
       padding: 2px 0 2px 12px;
       margin-top: 12px;
     }
     @media (max-width: 860px) {
-      .step { grid-template-columns: 56px minmax(0, 1fr); gap: 12px 20px; padding: 28px 0; }
+      .step { grid-template-columns: 48px minmax(0, 1fr); gap: 12px 16px; padding: 28px 0; }
       .step-body { grid-column: 2; }
     }
 
-    /* Board line specimen */
     .board {
-      background: var(--forest-deep);
-      color: #fff;
-      border-radius: 2px;
-      padding: 28px 28px 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 28px 32px 22px;
       margin-top: 56px;
     }
-    .board-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; border-bottom: 1px solid rgba(255,255,255,.14); padding-bottom: 14px; }
-    .board-head .eyebrow { color: var(--gold); }
-    .board-head small { font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,.5); letter-spacing: .06em; }
+    .board-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+    .board-head small { font-family: var(--mono); font-size: 11.5px; color: var(--muted-2); }
     .board-rows { list-style: none; margin: 0; padding: 0; }
-    .board-rows li { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .board-rows li { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--line); }
     .board-rows li:last-child { border-bottom: 0; }
-    .board-rows .k { font-size: 15.5px; color: rgba(255,255,255,.9); }
-    .tag {
-      font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
-      padding: 5px 10px; border-radius: 2px; white-space: nowrap; border: 1px solid;
-    }
-    .tag.answered { color: #9CC3A8; border-color: rgba(156,195,168,.45); }
-    .tag.partial { color: var(--gold); border-color: rgba(200,169,110,.5); }
-    .tag.unsayable { color: rgba(255,255,255,.55); border-color: rgba(255,255,255,.22); border-style: dashed; }
-    .tag.calc { color: var(--forest); border-color: rgba(28,62,41,.35); background: rgba(78,122,96,.08); }
-    .tag.pending { color: var(--ink-3); border-color: var(--rule); border-style: dashed; }
-    .board-foot { font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,.45); margin-top: 14px; letter-spacing: .04em; }
+    .board-rows .k { display: inline-flex; align-items: center; gap: 12px; font-size: 15.5px; }
+    .board-foot { font-family: var(--mono); font-size: 12px; color: var(--muted-2); margin-top: 12px; }
+    @media (max-width: 560px) { .board { padding: 22px 18px 18px; } }
 
-    /* ── Coverage ──────────────────────────────────────── */
-    .coverage { background: var(--cream-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-    .attr-table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--rule); }
-    .attr-table th, .attr-table td { text-align: left; vertical-align: top; padding: 18px 22px; border-bottom: 1px solid var(--rule); }
-    .attr-table thead th { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; background: #FAF8F3; }
+    .tag {
+      font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 4px; white-space: nowrap; border: 1px solid;
+    }
+    .tag.answered { color: var(--navy); border-color: rgba(31,58,92,.35); background: rgba(31,58,92,.05); }
+    .tag.partial { color: var(--teal); border-color: rgba(38,122,118,.4); background: rgba(38,122,118,.06); }
+    .tag.unsayable, .tag.pending { color: var(--muted-2); border-color: var(--field-line); border-style: dashed; }
+    .tag.calc { color: var(--navy); border-color: rgba(31,58,92,.35); background: rgba(31,58,92,.05); }
+
+    /* Coverage */
+    .coverage { background: var(--bg-2); }
+    .attr-table { width: 100%; border-collapse: separate; border-spacing: 0; background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+    .attr-table th, .attr-table td { text-align: left; vertical-align: top; padding: 18px 22px; border-bottom: 1px solid var(--line); }
+    .attr-table thead th { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--muted-2); font-weight: 600; }
     .attr-table tbody tr:last-child td, .attr-table tbody tr:last-child th { border-bottom: 0; }
-    .attr-no { font-family: var(--mono); font-size: 12px; color: var(--gold-ink); width: 56px; }
-    .attr-name { font-family: var(--display); font-size: 17px; font-weight: 500; letter-spacing: -0.01em; }
+    .attr-no { font-family: var(--mono); font-size: 12.5px; color: var(--teal); width: 56px; }
+    .attr-name { font-family: var(--serif); font-size: 18px; font-weight: 400; }
     .attr-lines { list-style: none; margin: 0; padding: 0; }
-    .attr-lines li { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 4px 0; font-size: 15.5px; color: var(--ink-2); }
-    .attr-table tr.off .attr-name { color: var(--ink-3); }
-    .attr-note { font-size: 13.5px; color: var(--ink-3); margin-top: 8px; }
+    .attr-lines li { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 4px 0; font-size: 15.5px; color: var(--muted); }
+    .attr-table tr.off .attr-name { color: var(--muted-2); }
+    .attr-note { font-size: 13.5px; color: var(--muted-2); margin-top: 8px; }
     .coverage-rules { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 40px; }
-    .coverage-rules div { border-top: 2px solid var(--gold); padding-top: 14px; }
-    .coverage-rules strong { display: block; font-family: var(--display); font-weight: 500; font-size: 17px; margin-bottom: 6px; }
-    .coverage-rules span { color: var(--ink-2); font-size: 15.5px; }
+    .coverage-rules div { border-top: 2px solid var(--navy); padding-top: 14px; }
+    .coverage-rules strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 19px; margin-bottom: 6px; }
+    .coverage-rules span { color: var(--muted); font-size: 15.5px; }
     @media (max-width: 760px) {
       .attr-table thead { display: none; }
       .attr-table, .attr-table tbody, .attr-table tr, .attr-table td, .attr-table th { display: block; width: 100%; }
-      .attr-table tr { border-bottom: 1px solid var(--rule); padding: 16px 18px; }
+      .attr-table tr { border-bottom: 1px solid var(--line); padding: 16px 18px; }
       .attr-table tbody tr:last-child { border-bottom: 0; }
       .attr-table th, .attr-table td { padding: 0; border: 0; }
       .attr-no { width: auto; margin-bottom: 4px; }
@@ -280,113 +288,62 @@
       .coverage-rules { grid-template-columns: 1fr; }
     }
 
-    /* ── CTA ───────────────────────────────────────────── */
-    .cta { background: var(--forest-deep); color: #fff; text-align: center; }
-    .cta h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 16px auto 20px; max-width: 18em; }
-    .cta .eyebrow { color: var(--gold); }
-    .cta p { color: rgba(255,255,255,.78); max-width: 36em; margin: 0 auto 36px; font-weight: 300; font-size: 18px; }
-    .cta-addr { display: block; margin-top: 20px; font-family: var(--mono); font-size: 13px; color: rgba(255,255,255,.6); }
-    .cta-addr a { color: rgba(255,255,255,.85); }
+    /* CTA: the streams again, quieter */
+    .cta { position: relative; overflow: hidden; text-align: center; padding: 136px 0; }
+    .cta .streams { opacity: .8; }
+    .cta .wrap { position: relative; z-index: 1; }
+    .cta-card {
+      max-width: 560px; margin: 0 auto;
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+      padding: 44px 40px;
+      backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);
+    }
+    .cta h2 { font-size: clamp(1.8rem, 3.4vw, 2.4rem); line-height: 1.15; margin: 16px 0 14px; }
+    .cta p { color: var(--muted); margin: 0 0 28px; }
+    .cta-addr { display: block; margin-top: 16px; font-family: var(--mono); font-size: 13px; color: var(--muted-2); }
+    @media (max-width: 560px) { .cta-card { padding: 32px 22px; } }
 
-    /* ── Footer ────────────────────────────────────────── */
-    footer { background: var(--forest-deep); color: rgba(255,255,255,.6); border-top: 1px solid rgba(255,255,255,.1); font-size: 13.5px; }
+    footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 13.5px; }
     footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px 32px; padding-top: 28px; padding-bottom: 28px; flex-wrap: wrap; }
     footer .f-brand { display: flex; align-items: center; gap: 12px; }
-    footer .f-brand img { width: 28px; height: 28px; border-radius: 2px; }
+    footer .f-brand img { width: 28px; height: 28px; border-radius: 4px; }
     footer nav { display: flex; gap: 20px; }
-    footer a { color: rgba(255,255,255,.75); text-decoration: none; }
-    footer a:hover { color: #fff; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--navy); }
   </style>
 </head>
 <body>
 
-  <header class="nav">
-    <div class="wrap">
-      <a class="nav-brand" href="/" aria-label="EDRA home">
-        <img src="./edra-logo.jpg" alt="" width="36" height="36" />
-        <span>EDRA<sup>TM</sup></span>
-      </a>
-      <ul class="nav-links" role="list">
-        <li class="nav-anchor"><a href="#sequence">How it runs</a></li>
-        <li class="nav-anchor"><a href="#calculated">What is calculated</a></li>
-        <li><a class="btn" href="mailto:hello@edraindex.com?subject=BRSR%20Core%20walkthrough" data-track="walkthrough_click" data-loc="nav">Request a walkthrough</a></li>
-      </ul>
-    </div>
-  </header>
-
   <main>
 
-    <!-- Hero -->
+    <!-- Hero: the EDRA ONE screen, streams that merge and part -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="wrap">
-        <div>
-          <div class="eyebrow">BRSR Core &middot; for Indian listed companies</div>
+      <canvas class="streams" data-streams data-density="1" data-labels="1" aria-hidden="true"></canvas>
+
+      <header class="corner">
+        <a class="mark" href="/" aria-label="EDRA ONE home">EDRA ONE</a>
+        <nav aria-label="Page">
+          <a href="#sequence">How it runs</a>
+          <a href="#calculated">What is calculated</a>
+        </nav>
+      </header>
+
+      <div class="column">
+        <div class="card">
+          <div class="mark" aria-hidden="true">EDRA ONE</div>
           <h1 id="hero-title">Your BRSR Core position, from what you <em>sent</em>.</h1>
-          <p class="hero-sub">Send one workbook. EDRA calculates what it can support, asks for what it cannot, and holds every accepted figure to the file it came from. Nothing is guessed to close a gap.</p>
-          <a class="btn" href="mailto:hello@edraindex.com?subject=BRSR%20Core%20walkthrough" data-track="walkthrough_click" data-loc="hero">
-            Request a walkthrough
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-          <div class="hero-note">Not an assurance &middot; Not a rating</div>
+          <p>Send one workbook. EDRA calculates what it can support, asks for what it cannot, and holds every accepted figure to the file it came from. Nothing is guessed to close a gap.</p>
+          <a class="btn" href="mailto:hello@edraindex.com?subject=BRSR%20Core%20walkthrough" data-track="walkthrough_click" data-loc="hero">Request a walkthrough</a>
+          <div class="fine">Not an assurance &middot; Not a rating</div>
         </div>
+        <div class="tagline mark">The BRSR platform</div>
+      </div>
 
-        <!-- Workbook → position → ask → accept/reject → rerun → board line -->
-        <svg class="flow" viewBox="0 0 440 400" role="img" aria-labelledby="flow-t">
-          <title id="flow-t">One workbook goes in. EDRA returns a position. Gaps go back as asks; replies with their files are accepted or rejected by an analyst; a rerun produces a new calculation, and the board line reads the latest.</title>
-          <g fill="none" stroke-width="1">
-            <!-- workbook -->
-            <rect x="20" y="24" width="120" height="76" stroke="#C8A96E"/>
-            <path d="M20 44h120M20 62h120M20 80h120M60 24v76M100 24v76" stroke="#C8A96E" stroke-opacity=".35"/>
-            <text x="20" y="122" fill="#C8A96E" font-size="10" letter-spacing="1.2">ONE .XLSX</text>
-
-            <!-- arrow to position -->
-            <path d="M148 62h86" stroke="#ffffff" stroke-opacity=".4"/>
-            <path d="M228 57l6 5-6 5" stroke="#ffffff" stroke-opacity=".4"/>
-
-            <!-- position -->
-            <rect x="244" y="24" width="176" height="76" stroke="#ffffff" stroke-opacity=".55"/>
-            <text x="258" y="50" fill="#ffffff" fill-opacity=".9" font-size="11">POSITION</text>
-            <text x="258" y="70" fill="#ffffff" fill-opacity=".55" font-size="9.5">from what was sent</text>
-            <text x="258" y="86" fill="#ffffff" fill-opacity=".55" font-size="9.5">calculation 1 · preserved</text>
-
-            <!-- down to asks -->
-            <path d="M332 108v52" stroke="#ffffff" stroke-opacity=".4"/>
-            <path d="M327 154l5 6 5-6" stroke="#ffffff" stroke-opacity=".4"/>
-
-            <!-- asks -->
-            <rect x="244" y="170" width="176" height="62" stroke="#C8A96E" stroke-dasharray="3 3"/>
-            <text x="258" y="194" fill="#C8A96E" font-size="11">ASK</text>
-            <text x="258" y="214" fill="#ffffff" fill-opacity=".55" font-size="9.5">figure + its source file</text>
-
-            <!-- to analyst -->
-            <path d="M236 201h-60" stroke="#ffffff" stroke-opacity=".4"/>
-            <path d="M182 196l-6 5 6 5" stroke="#ffffff" stroke-opacity=".4"/>
-
-            <!-- analyst -->
-            <rect x="20" y="170" width="148" height="62" stroke="#ffffff" stroke-opacity=".55"/>
-            <text x="34" y="194" fill="#ffffff" fill-opacity=".9" font-size="11">ANALYST</text>
-            <text x="34" y="214" fill="#ffffff" fill-opacity=".55" font-size="9.5">accept · reject</text>
-
-            <!-- down to rerun -->
-            <path d="M94 240v52" stroke="#ffffff" stroke-opacity=".4"/>
-            <path d="M89 286l5 6 5-6" stroke="#ffffff" stroke-opacity=".4"/>
-
-            <!-- rerun -->
-            <rect x="20" y="302" width="148" height="62" stroke="#ffffff" stroke-opacity=".55"/>
-            <text x="34" y="326" fill="#ffffff" fill-opacity=".9" font-size="11">RERUN</text>
-            <text x="34" y="346" fill="#ffffff" fill-opacity=".55" font-size="9.5">calculation 2 · new</text>
-
-            <!-- to board -->
-            <path d="M176 333h60" stroke="#ffffff" stroke-opacity=".4"/>
-            <path d="M230 328l6 5-6 5" stroke="#ffffff" stroke-opacity=".4"/>
-
-            <!-- board line -->
-            <rect x="244" y="302" width="176" height="62" fill="#C8A96E" fill-opacity=".1" stroke="#C8A96E"/>
-            <text x="258" y="326" fill="#C8A96E" font-size="11">BOARD LINE</text>
-            <text x="258" y="346" fill="#ffffff" fill-opacity=".7" font-size="9.5">reads the latest run</text>
-          </g>
-        </svg>
+      <div class="legend" aria-hidden="true">
+        <span><i class="g raw"></i>As sent</span>
+        <span><i class="g ans"></i>Answered</span>
+        <span><i class="g par"></i>Partial</span>
+        <span><i class="g gap"></i>Missing &middot; never filled</span>
       </div>
     </section>
 
@@ -394,7 +351,7 @@
     <section class="section" id="sequence" aria-labelledby="seq-title">
       <div class="wrap">
         <div class="section-head">
-          <div class="eyebrow">The engagement, in order</div>
+          <div class="label">The engagement, in order</div>
           <h2 id="seq-title">Six steps. None of them <em>fills a gap</em> for you.</h2>
         </div>
 
@@ -451,13 +408,13 @@
 
         <div class="board" role="figure" aria-label="How a board line reads">
           <div class="board-head">
-            <span class="eyebrow">Board line &middot; how it reads</span>
+            <span class="label">Board line &middot; how it reads</span>
             <small>Layout only. No client figures shown.</small>
           </div>
           <ul class="board-rows" role="list">
-            <li><span class="k">A line every site and every source supports</span><span class="tag answered">Answered</span></li>
-            <li><span class="k">A line with some of what it needs, carried as partial</span><span class="tag partial">Partial</span></li>
-            <li><span class="k">A line the latest calculation cannot support</span><span class="tag unsayable">Not sayable</span></li>
+            <li><span class="k"><i class="g ans"></i>A line every site and every source supports</span><span class="tag answered">Answered</span></li>
+            <li><span class="k"><i class="g par"></i>A line with some of what it needs, carried as partial</span><span class="tag partial">Partial</span></li>
+            <li><span class="k"><i class="g gap"></i>A line the latest calculation cannot support</span><span class="tag unsayable">Not sayable</span></li>
           </ul>
           <div class="board-foot">A partial figure is never shown as a total.</div>
         </div>
@@ -468,7 +425,7 @@
     <section class="section coverage" id="calculated" aria-labelledby="calc-title">
       <div class="wrap">
         <div class="section-head">
-          <div class="eyebrow">What is calculated today</div>
+          <div class="label">What is calculated today</div>
           <h2 id="calc-title">Four BRSR Core attributes on this engagement. Five <em>not yet</em>.</h2>
           <p>BRSR Core has nine attributes. These are the lines EDRA calculates today, and the ones it does not.</p>
         </div>
@@ -559,16 +516,16 @@
     </section>
 
     <!-- CTA -->
-    <section class="section cta" id="walkthrough" aria-labelledby="cta-title">
+    <section class="cta" id="walkthrough" aria-labelledby="cta-title">
+      <canvas class="streams" data-streams data-density="0.6" aria-hidden="true"></canvas>
       <div class="wrap">
-        <div class="eyebrow">One action</div>
-        <h2 id="cta-title">See the sequence run, <em>end to end</em>.</h2>
-        <p>A walkthrough of the engagement: workbook in, position out, ask, decision, rerun, board line.</p>
-        <a class="btn" href="mailto:hello@edraindex.com?subject=BRSR%20Core%20walkthrough" data-track="walkthrough_click" data-loc="cta">
-          Request a walkthrough
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
-        <span class="cta-addr"><a href="mailto:hello@edraindex.com?subject=BRSR%20Core%20walkthrough">hello@edraindex.com</a></span>
+        <div class="cta-card">
+          <div class="label">One action</div>
+          <h2 id="cta-title">See the sequence run, <em>end to end</em>.</h2>
+          <p>A walkthrough of the engagement: workbook in, position out, ask, decision, rerun, board line.</p>
+          <a class="btn" href="mailto:hello@edraindex.com?subject=BRSR%20Core%20walkthrough" data-track="walkthrough_click" data-loc="cta">Request a walkthrough</a>
+          <span class="cta-addr"><a href="mailto:hello@edraindex.com?subject=BRSR%20Core%20walkthrough">hello@edraindex.com</a></span>
+        </div>
       </div>
     </section>
 
@@ -577,15 +534,15 @@
   <footer>
     <div class="wrap">
       <div class="f-brand">
-        <img src="./edra-logo.jpg" alt="" width="28" height="28" />
-        <span>EDRA<sup>TM</sup> is built and operated by Outsourcing Hub India.</span>
+        <img src="./edra-logo.jpg" alt="EDRA" width="28" height="28" />
+        <span>EDRA ONE is built and operated by Outsourcing Hub India.</span>
       </div>
       <nav aria-label="Legal">
         <a href="./privacy.html">Privacy</a>
         <a href="./cookies.html">Cookies</a>
         <a href="./terms.html">Terms</a>
       </nav>
-      <span>&copy; 2026 EDRA<sup>TM</sup></span>
+      <span>&copy; 2026 EDRA</span>
     </div>
   </footer>
 
@@ -597,6 +554,184 @@
         }
       });
     });
+
+    /*
+     * Streams that merge and part — the EDRA ONE sign-in background
+     * (SignInBackground.tsx), ported to plain JS for the site.
+     *
+     * Added for the homepage: points carry the engagement. Left of the first
+     * knot they are "as sent" (faint, unclassified). Through the knot they come
+     * out classified — answered (navy), partial (teal) — and a missing point is
+     * a hollow square that stays hollow all the way across: a gap is never
+     * filled. The second knot is the board line.
+     */
+    (function () {
+      var NAVY = '31, 58, 92', TEAL = '38, 122, 118', BG = '#f3f0e9';
+      var STREAM_COUNT = 34, BASE_DOTS = 420, SPEED = 2.4;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function Streams(canvas) {
+        var ctx = canvas.getContext('2d');
+        if (!ctx) return;
+        var density = parseFloat(canvas.dataset.density || '1');
+        var labels = canvas.dataset.labels === '1';
+        var w = 1, h = 1, time = 0, raf = 0, last = performance.now(), visible = true;
+        var streams = [], dots = [];
+
+        function resize() {
+          var r = canvas.getBoundingClientRect();
+          var dpr = Math.min(window.devicePixelRatio || 1, 2);
+          w = Math.max(1, r.width); h = Math.max(1, r.height);
+          canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        function seed() {
+          streams = [];
+          for (var s = 0; s < STREAM_COUNT; s++) {
+            var a = (s / (STREAM_COUNT - 1)) * 2 - 1;
+            streams.push({ a: a * (0.75 + Math.random() * 0.25), ph: Math.random() * Math.PI * 2, wob: 3 + Math.random() * 9 });
+          }
+          dots = [];
+          var n = Math.round(BASE_DOTS * density * (w < 700 ? 0.55 : 1));
+          for (var i = 0; i < n; i++) {
+            var roll = Math.random();
+            dots.push({
+              s: Math.floor(Math.random() * STREAM_COUNT),
+              x: Math.random() * (w + 200) - 100,
+              v: 0.04 + Math.random() * 0.06,
+              r: Math.random() < 0.12 ? 2.2 + Math.random() * 1.2 : 0.9 + Math.random() * 1.1,
+              ly: null,
+              kind: roll < 0.16 ? 'gap' : roll < 0.58 ? 'ans' : 'par'
+            });
+          }
+        }
+
+        function knots() {
+          var t = time * 0.00009;
+          return {
+            k1: w * (0.17 + 0.03 * Math.sin(t * 2.1)),
+            k2: w * (0.83 + 0.03 * Math.cos(t * 1.7)),
+            cy: h * (0.5 + 0.03 * Math.sin(t * 1.3))
+          };
+        }
+
+        function yAt(st, x, k) {
+          var L = k.k2 - k.k1;
+          var s = Math.sin((Math.PI * (x - k.k1)) / L);
+          var open = Math.pow(Math.abs(s), 0.85);
+          return k.cy + st.a * h * 0.34 * open + st.wob * open * Math.sin(x * 0.006 + st.ph + time * 0.0006);
+        }
+
+        function draw(dt) {
+          var k = knots();
+          ctx.fillStyle = BG;
+          ctx.fillRect(0, 0, w, h);
+
+          ctx.lineWidth = 0.7;
+          ctx.strokeStyle = 'rgba(' + NAVY + ', 0.07)';
+          for (var j = 0; j < streams.length; j++) {
+            ctx.beginPath();
+            for (var x = -20; x <= w + 20; x += 10) {
+              var y = yAt(streams[j], x, k);
+              if (x === -20) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+          }
+
+          [k.k1, k.k2].forEach(function (kx, q) {
+            var pulse = 0.5 + 0.5 * Math.sin(time * 0.0015 + q * 3.1);
+            var g = ctx.createRadialGradient(kx, k.cy, 0, kx, k.cy, 70);
+            g.addColorStop(0, 'rgba(' + TEAL + ', ' + (0.16 + 0.1 * pulse).toFixed(3) + ')');
+            g.addColorStop(1, 'rgba(' + TEAL + ', 0)');
+            ctx.fillStyle = g;
+            ctx.beginPath(); ctx.arc(kx, k.cy, 70, 0, Math.PI * 2); ctx.fill();
+          });
+
+          if (labels && w >= 900) {
+            ctx.font = '600 10.5px "IBM Plex Sans", sans-serif';
+            ctx.fillStyle = 'rgba(' + NAVY + ', 0.62)';
+            ctx.textAlign = 'center';
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
+            ctx.fillText('WORKBOOK IN', k.k1, k.cy + 104);
+            ctx.fillText('BOARD LINE', k.k2, k.cy + 104);
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+          }
+
+          for (var i = 0; i < dots.length; i++) {
+            var d = dots[i];
+            var px = d.x;
+            d.x += d.v * dt;
+            if (d.x > w + 60) { d.x = -60; d.ly = null; px = d.x - 1; }
+            var yy = yAt(streams[d.s], d.x, k);
+            var py = d.ly == null ? yy : d.ly;
+            d.ly = yy;
+
+            var near = Math.min(Math.abs(d.x - k.k1), Math.abs(d.x - k.k2));
+            var a = 0.5 + 0.4 * Math.max(0, 1 - near / 160);
+            var sent = d.x < k.k1;           // still as sent: not yet through the first knot
+            var rgb = d.kind === 'par' ? TEAL : NAVY;
+            if (sent) { rgb = NAVY; a *= 0.45; }
+            var colour = 'rgba(' + rgb + ', ' + a.toFixed(3) + ')';
+            var q = 1 + d.r * 1.15;
+
+            if (d.kind === 'gap') {
+              // Missing: hollow on both sides of the knot. Never filled.
+              ctx.strokeStyle = colour;
+              ctx.lineWidth = 1;
+              var qq = Math.max(q, 2.6);
+              ctx.strokeRect(d.x - qq / 2, yy - qq / 2, qq, qq);
+            } else if (i % 4 === 0) {
+              var dx = d.x - px, dy = yy - py;
+              var len = Math.hypot(dx, dy) || 1;
+              var half = (6 + d.r * 3) / 2;
+              ctx.strokeStyle = colour;
+              ctx.lineWidth = 1.3;
+              ctx.lineCap = 'butt';
+              ctx.beginPath();
+              ctx.moveTo(d.x - (dx / len) * half, yy - (dy / len) * half);
+              ctx.lineTo(d.x + (dx / len) * half, yy + (dy / len) * half);
+              ctx.stroke();
+            } else {
+              ctx.fillStyle = colour;
+              ctx.fillRect(d.x - q / 2, yy - q / 2, q, q);
+            }
+          }
+        }
+
+        function tick(now) {
+          var dt = Math.min(64, now - last) * SPEED;
+          last = now; time += dt;
+          draw(dt);
+          raf = requestAnimationFrame(tick);
+        }
+        function start() { cancelAnimationFrame(raf); last = performance.now(); raf = requestAnimationFrame(tick); }
+        function stop() { cancelAnimationFrame(raf); }
+
+        resize(); seed();
+        if (reduce) draw(0);
+
+        // Animate only while on screen and the tab is visible.
+        if (!reduce && 'IntersectionObserver' in window) {
+          new IntersectionObserver(function (es) {
+            visible = es[0].isIntersecting;
+            if (visible && !document.hidden) start(); else stop();
+          }).observe(canvas);
+        } else if (!reduce) { start(); }
+
+        document.addEventListener('visibilitychange', function () {
+          if (reduce) return;
+          if (document.hidden || !visible) stop(); else start();
+        });
+        var rt;
+        window.addEventListener('resize', function () {
+          clearTimeout(rt);
+          rt = setTimeout(function () { resize(); seed(); if (reduce) draw(0); }, 120);
+        });
+      }
+
+      document.querySelectorAll('canvas[data-streams]').forEach(Streams);
+    })();
   </script>
 </body>
 </html>
