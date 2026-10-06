@@ -63,9 +63,8 @@
       "email": "hello@edraindex.com",
       "parentOrganization": {
         "@type": "Organization",
-        "name": "OutsourcingHubIndia",
-        "legalName": "P B Tech Impact Solutions Private Limited",
-        "url": "https://www.outsourcinghubindia.com"
+        "name": "OHI",
+        "legalName": "P B Tech Impact Solutions Private Limited"
       }
     }
   ]
@@ -96,19 +95,7 @@
       </div>
       <div class="side"><p class="lead">The terms that govern your access to and use of <strong>edraindex.com</strong>. By using this website, you agree to them. Please read them alongside our <a href="./privacy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a>.</p></div>
     </div>
-    <svg class="hills" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
-  <path d="M0 70 C 180 40, 360 52, 540 62 S 900 30, 1080 46 S 1320 70, 1440 52 L1440 150 L0 150 Z" fill="#dfe6d8"/>
-  <path d="M0 98 C 200 80, 420 92, 620 100 S 980 70, 1180 84 S 1380 102, 1440 94 L1440 150 L0 150 Z" fill="#cfdccb"/>
-  <path d="M0 126 C 240 112, 480 120, 720 128 S 1100 110, 1300 120 S 1420 130, 1440 128 L1440 150 L0 150 Z" fill="#bfd1bd"/>
-  <g fill="#2f7a5a" opacity=".55">
-    <rect x="132" y="60" width="2" height="2"/><rect x="318" y="57" width="3" height="3"/><rect x="611" y="64" width="2" height="2"/><rect x="842" y="47" width="2" height="2"/><rect x="1004" y="44" width="3" height="3"/><rect x="1268" y="60" width="2" height="2"/>
-    <rect x="96" y="92" width="2" height="2"/><rect x="455" y="94" width="3" height="3"/><rect x="760" y="92" width="2" height="2"/><rect x="1133" y="83" width="2" height="2"/><rect x="1352" y="97" width="3" height="3"/>
-    <rect x="260" y="118" width="2" height="2"/><rect x="590" y="124" width="2" height="2"/><rect x="940" y="118" width="3" height="3"/><rect x="1210" y="117" width="2" height="2"/>
-  </g>
-  <g stroke="#1d4a37" stroke-width="1.2" opacity=".35">
-    <path d="M205 66h9M720 58h8M1180 52h9M380 99h8M1010 84h9M140 122h8M860 122h9"/>
-  </g>
-</svg>
+    <canvas class="hills" data-hills data-seed="18" aria-hidden="true"></canvas>
   </section>
   <section class="section" style="padding-top:88px">
     <div class="wrap legal-wrap-outer">
@@ -173,7 +160,7 @@
   <div class="wrap top">
     <div>
       <a class="brand" href="/" aria-label="EDRA home"><img src="/edra-logo.jpg" alt="" width="32" height="32"><span>EDRA</span></a>
-      <p>EDRA ONE is our ESG data platform. EDRA is built and operated by OutsourcingHubIndia.</p>
+      <p>EDRA ONE is our ESG data platform. EDRA is built and operated by OHI.</p>
     </div>
     <div>
       <h4>Platform</h4>
@@ -203,11 +190,12 @@
     </div>
   </div>
   <div class="wrap"><div class="bottom">
-    <span>&copy; 2026 EDRA &middot; P B Tech Impact Solutions Private Limited, doing business as OutsourcingHubIndia</span>
+    <span>&copy; 2026 EDRA &middot; P B Tech Impact Solutions Private Limited, doing business as OHI</span>
     <span>Not an assurance. Not a rating.</span>
   </div></div>
 </footer>
 <script src="/assets/nav.js" defer></script>
+<script src="/assets/hills.js" defer></script>
 <script>
 document.querySelectorAll('[data-track]').forEach(function (el) {
   el.addEventListener('click', function () { if (typeof gtag === 'function') gtag('event', el.dataset.track, { location: el.dataset.loc || '', page: location.pathname }); });

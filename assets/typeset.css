@@ -58,3 +58,11 @@ section h2 { line-height: 1.08 !important; }
 @media (max-width: 380px) {
   #home > header > a span { letter-spacing: 0.3em !important; font-size: 17px !important; }
 }
+
+/* One column line for the whole site: two-column rows use the same 32px gutter as the
+   three- and four-column rows, so right-hand columns start on a shared vertical. */
+[style*="minmax(340px, 1fr)"] { column-gap: 32px !important; }
+[style*="minmax(340px, 1fr)"] > :first-child { padding-right: 64px; box-sizing: border-box; }
+[style*="minmax(260px, 1fr)"] { column-gap: 32px !important; }
+[style*="minmax(260px, 1fr)"] > * { padding-right: 32px; box-sizing: border-box; }
+@media (max-width: 860px) { [style*="minmax(340px, 1fr)"] > :first-child, [style*="minmax(260px, 1fr)"] > * { padding-right: 0; } }
