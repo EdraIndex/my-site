@@ -142,7 +142,8 @@
         <div class="field"><label for="f-framework">Framework</label>
           <select id="f-framework" name="framework" required>
             <option value="" disabled selected>Choose one</option>
-            <option value="BRSR / BRSR Core">BRSR / BRSR Core</option>
+            <option value="BRSR Core">BRSR Core</option>
+            <option value="BRSR Full">BRSR Full</option>
             <option value="GRESB">GRESB</option>
             <option value="IGBC">IGBC</option>
             <option value="NABERS">NABERS</option>
@@ -204,7 +205,7 @@
   </div>
   <div class="wrap"><div class="bottom">
     <span>&copy; 2026 EDRA &middot; P B Tech Impact Solutions Private Limited, doing business as OHI</span>
-    <span>Not an assurance. Not a rating.</span>
+    <span>EDRA ONE &middot; the ESG data platform</span>
   </div></div>
 </footer>
 <script src="/assets/nav.js" defer></script>
@@ -218,7 +219,7 @@ document.querySelectorAll('[data-track]').forEach(function (el) {
 (function () {
   var form = document.getElementById('contact-form'); if (!form) return;
   var q = new URLSearchParams(location.search).get('framework');
-  var map = { brsr: 'BRSR / BRSR Core', gresb: 'GRESB', igbc: 'IGBC', nabers: 'NABERS' };
+  var map = { brsr: 'BRSR Core', 'brsr-full': 'BRSR Full', gresb: 'GRESB', igbc: 'IGBC', nabers: 'NABERS' };
   if (q && map[q.toLowerCase()]) form.framework.value = map[q.toLowerCase()];
   var RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   var PERSONAL = /@(gmail|googlemail|yahoo|hotmail|outlook|live|msn|aol|icloud|me|mac|protonmail|proton|rediffmail|rediff|gmx|yandex|mail|fastmail|tutanota)\./i;

@@ -181,6 +181,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 /* status legend */
 .legend { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 32px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.legend.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .legend > div { display: flex; gap: 12px; padding: 22px 0; }
 .legend .dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 7px; flex: none; }
 .legend .dot.full { background: var(--forest); }
