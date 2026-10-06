@@ -3,14 +3,15 @@
 // ============================================================================
 // Receives a POST from the homepage assessment-request form, validates it
 // server-side (defense-in-depth against bots that bypass the client-side
-// validation), and emails both p.jain@edraindex.com and rachit@edraindex.com
+// validation), and emails p.jain@edraindex.com, rachit@edraindex.com and
+// p.jain@outsourcinghubindia.com
 // via Resend with the lead details.
 //
 // Returns 200 + { ok: true } on success so the client can show the
 // "Request Received" state.
 // ============================================================================
 
-const RECIPIENTS = ['p.jain@edraindex.com', 'rachit@edraindex.com'];
+const RECIPIENTS = ['p.jain@edraindex.com', 'rachit@edraindex.com', 'p.jain@outsourcinghubindia.com'];
 
 // Landing-page bookings route to the chosen host's inbox. This is a CLOSED
 // server-side enum — the client sends only a `book_with` key ('preyanka' |
