@@ -9,6 +9,14 @@
   },
   "rewrites": [
     {
+      "source": "/option-india",
+      "destination": "/option-india.html"
+    },
+    {
+      "source": "/option-global",
+      "destination": "/option-global.html"
+    },
+    {
       "source": "/sign-in",
       "destination": "/sign-in.html"
     },
