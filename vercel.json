@@ -9,6 +9,10 @@
   },
   "rewrites": [
     {
+      "source": "/meet-edra",
+      "destination": "/meet-edra.html"
+    },
+    {
       "source": "/option-india",
       "destination": "/option-india.html"
     },
