@@ -9,6 +9,10 @@
   },
   "rewrites": [
     {
+      "source": "/brsr-core",
+      "destination": "/brsr-core.html"
+    },
+    {
       "source": "/sample-report",
       "destination": "/sample-report.html"
     },
