@@ -389,3 +389,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .closing { padding-bottom: 120px !important; }
 @media (max-width: 720px) { .closing { padding-bottom: 84px !important; } }
+
+/* Links that land on the form leave room for the top of the page */
+#contact-form { scroll-margin-top: 24px; }

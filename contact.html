@@ -105,7 +105,7 @@
   </nav>
   <div class="head-actions">
     <a class="signin" href="/sign-in">Sign in</a>
-    <a class="btn sm" href="/contact" data-track="talk_click" data-loc="header">Talk to us</a>
+    <a class="btn sm" href="/contact#contact-form" data-track="talk_click" data-loc="header">Talk to us</a>
   </div>
 </header>
 <main>
@@ -159,7 +159,7 @@
             <option value="Preparing for another framework">Preparing for another framework</option>
             <option value="Something else">Something else</option>
           </select><span class="err" id="e-need"></span></div>
-        <div class="field full"><label for="f-msg">Anything we should know <i>(optional)</i></label><textarea id="f-msg" name="message"></textarea></div>
+        <div class="field full"><label for="f-msg">Anything we should know</label><textarea id="f-msg" name="message" required placeholder="What you report, what you already keep, and any deadline"></textarea><span class="err" id="e-message"></span></div>
         <div class="full form-foot">
           <button class="btn" type="submit" data-track="contact_form_submit" data-loc="contact">Send <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></button>
           <p class="form-status" id="form-status" aria-live="polite"></p>
@@ -189,7 +189,7 @@
       <h4>Company</h4>
       <ul>
         <li><a href="/about">About</a></li>
-        <li><a href="/contact">Talk to us</a></li>
+        <li><a href="/contact#contact-form">Talk to us</a></li>
         <li><a href="mailto:marketing@edraindex.com">marketing@edraindex.com</a></li>
         <li><a href="/sign-in">Sign in</a></li>
       </ul>
@@ -239,7 +239,8 @@ document.querySelectorAll('[data-track]').forEach(function (el) {
      ['company', v('company').length < 2 ? 'Please enter your company.' : ''],
      ['framework', !v('framework') ? 'Please choose one.' : ''],
      ['sites', !v('sites') ? 'An approximate number is fine.' : ''],
-     ['need', !v('need') ? 'Please choose one.' : '']
+     ['need', !v('need') ? 'Please choose one.' : ''],
+     ['message', form.message.type !== 'hidden' && v('message').length < 2 ? 'Please tell us a little about what you need.' : '']
     ].forEach(function (c) { if (err(c[0], c[1])) { bad++; first = first || form[c[0]]; } });
     if (bad) { first.focus(); return; }
     var btn = form.querySelector('button[type=submit]'); var html = btn.innerHTML;
