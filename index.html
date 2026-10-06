@@ -344,133 +344,120 @@ class Component extends DCLogic {
     var H = this.hills[l];
     return this.h * H.base + H.a1 * Math.sin(x * H.f1 + H.p1) + H.a2 * Math.sin(x * H.f2 + H.p2);
   }
-  far(x) { return this.h * 0.775 + this.h * 0.022 * Math.sin(x * 0.0036 + 1.1) + this.h * 0.008 * Math.sin(x * 0.011 + 0.3); }
-  near(x) { return this.h * 0.905 + this.h * 0.016 * Math.sin(x * 0.0028 + 2.4) + this.h * 0.006 * Math.sin(x * 0.009); }
-  river(x) { return this.h * 0.85 + this.h * 0.012 * Math.sin(x * 0.0045 + 0.6); }
   seed() {
-    var R = this.rng(20261006), w = this.w, h = this.h, self = this, dens = this.props.density ?? 1;
-    var k = Math.max(0.55, Math.min(1.15, w / 1440));
-    var c = document.createElement('canvas'); c.width = Math.ceil(w); c.height = Math.ceil(h);
-    var x = c.getContext('2d', { willReadFrequently: true });
-    x.lineCap = 'round'; x.lineJoin = 'round'; x.lineWidth = 3.2;
-    var NAT = 'rgb(0,255,0)', SOC = 'rgb(255,0,0)', GOV = 'rgb(0,0,255)', P = Math.PI, xx;
-    var line = function (pts) { x.beginPath(); x.moveTo(pts[0], pts[1]); for (var i = 2; i < pts.length; i += 2) x.lineTo(pts[i], pts[i + 1]); x.stroke(); };
-    // hills
-    x.strokeStyle = NAT;
-    x.beginPath(); for (xx = 0; xx <= w; xx += 8) { if (xx === 0) x.moveTo(xx, this.far(xx)); else x.lineTo(xx, this.far(xx)); } x.stroke();
-    x.beginPath(); for (xx = 0; xx <= w; xx += 8) { if (xx === 0) x.moveTo(xx, this.near(xx)); else x.lineTo(xx, this.near(xx)); } x.stroke();
-    // trees
-    [0.03, 0.075, 0.115, 0.6, 0.645, 0.965].forEach(function (f, i) {
-      var tx = w * f, base = (i % 3 === 1) ? self.far(tx) : self.near(tx), s = (i % 3 === 1 ? 0.8 : 1.1) * k;
-      x.strokeStyle = NAT; line([tx, base, tx, base - 34 * s]);
-      x.beginPath(); x.arc(tx, base - 50 * s, 20 * s, 0, 2 * P); x.stroke();
-      x.beginPath(); x.arc(tx - 10 * s, base - 40 * s, 11 * s, 0.5 * P, 1.6 * P); x.stroke();
-    });
-    // village and school
-    [[0.18, 1], [0.215, 0.8], [0.245, 0.95]].forEach(function (hs) {
-      var hx = w * hs[0], b = self.far(hx), s = hs[1] * k, hw = 18 * s, hh = 26 * s;
-      x.strokeStyle = SOC; line([hx - hw, b, hx - hw, b - hh, hx, b - hh - 16 * s, hx + hw, b - hh, hx + hw, b, hx - hw, b]);
-      x.strokeRect(hx - 5 * s, b - 14 * s, 10 * s, 14 * s);
-    });
-    var sx = w * 0.285, sb = this.far(sx);
-    x.strokeStyle = SOC; x.strokeRect(sx - 30 * k, sb - 34 * k, 60 * k, 34 * k);
-    line([sx - 34 * k, sb - 34 * k, sx, sb - 52 * k, sx + 34 * k, sb - 34 * k]);
-    line([sx, sb - 52 * k, sx, sb - 84 * k]); line([sx, sb - 84 * k, sx + 18 * k, sb - 78 * k, sx, sb - 72 * k]);
-    for (var wi = 0; wi < 3; wi++) x.strokeRect(sx - 22 * k + wi * 17 * k, sb - 26 * k, 9 * k, 9 * k);
-    // civic building: governance
-    var gx = w * 0.365, gb = this.far(gx), gw = 46 * k;
-    x.strokeStyle = GOV;
-    line([gx - gw - 8 * k, gb, gx + gw + 8 * k, gb]); line([gx - gw - 4 * k, gb - 6 * k, gx + gw + 4 * k, gb - 6 * k]);
-    for (var ci = 0; ci < 5; ci++) { var cx2 = gx - gw + 6 * k + ci * (gw * 2 - 12 * k) / 4; line([cx2, gb - 8 * k, cx2, gb - 52 * k]); }
-    line([gx - gw - 4 * k, gb - 54 * k, gx + gw + 4 * k, gb - 54 * k]);
-    line([gx - gw - 6 * k, gb - 58 * k, gx, gb - 80 * k, gx + gw + 6 * k, gb - 58 * k, gx - gw - 6 * k, gb - 58 * k]);
-    // people holding hands
-    var px0 = w * 0.43, n = 6, gap = 30 * k;
-    x.strokeStyle = SOC;
-    for (var pi = 0; pi < n; pi++) {
-      var ppx = px0 + pi * gap, pb = this.near(ppx), sc = (pi % 3 === 2 ? 0.78 : 1) * k, hgt = 46 * sc;
-      x.beginPath(); x.arc(ppx, pb - hgt - 7 * sc, 7 * sc, 0, 2 * P); x.stroke();
-      line([ppx, pb - hgt, ppx, pb - 18 * sc]); line([ppx - 8 * sc, pb, ppx, pb - 18 * sc, ppx + 8 * sc, pb]);
-      if (pi < n - 1) { var nx = px0 + (pi + 1) * gap, nb = self.near(nx), nsc = ((pi + 1) % 3 === 2 ? 0.78 : 1) * k; line([ppx, pb - hgt + 6 * sc, (ppx + nx) / 2, (pb - hgt * 0.62 + nb - 46 * nsc * 0.62) / 2, nx, nb - 46 * nsc + 6 * nsc]); }
-    }
-    // solar array
-    for (var si = 0; si < 3; si++) {
-      var spx = w * 0.69 + si * 30 * k, spb = this.near(spx) - 6 * k;
-      x.strokeStyle = NAT;
-      line([spx - 12 * k, spb, spx + 12 * k, spb - 16 * k, spx + 20 * k, spb - 12 * k, spx - 4 * k, spb + 4 * k, spx - 12 * k, spb]);
-      line([spx + 4 * k, spb - 2 * k, spx + 4 * k, spb + 8 * k]);
-    }
-    // turbine towers (blades are live)
-    this.hubs = [];
-    [0.79, 0.845, 0.9].forEach(function (f, i) {
-      var tx = w * f, b = self.far(tx), th = (88 - i * 10) * k;
-      x.strokeStyle = NAT; line([tx, b, tx, b - th]);
-      self.hubs.push({ x: tx, y: b - th, L: (36 - i * 4) * k, ph: i * 1.3 });
-    });
-    // sample
-    var d = x.getImageData(0, 0, c.width, c.height).data, step = 4;
+    var R = this.rng(20261006), h = this.h, w = this.w, dens = this.props.density ?? 1;
+    this.hills = [
+      { base: 0.70, a1: h * 0.030, f1: 0.0042, p1: 1.2, a2: h * 0.012, f2: 0.011, p2: 0.4 },
+      { base: 0.79, a1: h * 0.034, f1: 0.0031, p1: 3.1, a2: h * 0.014, f2: 0.0093, p2: 2.2 },
+      { base: 0.90, a1: h * 0.028, f1: 0.0024, p1: 0.3, a2: h * 0.010, f2: 0.0077, p2: 5.0 }
+    ];
+    var specs = [
+      { fx: 0.05, l: 2, s: 1.05 }, { fx: 0.17, l: 1, s: 0.72 }, { fx: 0.27, l: 2, s: 0.8 }, { fx: 0.11, l: 0, s: 0.42 },
+      { fx: 0.36, l: 0, s: 0.38 }, { fx: 0.64, l: 0, s: 0.36 }, { fx: 0.42, l: 1, s: 0.46 }, { fx: 0.58, l: 1, s: 0.44 },
+      { fx: 0.73, l: 2, s: 0.82 }, { fx: 0.84, l: 1, s: 0.7 }, { fx: 0.95, l: 2, s: 1.0 }, { fx: 0.9, l: 0, s: 0.4 }
+    ];
+    var greens = ['29, 74, 55', '47, 122, 90', '82, 145, 98', '131, 172, 112', '170, 192, 120'];
     this.pts = [];
-    var y0 = Math.floor(h * 0.5);
-    for (var yy = y0; yy < c.height; yy += step) for (xx = 1; xx < c.width; xx += step) {
-      var o = (yy * c.width + xx) * 4; if (d[o + 3] < 90) continue;
-      var cat = d[o] > d[o + 1] && d[o] > d[o + 2] ? 1 : (d[o + 2] > d[o + 1] ? 2 : 0);
-      this.pts.push({ tx: xx + (R() - 0.5), ty: yy + (R() - 0.5), cat: cat, sx: xx + (R() - 0.5) * 300, sy: -20 - R() * h * 0.5, delay: 300 + (xx / w) * 2600 + R() * 900, ph: R() * 6.28, sz: 1.5 + R() * 1.3, shade: R() });
-    }
+    var self = this;
+    specs.forEach(function (sp, i) {
+      var x0 = w * sp.fx, y0 = self.hillY(sp.l, x0) + 4;
+      var len = h * 0.095 * sp.s * (0.9 + R() * 0.2);
+      var maxD = sp.l === 2 ? 5 : (sp.l === 1 ? 4 : 3);
+      var t0 = 500 + i * 650 + R() * 400;
+      var tree = { x: x0, y: y0, hgt: len * 3.1 };
+      var branch = function (x, y, a, L, d, delay) {
+        var x2 = x + Math.cos(a) * L, y2 = y + Math.sin(a) * L;
+        var n = Math.max(2, Math.floor(L / 6));
+        for (var k = 0; k < n; k++) {
+          var t = k / n;
+          self.pts.push({ tx: x + (x2 - x) * t, ty: y + (y2 - y) * t, kind: 0, ang: a, wd: Math.max(0.8, (maxD - d + 1) * 0.55 * sp.s + 0.3), delay: delay + t * 320, col: d < 2 ? '58, 64, 52' : '62, 92, 70', layer: sp.l, tree: tree, sx: x + (R() - 0.5) * 120, sy: y0 + 40 + R() * 80 });
+        }
+        if (d >= maxD) {
+          var nl = Math.round((8 + R() * 8) * dens);
+          for (var j = 0; j < nl; j++) {
+            var rr = L * (0.4 + R() * 1.3), aa = R() * 6.2832;
+            self.pts.push({ tx: x2 + Math.cos(aa) * rr, ty: y2 + Math.sin(aa) * rr * 0.75, kind: R() < 0.2 ? 2 : 1, sz: (1.4 + R() * 2.4) * (0.6 + sp.s * 0.5), delay: delay + 320 + R() * 1400,
+              col: greens[Math.min(4, Math.floor(R() * 4 + (2 - sp.l) * 0.5))], layer: sp.l, tree: tree, sx: -60 - R() * 400, sy: h * (0.15 + R() * 0.5), gold: R() < 0.025 });
+          }
+          return;
+        }
+        var sprd = 0.32 + R() * 0.26;
+        branch(x2, y2, a - sprd + (R() - 0.5) * 0.2, L * (0.68 + R() * 0.1), d + 1, delay + 320);
+        branch(x2, y2, a + sprd + (R() - 0.5) * 0.2, L * (0.68 + R() * 0.1), d + 1, delay + 320);
+        if (d < 2 && R() < 0.45) branch(x2, y2, a + (R() - 0.5) * 0.3, L * 0.6, d + 1, delay + 320);
+      };
+      branch(x0, y0, -Math.PI / 2 + (R() - 0.5) * 0.12, len, 0, t0);
+    });
+    this.pts.sort(function (a, b) { return a.layer - b.layer; });
     this.flow = [];
-    for (var f = 0; f < Math.round(150 * dens); f++) this.flow.push({ x: R() * w, off: (R() - 0.5) * 16 * k, v: 0.02 + R() * 0.03, dash: R() < 0.5 });
+    for (var i = 0; i < Math.round(260 * dens); i++) this.flow.push({ l: Math.floor(R() * 3), off: R() * 70, x: R() * (w + 100) - 50, v: 0.012 + R() * 0.03, sq: R() < 0.75, sz: 0.8 + R() * 1.6 });
     this.seeds = [];
-    for (var s = 0; s < 36; s++) this.seeds.push({ x: R() * w, y: h * (0.3 + R() * 0.5), vx: 0.004 + R() * 0.01, vy: -0.004 - R() * 0.006, ph: R() * 6.28, cat: Math.floor(R() * 3) });
+    for (var s = 0; s < 40; s++) this.seeds.push({ x: R() * w, y: h * (0.2 + R() * 0.55), vx: 0.006 + R() * 0.014, vy: -0.003 - R() * 0.006, ph: R() * 6.28 });
   }
   quiet(x, y) {
     var dx = (x - this.w / 2) / Math.min(this.w * 0.32, 470), dy = (y - this.h * 0.33) / (this.h * 0.26);
     var e = Math.sqrt(dx * dx + dy * dy);
-    return 1 - 0.9 * Math.max(0, Math.min(1, 1.3 - e));
+    return 1 - 0.88 * Math.max(0, Math.min(1, 1.3 - e));
   }
   draw(dt) {
     var ctx = this.ctx, w = this.w, h = this.h, T = this.time; if (!ctx) return;
+    var windK = this.props.wind ?? 1;
     ctx.fillStyle = '#f1efe7'; ctx.fillRect(0, 0, w, h);
-    var cols = [['29, 74, 55', '47, 122, 90', '82, 145, 98'], ['184, 104, 58', '160, 88, 48', '200, 128, 80'], ['31, 58, 92', '45, 78, 118', '31, 58, 92']];
-    ctx.fillStyle = 'rgba(131, 172, 112, 0.07)';
-    ctx.beginPath(); ctx.moveTo(0, h); for (var x = 0; x <= w; x += 12) ctx.lineTo(x, this.far(x)); ctx.lineTo(w, h); ctx.closePath(); ctx.fill();
-    ctx.fillStyle = 'rgba(82, 145, 98, 0.07)';
-    ctx.beginPath(); ctx.moveTo(0, h); for (x = 0; x <= w; x += 12) ctx.lineTo(x, this.near(x)); ctx.lineTo(w, h); ctx.closePath(); ctx.fill();
-    // river of data
-    for (var f = 0; f < this.flow.length; f++) {
-      var fl = this.flow[f]; fl.x += fl.v * dt; if (fl.x > w + 20) fl.x = -20;
-      var fy = this.river(fl.x) + fl.off;
-      ctx.fillStyle = 'rgba(52, 112, 140, ' + (0.55 * Math.min(1, T / 3000)).toFixed(3) + ')';
-      if (fl.dash) ctx.fillRect(fl.x - 5, fy - 0.6, 10, 1.2); else ctx.fillRect(fl.x - 1, fy - 1, 2, 2);
-    }
-    for (var i = 0; i < this.pts.length; i++) {
-      var p = this.pts[i];
-      var u = (T - p.delay) / 1900; if (u <= 0) continue; if (u > 1) u = 1;
-      var e = 1 - Math.pow(1 - u, 3);
-      var cx = p.sx + (p.tx - p.sx) * e, cy = p.sy + (p.ty - p.sy) * e;
-      var tw = 0.75 + 0.25 * Math.sin(T * 0.0016 + p.ph + p.tx * 0.01);
-      var col = cols[p.cat][Math.floor(p.shade * 3)];
-      ctx.fillStyle = 'rgba(' + col + ', ' + ((0.25 + 0.65 * e) * tw * this.quiet(cx, cy)).toFixed(3) + ')';
-      ctx.fillRect(cx - p.sz / 2, cy - p.sz / 2, p.sz, p.sz);
-    }
-    // turbine blades, turning
-    var on = Math.min(1, Math.max(0, (T - 2600) / 1200));
-    for (var t = 0; t < this.hubs.length; t++) {
-      var hb = this.hubs[t];
-      for (var b = 0; b < 3; b++) {
-        var a = T * 0.0011 * (this.props.wind ?? 1) + hb.ph + b * 2.0944;
-        for (var r = 4; r < hb.L; r += 4) {
-          ctx.fillStyle = 'rgba(47, 122, 90, ' + (0.85 * on).toFixed(3) + ')';
-          ctx.fillRect(hb.x + Math.cos(a) * r - 1.2, hb.y + Math.sin(a) * r - 1.2, 2.4, 2.4);
+    var fills = ['rgba(131, 172, 112, 0.10)', 'rgba(82, 145, 98, 0.11)', 'rgba(47, 122, 90, 0.12)'];
+    var pi = 0, x, l;
+    for (l = 0; l < 3; l++) {
+      // hill body and contour lines
+      ctx.beginPath(); ctx.moveTo(-10, h);
+      for (x = -10; x <= w + 10; x += 12) ctx.lineTo(x, this.hillY(l, x));
+      ctx.lineTo(w + 10, h); ctx.closePath(); ctx.fillStyle = fills[l]; ctx.fill();
+      ctx.lineWidth = 0.7;
+      for (var c = 0; c < 4; c++) {
+        ctx.strokeStyle = 'rgba(29, 74, 55, ' + (0.10 - c * 0.02).toFixed(3) + ')';
+        ctx.beginPath();
+        for (x = -10; x <= w + 10; x += 12) { var yy = this.hillY(l, x) + c * 16 * (l + 1) * 0.6; if (x === -10) ctx.moveTo(x, yy); else ctx.lineTo(x, yy); }
+        ctx.stroke();
+      }
+      // data flowing along the land
+      for (var f = 0; f < this.flow.length; f++) {
+        var d = this.flow[f]; if (d.l !== l) continue;
+        d.x += d.v * dt; if (d.x > w + 40) d.x = -40;
+        var fy = this.hillY(l, d.x) + d.off * (0.4 + l * 0.4);
+        ctx.fillStyle = 'rgba(29, 74, 55, ' + (0.35 + l * 0.12).toFixed(2) + ')';
+        if (d.sq) { var q = d.sz + l * 0.5; ctx.fillRect(d.x - q / 2, fy - q / 2, q, q); } else { ctx.fillRect(d.x - 5, fy - 0.6, 10, 1.2); }
+      }
+      // trees on this layer
+      for (; pi < this.pts.length && this.pts[pi].layer === l; pi++) {
+        var p = this.pts[pi];
+        var u = (T - p.delay) / (p.kind === 0 ? 900 : 2600);
+        if (u <= 0) continue;
+        if (u > 1) u = 1;
+        var e = 1 - Math.pow(1 - u, 3);
+        var hf = Math.max(0, (p.tree.y - p.ty) / p.tree.hgt);
+        var sway = Math.sin(T * 0.0011 + p.tree.x * 0.013 + p.ty * 0.004) * hf * hf * 4.5 * windK * (0.5 + l * 0.3);
+        var cx = p.sx + (p.tx - p.sx) * e, cy = p.sy + (p.ty - p.sy) * e;
+        if (p.kind !== 0) { var lift = Math.sin(Math.PI * e) * 80; cy -= lift; }
+        cx += sway * e;
+        var a = (p.kind === 0 ? 0.8 : 0.78) * (0.35 + 0.65 * e) * (0.55 + l * 0.22) * this.quiet(cx, cy);
+        if (p.kind === 0) {
+          ctx.strokeStyle = 'rgba(' + p.col + ', ' + a.toFixed(3) + ')';
+          ctx.lineWidth = p.wd; ctx.lineCap = 'butt';
+          var L2 = 3.4;
+          ctx.beginPath(); ctx.moveTo(cx - Math.cos(p.ang) * L2, cy - Math.sin(p.ang) * L2); ctx.lineTo(cx + Math.cos(p.ang) * L2, cy + Math.sin(p.ang) * L2); ctx.stroke();
+        } else {
+          ctx.fillStyle = p.gold ? 'rgba(201, 154, 60, ' + Math.min(1, a + 0.15).toFixed(3) + ')' : 'rgba(' + p.col + ', ' + a.toFixed(3) + ')';
+          if (p.kind === 2) { ctx.fillRect(cx - p.sz * 1.4, cy - 0.6, p.sz * 2.8, 1.2); }
+          else { ctx.fillRect(cx - p.sz / 2, cy - p.sz / 2, p.sz, p.sz); }
         }
       }
-      ctx.fillStyle = 'rgba(29, 74, 55, ' + on.toFixed(3) + ')'; ctx.fillRect(hb.x - 2.5, hb.y - 2.5, 5, 5);
     }
-    // data rising from the world
+    // seeds drifting upward, data leaving the canopy
     for (var s = 0; s < this.seeds.length; s++) {
-      var sd = this.seeds[s]; sd.x += sd.vx * dt; sd.y += sd.vy * dt;
-      if (sd.y < h * 0.12 || sd.x > w + 20) { sd.x = Math.random() * w; sd.y = h * (0.62 + Math.random() * 0.2); }
+      var sd = this.seeds[s];
+      sd.x += sd.vx * dt; sd.y += sd.vy * dt;
+      if (sd.y < h * 0.08 || sd.x > w + 20) { sd.x = Math.random() * w * 0.9; sd.y = h * (0.55 + Math.random() * 0.2); }
       var sx2 = sd.x + Math.sin(T * 0.001 + sd.ph) * 6;
-      ctx.fillStyle = 'rgba(' + cols[sd.cat][1] + ', ' + (0.45 * this.quiet(sx2, sd.y) * Math.min(1, T / 4000)).toFixed(3) + ')';
-      ctx.fillRect(sx2 - 1, sd.y - 1, 2, 2);
+      ctx.fillStyle = 'rgba(47, 122, 90, ' + (0.4 * this.quiet(sx2, sd.y)).toFixed(3) + ')';
+      ctx.fillRect(sx2 - 0.9, sd.y - 0.9, 1.8, 1.8);
     }
   }
   renderVals() {
