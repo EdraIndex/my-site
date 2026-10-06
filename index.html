@@ -89,13 +89,14 @@ a:focus-visible,button:focus-visible{outline:2px solid #c99a3c;outline-offset:2p
 .dk-btn:hover { background: #ffffff; color: #123426; }
 .dk-btn.sm { min-height: 44px; padding: 0 20px; font-size: 15px; }
 .dk-grid { position: relative; z-index: 2; flex: 1; max-width: 1280px; width: 100%; margin: 0 auto; padding: 48px 32px 96px; box-sizing: border-box;
-  display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr); gap: 32px; align-items: center; }
-.dk-copy { display: flex; flex-direction: column; gap: 26px; padding-right: 32px; }
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+.dk-copy { position: relative; display: flex; flex-direction: column; gap: 26px; padding-right: 32px; }
+.dk-copy::before { content: ""; position: absolute; inset: -60px -40px -60px -80px; z-index: -1; pointer-events: none; background: radial-gradient(closest-side, rgba(15, 42, 31, 0.78), rgba(15, 42, 31, 0.45) 60%, rgba(15, 42, 31, 0) 100%); }
 .dk-chip { align-self: flex-start; display: inline-flex; flex-wrap: nowrap; white-space: nowrap; align-items: center; gap: 10px; padding: 7px 16px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; background: rgba(255,255,255,.06); color: #fff; font-size: 14px; text-decoration: none; }
 .dk-chip i { width: 7px; height: 7px; border-radius: 50%; background: #8fd0b0; }
 .dk-chip span { color: rgba(255,255,255,.4); }
 .dk-chip em { font-style: normal; color: rgba(255,255,255,.7); }
-.dk-copy h1 { margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: clamp(38px, 3.9vw, 58px); line-height: 1.02; letter-spacing: -0.025em; color: #fff; }
+.dk-copy h1 { margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; font-size: clamp(34px, 3.5vw, 54px); line-height: 1.02; letter-spacing: -0.025em; color: #fff; }
 .dk-copy h1 em { font-style: italic; color: #a9dcc0; }
 .dk-copy > p { margin: 0; max-width: 560px; font-size: 18.5px; line-height: 1.6; color: rgba(255,255,255,.82); }
 .dk-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
@@ -163,8 +164,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #c99a3c;outline-offset:2p
     <div class="dk-grid">
       <div class="dk-copy">
         <a href="#frameworks" class="dk-chip"><i></i>BRSR Core live in India<span>·</span><em>BRSR Full, GRESB, IGBC and NABERS coming soon</em></a>
-        <h1 id="dk-t">Sustainability reporting<br>for India, <em>simplified</em>.</h1>
-        <p>EDRA ONE is the ESG data platform for listed companies and real-asset portfolios. It turns the records you already keep into figures every framework can trust, with our team beside you until the numbers move the right way.</p>
+        <h1 id="dk-t"><span style="white-space: nowrap">Sustainability reporting</span><br>for India, <em>simplified</em>.</h1>
+        <p>EDRA ONE is the ESG data platform for listed companies and real&#8209;asset portfolios. It turns the records you already keep into figures every framework can trust, with our team beside you until the numbers move the right way.</p>
         <div class="dk-cta">
           <a href="/contact" class="dk-btn" data-track="demo_click" data-loc="dark-hero">Request a demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
           <a href="#tour" class="dk-link">See the platform</a>
@@ -629,9 +630,11 @@ class Component extends DCLogic {
     for (var s = 0; s < 40; s++) this.seeds.push({ x: R() * w, y: h * (0.2 + R() * 0.55), vx: 0.006 + R() * 0.014, vy: -0.003 - R() * 0.006, ph: R() * 6.28 });
   }
   quiet(x, y) {
-    var dx = (x - Math.max(this.w / 2 - 640, 0) - 330) / 330, dy = (y - this.h * 0.44) / (this.h * 0.20);
-    var e = Math.sqrt(dx * dx + dy * dy);
-    return 1 - 0.6 * Math.max(0, Math.min(1, 1.3 - e));
+    var q = window.__dkq;
+    if (!q) return 1;
+    var dx = Math.max(q.l - x, 0, x - q.r), dy = Math.max(q.t - y, 0, y - q.b);
+    var d = Math.sqrt(dx * dx + dy * dy);
+    return 0.06 + 0.94 * Math.min(1, d / 90);
   }
   draw(dt) {
     var ctx = this.ctx, w = this.w, h = this.h, T = this.time; if (!ctx) return;
@@ -765,6 +768,11 @@ class Component extends DCLogic {
    a dotted ring orbits behind it. Decorative; pauses off screen; still under
    reduced motion. */
 (function () {
+  (function () {
+    var copy = document.querySelector('.dk-copy'), hero = document.getElementById('home');
+    function mq() { if (!copy || !hero) return; var c = copy.getBoundingClientRect(), h = hero.getBoundingClientRect(); window.__dkq = { l: c.left - h.left - 24, r: c.right - h.left + 24, t: c.top - h.top - 24, b: c.bottom - h.top + 24 }; }
+    mq(); addEventListener('resize', mq); addEventListener('load', mq); if (document.fonts) document.fonts.ready.then(mq);
+  })();
   var canvas = document.getElementById('dk-canvas'), frame = document.getElementById('dk-frame');
   if (!canvas || !frame) return;
   var ctx = canvas.getContext('2d'), w = 1, h = 1, T = 0, last = 0, raf = 0, visible = true, box = null;
